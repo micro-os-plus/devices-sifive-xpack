@@ -1,6 +1,6 @@
 {
   "name": "@sifive/coreplex-devices",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An xPack with the µOS++ support for the SiFive Coreplex devices",
   "main": "index.js",
   "scripts": {
