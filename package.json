@@ -27,7 +27,9 @@
     "url": "https://github.com/micro-os-plus/sifive-coreplex-devices/issues"
   },
   "config": {},
-  "dependencies": {},
+  "dependencies": {
+    "@micro-os-plus/riscv-arch": "^0.0.2"
+  },
   "xpack": {},
   "homepage": "https://github.com/micro-os-plus/sifive-coreplex-devices"
 }
