@@ -36,11 +36,11 @@
 
 #if defined (SIFIVE_FREEDOM_E310)
 
-#include <sifive-coreplex-devices/freedom-e310/global-interrupts-handlers.h>
+#include <sifive-coreplex-devices/freedom-e310/device-interrupts-handlers.h>
 
 #elif defined (SIFIVE_COREPLEX_IP_31) || defined (SIFIVE_COREPLEX_IP_51)
 
-#include <sifive-coreplex-devices/coreplex-ip/global-interrupts-handlers.h>
+#include <sifive-coreplex-devices/coreplex-ip/device-interrupts-handlers.h>
 
 #endif
 

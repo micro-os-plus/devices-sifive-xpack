@@ -41,75 +41,127 @@ extern "C"
 #endif /* defined(__cplusplus) */
 
   // --------------------------------------------------------------------------
+  // Global interrupt handlers.
 
   void
-  riscv_irq_global_handle_uart0 (void);
+  riscv_interrupt_global_handle_uart0 (void);
 
   void
-  riscv_irq_global_handle_external (void);
+  riscv_interrupt_global_handle_external (void);
 
   void
-  riscv_irq_global_handle_spi0 (void);
+  riscv_interrupt_global_handle_spi0 (void);
 
   void
-  riscv_irq_global_handle_gpio0 (void);
+  riscv_interrupt_global_handle_gpio0 (void);
 
   void
-  riscv_irq_global_handle_gpio1 (void);
+  riscv_interrupt_global_handle_gpio1 (void);
 
   void
-  riscv_irq_global_handle_gpio2 (void);
+  riscv_interrupt_global_handle_gpio2 (void);
 
   void
-  riscv_irq_global_handle_gpio3 (void);
+  riscv_interrupt_global_handle_gpio3 (void);
 
   void
-  riscv_irq_global_handle_gpio4 (void);
+  riscv_interrupt_global_handle_gpio4 (void);
 
   void
-  riscv_irq_global_handle_gpio5 (void);
+  riscv_interrupt_global_handle_gpio5 (void);
 
   void
-  riscv_irq_global_handle_gpio6 (void);
+  riscv_interrupt_global_handle_gpio6 (void);
 
   void
-  riscv_irq_global_handle_gpio7 (void);
+  riscv_interrupt_global_handle_gpio7 (void);
 
   void
-  riscv_irq_global_handle_gpio8 (void);
+  riscv_interrupt_global_handle_gpio8 (void);
 
   void
-  riscv_irq_global_handle_gpio9 (void);
+  riscv_interrupt_global_handle_gpio9 (void);
 
   void
-  riscv_irq_global_handle_gpio10 (void);
+  riscv_interrupt_global_handle_gpio10 (void);
 
   void
-  riscv_irq_global_handle_gpio11 (void);
+  riscv_interrupt_global_handle_gpio11 (void);
 
   void
-  riscv_irq_global_handle_gpio12 (void);
+  riscv_interrupt_global_handle_gpio12 (void);
 
   void
-  riscv_irq_global_handle_gpio13 (void);
+  riscv_interrupt_global_handle_gpio13 (void);
 
   void
-  riscv_irq_global_handle_gpio14 (void);
+  riscv_interrupt_global_handle_gpio14 (void);
 
   void
-  riscv_irq_global_handle_gpio15 (void);
+  riscv_interrupt_global_handle_gpio15 (void);
 
   void
-  riscv_irq_global_handle_pwm0cmp0 (void);
+  riscv_interrupt_global_handle_pwm0cmp0 (void);
 
   void
-  riscv_irq_global_handle_pwm0cmp1 (void);
+  riscv_interrupt_global_handle_pwm0cmp1 (void);
 
   void
-  riscv_irq_global_handle_pwm0cmp2 (void);
+  riscv_interrupt_global_handle_pwm0cmp2 (void);
 
   void
-  riscv_irq_global_handle_pwm0cmp3 (void);
+  riscv_interrupt_global_handle_pwm0cmp3 (void);
+
+  // --------------------------------------------------------------------------
+  // Local interrupt handlers.
+
+  void
+  riscv_interrupt_local_handle_device0 (void);
+
+  void
+  riscv_interrupt_local_handle_device1 (void);
+
+  void
+  riscv_interrupt_local_handle_device2 (void);
+
+  void
+  riscv_interrupt_local_handle_device3 (void);
+
+  void
+  riscv_interrupt_local_handle_device4 (void);
+
+  void
+  riscv_interrupt_local_handle_device5 (void);
+
+  void
+  riscv_interrupt_local_handle_device6 (void);
+
+  void
+  riscv_interrupt_local_handle_device7 (void);
+
+  void
+  riscv_interrupt_local_handle_device8 (void);
+
+  void
+  riscv_interrupt_local_handle_device9 (void);
+
+  void
+  riscv_interrupt_local_handle_device10 (void);
+
+  void
+  riscv_interrupt_local_handle_device11 (void);
+
+  void
+  riscv_interrupt_local_handle_device12 (void);
+
+  void
+  riscv_interrupt_local_handle_device13 (void);
+
+  void
+  riscv_interrupt_local_handle_device14 (void);
+
+  void
+  riscv_interrupt_local_handle_device15 (void);
 
 // ----------------------------------------------------------------------------
 

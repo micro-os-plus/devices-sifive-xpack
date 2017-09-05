@@ -111,7 +111,8 @@
 // End of SiFive definitions.
 // ----------------------------------------------------------------------------
 
-#define IRQ_GLOBAL_ARRAY_SIZE (PLIC_NUM_INTERRUPTS - 1)
+#define RISCV_INTERRUPTS_LOCAL_DEVICE_ARRAY_SIZE (16)
+#define RISCV_INTERRUPTS_GLOBAL_ARRAY_SIZE (PLIC_NUM_INTERRUPTS - 1)
 
 // ----------------------------------------------------------------------------
 
