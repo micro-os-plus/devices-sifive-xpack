@@ -57,4 +57,7 @@
 #include <riscv-arch/device-functions.h>
 #include <riscv-arch/device-functions-inlines.h>
 
+#include <riscv-arch/plic-functions.h>
+#include <sifive-coreplex-devices/plic-functions-inlines.h>
+
 #endif /* MICRO_OS_PLUS_DEVICE_H_ */
