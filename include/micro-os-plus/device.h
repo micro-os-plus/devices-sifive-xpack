@@ -29,7 +29,9 @@
 #define MICRO_OS_PLUS_DEVICE_H_
 
 #include <micro-os-plus/architecture.h>
+
 #include <sifive-coreplex-devices/defines.h>
+#include <sifive-coreplex-devices/types.h>
 
 #include <sifive-coreplex-devices/functions.h>
 #include <sifive-coreplex-devices/functions-inlines.h>
