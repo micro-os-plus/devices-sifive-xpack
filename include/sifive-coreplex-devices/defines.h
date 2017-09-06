@@ -41,8 +41,6 @@
 #error "Unsupported device"
 #endif
 
-#include <sifive/plic/plic_driver.h>
-
 // ----------------------------------------------------------------------------
 
 #endif /* SIFIVE_COREPLEX_DEVICES_DEFINES_H_ */
