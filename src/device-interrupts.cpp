@@ -309,7 +309,7 @@ riscv_interrupts_global_handlers[] =
     riscv_interrupt_global_handle_pwm2cmp3 /* 51 */
   };
 
-#elif defined (SIFIVE_COREPLEX_IP_31) || defined (SIFIVE_COREPLEX_IP_51)
+#elif defined (SIFIVE_COREPLEX_31) || defined (SIFIVE_COREPLEX_51)
 
 void
 __attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))

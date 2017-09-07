@@ -33,10 +33,10 @@
 // Select one of the definition files based on device.
 #if defined (SIFIVE_FREEDOM_E310)
 #include <sifive-coreplex-devices/freedom-e310/defines.h>
-#elif defined (SIFIVE_COREPLEX_IP_31)
-#include <sifive-coreplex-devices/coreplex-ip/e31/defines.h>
-#elif defined (SIFIVE_COREPLEX_IP_51)
-#include <sifive-coreplex-devices/coreplex-ip/e51/defines.h>
+#elif defined (SIFIVE_COREPLEX_31)
+#include <sifive-coreplex-devices/coreplex/e31/defines.h>
+#elif defined (SIFIVE_COREPLEX_51)
+#include <sifive-coreplex-devices/coreplex/e51/defines.h>
 #else
 #error "Unsupported device"
 #endif

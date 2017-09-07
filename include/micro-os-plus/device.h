@@ -40,9 +40,9 @@
 
 #include <sifive-coreplex-devices/freedom-e310/device-interrupts-handlers.h>
 
-#elif defined (SIFIVE_COREPLEX_IP_31) || defined (SIFIVE_COREPLEX_IP_51)
+#elif defined (SIFIVE_COREPLEX_31) || defined (SIFIVE_COREPLEX_51)
 
-#include <sifive-coreplex-devices/coreplex-ip/device-interrupts-handlers.h>
+#include <sifive-coreplex-devices/coreplex/device-interrupts-handlers.h>
 
 #endif
 
