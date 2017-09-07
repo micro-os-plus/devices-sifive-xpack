@@ -52,8 +52,8 @@ extern "C"
     riscv_arch_register_t hart_id = riscv_csr_read_mhartid ();
 
     riscv_plic_priority_t previous =
-        plic_ptr->targets[hart_id].priority_threshold;
-    plic_ptr->targets[hart_id].priority_threshold = priority;
+        riscv_plic_ptr->targets[hart_id].priority_threshold;
+    riscv_plic_ptr->targets[hart_id].priority_threshold = priority;
 
     return previous;
   }
@@ -64,7 +64,7 @@ extern "C"
   {
     riscv_arch_register_t hart_id = riscv_csr_read_mhartid ();
 
-    return plic_ptr->targets[hart_id].priority_threshold;
+    return riscv_plic_ptr->targets[hart_id].priority_threshold;
   }
 
   static inline void
@@ -73,7 +73,7 @@ extern "C"
   {
     riscv_arch_register_t hart_id = riscv_csr_read_mhartid ();
 
-    plic_ptr->target_enables[hart_id].bits[global_interrupt_id / 32u] |= (1u
+    riscv_plic_ptr->target_enables[hart_id].bits[global_interrupt_id / 32u] |= (1u
         << (global_interrupt_id % 32u));
   }
 
@@ -83,7 +83,7 @@ extern "C"
   {
     riscv_arch_register_t hart_id = riscv_csr_read_mhartid ();
 
-    plic_ptr->target_enables[hart_id].bits[global_interrupt_id / 32u] &= ~(1u
+    riscv_plic_ptr->target_enables[hart_id].bits[global_interrupt_id / 32u] &= ~(1u
         << (global_interrupt_id % 32u));
   }
 
@@ -93,7 +93,7 @@ extern "C"
   {
     riscv_arch_register_t hart_id = riscv_csr_read_mhartid ();
 
-    return (plic_ptr->target_enables[hart_id].bits[global_interrupt_id / 32u]
+    return (riscv_plic_ptr->target_enables[hart_id].bits[global_interrupt_id / 32u]
         & ~(1u << (global_interrupt_id % 32u))) != 0;
   }
 
@@ -102,14 +102,14 @@ extern "C"
   riscv_plic_write_priority (riscv_plic_source_t global_interrupt_id,
                              riscv_plic_priority_t priority)
   {
-    plic_ptr->source_priorities[global_interrupt_id] = priority;
+    riscv_plic_ptr->source_priorities[global_interrupt_id] = priority;
   }
 
   static inline uint32_t
   __attribute__((always_inline))
   riscv_plic_read_priority (riscv_plic_source_t global_interrupt_id)
   {
-    return plic_ptr->source_priorities[global_interrupt_id];
+    return riscv_plic_ptr->source_priorities[global_interrupt_id];
   }
 
   static inline riscv_plic_source_t
@@ -118,7 +118,7 @@ extern "C"
   {
     riscv_arch_register_t hart_id = riscv_csr_read_mhartid ();
 
-    return plic_ptr->targets[hart_id].claim_complete;
+    return riscv_plic_ptr->targets[hart_id].claim_complete;
   }
 
   static inline void
@@ -127,7 +127,7 @@ extern "C"
   {
     riscv_arch_register_t hart_id = riscv_csr_read_mhartid ();
 
-    plic_ptr->targets[hart_id].claim_complete = global_interrupt_id;
+    riscv_plic_ptr->targets[hart_id].claim_complete = global_interrupt_id;
   }
 
 #if defined(__cplusplus)

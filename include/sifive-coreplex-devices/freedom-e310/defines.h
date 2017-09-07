@@ -152,6 +152,16 @@
 #define RISCV_INTERRUPTS_LOCAL_DEVICE_ARRAY_SIZE (0)
 #define RISCV_INTERRUPTS_GLOBAL_ARRAY_SIZE (PLIC_NUM_INTERRUPTS)
 
+// The typedefs are in types.h.
+#define riscv_plic_ptr    ((riscv_plic_t*)PLIC_CTRL_ADDR)
+#define riscv_device_prci_ptr    ((riscv_device_prci_t*)PRCI_CTRL_ADDR)
+#define riscv_device_gpio_ptr    ((riscv_device_gpio_t*)GPIO_CTRL_ADDR)
+#define riscv_device_uart0_ptr    ((riscv_device_uart_t*)UART0_CTRL_ADDR)
+#define riscv_device_uart1_ptr    ((riscv_device_uart_t*)UART1_CTRL_ADDR)
+#define riscv_device_pwm0_ptr    ((riscv_device_uart_t*)PWM0_CTRL_ADDR)
+#define riscv_device_pwm1_ptr    ((riscv_device_uart_t*)PWM1_CTRL_ADDR)
+#define riscv_device_pwm2_ptr    ((riscv_device_uart_t*)PWM2_CTRL_ADDR)
+
 // ----------------------------------------------------------------------------
 
 #endif /* SIFIVE_FREEDOM_E310_DEFINES_H_ */

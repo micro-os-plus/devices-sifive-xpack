@@ -63,11 +63,11 @@ namespace riscv
       for (std::size_t i = 0;
           i < ((RISCV_INTERRUPTS_GLOBAL_ARRAY_SIZE + 32u) / 32u); ++i)
         {
-          plic_ptr->target_enables[hart_id].bits[i] = 0;
+          riscv_plic_ptr->target_enables[hart_id].bits[i] = 0;
         }
 
       // Set the threshold to zero.
-      plic_ptr->targets[hart_id].priority_threshold = 0;
+      riscv_plic_ptr->targets[hart_id].priority_threshold = 0;
     }
 
     void
@@ -76,7 +76,7 @@ namespace riscv
       // Set priorities to zero.
       for (std::size_t i = 0; i < RISCV_INTERRUPTS_GLOBAL_ARRAY_SIZE; ++i)
         {
-          plic_ptr->source_priorities[i] = 0;
+          riscv_plic_ptr->source_priorities[i] = 0;
         }
     }
 

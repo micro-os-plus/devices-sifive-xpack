@@ -87,8 +87,93 @@ typedef struct riscv_plic_s
       / sizeof(uint32_t)];
 } riscv_plic_t;
 
-// PLIC_CTRL_ADDR comes from the device specific <.../define.h> header.
-#define plic_ptr    ((riscv_plic_t*)PLIC_CTRL_ADDR)
+// ----------------------------------------------------------------------------
+
+typedef struct riscv_device_prci_s
+{
+  volatile uint32_t hfrosccfg;
+  volatile uint32_t hfxosccfg;
+  volatile uint32_t pllcfg;
+  volatile uint32_t plloutdiv;
+  volatile uint32_t coreclkcfg;
+} riscv_device_prci_t;
+
+// ----------------------------------------------------------------------------
+
+typedef struct riscv_device_gpio_s
+{
+  volatile uint32_t value;
+  volatile uint32_t input_en;
+  volatile uint32_t output_en;
+  volatile uint32_t port;
+  volatile uint32_t pue;
+  volatile uint32_t ds;
+  volatile uint32_t rise_ie;
+  volatile uint32_t rise_ip;
+  volatile uint32_t fall_ie;
+  volatile uint32_t fall_ip;
+  volatile uint32_t high_ie;
+  volatile uint32_t high_ip;
+  volatile uint32_t low_ie;
+  volatile uint32_t low_ip;
+  volatile uint32_t iof_en;
+  volatile uint32_t iof_sel;
+  volatile uint32_t out_xor;
+} riscv_device_gpio_t;
+
+// ----------------------------------------------------------------------------
+
+typedef struct riscv_device_uart_s
+{
+  volatile uint32_t txdata;
+  volatile uint32_t rxdata;
+  volatile uint32_t txctrl;
+  volatile uint32_t rxctrl;
+  volatile uint32_t ie;
+  volatile uint32_t ip;
+  volatile uint32_t div;
+} riscv_device_uart_t;
+
+// ----------------------------------------------------------------------------
+
+typedef struct riscv_device_pwm_s
+{
+  volatile uint32_t pwmcfg;
+  volatile uint32_t __reserved0;
+  volatile uint32_t pwmcount;
+  volatile uint32_t __reserved1;
+  volatile uint32_t pwms;
+  volatile uint32_t __reserved2[3];
+  volatile uint32_t pwmcmp0;
+  volatile uint32_t pwmcmp1;
+  volatile uint32_t pwmcmp2;
+  volatile uint32_t pwmcmp3;
+} riscv_device_pwm_t;
+
+// ----------------------------------------------------------------------------
+
+#if defined(__cplusplus)
+
+namespace riscv
+{
+  // Not yet used.
+
+  using plic_t = riscv_plic_t;
+
+  namespace device
+  {
+    using prci_t = riscv_device_prci_t;
+
+    using gpio_t = riscv_device_gpio_t;
+    using uart_t = riscv_device_uart_t;
+    using pwm_t = riscv_device_pwm_t;
+
+  // --------------------------------------------------------------------------
+  } /* namespace device */
+// ----------------------------------------------------------------------------
+} /* namespace riscv */
+
+#endif /* __cplusplus */
 
 // ----------------------------------------------------------------------------
 

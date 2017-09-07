@@ -27,6 +27,23 @@
 
 #include <micro-os-plus/device.h>
 
+#include <cstddef>
+
+// ----------------------------------------------------------------------------
+// Validate the typedef content towards the Coreplex IP memory maps.
+
+static_assert(offsetof(riscv_device_prci_t, coreclkcfg) == (0x0010),
+    "Wrong offset of prci coreclkcfg");
+
+static_assert(offsetof(riscv_device_gpio_t, out_xor) == (GPIO_OUTPUT_XOR),
+    "Wrong offset of gpio out_xor");
+
+static_assert(offsetof(riscv_device_uart_t, div) == (UART_REG_DIV),
+    "Wrong offset of uart div");
+
+static_assert(offsetof(riscv_device_pwm_t, pwmcmp3) == (PWM_CMP3),
+    "Wrong offset of pwm pwmcmp3");
+
 // ----------------------------------------------------------------------------
 
 namespace riscv
