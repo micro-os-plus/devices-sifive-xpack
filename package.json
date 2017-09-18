@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "link": "npm link @micro-os-plus/riscv-arch"
+    "link": "npm link @micro-os-plus/riscv-arch; npm link @micro-os-plus/c-libs; npm link @micro-os-plus/cpp-libs; npm link @micro-os-plus/diag-trace; npm link @micro-os-plus/startup"
   },
   "repository": {
     "type": "git",
@@ -29,7 +29,7 @@
   },
   "config": {},
   "dependencies": {
-    "@micro-os-plus/riscv-arch": "^0.0.2"
+    "@micro-os-plus/riscv-arch": "^0.0.3"
   },
   "xpack": {},
   "homepage": "https://github.com/micro-os-plus/sifive-coreplex-devices"
