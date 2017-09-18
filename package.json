@@ -4,7 +4,8 @@
   "description": "An xPack with the µOS++ support for the SiFive Coreplex devices",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "link": "npm link @micro-os-plus/riscv-arch"
   },
   "repository": {
     "type": "git",
