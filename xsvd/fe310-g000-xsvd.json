@@ -1,0 +1,764 @@
+{
+    "schemaVersion": "0.1.0",
+    "devices": {
+        "fe310-g000": {
+            "version": "1.0.0",
+            "name": "Freedom E310-G000",
+            "description": "The FE310-G000 is the first Freedom E300 SoC, and is the industrys first commercially available RISC-V SoC. The FE310-G000 is built around the E31 Coreplex instantiated in the Freedom E300 platform.",
+            "busWidth": "32",
+            "size": "32",
+            "resetValue": "0x00000000",
+            "resetMask": "0xFFFFFFFF",
+            "access": "rw",
+            "peripherals": {
+                "clint": {
+                    "description": "Coreplex-Local Interruptor (CLINT)",
+                    "baseAddress": "0x02000000",
+                    "size": "0x10000",
+                    "registers": {
+                        "msip0": {
+                            "description": "MSIP for hart 0",
+                            "addressOffset": "0x0000"
+                        },
+                        "mtimecmp0": {
+                            "description": "Timer compare register for hart 0",
+                            "addressOffset": "0x4000",
+                            "size": "64"
+                        },
+                        "mtime": {
+                            "description": "Timer register",
+                            "addressOffset": "0xBFF8",
+                            "access": "ro",
+                            "size": "64"
+                        }
+                    }
+                },
+                "plic": {
+                    "description": "Platform-Level Interrupt Controller (PLIC)",
+                    "baseAddress": "0x0C000000",
+                    "size": "0x4000000",
+                    "registers": {
+                        "source_priorities": {
+                            "displayName": "source[%s]",
+                            "dim": "51",
+                            "dimIndex": "1-51",
+                            "description": "Interrupt Priorities",
+                            "addressOffset": "0x0C000004",
+                            "resetValue": "0x00000000",
+                            "resetMask": "0x00000007",
+                            "fields": {
+                                "priority": {
+                                    "description": "The priority for a given global interrupt",
+                                    "bitOffset": "0",
+                                    "bitWidth": "3"
+                                }
+                            }
+                        },
+                        "pendings": {
+                            "displayName": "pending[%s]",
+                            "dim": "2",
+                            "description": "Interrupt Pending Bits",
+                            "addressOffset": "0x0C001000",
+                            "access": "ro"
+                        }
+                    },
+                    "clusters": {
+                        "target-enables": {
+                            "displayName": "target-enables[%s]",
+                            "dim": "1",
+                            "description": "Hart M-Mode interrupt enable bits",
+                            "addressOffset": "0x0C002000",
+                            "dimIncrement": "0x20",
+                            "registers": {
+                                "enables": {
+                                    "displayName": "enable[%s]",
+                                    "dim": "2",
+                                    "description": "Interrupt Enable Bits",
+                                    "addressOffset": "0x0000"
+                                }
+                            }
+                        },
+                        "targets": {
+                            "displayName": "targets[%s]",
+                            "dim": "1",
+                            "description": "Hart M-Mode interrupt threasholds",
+                            "addressOffset": "0x0C200000",
+                            "dimIncrement": "0x8",
+                            "registers": {
+                                "threshold": {
+                                    "description": "The Priority Threshold Register",
+                                    "addressOffset": "0x0000",
+                                    "resetValue": "0x00000000",
+                                    "resetMask": "0x00000007",
+                                    "fields": {
+                                        "threshold": {
+                                            "description": "The priority threshold",
+                                            "bitOffset": "0",
+                                            "bitWidth": "3"
+                                        }
+                                    }
+                                },
+                                "claim-complete": {
+                                    "description": "The Interrupt Claim/Completion Register",
+                                    "addressOffset": "0x0004"
+                                }
+                            }
+                        }
+                    }
+                },
+                "aon": {
+                    "description": "",
+                    "baseAddress": "0x10000000",
+                    "size": "0x8000",
+                    "registers": {
+                        "...": {
+                        }
+                    }
+                },
+                "prci": {
+                    "description": "",
+                    "baseAddress": "0x10008000",
+                    "size": "0x8000",
+                    "registers": {
+                        "...": {
+                        }
+                    }
+                },
+                "otp": {
+                    "description": "",
+                    "baseAddress": "0x10010000",
+                    "size": "0x1000",
+                    "registers": {
+                        "...": {
+                        }
+                    }
+                },
+                "gpio": {
+                    "description": "General Purpose Input/Output Controller (GPIO)",
+                    "baseAddress": "0x10012000",
+                    "size": "0x1000",
+                    "registers": {
+                        "value": {
+                            "description": "Pin value",
+                            "addressOffset": "0x000"
+                        },
+                        "input_en": {
+                            "description": "Pin input enable",
+                            "addressOffset": "0x004"
+                        },
+                        "output_en": {
+                            "description": "Pin output enable",
+                            "addressOffset": "0x008"
+                        },
+                        "port": {
+                            "description": "Output port value",
+                            "addressOffset": "0x00C"
+                        },
+                        "pue": {
+                            "description": "Internal pull-up enable",
+                            "addressOffset": "0x010"
+                        },
+                        "ds": {
+                            "description": "Pin drive strength",
+                            "addressOffset": "0x014"
+                        },
+                        "rise_ie": {
+                            "description": "Rise interrupt enable",
+                            "addressOffset": "0x018"
+                        },
+                        "rise_ip": {
+                            "description": "Rise interrupt pending",
+                            "addressOffset": "0x01C"
+                        },
+                        "fall_ie": {
+                            "description": "Fall interrupt enable",
+                            "addressOffset": "0x020"
+                        },
+                        "fall_ip": {
+                            "description": "Fall interrupt pending",
+                            "addressOffset": "0x024"
+                        },
+                        "high_ie": {
+                            "description": "High interrupt enable",
+                            "addressOffset": "0x028"
+                        },
+                        "high_ip": {
+                            "description": "High interrupt pending",
+                            "addressOffset": "0x02C"
+                        },
+                        "low_ie": {
+                            "description": "Low interrupt enable",
+                            "addressOffset": "0x030"
+                        },
+                        "low_ip": {
+                            "description": "Low interrupt pending",
+                            "addressOffset": "0x034"
+                        },
+                        "iof_en": {
+                            "description": "HW I/O function enable",
+                            "addressOffset": "0x038"
+                        },
+                        "iof_sel": {
+                            "description": "HW I/O function select",
+                            "addressOffset": "0x03C"
+                        },
+                        "out_xor": {
+                            "description": "Output XOR (invert)",
+                            "addressOffset": "0x040"
+                        }
+                    }
+                },
+                "uart": {
+                    "description": "Universal Asynchronous Receiver/Transmitter (UART)",
+                    "baseAddress": "0x10013000",
+                    "size": "0x1000",
+                    "registers": {
+                        "txdata": {
+                            "description": "Transmit data register",
+                            "addressOffset": "0x000",
+                            "resetMask": "0x00000000",
+                            "fields": {
+                                "data": {
+                                    "description": "Transmit data",
+                                    "bitOffset": "0",
+                                    "bitWidth": "8"
+                                },
+                                "full": {
+                                    "description": "Transmit FIFO full",
+                                    "bitOffset": "31",
+                                    "bitWidth": "1"
+                                }
+                            }
+                        },
+                        "rxdata": {
+                            "description": "Receive data register",
+                            "addressOffset": "0x004",
+                            "resetMask": "0x00000000",
+                            "fields": {
+                                "data": {
+                                    "description": "Received data",
+                                    "bitOffset": "0",
+                                    "bitWidth": "8",
+                                    "access": "ro"
+                                },
+                                "empty": {
+                                    "description": "Receive FIFO empty",
+                                    "bitOffset": "31",
+                                    "bitWidth": "1"
+                                }
+                            }
+                        },
+                        "txctrl": {
+                            "description": "Transmit Control Register ",
+                            "addressOffset": "0x008",
+                            "resetMask": "0x00070003",
+                            "fields": {
+                                "txen": {
+                                    "description": "Transmit enable",
+                                    "bitOffset": "0",
+                                    "bitWidth": "1"
+                                },
+                                "nstop": {
+                                    "description": "Number of stop bits",
+                                    "bitOffset": "1",
+                                    "bitWidth": "1"
+                                },
+                                "txcnt": {
+                                    "description": "Transmit watermark level",
+                                    "bitOffset": "16",
+                                    "bitWidth": "3"
+                                }
+                            }
+                        },
+                        "rxctrl": {
+                            "description": "Receive Control Register",
+                            "addressOffset": "0x00C",
+                            "resetMask": "0x00070001",
+                            "fields": {
+                                "rxen": {
+                                    "description": "Receive enable",
+                                    "bitOffset": "0",
+                                    "bitWidth": "1"
+                                },
+                                "rxcnt": {
+                                    "description": "Receive watermark level",
+                                    "bitOffset": "16",
+                                    "bitWidth": "3"
+                                }
+                            }
+                        },
+                        "ie": {
+                            "description": "Interrupt enable",
+                            "addressOffset": "0x010",
+                            "resetMask": "0x00000003",
+                            "fields": {
+                                "txwm": {
+                                    "description": "Transmit watermark interrupt enable",
+                                    "bitOffset": "0",
+                                    "bitWidth": "1"
+                                },
+                                "rxwm": {
+                                    "description": "Receive watermark interrupt enable",
+                                    "bitOffset": "1",
+                                    "bitWidth": "1"
+                                }
+                            }
+                        },
+                        "ip": {
+                            "description": "Interrupt pending",
+                            "addressOffset": "0x014",
+                            "access": "ro",
+                            "resetMask": "0x00000000",
+                            "fields": {
+                                "description": "Transmit watermark interrupt pending",
+                                "bitOffset": "0",
+                                "bitWidth": "1"
+                            },
+                            "rxwm": {
+                                "description": "Receive watermark interrupt pending",
+                                "bitOffset": "1",
+                                "bitWidth": "1"
+                            }
+                        }
+                    },
+                    "div": {
+                        "description": "Baud rate divisor",
+                        "addressOffset": "0x018",
+                        "resetValue": "0x0000FFFF",
+                        "resetMask": "0x0000FFFF",
+                        "fields": {
+                            "div": {
+                                "description": "Baud rate divisor",
+                                "bitOffset": "0",
+                                "bitWidth": "16"
+                            }
+                        }
+                    }
+                },
+                "spi0": {
+                    "description": "Serial Peripheral Interface (SPI)",
+                    "baseAddress": "0x10014000",
+                    "size": "0x1000",
+                    "registers": {
+                        "sckdiv": {
+                            "description": "Serial clock divisor",
+                            "addressOffset": "0x000",
+                            "resetValue": "0x00000003",
+                            "resetMask": "0x00000FFF",
+                            "fields": {
+                                "scale": {
+                                    "description": "Divisor for serial clock",
+                                    "bitOffset": "0",
+                                    "bitWidth": "12"
+                                }
+                            }
+                        },
+                        "sckmode": {
+                            "description": "Serial clock mode",
+                            "addressOffset": "0x004",
+                            "resetMask": "0x00000003",
+                            "fields": {
+                                "pha": {
+                                    "description": "Serial clock phase",
+                                    "bitOffset": "0",
+                                    "bitWidth": "1"
+                                },
+                                "pol": {
+                                    "description": "Serial clock polarity",
+                                    "bitOffset": "1",
+                                    "bitWidth": "1"
+                                }
+                            }
+                        },
+                        "csid": {
+                            "description": "Chip select ID",
+                            "addressOffset": "0x010"
+                        },
+                        "csdef": {
+                            "description": "Chip select default",
+                            "addressOffset": "0x014",
+                            "resetValue": "0x00000001"
+                        },
+                        "csmode": {
+                            "description": "Chip select mode",
+                            "addressOffset": "0x018",
+                            "resetMask": "0x00000003",
+                            "fields": {
+                                "mode": {
+                                    "description": "Chip select mode",
+                                    "bitOffset": "0",
+                                    "bitWidth": "2"
+                                }
+                            }
+                        },
+                        "delay0": {
+                            "description": "Delay control 0",
+                            "addressOffset": "0x028",
+                            "resetValue": "0x00010001",
+                            "resetMask": "0x00FF00FF",
+                            "fields": {
+                                "cssck": {
+                                    "description": "CS to SCK Delay",
+                                    "bitOffset": "0",
+                                    "bitWidth": "8"
+                                },
+                                "sckcs": {
+                                    "description": "SCK to CS Delay",
+                                    "bitOffset": "16",
+                                    "bitWidth": "8"
+                                }
+                            }
+                        },
+                        "delay1": {
+                            "description": "Delay control 1",
+                            "addressOffset": "0x02C",
+                            "resetValue": "0x00010001",
+                            "resetMask": "0x00FF00FF",
+                            "fields": {
+                                "intercs": {
+                                    "description": "Minimum CS inactive time",
+                                    "bitOffset": "0",
+                                    "bitWidth": "8"
+                                },
+                                "interxfr": {
+                                    "description": "Maximum interframe delay",
+                                    "bitOffset": "16",
+                                    "bitWidth": "8"
+                                }
+                            }
+                        },
+                        "fmt": {
+                            "description": "Frame format",
+                            "addressOffset": "0x040",
+                            "resetValue": "0x00080008",
+                            "resetMask": "0x000F000F",
+                            "fields": {
+                                "proto": {
+                                    "description": "SPI Protocol",
+                                    "bitOffset": "0",
+                                    "bitWidth": "2"
+                                },
+                                "endian": {
+                                    "description": "SPI endinanness",
+                                    "bitOffset": "2",
+                                    "bitWidth": "1"
+                                },
+                                "dir": {
+                                    "description": "SPI I/O Direction",
+                                    "bitOffset": "3",
+                                    "bitWidth": "1"
+                                },
+                                "len": {
+                                    "description": "Number of bits per frame",
+                                    "bitOffset": "16",
+                                    "bitWidth": "4"
+                                }
+                            }
+                        },
+                        "txdata": {
+                            "description": "Tx FIFO data",
+                            "addressOffset": "0x048",
+                            "resetMask": "0x000000FF",
+                            "fields": {
+                                "data": {
+                                    "description": "Transmit data",
+                                    "bitOffset": "0",
+                                    "bitWidth": "8"
+                                },
+                                "full": {
+                                    "description": "FIFO full flag",
+                                    "bitOffset": "31",
+                                    "bitWidth": "1",
+                                    "access": "ro"
+                                }
+                            }
+                        },
+                        "rxdata": {
+                            "description": "Rx FIFO data",
+                            "addressOffset": "0x04C",
+                            "resetMask": "0x00000000",
+                            "access": "ro",
+                            "fields": {
+                                "data": {
+                                    "description": "Received data",
+                                    "bitOffset": "0",
+                                    "bitWidth": "8"
+                                },
+                                "empty": {
+                                    "description": "FIFO empty flag",
+                                    "bitOffset": "31",
+                                    "bitWidth": "1"
+                                }
+                            }
+                        },
+                        "txmark": {
+                            "description": "Tx FIFO watermark",
+                            "addressOffset": "0x050",
+                            "resetValue": "0x00000001",
+                            "resetMask": "0x00000007",
+                            "fields": {
+                                "txmark": {
+                                    "description": "Transmit watermark",
+                                    "bitOffset": "0",
+                                    "bitWidth": "3"
+                                }
+                            }
+                        },
+                        "rxmark": {
+                            "description": "Rx FIFO watermark",
+                            "addressOffset": "0x054",
+                            "resetMask": "0x00000007",
+                            "fields": {
+                                "rxmark": {
+                                    "description": "Receive watermark",
+                                    "bitOffset": "0",
+                                    "bitWidth": "3"
+                                }
+                            }
+                        },
+                        "fctrl": {
+                            "description": "SPI flash interface control",
+                            "addressOffset": "0x060",
+                            "resetMask": "0x00000001",
+                            "fields": {
+                                "en": {
+                                    "description": "SPI Flash Mode Select",
+                                    "bitOffset": "0",
+                                    "bitWidth": "1"
+                                }
+                            }
+                        },
+                        "ffmt": {
+                            "description": "SPI flash instruction format",
+                            "addressOffset": "0x064",
+                            "resetValue": "0x00030007",
+                            "resetMask": "0xFFFF3FFF",
+                            "fields": {
+                                "cmd en": {
+                                    "description": "Enable sending of command",
+                                    "bitOffset": "0",
+                                    "bitWidth": "1"
+                                },
+                                "addr len": {
+                                    "description": "Number of address bytes(0 to 4)",
+                                    "bitOffset": "1",
+                                    "bitWidth": "3"
+                                },
+                                "pad cnt": {
+                                    "description": "Number of dummy cycles",
+                                    "bitOffset": "4",
+                                    "bitWidth": "4"
+                                },
+                                "cmd proto": {
+                                    "description": "Protocol for transmitting command",
+                                    "bitOffset": "8",
+                                    "bitWidth": "2"
+                                },
+                                "addr proto": {
+                                    "description": "Protocol for transmitting address and padding",
+                                    "bitOffset": "10",
+                                    "bitWidth": "2"
+                                },
+                                "data proto": {
+                                    "description": "Protocol for receiving data bytes",
+                                    "bitOffset": "12",
+                                    "bitWidth": "2"
+                                },
+                                "cmd code": {
+                                    "description": "Value of command byte",
+                                    "bitOffset": "16",
+                                    "bitWidth": "8"
+                                },
+                                "pad code": {
+                                    "description": "First 8 bits to transmit during dummy cycles",
+                                    "bitOffset": "24",
+                                    "bitWidth": "8"
+                                }
+                            }
+                        },
+                        "ie": {
+                            "description": "SPI interrupt enable",
+                            "addressOffset": "0x070",
+                            "resetMask": "0x00000003",
+                            "fields": {
+                                "txwm": {
+                                    "description": "Transmit watermark enable",
+                                    "bitOffset": "0",
+                                    "bitWidth": "1",
+                                    "access": "ro"
+                                },
+                                "rxwm": {
+                                    "description": "Receive watermark enable",
+                                    "bitOffset": "1",
+                                    "bitWidth": "1",
+                                    "access": "ro"
+                                }
+                            }
+                        },
+                        "ip": {
+                            "description": "SPI interrupt pending",
+                            "addressOffset": "0x074",
+                            "fields": {
+                                "txwm": {
+                                    "description": "Transmit watermark pending",
+                                    "bitOffset": "0",
+                                    "bitWidth": "1",
+                                    "access": "ro"
+                                },
+                                "rxwm": {
+                                    "description": "Receive watermark pending",
+                                    "bitOffset": "1",
+                                    "bitWidth": "1",
+                                    "access": "ro"
+                                }
+                            }
+                        }
+                    }
+                },
+                "pwm0": {
+                    "description": "Pulse-Width Modulation (PWM)",
+                    "baseAddress": "0x10015000",
+                    "size": "0x1000",
+                    "resetMask": "0x00003000",
+                    "registers": {
+                        "cfg": {
+                            "description": "Configuration Register",
+                            "addressOffset": "0x000",
+                            "fields": {
+                                "scale": {
+                                    "description": "Counter scale",
+                                    "bitOffset": "0",
+                                    "bitWidth": "4"
+                                },
+                                "sticky": {
+                                    "description": "Sticky - disallow clearing pwmcmpXip bits",
+                                    "bitOffset": "8",
+                                    "bitWidth": "1"
+                                },
+                                "zerocmp": {
+                                    "description": "Zero - counter resets to zero after match",
+                                    "bitOffset": "9",
+                                    "bitWidth": "1"
+                                },
+                                "deglitch": {
+                                    "description": "Deglitch - latch pwmcmpXip within same cycle",
+                                    "bitOffset": "10",
+                                    "bitWidth": "1"
+                                },
+                                "enalways": {
+                                    "description": "Enable always - run continuously",
+                                    "bitOffset": "12",
+                                    "bitWidth": "1"
+                                },
+                                "enoneshot": {
+                                    "description": "enable one shot - run one cycle",
+                                    "bitOffset": "13",
+                                    "bitWidth": "1"
+                                },
+                                "cmp0center": {
+                                    "description": "PWM0 Compare Center",
+                                    "bitOffset": "16",
+                                    "bitWidth": "1"
+                                },
+                                "cmp1center": {
+                                    "description": "PWM1 Compare Center",
+                                    "bitOffset": "17",
+                                    "bitWidth": "1"
+                                },
+                                "cmp2center": {
+                                    "description": "PWM2 Compare Center",
+                                    "bitOffset": "18",
+                                    "bitWidth": "1"
+                                },
+                                "cmp3center": {
+                                    "description": "PWM3 Compare Center",
+                                    "bitOffset": "19",
+                                    "bitWidth": "1"
+                                },
+                                "cmp0gang": {
+                                    "description": "PWM0/PWM1 Compare Gang",
+                                    "bitOffset": "24",
+                                    "bitWidth": "1"
+                                },
+                                "cmp1gang": {
+                                    "description": "PWM1/PWM2 Compare Gang",
+                                    "bitOffset": "25",
+                                    "bitWidth": "1"
+                                },
+                                "cmp2gang": {
+                                    "description": "PWM2/PWM3 Compare Gang",
+                                    "bitOffset": "26",
+                                    "bitWidth": "1"
+                                },
+                                "cmp3gang": {
+                                    "description": "PWM3/PWM0 Compare Gang",
+                                    "bitOffset": "27",
+                                    "bitWidth": "1"
+                                },
+                                "cmp0ip": {
+                                    "description": "PWM0 Interrupt Pending",
+                                    "bitOffset": "28",
+                                    "bitWidth": "1"
+                                },
+                                "cmp1ip": {
+                                    "description": "PWM1 Interrupt Pending",
+                                    "bitOffset": "29",
+                                    "bitWidth": "1"
+                                },
+                                "cmp2ip": {
+                                    "description": "PWM2 Interrupt Pending",
+                                    "bitOffset": "30",
+                                    "bitWidth": "1"
+                                },
+                                "cmp3ip": {
+                                    "description": "PWM3 Interrupt Pending",
+                                    "bitOffset": "31",
+                                    "bitWidth": "1"
+                                }
+                            }
+                        },
+                        "count": {
+                            "description": "Configuration Register",
+                            "addressOffset": "0x008"
+                        },
+                        "scale": {
+                            "description": "Scale Register",
+                            "addressOffset": "0x010"
+                        },
+                        "cmp": {
+                            "displayName": "cmp[%s]",
+                            "dim": "4",
+                            "description": "Compare Registers",
+                            "addressOffset": "0x020",
+                            "resetMask": "0x00000000",
+                            "fields": {
+                                "value": {
+                                    "description": "Compare value",
+                                    "bitOffset": "0",
+                                    "bitWidth": "16"
+                                }
+                            }
+                            
+                        }
+                    }
+                },
+                "spi1": {
+                    "baseAddress": "0x10024000",
+                    "derivedFrom": "spi0"
+                },
+                "pwm1": {
+                    "baseAddress": "0x10025000",
+                    "derivedFrom": "pwm0"
+                },
+                "spi2": {
+                    "baseAddress": "0x10034000",
+                    "derivedFrom": "spi0"
+                },
+                "pwm2": {
+                    "baseAddress": "0x10035000",
+                    "derivedFrom": "pwm0"
+                }
+            }
+        }
+    }
+}
