@@ -2,7 +2,7 @@
   "name": "@sifive/coreplex-devices",
   "version": "0.0.4",
   "description": "An xPack with the µOS++ support for the SiFive Coreplex devices",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "link": "npm link @micro-os-plus/riscv-arch; npm link @micro-os-plus/c-libs; npm link @micro-os-plus/cpp-libs; npm link @micro-os-plus/diag-trace; npm link @micro-os-plus/startup"
@@ -11,12 +11,15 @@
     "type": "git",
     "url": "git+https://github.com/micro-os-plus/sifive-coreplex-devices.git"
   },
+  "homepage": "https://github.com/micro-os-plus/sifive-coreplex-devices",
   "keywords": [
+    "xpack",
     "c++",
     "micro-os-plus",
     "sifive",
     "coreplex",
-    "risc-v"
+    "risc-v",
+    "riscv"
   ],
   "author": {
     "name": "Liviu Ionescu",
@@ -28,9 +31,10 @@
     "url": "https://github.com/micro-os-plus/sifive-coreplex-devices/issues"
   },
   "config": {},
-  "dependencies": {
-    "@micro-os-plus/riscv-arch": "^0.0.3"
-  },
-  "xpack": {},
-  "homepage": "https://github.com/micro-os-plus/sifive-coreplex-devices"
+  "dependencies": {},
+  "xpack": {
+    "dependencies": {
+      "@micro-os-plus/riscv-arch": "~0.0.4"
+    }
+  }
 }
