@@ -370,11 +370,11 @@
                   "access": "r",
                                     "enumeration": {
                                         "wakeupcause_enum": {
-                                            "description": "Wakeup Cause Values",
+                      "description": "Wakeup Cause Values Enumeration",
                                             "values": {
                                                 "0": {
                                                     "displayName": "reset",
-                                                    "description": "Reset"
+                          "description": "Reset Wakeup"
                                                 },
                                                 "1": {
                                                     "displayName": "rtc",
@@ -398,7 +398,7 @@
                   "access": "r",
                                     "enumeration": {
                                         "resetcause_enum": {
-                                            "description": "Reset Cause Values",
+                      "description": "Reset Cause Values Enumeration",
                                             "values": {
                                                 "1": {
                                                     "displayName": "external",
@@ -507,7 +507,7 @@
                                     "resetValue": "0x1",
                                     "enumeration": {
                                         "pllr_enum": {
-                                            "description": "Reference clock R divide ratio",
+                      "description": "Reference Clock R Divide Ratio Enumeration",
                                             "values": {
                                                 "0": {
                           "displayName": "div1",
@@ -544,7 +544,7 @@
                                     "resetValue": "0x3",
                                     "enumeration": {
                                         "pllq_enum": {
-                                            "description": "Reference clock Q divide ratio",
+                      "description": "Reference Clock Q Divide Ratio Enumeration",
                                             "values": {
                         "*": {
                                                     "displayName": "n/a",
@@ -748,7 +748,7 @@
                             "addressOffset": "0x030"
                         },
                         "low_ip": {
-                            "description": "Low Enterrupt Pending Register",
+              "description": "Low Interrupt Pending Register",
                             "addressOffset": "0x034"
                         },
                         "iof_en": {
@@ -1105,7 +1105,7 @@
                                     "resetValue": "0x0",
                                     "enumeration": {
                                         "csmode_enum": {
-                                            "description": "Chip Select Modes",
+                      "description": "Chip Select Modes Enumeration",
                                             "values": {
                                                 "0": {
                                                     "displayName": "auto",
@@ -1180,7 +1180,7 @@
                                     "resetValue": "0x0",
                                     "enumeration": {
                                         "proto_enum": {
-                                            "description": "SPI Protocol",
+                      "description": "SPI Protocol Enumeration",
                                             "values": {
                                                 "0": {
                                                     "displayName": "single",
@@ -1209,7 +1209,7 @@
                                     "resetValue": "0x0",
                                     "enumeration": {
                                         "endian_enum": {
-                                            "description": "SPI Endianness",
+                      "description": "SPI Endianness Enumeration",
                                             "values": {
                                                 "0": {
                                                     "displayName": "msb",
@@ -1231,7 +1231,7 @@
                                     "resetValue": "0x1",
                                     "enumeration": {
                                         "dir_enum": {
-                                            "description": "SPI I/O Direction",
+                      "description": "SPI I/O Direction Enumeration",
                                             "values": {
                                                 "0": {
                                                     "displayName": "rx",
