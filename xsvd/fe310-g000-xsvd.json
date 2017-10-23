@@ -2,7 +2,6 @@
     "schemaVersion": "0.2.0",
     "devices": {
         "fe310-g000": {
-            "version": "1.0.0",
             "displayName": "Freedom E310-G000",
             "description": "The FE310-G000 is the first Freedom E300 SoC, and is the industry's first commercially available RISC-V SoC. The FE310-G000 is built around the E31 Coreplex instantiated in the Freedom E300 platform.",
       "vendor": {
@@ -16,6 +15,7 @@
             "resetMask": "all",
             "resetValue": "0x00000000",
             "access": "rw",
+      "revision": "r0p0",
       "cores": {
         "e31": {
           "harts": "1",
