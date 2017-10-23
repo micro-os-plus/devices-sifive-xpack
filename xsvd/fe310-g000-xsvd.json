@@ -11,11 +11,16 @@
         "contact": "info@sifive.com"
       },
             "busWidth": "32",
-            "regWidth": "32",
             "resetMask": "all",
             "resetValue": "0x00000000",
             "access": "rw",
+      "headerTypePrefix": "riscv_device_",
+      "headerInterruptPrefix": "riscv_interrupt_global_",
+      "headerInterruptEnumPrefix": "riscv_interrupts_global_",
       "revision": "r0p0",
+      "numInterrupts": "51",
+      "priorityBits": "3",
+      "regWidth": "32",
       "cores": {
         "e31": {
           "harts": "1",
@@ -423,6 +428,17 @@
                             "description": "PMU Key Register",
                             "addressOffset": "0x014C"
                         }
+          },
+          "interrupts": {
+            "wdogcmp": {
+              "description": "Watchdog Compare Interrupt",
+              "value": "1"
+            },
+            "rtcmp": {
+              "description": "RTC Compare Interrupt",
+              "value": "2",
+              "type": "global"
+            }
                     }
                 },
                 "prci": {
@@ -750,6 +766,136 @@
                             "description": "Output XOR (invert) Register",
                             "addressOffset": "0x040"
                         }
+          },
+          "interrupts": {
+            "gpio0": {
+              "description": "GPIO0 Interrupt",
+              "value": "8"
+            },
+            "gpio1": {
+              "description": "GPIO1 Interrupt",
+              "value": "9"
+            },
+            "gpio2": {
+              "description": "GPIO2 Interrupt",
+              "value": "10"
+            },
+            "gpio3": {
+              "description": "GPIO3 Interrupt",
+              "value": "11"
+            },
+            "gpio4": {
+              "description": "GPIO4 Interrupt",
+              "value": "12"
+            },
+            "gpio5": {
+              "description": "GPIO5 Interrupt",
+              "value": "13"
+            },
+            "gpio6": {
+              "description": "GPIO6 Interrupt",
+              "value": "14"
+            },
+            "gpio7": {
+              "description": "GPIO7 Interrupt",
+              "value": "15"
+            },
+            "gpio8": {
+              "description": "GPIO8 Interrupt",
+              "value": "16"
+            },
+            "gpio9": {
+              "description": "GPIO9 Interrupt",
+              "value": "17"
+            },
+            "gpio10": {
+              "description": "GPIO10 Interrupt",
+              "value": "18"
+            },
+            "gpio11": {
+              "description": "GPIO11 Interrupt",
+              "value": "19"
+            },
+            "gpio12": {
+              "description": "GPIO12 Interrupt",
+              "value": "20"
+            },
+            "gpio13": {
+              "description": "GPIO13 Interrupt",
+              "value": "21"
+            },
+            "gpio14": {
+              "description": "GPIO14 Interrupt",
+              "value": "22"
+            },
+            "gpio15": {
+              "description": "GPIO15 Interrupt",
+              "value": "23"
+            },
+            "gpio16": {
+              "description": "GPIO16 Interrupt",
+              "value": "24"
+            },
+            "gpio17": {
+              "description": "GPIO17 Interrupt",
+              "value": "25"
+            },
+            "gpio18": {
+              "description": "GPIO18 Interrupt",
+              "value": "26"
+            },
+            "gpio19": {
+              "description": "GPIO19 Interrupt",
+              "value": "27"
+            },
+            "gpio20": {
+              "description": "GPIO20 Interrupt",
+              "value": "28"
+            },
+            "gpio21": {
+              "description": "GPIO21 Interrupt",
+              "value": "29"
+            },
+            "gpio22": {
+              "description": "GPIO22 Interrupt",
+              "value": "30"
+            },
+            "gpio23": {
+              "description": "GPIO23 Interrupt",
+              "value": "31"
+            },
+            "gpio24": {
+              "description": "GPIO24 Interrupt",
+              "value": "32"
+            },
+            "gpio25": {
+              "description": "GPIO25 Interrupt",
+              "value": "33"
+            },
+            "gpio26": {
+              "description": "GPIO26 Interrupt",
+              "value": "34"
+            },
+            "gpio27": {
+              "description": "GPIO27 Interrupt",
+              "value": "35"
+            },
+            "gpio28": {
+              "description": "GPIO28 Interrupt",
+              "value": "36"
+            },
+            "gpio29": {
+              "description": "GPIO29 Interrupt",
+              "value": "37"
+            },
+            "gpio30": {
+              "description": "GPIO30 Interrupt",
+              "value": "38"
+            },
+            "gpio31": {
+              "description": "GPIO31 Interrupt",
+              "value": "39"
+            }
                     }
                 },
                 "uart": {
@@ -889,6 +1035,12 @@
                                 }
                             }
                         }
+          },
+          "interrupts": {
+            "uart0": {
+              "description": "UART0 Interrupt",
+              "value": "3"
+            }
                     }
                 },
                 "qspi0": {
@@ -1281,6 +1433,12 @@
                                 }
                             }
                         }
+          },
+          "interrupts": {
+            "qspi0": {
+              "description": "QSPI0 Interrupt",
+              "value": "5"
+            }
                     }
                 },
                 "pwm0": {
@@ -1410,27 +1568,99 @@
                                 }
                             }
                         }
+          },
+          "interrupts": {
+            "pwm0cmp0": {
+              "description": "PWM0 Compare 0 Interrupt",
+              "value": "40"
+            },
+            "pwm0cmp1": {
+              "description": "PWM0 Compare 1 Interrupt",
+              "value": "41"
+            },
+            "pwm0cmp2": {
+              "description": "PWM0 Compare 2 Interrupt",
+              "value": "42"
+            },
+            "pwm0cmp3": {
+              "description": "PWM0 Compare 3 Interrupt",
+              "value": "43"
+            }
                     }
                 },
                 "uart1": {
                     "baseAddress": "0x10023000",
                     "derivedFrom": "uart0"
+          "interrupts": {
+            "uart1": {
+              "description": "UART1 Interrupt",
+              "value": "4"
+            }
+          }
                 },
                 "qspi1": {
                     "baseAddress": "0x10024000",
                     "derivedFrom": "spi0"
+          "interrupts": {
+            "qspi1": {
+              "description": "QSPI0 Interrupt",
+              "value": "6"
+            }
+          }
                 },
                 "pwm1": {
                     "baseAddress": "0x10025000",
                     "derivedFrom": "pwm0"
+          "interrupts": {
+            "pwm1cmp0": {
+              "description": "PWM1 Compare 0 Interrupt",
+              "value": "44"
+            },
+            "pwm1cmp1": {
+              "description": "PWM1 Compare 1 Interrupt",
+              "value": "45"
+            },
+            "pwm1cmp2": {
+              "description": "PWM1 Compare 2 Interrupt",
+              "value": "46"
+            },
+            "pwm1cmp3": {
+              "description": "PWM1 Compare 3 Interrupt",
+              "value": "47"
+            }
+          }
                 },
                 "qspi2": {
                     "baseAddress": "0x10034000",
                     "derivedFrom": "spi0"
+          "interrupts": {
+            "qspi2": {
+              "description": "QSPI2 Interrupt",
+              "value": "7"
+            }
+          }
                 },
                 "pwm2": {
                     "baseAddress": "0x10035000",
                     "derivedFrom": "pwm0"
+          "interrupts": {
+            "pwm2cmp0": {
+              "description": "PWM2 Compare 0 Interrupt",
+              "value": "48"
+            },
+            "pwm2cmp1": {
+              "description": "PWM2 Compare 1 Interrupt",
+              "value": "49"
+            },
+            "pwm2cmp2": {
+              "description": "PWM2 Compare 2 Interrupt",
+              "value": "50"
+            },
+            "pwm2cmp3": {
+              "description": "PWM2 Compare 3 Interrupt",
+              "value": "51"
+            }
+          }
                 }
             }
         }
