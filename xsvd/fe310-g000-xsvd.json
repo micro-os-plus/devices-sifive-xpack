@@ -510,20 +510,20 @@
                                             "description": "Reference clock R divide ratio",
                                             "values": {
                                                 "0": {
-                                                    "displayName": "/1",
+                          "displayName": "div1",
                                                     "description": "Unchanged"
                                                 },
                                                 "1": {
-                                                    "displayName": "/2",
-                                                    "description": "Divide by 2"
+                          "displayName": "div2",
+                          "description": "Divided by 2"
                                                 },
                                                 "2": {
-                                                    "displayName": "/3",
-                                                    "description": "Divide by 3"
+                          "displayName": "div3",
+                          "description": "Divided by 3"
                                                 },
                                                 "3": {
-                                                    "displayName": "/4",
-                                                    "description": "Divide by 4"
+                          "displayName": "div4",
+                          "description": "Divided by 4"
                                                 }
                                             }
                                         }
@@ -546,21 +546,21 @@
                                         "pllq_enum": {
                                             "description": "Reference clock Q divide ratio",
                                             "values": {
-                                                "0": {
+                        "*": {
                                                     "displayName": "n/a",
                                                     "description": "Not supported"
                                                 },
                                                 "1": {
-                                                    "displayName": "/2",
-                                                    "description": "Divide by 2"
+                          "displayName": "div2",
+                          "description": "Divided by 2"
                                                 },
                                                 "2": {
-                                                    "displayName": "/3",
-                                                    "description": "Divide by 3"
+                          "displayName": "div3",
+                          "description": "Divided by 3"
                                                 },
                                                 "3": {
-                                                    "displayName": "/4",
-                                                    "description": "Divide by 4"
+                          "displayName": "div4",
+                          "description": "Divided by 4"
                                                 }
                                             }
                                         }
