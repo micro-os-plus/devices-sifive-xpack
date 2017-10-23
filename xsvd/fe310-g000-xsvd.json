@@ -701,11 +701,11 @@
               "description": "Pin Value Register",
               "addressOffset": "0x000"
             },
-            "input_en": {
+            "inputen": {
               "description": "Pin Input Enable Register",
               "addressOffset": "0x004"
             },
-            "output_en": {
+            "outputen": {
               "description": "Pin Output Enable Register",
               "addressOffset": "0x008"
             },
@@ -721,47 +721,47 @@
               "description": "Pin Drive Strength Register",
               "addressOffset": "0x014"
             },
-            "rise_ie": {
+            "riseie": {
               "description": "Rise Interrupt Enable Register",
               "addressOffset": "0x018"
             },
-            "rise_ip": {
+            "riseip": {
               "description": "Rise Interrupt Pending Register",
               "addressOffset": "0x01C"
             },
-            "fall_ie": {
+            "fallie": {
               "description": "Fall Interrupt Enable Register",
               "addressOffset": "0x020"
             },
-            "fall_ip": {
+            "fallip": {
               "description": "Fall Interrupt Pending Register",
               "addressOffset": "0x024"
             },
-            "high_ie": {
+            "highie": {
               "description": "High Interrupt Enable Register",
               "addressOffset": "0x028"
             },
-            "high_ip": {
+            "highip": {
               "description": "High Interrupt Pending Register",
               "addressOffset": "0x02C"
             },
-            "low_ie": {
+            "lowie": {
               "description": "Low Interrupt Enable Register",
               "addressOffset": "0x030"
             },
-            "low_ip": {
+            "lowip": {
               "description": "Low Interrupt Pending Register",
               "addressOffset": "0x034"
             },
-            "iof_en": {
+            "iofen": {
               "description": "HW I/O Function Enable Register",
               "addressOffset": "0x038"
             },
-            "iof_sel": {
+            "iofsel": {
               "description": "HW I/O Function Select Register",
               "addressOffset": "0x03C"
             },
-            "out_xor": {
+            "outxor": {
               "description": "Output XOR (invert) Register",
               "addressOffset": "0x040"
             }
