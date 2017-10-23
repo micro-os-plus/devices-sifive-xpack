@@ -898,11 +898,12 @@
             }
                     }
                 },
-                "uart": {
+        "uart0": {
                     "description": "Universal Asynchronous Receiver/Transmitter (UART) Peripheral",
                     "baseAddress": "0x10013000",
                     "size": "0x1000",
                     "resetMask": "none",
+          "groupName": "uart",
                     "registers": {
                         "txdata": {
                             "description": "Transmit Data Register",
@@ -1048,6 +1049,7 @@
                     "baseAddress": "0x10014000",
                     "size": "0x1000",
                     "resetMask": "none",
+          "groupName": "qspi",
                     "registers": {
                         "sckdiv": {
                             "description": "Serial clock divisor Register",
@@ -1446,6 +1448,7 @@
                     "baseAddress": "0x10015000",
                     "size": "0x1000",
                     "resetMask": "none",
+          "groupName": "pwm",
                     "registers": {
                         "cfg": {
                             "description": "Configuration Register",
@@ -1590,7 +1593,8 @@
                 },
                 "uart1": {
                     "baseAddress": "0x10023000",
-                    "derivedFrom": "uart0"
+          "derivedFrom": "uart0",
+          "groupName": "uart",
           "interrupts": {
             "uart1": {
               "description": "UART1 Interrupt",
@@ -1600,7 +1604,8 @@
                 },
                 "qspi1": {
                     "baseAddress": "0x10024000",
-                    "derivedFrom": "spi0"
+          "derivedFrom": "spi0",
+          "groupName": "qspi",
           "interrupts": {
             "qspi1": {
               "description": "QSPI0 Interrupt",
@@ -1610,7 +1615,8 @@
                 },
                 "pwm1": {
                     "baseAddress": "0x10025000",
-                    "derivedFrom": "pwm0"
+          "derivedFrom": "pwm0",
+          "groupName": "pwm",
           "interrupts": {
             "pwm1cmp0": {
               "description": "PWM1 Compare 0 Interrupt",
@@ -1632,7 +1638,8 @@
                 },
                 "qspi2": {
                     "baseAddress": "0x10034000",
-                    "derivedFrom": "spi0"
+          "derivedFrom": "spi0",
+          "groupName": "qspi",
           "interrupts": {
             "qspi2": {
               "description": "QSPI2 Interrupt",
@@ -1642,7 +1649,8 @@
                 },
                 "pwm2": {
                     "baseAddress": "0x10035000",
-                    "derivedFrom": "pwm0"
+          "derivedFrom": "pwm0",
+          "groupName": "pwm",
           "interrupts": {
             "pwm2cmp0": {
               "description": "PWM2 Compare 0 Interrupt",
