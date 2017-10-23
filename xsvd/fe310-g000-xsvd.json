@@ -263,7 +263,7 @@
                                     "description": "RTC comparator interrupt pending",
                                     "bitOffset": "28",
                                     "bitWidth": "1",
-                                    "access": "ro"
+                  "access": "r"
                                 }
                             }
                         },
@@ -319,7 +319,7 @@
                                     "description": "LFROSC ready",
                                     "bitOffset": "31",
                                     "bitWidth": "1",
-                                    "access": "ro"
+                  "access": "r"
                                 }
                             }
                         },
@@ -365,7 +365,7 @@
                                     "description": "Wakeup cause",
                                     "bitOffset": "0",
                                     "bitWidth": "2",
-                                    "access": "ro",
+                  "access": "r",
                                     "enumeration": {
                                         "wakeupcause_enum": {
                                             "description": "Wakeup Cause Values",
@@ -393,7 +393,7 @@
                                     "description": "Reset cause",
                                     "bitOffset": "8",
                                     "bitWidth": "2",
-                                    "access": "ro",
+                  "access": "r",
                                     "enumeration": {
                                         "resetcause_enum": {
                                             "description": "Reset Cause Values",
@@ -459,7 +459,7 @@
                                     "description": "HFROSC ready",
                                     "bitOffset": "31",
                                     "bitWidth": "1",
-                                    "access": "ro"
+                  "access": "r"
                                 }
                             }
                         },
@@ -478,7 +478,7 @@
                                     "description": "HFXOSC ready",
                                     "bitOffset": "31",
                                     "bitWidth": "1",
-                                    "access": "ro"
+                  "access": "r"
                                 }
                             }
                         },
@@ -578,7 +578,7 @@
                                     "description": "PLL lock indicator",
                                     "bitOffset": "31",
                                     "bitWidth": "1",
-                                    "access": "ro"
+                  "access": "r"
                                 }
                             }
                         },
@@ -783,7 +783,7 @@
                                     "description": "Received data",
                                     "bitOffset": "0",
                                     "bitWidth": "8",
-                                    "access": "ro"
+                  "access": "r"
                                 },
                                 "empty": {
                                     "description": "Receive FIFO empty",
@@ -862,7 +862,7 @@
                         "ip": {
                             "description": "Interrupt Pending Register",
                             "addressOffset": "0x014",
-                            "access": "ro",
+              "access": "r",
                             "fields": {
                                 "txwm": {
                                     "description": "Transmit watermark interrupt pending",
@@ -1118,7 +1118,7 @@
                                     "description": "FIFO full flag",
                                     "bitOffset": "31",
                                     "bitWidth": "1",
-                                    "access": "ro"
+                  "access": "r"
                                 }
                             }
                         },
@@ -1126,7 +1126,7 @@
                             "description": "Rx FIFO Data Register",
                             "addressOffset": "0x04C",
                             "resetMask": "none",
-                            "access": "ro",
+              "access": "r",
                             "fields": {
                                 "data": {
                                     "description": "Received data",
@@ -1249,7 +1249,7 @@
                                     "description": "Transmit watermark enable",
                                     "bitOffset": "0",
                                     "bitWidth": "1",
-                                    "access": "ro",
+                  "access": "r",
                                     "resetMask": "all",
                                     "resetValue": "0x0"
                                 },
@@ -1257,7 +1257,7 @@
                                     "description": "Receive watermark enable",
                                     "bitOffset": "1",
                                     "bitWidth": "1",
-                                    "access": "ro",
+                  "access": "r",
                                     "resetMask": "all",
                                     "resetValue": "0x0"
                                 }
@@ -1271,13 +1271,13 @@
                                     "description": "Transmit watermark pending",
                                     "bitOffset": "0",
                                     "bitWidth": "1",
-                                    "access": "ro"
+                  "access": "r"
                                 },
                                 "rxwm": {
                                     "description": "Receive watermark pending",
                                     "bitOffset": "1",
                                     "bitWidth": "1",
-                                    "access": "ro"
+                  "access": "r"
                                 }
                             }
                         }
