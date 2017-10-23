@@ -3,7 +3,7 @@
     "devices": {
         "fe310-g000": {
             "displayName": "Freedom E310-G000",
-            "description": "The FE310-G000 is the first Freedom E300 SoC, and is the industry's first commercially available RISC-V SoC. The FE310-G000 is built around the E31 Coreplex instantiated in the Freedom E300 platform.",
+      "description": "The FE310-G000 is the first Freedom E300 SoC, and is the industry's first commercially available RISC-V SoC. The FE310-G000 is built around the E31 Core Complex instantiated in the Freedom E300 platform.",
       "vendor": {
         "name": "sifive",
         "id": "1",
@@ -42,24 +42,46 @@
       },
             "peripherals": {
                 "clint": {
-                    "description": "Coreplex-Local Interruptor (CLINT) Peripheral",
+          "description": "Core Complex Local Interruptor (CLINT) Peripheral",
                     "baseAddress": "0x02000000",
                     "size": "0x10000",
                     "registers": {
-                        "msip0": {
-                            "description": "MSIP (Machine-mode Software Interrupts) Register for Hart 0",
-                            "addressOffset": "0x0000"
+            "msip": {
+              "description": "MSIP (Machine-mode Software Interrupts) Register per Hart",
+              "addressOffset": "0x0000",
+              "arraySize": "1"
+            }
                         },
-                        "mtimecmp0": {
-                            "description": "Machine Time Compare Register for Hart 0",
+          "clusters": {
+            "mtimecmp": {
+              "description": "Machine Time Compare Registers per Hart",
                             "addressOffset": "0x4000",
-                            "regWidth": "64"
+              "arraySize": "1",
+              "registers": {
+                "low": {
+                  "description": "Machine Compare Register Low",
+                  "addressOffset": "0x0000"
+                },
+                "high": {
+                  "description": "Machine Compare Register High",
+                  "addressOffset": "0x0004"
+                }
+              }
                         },
                         "mtime": {
                             "description": "Machine Time Register",
                             "addressOffset": "0xBFF8",
-                            "access": "ro",
-                            "regWidth": "64"
+              "access": "r",
+              "registers": {
+                "low": {
+                  "description": "Machine Time Register Low",
+                  "addressOffset": "0x0000"
+                },
+                "high": {
+                  "description": "Machine Time Register High",
+                  "addressOffset": "0x0004"
+                }
+              }
                         }
                     }
                 },
@@ -69,12 +91,11 @@
                     "size": "0x4000000",
                     "registers": {
                         "source_priorities": {
-                            "displayName": "source[%s]",
                             "arraySize": "51",
                             "description": "Interrupt Priorities Registers",
-                            "addressOffset": "0x0C000004",
+              "addressOffset": "0x0004",
                             "fields": {
-                                "priority": {
+                "value": {
                                     "description": "The priority for a given global interrupt",
                                     "bitOffset": "0",
                                     "bitWidth": "3",
@@ -84,42 +105,45 @@
                             }
                         },
                         "pendings": {
-                            "displayName": "pending[%s]",
                             "arraySize": "2",
                             "description": "Interrupt Pending Bits Registers",
-                            "addressOffset": "0x0C001000",
-                            "access": "ro"
+              "addressOffset": "0x1000",
+              "access": "r"
                         }
                     },
                     "clusters": {
-                        "target_enables": {
-                            "displayName": "target_enables[%s]",
-                            "arraySize": "1",
-                            "description": "Hart M-Mode Interrupt Enable Bits",
-                            "addressOffset": "0x0C002000",
-                            "repeatIncrement": "0x20",
+            "enables_hart0": {
+              "description": "Hart 0 Interrupt Enable Bits",
+              "addressOffset": "0x00002000",
+              "clusters": {
+                "m": {
+                  "addressOffset": "0x0000",
+                  "description": "Hart 0 M-mode Interrupt Enable Bits",
                             "registers": {
-                                "enables": {
-                                    "displayName": "enable[%s]",
+                    "bits": {
                                     "arraySize": "2",
                                     "description": "Interrupt Enable Bits Registers",
                                     "addressOffset": "0x0000"
                                 }
                             }
+                }
+              }
                         },
-                        "targets": {
-                            "displayName": "targets[%s]",
-                            "arraySize": "1",
-                            "description": "Hart M-Mode Interrupt Thresholds",
-                            "addressOffset": "0x0C200000",
+            "hart0": {
+              "description": "Hart 0 Interrupt Thresholds",
+              "addressOffset": "0x00200000",
                             "repeatIncrement": "0x8",
+              "clusters": {
+                "m": {
+                  "addressOffset": "0x0000",
+                  "description": "Hart 0 M-Mode Interrupt Threshold",
                             "registers": {
                                 "threshold": {
                                     "description": "The Priority Threshold Register",
                                     "addressOffset": "0x0000",
                                     "fields": {
-                                        "threshold": {
-                                            "description": "The priority threshold",
+                        "value": {
+                          "description": "The priority threshold value",
                                             "bitOffset": "0",
                                             "bitWidth": "3",
                                             "resetMask": "all",
@@ -134,6 +158,8 @@
                             }
                         }
                     }
+            }
+          }
                 },
                 "aon": {
                     "description": "Always-On (AON) Domain",
