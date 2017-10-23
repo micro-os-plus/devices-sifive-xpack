@@ -1,5 +1,7 @@
 {
-    "schemaVersion": "0.2.0",
+  "schemaVersion": "0.2.2",
+  "contentVersion": "0.1.0",
+  "headerVersion": "0.1.0",
   "device": {
         "fe310-g000": {
             "displayName": "Freedom E310-G000",
