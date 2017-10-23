@@ -97,7 +97,7 @@
           "baseAddress": "0x0C000000",
           "size": "0x4000000",
           "registers": {
-            "source_priorities": {
+            "priorities": {
               "arraySize": "51",
               "description": "Interrupt Priorities Registers",
               "addressOffset": "0x0004",
@@ -119,7 +119,7 @@
             }
           },
           "clusters": {
-            "enables_hart0": {
+            "enableshart0": {
               "description": "Hart 0 Interrupt Enable Bits",
               "addressOffset": "0x00002000",
               "clusters": {
@@ -158,7 +158,7 @@
                         }
                       }
                     },
-                    "claim_complete": {
+                    "claimcomplete": {
                       "description": "The Interrupt Claim/Completion Register",
                       "addressOffset": "0x0004"
                     }
