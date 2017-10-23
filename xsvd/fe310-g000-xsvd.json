@@ -1027,7 +1027,7 @@
                             "description": "Baud Rate Divisor Register",
                             "addressOffset": "0x018",
                             "fields": {
-                                "div": {
+                "value": {
                                     "description": "Baud rate divisor",
                                     "bitOffset": "0",
                                     "bitWidth": "16",
@@ -1298,7 +1298,7 @@
                             "description": "Tx FIFO Watermark Register",
                             "addressOffset": "0x050",
                             "fields": {
-                                "txmark": {
+                "value": {
                                     "description": "Transmit watermark",
                                     "bitOffset": "0",
                                     "bitWidth": "3",
@@ -1311,7 +1311,7 @@
                             "description": "Rx FIFO Watermark Register",
                             "addressOffset": "0x054",
                             "fields": {
-                                "rxmark": {
+                "value": {
                                     "description": "Receive watermark",
                                     "bitOffset": "0",
                                     "bitWidth": "3",
