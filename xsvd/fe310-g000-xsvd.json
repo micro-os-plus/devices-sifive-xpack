@@ -1556,8 +1556,7 @@
                             "addressOffset": "0x010"
                         },
                         "cmp": {
-                            "displayName": "cmp%s",
-                            "repeatGenerator": "0,1,2,3",
+              "arraySize": "4",
                             "description": "Compare Registers",
                             "addressOffset": "0x020",
                             "fields": {
