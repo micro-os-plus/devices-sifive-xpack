@@ -1336,56 +1336,56 @@
               "description": "Flash Instruction Format Register",
               "addressOffset": "0x064",
               "fields": {
-                "cmd_en": {
+                "cmden": {
                   "description": "Enable sending of command",
                   "bitOffset": "0",
                   "bitWidth": "1",
                   "resetMask": "all",
                   "resetValue": "0x1"
                 },
-                "addr_len": {
+                "addrlen": {
                   "description": "Number of address bytes(0 to 4)",
                   "bitOffset": "1",
                   "bitWidth": "3",
                   "resetMask": "all",
                   "resetValue": "0x3"
                 },
-                "pad_cnt": {
+                "padcnt": {
                   "description": "Number of dummy cycles",
                   "bitOffset": "4",
                   "bitWidth": "4",
                   "resetMask": "all",
                   "resetValue": "0x0"
                 },
-                "cmd_proto": {
+                "cmdproto": {
                   "description": "Protocol for transmitting command",
                   "bitOffset": "8",
                   "bitWidth": "2",
                   "resetMask": "all",
                   "resetValue": "0x0"
                 },
-                "addr_proto": {
+                "addrproto": {
                   "description": "Protocol for transmitting address and padding",
                   "bitOffset": "10",
                   "bitWidth": "2",
                   "resetMask": "all",
                   "resetValue": "0x0"
                 },
-                "data_proto": {
+                "dataproto": {
                   "description": "Protocol for receiving data bytes",
                   "bitOffset": "12",
                   "bitWidth": "2",
                   "resetMask": "all",
                   "resetValue": "0x0"
                 },
-                "cmd_code": {
+                "cmdcode": {
                   "description": "Value of command byte",
                   "bitOffset": "16",
                   "bitWidth": "8",
                   "resetMask": "all",
                   "resetValue": "0x03"
                 },
-                "pad_code": {
+                "padcode": {
                   "description": "First 8 bits to transmit during dummy cycles",
                   "bitOffset": "24",
                   "bitWidth": "8",
