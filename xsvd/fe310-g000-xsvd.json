@@ -329,19 +329,16 @@
                             }
                         },
                         "backup": {
-                            "displayName": "backup[%s]",
                             "description": "Backup Registers",
                             "addressOffset": "0x0080",
                             "arraySize": "32"
                         },
                         "pmuwakeupi": {
-                            "displayName": "pmuwakeupi[%s]",
                             "description": "Wakeup program instruction Registers",
                             "addressOffset": "0x0100",
                             "arraySize": "8"
                         },
                         "pmusleepi": {
-                            "displayName": "pmusleepi[%s]",
                             "description": "Sleep Program Instruction Registers",
                             "addressOffset": "0x0120",
                             "arraySize": "8"
