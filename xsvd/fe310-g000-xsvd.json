@@ -16,6 +16,30 @@
             "resetMask": "all",
             "resetValue": "0x00000000",
             "access": "rw",
+      "cores": {
+        "e31": {
+          "harts": "1",
+          "isa": "RV32IMAC",
+          "isaVersion": "2.2",
+          "mpu": "pmp",
+          "mmu": "none",
+          "localInterrupts": {
+            "machine_software": {
+              "description": "Machine Software Interrupt",
+              "value": "3"
+            },
+            "machine_timer": {
+              "description": "Machine Timer Interrupt",
+              "value": "7"
+            },
+            "machine_ext": {
+              "description": "Machine External Interrupt",
+              "value": "11"
+            }
+          },
+          "numLocalInterrupts": "16"
+        }
+      },
             "peripherals": {
                 "clint": {
                     "description": "Coreplex-Local Interruptor (CLINT) Peripheral",
