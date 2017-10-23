@@ -371,7 +371,7 @@
                   "bitWidth": "2",
                   "access": "r",
                   "enumeration": {
-                    "wakeupcause_enum": {
+                    "wakeupcause-enum": {
                       "description": "Wakeup Cause Values Enumeration",
                       "values": {
                         "0": {
@@ -399,7 +399,7 @@
                   "bitWidth": "2",
                   "access": "r",
                   "enumeration": {
-                    "resetcause_enum": {
+                    "resetcause-enum": {
                       "description": "Reset Cause Values Enumeration",
                       "values": {
                         "1": {
@@ -508,7 +508,7 @@
                   "resetMask": "all",
                   "resetValue": "0x1",
                   "enumeration": {
-                    "pllr_enum": {
+                    "pllr-enum": {
                       "description": "Reference Clock R Divide Ratio Enumeration",
                       "values": {
                         "0": {
@@ -545,7 +545,7 @@
                   "resetMask": "all",
                   "resetValue": "0x3",
                   "enumeration": {
-                    "pllq_enum": {
+                    "pllq-enum": {
                       "description": "Reference Clock Q Divide Ratio Enumeration",
                       "values": {
                         "*": {
@@ -1106,7 +1106,7 @@
                   "resetMask": "all",
                   "resetValue": "0x0",
                   "enumeration": {
-                    "csmode_enum": {
+                    "csmode-enum": {
                       "description": "Chip Select Modes Enumeration",
                       "values": {
                         "0": {
@@ -1181,7 +1181,7 @@
                   "resetMask": "all",
                   "resetValue": "0x0",
                   "enumeration": {
-                    "proto_enum": {
+                    "proto-enum": {
                       "description": "SPI Protocol Enumeration",
                       "values": {
                         "0": {
@@ -1210,7 +1210,7 @@
                   "resetMask": "all",
                   "resetValue": "0x0",
                   "enumeration": {
-                    "endian_enum": {
+                    "endian-enum": {
                       "description": "SPI Endianness Enumeration",
                       "values": {
                         "0": {
@@ -1232,7 +1232,7 @@
                   "resetMask": "all",
                   "resetValue": "0x1",
                   "enumeration": {
-                    "dir_enum": {
+                    "dir-enum": {
                       "description": "SPI I/O Direction Enumeration",
                       "values": {
                         "0": {
