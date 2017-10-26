@@ -1,7 +1,7 @@
 {
-  "name": "@sifive/coreplex-devices",
-  "version": "0.0.5",
-  "description": "An xPack with the µOS++ support for the SiFive Coreplex devices",
+  "name": "@sifive/devices",
+  "version": "0.1.0",
+  "description": "An xPack with the µOS++ support for the SiFive Core Complex devices",
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/micro-os-plus/sifive-coreplex-devices.git"
+    "url": "git+https://github.com/micro-os-plus/sifive-devices-xpack.git"
   },
-  "homepage": "https://github.com/micro-os-plus/sifive-coreplex-devices",
+  "homepage": "https://github.com/micro-os-plus/sifive-devices-xpack",
   "keywords": [
     "xpack",
     "c++",
     "micro-os-plus",
     "sifive",
-    "coreplex",
+    "corecomplex",
     "risc-v",
     "riscv"
   ],
@@ -28,7 +28,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/micro-os-plus/sifive-coreplex-devices/issues"
+    "url": "https://github.com/micro-os-plus/sifive-devices-xpack/issues"
   },
   "config": {},
   "dependencies": {},
