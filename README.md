@@ -16,13 +16,13 @@ This section is intended to developers who plan to include this library in their
 
 The source files are available from [GitHub](https://github.com/micro-os-plus/sifive-devices-xpack):
 
-```bash
+```console
 $ git clone https://github.com/micro-os-plus/sifive-devices-xpack.git sifive-devices-xpack.git
 ```
 
 The library will shortly be available from the npm registry:
 
-```bash
+```console
 $ npm install @sifive/coreplex-devices
 ```
 
