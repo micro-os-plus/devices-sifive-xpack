@@ -2,16 +2,16 @@
     "schemaVersion": "0.1.0",
     "devices": {
         "families": {
-            "fe300": {
+            "fe": {
+                "name": "Freedom Everywhere",
                 "vendor": {
                     "name": "sifive",
                     "id": "1",
                     "fullName": "SiFive, Inc.",
                     "contact": "info@sifive.com"
                 },
-                "name": "Freedom E300",
                 "devices": {
-                    "fe310-g000": {
+                    "fe310": {
                         "name": "Freedom E310-G000",
                         "description": "The FE310-G000 is the first Freedom E300 SoC, and is the industry's first commercially available RISC-V SoC. The FE310-G000 is built around the E31 Coreplex instantiated in the Freedom E300 platform.",
                         "url": "https://www.sifive.com/products/freedom-e310/",
@@ -62,7 +62,91 @@
                                 "irlen": "5"
                             }
                         },
-                        "xsvd": "xsvd/fe310-g000-xsvd.json"
+                        "xsvd": "xsvd/fe310-xsvd.json"
+                    },
+                    "e31arty": {
+                        "name": "Arty E31",
+                        "description": "Core Complex IP E31 Arty image.",
+                        "url": "https://www.sifive.com/products/risc-v-core-ip/e31/",
+                        "compile": {
+                            "headers": [
+                                "<micro-os-plus/device.h>"
+                            ],
+                            "macros": [
+                                "SIFIVE_E310ARTY"
+                            ],
+                            "target": [
+                                "-march=rv32imac",
+                                "-mabi=ilp32",
+                                "-mcmodel=medany",
+                                "-msmall-data-limit=8"
+                            ]
+                        },
+                        "features": {
+                            "core": "RV32IMAC",
+                            "width": "32 bits",
+                            "hfosc": "65 MHz",
+                            "lfosc": "32768 Hz"
+                        },
+                        "memoryRegions": {
+                            "ram": {
+                                "onChip": "true",
+                                "address": "0x80000000",
+                                "size": "16 KiB",
+                                "access": "rwx",
+                                "description": "On-Chip Volatile Memory - Data Tightly Integrated Memory (DTIM)"
+                            },
+                            "rom": {
+                                "onChip": "false",
+                                "address": "0x40000000",
+                                "maxSize": "512 MiB",
+                                "access": "rx",
+                                "description": "Off-Chip Non-Volatile Memory - QSPI 0 eXecute-In-Place (XIP)"
+                            }
+                        },
+                        "xsvd": "xsvd/e31arty-xsvd.json"
+                    },
+                    "e51arty": {
+                        "name": "Arty E51",
+                        "description": "Core Complex IP E51 Arty image.",
+                        "url": "https://www.sifive.com/products/risc-v-core-ip/e31/",
+                        "compile": {
+                            "headers": [
+                                "<micro-os-plus/device.h>"
+                            ],
+                            "macros": [
+                                "SIFIVE_E51ARTY"
+                            ],
+                            "target": [
+                                "-march=rv64imac",
+                                "-mabi=lp64",
+                                "-mcmodel=medany",
+                                "-msmall-data-limit=8"
+                            ]
+                        },
+                        "features": {
+                            "core": "RV64IMAC",
+                            "width": "64 bits",
+                            "hfosc": "65 MHz",
+                            "lfosc": "32768 Hz"
+                        },
+                        "memoryRegions": {
+                            "ram": {
+                                "onChip": "true",
+                                "address": "0x80000000",
+                                "size": "16 KiB",
+                                "access": "rwx",
+                                "description": "On-Chip Volatile Memory - Data Tightly Integrated Memory (DTIM)"
+                            },
+                            "rom": {
+                                "onChip": "false",
+                                "address": "0x40000000",
+                                "maxSize": "512 MiB",
+                                "access": "rx",
+                                "description": "Off-Chip Non-Volatile Memory - QSPI 0 eXecute-In-Place (XIP)"
+                            }
+                        },
+                        "xsvd": "xsvd/e51arty-xsvd.json"
                     }
                 }
             }
