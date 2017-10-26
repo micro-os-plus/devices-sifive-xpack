@@ -3,7 +3,7 @@
   "contentVersion": "0.1.0",
   "headerVersion": "0.1.0",
   "device": {
-    "fe310-g000": {
+    "fe310": {
       "displayName": "Freedom E310-G000",
       "description": "The FE310-G000 is the first Freedom E300 SoC, and is the industry's first commercially available RISC-V SoC. The FE310-G000 is built around the E31 Core Complex instantiated in the Freedom E300 platform.",
       "vendor": {
@@ -16,8 +16,8 @@
       "resetMask": "all",
       "resetValue": "0x00000000",
       "access": "rw",
-      "headerTypePrefix": "riscv_device_",
-      "headerInterruptPrefix": "riscv_interrupt_global_",
+      "headerTypePrefix": "sifive_fe310_",
+      "headerInterruptPrefix": "sifive_fe310_interrupt_global_",
       "headerInterruptEnumPrefix": "riscv_interrupts_global_",
       "revision": "r0p0",
       "numInterrupts": "51",
@@ -44,7 +44,7 @@
               "value": "11"
             }
           },
-          "numLocalInterrupts": "16"
+          "numLocalInterrupts": "0"
         }
       },
       "peripherals": {
@@ -127,7 +127,7 @@
                   "addressOffset": "0x0000",
                   "description": "Hart 0 M-mode Interrupt Enable Bits",
                   "registers": {
-                    "bits": {
+                    "enables": {
                       "arraySize": "2",
                       "description": "Interrupt Enable Bits Registers",
                       "addressOffset": "0x0000"
@@ -139,7 +139,6 @@
             "hart0": {
               "description": "Hart 0 Interrupt Thresholds",
               "addressOffset": "0x00200000",
-              "repeatIncrement": "0x8",
               "clusters": {
                 "m": {
                   "addressOffset": "0x0000",
@@ -1447,6 +1446,182 @@
           "baseAddress": "0x10015000",
           "size": "0x1000",
           "resetMask": "none",
+          "registers": {
+            "cfg": {
+              "description": "Configuration Register",
+              "addressOffset": "0x000",
+              "fields": {
+                "scale": {
+                  "description": "Counter scale",
+                  "bitOffset": "0",
+                  "bitWidth": "4"
+                },
+                "sticky": {
+                  "description": "Sticky - disallow clearing pwmcmpXip bits",
+                  "bitOffset": "8",
+                  "bitWidth": "1"
+                },
+                "zerocmp": {
+                  "description": "Zero - counter resets to zero after match",
+                  "bitOffset": "9",
+                  "bitWidth": "1"
+                },
+                "deglitch": {
+                  "description": "Deglitch - latch pwmcmpXip within same cycle",
+                  "bitOffset": "10",
+                  "bitWidth": "1"
+                },
+                "enalways": {
+                  "description": "Enable always - run continuously",
+                  "bitOffset": "12",
+                  "bitWidth": "1",
+                  "resetMask": "all",
+                  "resetValue": "0x0"
+                },
+                "enoneshot": {
+                  "description": "enable one shot - run one cycle",
+                  "bitOffset": "13",
+                  "bitWidth": "1",
+                  "resetMask": "all",
+                  "resetValue": "0x0"
+                },
+                "cmp0center": {
+                  "description": "PWM0 Compare Center",
+                  "bitOffset": "16",
+                  "bitWidth": "1"
+                },
+                "cmp1center": {
+                  "description": "PWM1 Compare Center",
+                  "bitOffset": "17",
+                  "bitWidth": "1"
+                },
+                "cmp2center": {
+                  "description": "PWM2 Compare Center",
+                  "bitOffset": "18",
+                  "bitWidth": "1"
+                },
+                "cmp3center": {
+                  "description": "PWM3 Compare Center",
+                  "bitOffset": "19",
+                  "bitWidth": "1"
+                },
+                "cmp0gang": {
+                  "description": "PWM0/PWM1 Compare Gang",
+                  "bitOffset": "24",
+                  "bitWidth": "1"
+                },
+                "cmp1gang": {
+                  "description": "PWM1/PWM2 Compare Gang",
+                  "bitOffset": "25",
+                  "bitWidth": "1"
+                },
+                "cmp2gang": {
+                  "description": "PWM2/PWM3 Compare Gang",
+                  "bitOffset": "26",
+                  "bitWidth": "1"
+                },
+                "cmp3gang": {
+                  "description": "PWM3/PWM0 Compare Gang",
+                  "bitOffset": "27",
+                  "bitWidth": "1"
+                },
+                "cmp0ip": {
+                  "description": "PWM0 Interrupt Pending",
+                  "bitOffset": "28",
+                  "bitWidth": "1"
+                },
+                "cmp1ip": {
+                  "description": "PWM1 Interrupt Pending",
+                  "bitOffset": "29",
+                  "bitWidth": "1"
+                },
+                "cmp2ip": {
+                  "description": "PWM2 Interrupt Pending",
+                  "bitOffset": "30",
+                  "bitWidth": "1"
+                },
+                "cmp3ip": {
+                  "description": "PWM3 Interrupt Pending",
+                  "bitOffset": "31",
+                  "bitWidth": "1"
+                }
+              }
+            },
+            "count": {
+              "description": "Configuration Register",
+              "addressOffset": "0x008"
+            },
+            "scale": {
+              "description": "Scale Register",
+              "addressOffset": "0x010",
+              "fields": {
+                "value": {
+                  "description": "Compare value",
+                  "bitOffset": "0",
+                  "bitWidth": "8"
+                }
+              }
+            },
+            "cmp": {
+              "arraySize": "4",
+              "description": "Compare Registers",
+              "addressOffset": "0x020",
+              "fields": {
+                "value": {
+                  "description": "Compare value",
+                  "bitOffset": "0",
+                  "bitWidth": "8"
+                }
+              }
+            }
+          },
+          "interrupts": {
+            "pwm0cmp0": {
+              "description": "PWM0 Compare 0 Interrupt",
+              "value": "40"
+            },
+            "pwm0cmp1": {
+              "description": "PWM0 Compare 1 Interrupt",
+              "value": "41"
+            },
+            "pwm0cmp2": {
+              "description": "PWM0 Compare 2 Interrupt",
+              "value": "42"
+            },
+            "pwm0cmp3": {
+              "description": "PWM0 Compare 3 Interrupt",
+              "value": "43"
+            }
+          }
+        },
+        "uart1": {
+          "baseAddress": "0x10023000",
+          "derivedFrom": "uart0",
+          "groupName": "uart",
+          "interrupts": {
+            "uart1": {
+              "description": "UART1 Interrupt",
+              "value": "4"
+            }
+          }
+        },
+        "qspi1": {
+          "baseAddress": "0x10024000",
+          "derivedFrom": "spi0",
+          "groupName": "qspi",
+          "interrupts": {
+            "qspi1": {
+              "description": "QSPI0 Interrupt",
+              "value": "6"
+            }
+          }
+        },
+        "pwm1": {
+          "description": "Pulse-Width Modulation (PWM) Peripheral",
+          "baseAddress": "0x10025000",
+          "groupName": "pwm",
+          "size": "0x1000",
+          "resetMask": "none",
           "groupName": "pwm",
           "registers": {
             "cfg": {
@@ -1555,7 +1730,14 @@
             },
             "scale": {
               "description": "Scale Register",
-              "addressOffset": "0x010"
+              "addressOffset": "0x010",
+              "fields": {
+                "value": {
+                  "description": "Compare value",
+                  "bitOffset": "0",
+                  "bitWidth": "16"
+                }
+              }
             },
             "cmp": {
               "arraySize": "4",
@@ -1570,51 +1752,6 @@
               }
             }
           },
-          "interrupts": {
-            "pwm0cmp0": {
-              "description": "PWM0 Compare 0 Interrupt",
-              "value": "40"
-            },
-            "pwm0cmp1": {
-              "description": "PWM0 Compare 1 Interrupt",
-              "value": "41"
-            },
-            "pwm0cmp2": {
-              "description": "PWM0 Compare 2 Interrupt",
-              "value": "42"
-            },
-            "pwm0cmp3": {
-              "description": "PWM0 Compare 3 Interrupt",
-              "value": "43"
-            }
-          }
-        },
-        "uart1": {
-          "baseAddress": "0x10023000",
-          "derivedFrom": "uart0",
-          "groupName": "uart",
-          "interrupts": {
-            "uart1": {
-              "description": "UART1 Interrupt",
-              "value": "4"
-            }
-          }
-        },
-        "qspi1": {
-          "baseAddress": "0x10024000",
-          "derivedFrom": "spi0",
-          "groupName": "qspi",
-          "interrupts": {
-            "qspi1": {
-              "description": "QSPI0 Interrupt",
-              "value": "6"
-            }
-          }
-        },
-        "pwm1": {
-          "baseAddress": "0x10025000",
-          "derivedFrom": "pwm0",
-          "groupName": "pwm",
           "interrupts": {
             "pwm1cmp0": {
               "description": "PWM1 Compare 0 Interrupt",
@@ -1647,7 +1784,7 @@
         },
         "pwm2": {
           "baseAddress": "0x10035000",
-          "derivedFrom": "pwm0",
+          "derivedFrom": "pwm1",
           "groupName": "pwm",
           "interrupts": {
             "pwm2cmp0": {
