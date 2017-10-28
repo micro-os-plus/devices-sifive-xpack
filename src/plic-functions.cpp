@@ -44,7 +44,7 @@ namespace riscv
     {
       // Disable all interrupts for the current hart.
       for (std::size_t i = 0;
-          i < ((RISCV_INTERRUPTS_GLOBAL_NUMBEROF + 32u) / 32u); ++i)
+          i < ((RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER + 32u) / 32u); ++i)
         {
           PLIC->enablestarget0.m.enables[i] = 0;
         }
@@ -56,10 +56,10 @@ namespace riscv
     void
     clear_priorities (void)
     {
-      // Set priorities to zero.
-      for (std::size_t i = 0; i < RISCV_INTERRUPTS_GLOBAL_NUMBEROF; ++i)
+      // Set priorities to zero. The array starts at 1.
+      for (std::size_t i = 1; i <= RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER; ++i)
         {
-          PLIC->priorities[i] = 0;
+          PLIC->priorities[i - 1] = 0;
         }
     }
 

@@ -25,8 +25,8 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef SIFIVE_COREPLEX_PLIC_FUNCTIONS_INLINES_H_
-#define SIFIVE_COREPLEX_PLIC_FUNCTIONS_INLINES_H_
+#ifndef SIFIVE_DEVICES_PLIC_FUNCTIONS_INLINES_H_
+#define SIFIVE_DEVICES_PLIC_FUNCTIONS_INLINES_H_
 
 #include <sifive-devices/defines.h>
 
@@ -44,15 +44,14 @@ extern "C"
 
 // ----------------------------------------------------------------------------
 // Device PLIC support functions in C.
-// Single core devices only.
+// Assume there is a single target (target0), corresponding to Hart 0.
 
   static inline riscv_plic_priority_t
   __attribute__((always_inline))
   riscv_plic_write_threshold (riscv_plic_priority_t priority)
   {
-    riscv_plic_priority_t previous =
-        PLIC->target0.m.threshold;
-        PLIC->target0.m.threshold = priority;
+    riscv_plic_priority_t previous = PLIC->target0.m.threshold;
+    PLIC->target0.m.threshold = priority;
 
     return previous;
   }
@@ -76,8 +75,8 @@ extern "C"
   __attribute__((always_inline))
   riscv_plic_disable_interrupt (riscv_plic_source_t global_interrupt_id)
   {
-    PLIC->enablestarget0.m.enables[global_interrupt_id / 32u] &= ~(1u
-        << (global_interrupt_id % 32u));
+    PLIC->enablestarget0.m.enables[global_interrupt_id / 32u] &= 
+      ~(1u << (global_interrupt_id % 32u));
   }
 
   static inline bool
@@ -252,4 +251,4 @@ namespace riscv
 
 // ----------------------------------------------------------------------------
 
-#endif /* SIFIVE_COREPLEX_PLIC_FUNCTIONS_INLINES_H_ */
+#endif /* SIFIVE_DEVICES_PLIC_FUNCTIONS_INLINES_H_ */
