@@ -99,7 +99,7 @@ typedef enum {
 
 #define RISCV_INTERRUPTS_GLOBAL_PRIORITY_BITS  (3u)
 #define RISCV_INTERRUPTS_GLOBAL_PRIORITY_LEVELS  (7u)
-#define RISCV_INTERRUPTS_GLOBAL_NUMBEROF  (26u)
+#define RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER  (26u)
 
 // ----------------------------------------------------------------------------
 
