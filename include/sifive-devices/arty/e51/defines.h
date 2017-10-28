@@ -25,58 +25,23 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef SIFIVE_COREPLEX_DEVICES_FUNCTIONS_H_
-#define SIFIVE_COREPLEX_DEVICES_FUNCTIONS_H_
-
-#include <sifive-coreplex-devices/defines.h>
+#ifndef SIFIVE_ARTY_E51_DEFINES_H_
+#define SIFIVE_ARTY_E51_DEFINES_H_
 
 #include <stdint.h>
 
-/*
- * Coreplex IP support functions.
- *
- * Inline functions are first defined in C (prefixed with `riscv_device_`),
- * then, for convenience, are redefined in C++ in the `riscv::device::`
- * namespace.
- *
- * Regular functions are first defined in C++ then aliased to C.
- */
-
 // ----------------------------------------------------------------------------
-#if defined(__cplusplus)
-extern "C"
-{
-#endif /* defined(__cplusplus) */
 
-// --------------------------------------------------------------------------
-// Device support functions in C.
+// TODO: sort them out
 
-// TODO: add functions.
-// Prefix them with `riscv_device_`.
+// #define IRQ_M_LOCAL        16
+// #define MIP_MLIP(x)        (1 << (IRQ_M_LOCAL + x))
 
-#if defined(__cplusplus)
-}
-#endif /* defined(__cplusplus) */
+// #define NUM_GPIO 16
+
+// Why 28?
+// #define PLIC_NUM_INTERRUPTS 28
 
 // ----------------------------------------------------------------------------
 
-#if defined(__cplusplus)
-
-namespace riscv
-{
-  namespace device
-  {
-  // --------------------------------------------------------------------------
-  // Device support functions in C++.
-
-  // TODO: add functions.
-
-  // --------------------------------------------------------------------------
-  } /* namespace device */
-} /* namespace riscv */
-
-#endif /* defined(__cplusplus) */
-
-// ----------------------------------------------------------------------------
-
-#endif /* SIFIVE_COREPLEX_DEVICES_FUNCTIONS_H_ */
+#endif /* SIFIVE_ARTY_E51_DEFINES_H_ */

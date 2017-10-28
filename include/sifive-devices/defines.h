@@ -25,32 +25,22 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#include <micro-os-plus/device.h>
+#ifndef SIFIVE_DEVICES_DEFINES_H_
+#define SIFIVE_DEVICES_DEFINES_H_
 
-#include <cstddef>
+// ----------------------------------------------------------------------------
+
+// Select one of the definition files based on device.
+#if defined (SIFIVE_FE310)
+#include <sifive-devices/fe310/defines.h>
+#elif defined (SIFIVE_E31ARTY)
+#include <sifive-devices/arty/e31/defines.h>
+#elif defined (SIFIVE_E51ARTY)
+#include <sifive-devices/arty/e51/defines.h>
+#else
+#error "Unsupported device"
+#endif
 
 // ----------------------------------------------------------------------------
 
-namespace riscv
-{
-  namespace device
-  {
-  // ------------------------------------------------------------------------
-  // Device functions definitions.
-
-  // TODO: add functions.
-
-  // --------------------------------------------------------------------------
-  } /* namespace device */
-} /* namespace riscv */
-
-// ----------------------------------------------------------------------------
-// C aliases to the C++ functions.
-
-// TODO: add aliases.
-
-// uint64_t
-// __attribute__((alias("_ZN5riscv6device5mtimeEv")))
-// riscv_device_read_mtime (void);
-
-// ----------------------------------------------------------------------------
+#endif /* SIFIVE_DEVICES_DEFINES_H_ */

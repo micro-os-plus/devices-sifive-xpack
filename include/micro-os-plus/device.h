@@ -28,36 +28,48 @@
 #ifndef MICRO_OS_PLUS_DEVICE_H_
 #define MICRO_OS_PLUS_DEVICE_H_
 
+// ----------------------------------------------------------------------------
+
+// Architecture definitions.
 #include <micro-os-plus/architecture.h>
 
-#include <sifive-coreplex-devices/defines.h>
-#include <sifive-coreplex-devices/types.h>
+// ----------------------------------------------------------------------------
 
-#include <sifive-coreplex-devices/functions.h>
-#include <sifive-coreplex-devices/functions-inlines.h>
+// Automatically generated device header files.
+#include <sifive-devices/device-peripherals.h>
 
-#if defined (SIFIVE_FREEDOM_E310)
+// Additional definitions and types.
+#include <sifive-devices/defines.h>
+#include <sifive-devices/types.h>
 
-#include <sifive-coreplex-devices/freedom-e310/device-interrupts-handlers.h>
+// ----------------------------------------------------------------------------
 
-#elif defined (SIFIVE_COREPLEX_31) || defined (SIFIVE_COREPLEX_51)
+// API function prototypes.
+#include <sifive-devices/functions.h>
+#include <sifive-devices/functions-inlines.h>
 
-#include <sifive-coreplex-devices/coreplex/device-interrupts-handlers.h>
+// ----------------------------------------------------------------------------
 
-#endif
+#include <sifive-devices/device-interrupts-handlers.h>
+
+// ----------------------------------------------------------------------------
 
 // The names of the RISCV_MMIO_ symbols are architecture specific,
-// but their values depend on a specific implementation.
+// but their values depend on a specific device implementation.
 // These definitions will be used in <riscv-arch/device-functions-inlines.h>,
 // included below.
 
-#define RISCV_MMIO_MTIME_ADDR (CLINT_CTRL_ADDR + CLINT_MTIME)
-#define RISCV_MMIO_MTIMECMP_ADDR (CLINT_CTRL_ADDR + CLINT_MTIMECMP)
+#define RISCV_MMIO_MTIME_ADDRESS (&CLINT->mtime)
+#define RISCV_MMIO_MTIMECMP_ADDRESS (&CLINT->mtimecmp)
 
 #include <riscv-arch/device-functions.h>
 #include <riscv-arch/device-functions-inlines.h>
 
+// ----------------------------------------------------------------------------
+
 #include <riscv-arch/plic-functions.h>
-#include <sifive-coreplex-devices/plic-functions-inlines.h>
+#include <sifive-devices/plic-functions-inlines.h>
+
+// ----------------------------------------------------------------------------
 
 #endif /* MICRO_OS_PLUS_DEVICE_H_ */

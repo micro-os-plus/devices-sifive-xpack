@@ -25,8 +25,8 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef SIFIVE_COREPLEX_DEVICES_TYPES_H_
-#define SIFIVE_COREPLEX_DEVICES_TYPES_H_
+#ifndef SIFIVE_DEVICES_TYPES_H_
+#define SIFIVE_DEVICES_TYPES_H_
 
 #include <stdint.h>
 
@@ -35,7 +35,9 @@
 typedef uint32_t riscv_plic_source_t;
 typedef uint32_t riscv_plic_priority_t;
 
-// The Coreplex IP PLIC supports a maximum of 255 external interrupt
+#if 0
+
+// The Core Complex IP PLIC supports a maximum of 255 external interrupt
 // sources with 7 priority levels.
 
 #define RISCV_INTERRUPTS_GLOBAL_MAX_ARRAY_SIZE  (256)
@@ -48,9 +50,9 @@ typedef struct riscv_plic_target_enables_s
 typedef struct riscv_plic_target_s
 {
   /**
-   * The threshold is a WARL field, where the E31 Coreplex supports
+   * The threshold is a WARL field, where the E31 Core Complex supports
    * a maximum threshold of 7.
-   * The E31 Coreplex will mask all PLIC interrupts of a priority
+   * The E31 Core Complex will mask all PLIC interrupts of a priority
    * less than or equal to threshold. For example, a threshold
    * value of zero permits all interrupts with non-zero priority,
    * whereas a value of 7 masks all interrupts.
@@ -150,6 +152,7 @@ typedef struct riscv_device_pwm_s
   volatile uint32_t pwmcmp3;
 } riscv_device_pwm_t;
 
+
 // ----------------------------------------------------------------------------
 
 #if defined(__cplusplus)
@@ -173,8 +176,10 @@ namespace riscv
 // ----------------------------------------------------------------------------
 } /* namespace riscv */
 
+#endif
+
 #endif /* __cplusplus */
 
 // ----------------------------------------------------------------------------
 
-#endif /* SIFIVE_COREPLEX_DEVICES_TYPES_H_ */
+#endif /* SIFIVE_DEVICES_TYPES_H_ */

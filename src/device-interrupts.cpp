@@ -43,7 +43,7 @@ extern "C"
 // To provide the desired functionality, redefine any of these
 // functions in the application.
 
-#if defined (SIFIVE_FREEDOM_E310)
+#if defined (SIFIVE_FE310)
 
 void
 __attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
@@ -309,7 +309,7 @@ riscv_interrupts_global_handlers[] =
     riscv_interrupt_global_handle_pwm2cmp3 /* 51 */
   };
 
-#elif defined (SIFIVE_COREPLEX_31) || defined (SIFIVE_COREPLEX_51)
+#elif defined (SIFIVE_E31ARTY) || defined (SIFIVE_E51ARTY)
 
 void
 __attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
@@ -528,8 +528,8 @@ riscv_interrupts_local_device_handlers[] =
 #endif /* DEVICE */
 
 static_assert(
-    sizeof(riscv_interrupts_global_handlers)/sizeof(riscv_interrupts_global_handlers[0]) == RISCV_INTERRUPTS_GLOBAL_ARRAY_SIZE,
-    "riscv_interrupts_global_handlers[] size must match RISCV_INTERRUPTS_GLOBAL_ARRAY_SIZE");
+    sizeof(riscv_interrupts_global_handlers)/sizeof(riscv_interrupts_global_handlers[0]) == (RISCV_INTERRUPTS_GLOBAL_NUMBEROF + 1),
+    "riscv_interrupts_global_handlers[] size must match RISCV_INTERRUPTS_GLOBAL_NUMBEROF");
 
 #if defined(RISCV_INTERRUPTS_LOCAL_DEVICE_ARRAY_SIZE) && RISCV_INTERRUPTS_LOCAL_DEVICE_ARRAY_SIZE != 0
 

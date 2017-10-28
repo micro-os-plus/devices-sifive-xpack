@@ -31,21 +31,6 @@
 #include <cstddef>
 
 // ----------------------------------------------------------------------------
-// Validate the riscv_plic_t content towards the Coreplex IP PLIC memory map.
-
-static_assert(sizeof(riscv_plic_t) == (0x0FFFFFFF + 1 - 0x0C000000),
-    "Wrong size of riscv_plic_t");
-
-static_assert(offsetof(riscv_plic_t, pending_bits) == (0x0C001000 - 0x0C000000),
-    "Wrong offset of pending_bits");
-
-static_assert(offsetof(riscv_plic_t, target_enables) == (0x0C002000 - 0x0C000000),
-    "Wrong offset of target_enables");
-
-static_assert(offsetof(riscv_plic_t, targets) == (0x0C200000 - 0x0C000000),
-    "Wrong offset of targets");
-
-// ----------------------------------------------------------------------------
 
 namespace riscv
 {
@@ -57,26 +42,24 @@ namespace riscv
     void
     initialize (void)
     {
-      riscv::arch::register_t hart_id = riscv::csr::mhartid ();
-
       // Disable all interrupts for the current hart.
       for (std::size_t i = 0;
-          i < ((RISCV_INTERRUPTS_GLOBAL_ARRAY_SIZE + 32u) / 32u); ++i)
+          i < ((RISCV_INTERRUPTS_GLOBAL_NUMBEROF + 32u) / 32u); ++i)
         {
-          riscv_plic_ptr->target_enables[hart_id].bits[i] = 0;
+          PLIC->enablestarget0.m.enables[i] = 0;
         }
 
       // Set the threshold to zero.
-      riscv_plic_ptr->targets[hart_id].priority_threshold = 0;
+      PLIC->target0.m.threshold = 0;
     }
 
     void
     clear_priorities (void)
     {
       // Set priorities to zero.
-      for (std::size_t i = 0; i < RISCV_INTERRUPTS_GLOBAL_ARRAY_SIZE; ++i)
+      for (std::size_t i = 0; i < RISCV_INTERRUPTS_GLOBAL_NUMBEROF; ++i)
         {
-          riscv_plic_ptr->source_priorities[i] = 0;
+          PLIC->priorities[i] = 0;
         }
     }
 

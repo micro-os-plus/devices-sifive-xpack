@@ -25,32 +25,53 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#include <micro-os-plus/device.h>
+#ifndef SIFIVE_DEVICES_FUNCTIONS_INLINES_H_
+#define SIFIVE_DEVICES_FUNCTIONS_INLINES_H_
 
-#include <cstddef>
+#include <sifive-devices/defines.h>
+
+#include <stdint.h>
+
+/*
+ * Inline implementations for the Core Complex IP support functions.
+ */
 
 // ----------------------------------------------------------------------------
+#if defined(__cplusplus)
+extern "C"
+{
+#endif /* defined(__cplusplus) */
+
+// ----------------------------------------------------------------------------
+// Device support functions in C.
+
+// TODO: add functions.
+// Prefix them with `riscv_device_`.
+
+#if defined(__cplusplus)
+}
+#endif /* defined(__cplusplus) */
+
+// ----------------------------------------------------------------------------
+
+#if defined(__cplusplus)
 
 namespace riscv
 {
   namespace device
   {
-  // ------------------------------------------------------------------------
-  // Device functions definitions.
+  // --------------------------------------------------------------------------
+  // Device support functions in C++.
 
   // TODO: add functions.
 
   // --------------------------------------------------------------------------
   } /* namespace device */
+// ----------------------------------------------------------------------------
 } /* namespace riscv */
 
-// ----------------------------------------------------------------------------
-// C aliases to the C++ functions.
-
-// TODO: add aliases.
-
-// uint64_t
-// __attribute__((alias("_ZN5riscv6device5mtimeEv")))
-// riscv_device_read_mtime (void);
+#endif /* defined(__cplusplus) */
 
 // ----------------------------------------------------------------------------
+
+#endif /* SIFIVE_DEVICES_FUNCTIONS_INLINES_H_ */

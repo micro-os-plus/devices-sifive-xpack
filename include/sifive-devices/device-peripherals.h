@@ -25,22 +25,23 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef SIFIVE_COREPLEX_DEVICES_DEFINES_H_
-#define SIFIVE_COREPLEX_DEVICES_DEFINES_H_
+#ifndef SIFIVE_DEVICE_PERIPHERALS_H_
+#define SIFIVE_DEVICE_PERIPHERALS_H_
 
 // ----------------------------------------------------------------------------
 
 // Select one of the definition files based on device.
-#if defined (SIFIVE_FREEDOM_E310)
-#include <sifive-coreplex-devices/freedom-e310/defines.h>
-#elif defined (SIFIVE_COREPLEX_31)
-#include <sifive-coreplex-devices/coreplex/e31/defines.h>
-#elif defined (SIFIVE_COREPLEX_51)
-#include <sifive-coreplex-devices/coreplex/e51/defines.h>
+#if defined (SIFIVE_FE310)
+#include <sifive-devices/fe310/device-peripherals.h>
+#elif defined (SIFIVE_E31ARTY)
+#include <sifive-devices/arty/e31/device-peripherals.h>
+#elif defined (SIFIVE_E51ARTY)
+#include <sifive-devices/arty/e51/device-peripherals.h>
 #else
 #error "Unsupported device"
 #endif
 
+
 // ----------------------------------------------------------------------------
 
-#endif /* SIFIVE_COREPLEX_DEVICES_DEFINES_H_ */
+#endif /* SIFIVE_DEVICE_PERIPHERALS_H_ */

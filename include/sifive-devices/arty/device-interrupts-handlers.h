@@ -25,11 +25,13 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef SIFIVE_COREPLEX_DEVICES_FREEDOM_E310_GLOBAL_INTERRUPTS_HANDLERS_H_
-#define SIFIVE_COREPLEX_DEVICES_FREEDOM_E310_GLOBAL_INTERRUPTS_HANDLERS_H_
+#ifndef SIFIVE_DEVICES_ARTY_DEVICE_INTERRUPTS_HANDLERS_H_
+#define SIFIVE_DEVICES_ARTY_DEVICE_INTERRUPTS_HANDLERS_H_
 
 /*
- * SiFive Freedom E310 global interrupts handler functions.
+ * SiFive Core Complex IP E31/E51 global interrupts handler functions.
+ *
+ * TODO: split into
  */
 
 // ----------------------------------------------------------------------------
@@ -42,25 +44,13 @@ extern "C"
   // Global interrupt handlers.
 
   void
-  riscv_interrupt_global_handle_wdogcmp (void);
-
-  void
-  riscv_interrupt_global_handle_rtccmp (void);
-
-  void
   riscv_interrupt_global_handle_uart0 (void);
 
   void
-  riscv_interrupt_global_handle_uart1 (void);
+  riscv_interrupt_global_handle_external (void);
 
   void
-  riscv_interrupt_global_handle_qspi0 (void);
-
-  void
-  riscv_interrupt_global_handle_qspi1 (void);
-
-  void
-  riscv_interrupt_global_handle_qspi2 (void);
+  riscv_interrupt_global_handle_spi0 (void);
 
   void
   riscv_interrupt_global_handle_gpio0 (void);
@@ -111,54 +101,6 @@ extern "C"
   riscv_interrupt_global_handle_gpio15 (void);
 
   void
-  riscv_interrupt_global_handle_gpio16 (void);
-
-  void
-  riscv_interrupt_global_handle_gpio17 (void);
-
-  void
-  riscv_interrupt_global_handle_gpio18 (void);
-
-  void
-  riscv_interrupt_global_handle_gpio19 (void);
-
-  void
-  riscv_interrupt_global_handle_gpio20 (void);
-
-  void
-  riscv_interrupt_global_handle_gpio21 (void);
-
-  void
-  riscv_interrupt_global_handle_gpio22 (void);
-
-  void
-  riscv_interrupt_global_handle_gpio23 (void);
-
-  void
-  riscv_interrupt_global_handle_gpio24 (void);
-
-  void
-  riscv_interrupt_global_handle_gpio25 (void);
-
-  void
-  riscv_interrupt_global_handle_gpio26 (void);
-
-  void
-  riscv_interrupt_global_handle_gpio27 (void);
-
-  void
-  riscv_interrupt_global_handle_gpio28 (void);
-
-  void
-  riscv_interrupt_global_handle_gpio29 (void);
-
-  void
-  riscv_interrupt_global_handle_gpio30 (void);
-
-  void
-  riscv_interrupt_global_handle_gpio31 (void);
-
-  void
   riscv_interrupt_global_handle_pwm0cmp0 (void);
 
   void
@@ -170,34 +112,56 @@ extern "C"
   void
   riscv_interrupt_global_handle_pwm0cmp3 (void);
 
-  void
-  riscv_interrupt_global_handle_pwm1cmp0 (void);
-
-  void
-  riscv_interrupt_global_handle_pwm1cmp1 (void);
-
-  void
-  riscv_interrupt_global_handle_pwm1cmp2 (void);
-
-  void
-  riscv_interrupt_global_handle_pwm1cmp3 (void);
-
-  void
-  riscv_interrupt_global_handle_pwm2cmp0 (void);
-
-  void
-  riscv_interrupt_global_handle_pwm2cmp1 (void);
-
-  void
-  riscv_interrupt_global_handle_pwm2cmp2 (void);
-
-  void
-  riscv_interrupt_global_handle_pwm2cmp3 (void);
-
   // --------------------------------------------------------------------------
   // Local interrupt handlers.
 
-  // None.
+  void
+  riscv_interrupt_local_handle_device0 (void);
+
+  void
+  riscv_interrupt_local_handle_device1 (void);
+
+  void
+  riscv_interrupt_local_handle_device2 (void);
+
+  void
+  riscv_interrupt_local_handle_device3 (void);
+
+  void
+  riscv_interrupt_local_handle_device4 (void);
+
+  void
+  riscv_interrupt_local_handle_device5 (void);
+
+  void
+  riscv_interrupt_local_handle_device6 (void);
+
+  void
+  riscv_interrupt_local_handle_device7 (void);
+
+  void
+  riscv_interrupt_local_handle_device8 (void);
+
+  void
+  riscv_interrupt_local_handle_device9 (void);
+
+  void
+  riscv_interrupt_local_handle_device10 (void);
+
+  void
+  riscv_interrupt_local_handle_device11 (void);
+
+  void
+  riscv_interrupt_local_handle_device12 (void);
+
+  void
+  riscv_interrupt_local_handle_device13 (void);
+
+  void
+  riscv_interrupt_local_handle_device14 (void);
+
+  void
+  riscv_interrupt_local_handle_device15 (void);
 
 // ----------------------------------------------------------------------------
 
@@ -207,4 +171,4 @@ extern "C"
 
 // ----------------------------------------------------------------------------
 
-#endif /* SIFIVE_COREPLEX_DEVICES_FREEDOM_E310_GLOBAL_INTERRUPTS_HANDLERS_H_ */
+#endif /* SIFIVE_DEVICES_ARTY_DEVICE_INTERRUPTS_HANDLERS_H_ */

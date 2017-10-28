@@ -13,14 +13,14 @@
                 "devices": {
                     "fe310": {
                         "name": "Freedom E310-G000",
-                        "description": "The FE310-G000 is the first Freedom E300 SoC, and is the industry's first commercially available RISC-V SoC. The FE310-G000 is built around the E31 Coreplex instantiated in the Freedom E300 platform.",
+                        "description": "The FE310-G000 is the first Freedom E300 SoC, and is the industry's first commercially available RISC-V SoC. The FE310-G000 is built around the E31 Core Complex instantiated in the Freedom E300 platform.",
                         "url": "https://www.sifive.com/products/freedom-e310/",
                         "compile": {
                             "headers": [
                                 "<micro-os-plus/device.h>"
                             ],
                             "macros": [
-                                "SIFIVE_FREEDOM_E310"
+                                "SIFIVE_FE310"
                             ],
                             "target": [
                                 "-march=rv32imac",

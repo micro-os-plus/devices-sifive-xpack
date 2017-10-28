@@ -25,32 +25,23 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#include <micro-os-plus/device.h>
+#ifndef SIFIVE_ARTY_E31_DEFINES_H_
+#define SIFIVE_ARTY_E31_DEFINES_H_
 
-#include <cstddef>
+#include <stdint.h>
+
+// ----------------------------------------------------------------------------
+
+// TODO: sort them out
+
+// #define IRQ_M_LOCAL        16
+// #define MIP_MLIP(x)        (1 << (IRQ_M_LOCAL + x))
+
+// #define NUM_GPIO 16
+
+// Why 28?
+// #define PLIC_NUM_INTERRUPTS 28
 
 // ----------------------------------------------------------------------------
 
-namespace riscv
-{
-  namespace device
-  {
-  // ------------------------------------------------------------------------
-  // Device functions definitions.
-
-  // TODO: add functions.
-
-  // --------------------------------------------------------------------------
-  } /* namespace device */
-} /* namespace riscv */
-
-// ----------------------------------------------------------------------------
-// C aliases to the C++ functions.
-
-// TODO: add aliases.
-
-// uint64_t
-// __attribute__((alias("_ZN5riscv6device5mtimeEv")))
-// riscv_device_read_mtime (void);
-
-// ----------------------------------------------------------------------------
+#endif /* SIFIVE_ARTY_E31_DEFINES_H_ */

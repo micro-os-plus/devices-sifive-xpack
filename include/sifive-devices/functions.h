@@ -25,15 +25,21 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef SIFIVE_COREPLEX_DEVICES_FUNCTIONS_INLINES_H_
-#define SIFIVE_COREPLEX_DEVICES_FUNCTIONS_INLINES_H_
+#ifndef SIFIVE_DEVICES_FUNCTIONS_H_
+#define SIFIVE_DEVICES_FUNCTIONS_H_
 
-#include <sifive-coreplex-devices/defines.h>
+#include <sifive-devices/defines.h>
 
 #include <stdint.h>
 
 /*
- * Inline implementations for the Coreplex IP support functions.
+ * Core Complex IP support functions.
+ *
+ * Inline functions are first defined in C (prefixed with `riscv_device_`),
+ * then, for convenience, are redefined in C++ in the `riscv::device::`
+ * namespace.
+ *
+ * Regular functions are first defined in C++ then aliased to C.
  */
 
 // ----------------------------------------------------------------------------
@@ -42,7 +48,7 @@ extern "C"
 {
 #endif /* defined(__cplusplus) */
 
-// ----------------------------------------------------------------------------
+// --------------------------------------------------------------------------
 // Device support functions in C.
 
 // TODO: add functions.
@@ -67,11 +73,10 @@ namespace riscv
 
   // --------------------------------------------------------------------------
   } /* namespace device */
-// ----------------------------------------------------------------------------
 } /* namespace riscv */
 
 #endif /* defined(__cplusplus) */
 
 // ----------------------------------------------------------------------------
 
-#endif /* SIFIVE_COREPLEX_DEVICES_FUNCTIONS_INLINES_H_ */
+#endif /* SIFIVE_DEVICES_FUNCTIONS_H_ */
