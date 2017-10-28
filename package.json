@@ -4,7 +4,9 @@
   "description": "An xPack with the µOS++ support for the SiFive Core Complex devices",
   "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "link": "npm link xsvd",
+    "gen": "xsvd gen-headers --file xsvd/fe310-xsvd.json --dest include/sifive-devices/fe310; xsvd gen-headers --file xsvd/e31arty-xsvd.json --dest include/sifive-devices/arty/e31; xsvd gen-headers --file xsvd/e51arty-xsvd.json --dest include/sifive-devices/arty/e51"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,9 @@
   },
   "config": {},
   "dependencies": {},
+  "devDependencies": {
+    "xsvd": "~0.2.3"
+  },
   "xpack": {
     "dependencies": {
       "@micro-os-plus/riscv-arch": "~0.1.0"
