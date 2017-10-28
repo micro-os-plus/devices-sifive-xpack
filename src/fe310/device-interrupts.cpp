@@ -309,235 +309,63 @@ riscv_interrupts_global_handlers[] =
     riscv_interrupt_global_handle_pwm2cmp3 /* 51 */
   };
 
-#elif defined (SIFIVE_E31ARTY) || defined (SIFIVE_E51ARTY)
+static_assert(
+    sizeof(riscv_interrupts_global_handlers)/sizeof(riscv_interrupts_global_handlers[0]) == (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER + 1),
+    "riscv_interrupts_global_handlers[] size must match RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER");
+
+// ----------------------------------------------------------------------------
+
+// Architecture interrupts.
+void
+__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
+riscv_interrupt_local_handle_machine_software (void);
 
 void
 __attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_uart0 (void);
+riscv_interrupt_local_handle_machine_timer (void);
+
+#if !defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER)
 
 void
 __attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_external (void);
+riscv_interrupt_local_handle_machine_ext (void);
 
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_spi0 (void);
+#endif /* !defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER) */
 
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_gpio0 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_gpio1 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_gpio2 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_gpio3 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_gpio4 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_gpio5 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_gpio6 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_gpio7 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_gpio8 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_gpio9 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_gpio10 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_gpio11 (void);
-
-void __attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_gpio12 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_gpio13 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_gpio14 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_gpio15 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_pwm0cmp0 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_pwm0cmp1 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_pwm0cmp2 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_global_handle_pwm0cmp3 (void);
+// Device local interrupts.
+// (none)
 
 /*
  * Array of pointers to interrupt handlers. See Table 3.6 from Volume II.
  */
-riscv_trap_handler_ptr_t __attribute__ ((section(".interrupts_global_array")))
-riscv_interrupts_global_handlers[] =
-  { //
+riscv_trap_handler_ptr_t __attribute__ ((section(".interrupts_local_array")))
+riscv_interrupts_local_device_handlers[] =
+  { // Architecture interrupts.
     riscv_interrupt_device_handle_unused, /* 0 */
-    riscv_interrupt_global_handle_uart0, /* 1 */
-    riscv_interrupt_global_handle_external, /* 2 */
-    riscv_interrupt_device_handle_unused, /* 3 */
+    riscv_interrupt_device_handle_unused, /* 1 */
+    riscv_interrupt_device_handle_unused, /* 2 */
+    riscv_interrupt_local_handle_machine_software, /* 3 */
     riscv_interrupt_device_handle_unused, /* 4 */
     riscv_interrupt_device_handle_unused, /* 5 */
-    riscv_interrupt_global_handle_spi0, /* 6 */
-    riscv_interrupt_global_handle_gpio0, /* 7 */
-    riscv_interrupt_global_handle_gpio1, /* 8 */
-    riscv_interrupt_global_handle_gpio2, /* 9 */
-    riscv_interrupt_global_handle_gpio3, /* 10 */
-    riscv_interrupt_global_handle_gpio4, /* 11 */
-    riscv_interrupt_global_handle_gpio5, /* 12 */
-    riscv_interrupt_global_handle_gpio6, /* 13 */
-    riscv_interrupt_global_handle_gpio7, /* 14 */
-    riscv_interrupt_global_handle_gpio8, /* 15 */
-    riscv_interrupt_global_handle_gpio9, /* 16 */
-    riscv_interrupt_global_handle_gpio10, /* 17 */
-    riscv_interrupt_global_handle_gpio11, /* 18 */
-    riscv_interrupt_global_handle_gpio12, /* 19 */
-    riscv_interrupt_global_handle_gpio13, /* 20 */
-    riscv_interrupt_global_handle_gpio14, /* 21 */
-    riscv_interrupt_global_handle_gpio15, /* 22 */
-    riscv_interrupt_global_handle_pwm0cmp0, /* 23 */
-    riscv_interrupt_global_handle_pwm0cmp1, /* 24 */
-    riscv_interrupt_global_handle_pwm0cmp2, /* 25 */
-    riscv_interrupt_global_handle_pwm0cmp3 /* 26 */
+    riscv_interrupt_device_handle_unused, /* 6 */
+    riscv_interrupt_local_handle_machine_timer, /* 7 */
+    riscv_interrupt_device_handle_unused, /* 8 */
+    riscv_interrupt_device_handle_unused, /* 9 */
+    riscv_interrupt_device_handle_unused, /* 10 */
+    riscv_interrupt_local_handle_machine_ext, /* 11 */
+    riscv_interrupt_device_handle_unused, /* 12 */
+    riscv_interrupt_device_handle_unused, /* 13 */
+    riscv_interrupt_device_handle_unused, /* 14 */
+    riscv_interrupt_device_handle_unused, /* 15 */
+    // Device local interrupts.
+    // (none)
   };
 
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_local_handle_device0 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_local_handle_device1 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_local_handle_device2 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_local_handle_device3 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_local_handle_device4 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_local_handle_device5 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_local_handle_device6 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_local_handle_device7 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_local_handle_device8 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_local_handle_device9 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_local_handle_device10 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_local_handle_device11 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_local_handle_device12 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_local_handle_device13 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_local_handle_device14 (void);
-
-void
-__attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
-riscv_interrupt_local_handle_device15 (void);
-
-/*
- * Array of pointers to interrupt handlers. See Table 3.6 from Volume II.
- */
-riscv_trap_handler_ptr_t __attribute__ ((section(".interrupts_local_device_array")))
-riscv_interrupts_local_device_handlers[] =
-  { //
-    riscv_interrupt_local_handle_device0, /* 0 */
-    riscv_interrupt_local_handle_device1, /* 1 */
-    riscv_interrupt_local_handle_device2, /* 2 */
-    riscv_interrupt_local_handle_device3, /* 3 */
-    riscv_interrupt_local_handle_device4, /* 4 */
-    riscv_interrupt_local_handle_device5, /* 5 */
-    riscv_interrupt_local_handle_device6, /* 6 */
-    riscv_interrupt_local_handle_device7, /* 7 */
-    riscv_interrupt_local_handle_device8, /* 8 */
-    riscv_interrupt_local_handle_device9, /* 9 */
-    riscv_interrupt_local_handle_device10, /* 10 */
-    riscv_interrupt_local_handle_device11, /* 11 */
-    riscv_interrupt_local_handle_device12, /* 12 */
-    riscv_interrupt_local_handle_device13, /* 13 */
-    riscv_interrupt_local_handle_device14, /* 14 */
-    riscv_interrupt_local_handle_device15 /* 15 */
-  };
-
-#endif /* DEVICE */
-
 static_assert(
-    sizeof(riscv_interrupts_global_handlers)/sizeof(riscv_interrupts_global_handlers[0]) == (RISCV_INTERRUPTS_GLOBAL_NUMBEROF + 1),
-    "riscv_interrupts_global_handlers[] size must match RISCV_INTERRUPTS_GLOBAL_NUMBEROF");
+    sizeof(riscv_interrupts_local_device_handlers)/sizeof(riscv_interrupts_local_device_handlers[0]) == (RISCV_INTERRUPTS_LOCAL_LAST_NUMBER + 1),
+    "riscv_interrupts_local_device_handlers[] size must match RISCV_INTERRUPTS_LOCAL_LAST_NUMBER");
 
-#if defined(RISCV_INTERRUPTS_LOCAL_DEVICE_ARRAY_SIZE) && RISCV_INTERRUPTS_LOCAL_DEVICE_ARRAY_SIZE != 0
-
-static_assert(
-    sizeof(riscv_interrupts_local_device_handlers)/sizeof(riscv_interrupts_local_device_handlers[0]) == RISCV_INTERRUPTS_LOCAL_DEVICE_ARRAY_SIZE,
-    "riscv_interrupts_local_device_handlers[] size must match RISCV_INTERRUPTS_LOCAL_DEVICE_ARRAY_SIZE");
-
-#endif /* RISCV_INTERRUPTS_LOCAL_DEVICE_ARRAY_SIZE */
+// ----------------------------------------------------------------------------
 
 void
 __attribute__ ((section(".traps_handlers"),weak))
@@ -552,5 +380,7 @@ riscv_interrupt_device_handle_unused (void)
       riscv::arch::nop ();
     }
 }
+
+#endif /* DEVICE */
 
 // ----------------------------------------------------------------------------
