@@ -33,7 +33,7 @@
 #include <stdint.h>
 
 /*
- * Core Complex IP support functions.
+ * Device support functions.
  *
  * Inline functions are first defined in C (prefixed with `riscv_device_`),
  * then, for convenience, are redefined in C++ in the `riscv::device::`

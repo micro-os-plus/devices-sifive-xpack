@@ -41,7 +41,6 @@
 #error "Unsupported device"
 #endif
 
-
 // ----------------------------------------------------------------------------
 
 #endif /* SIFIVE_DEVICE_PERIPHERALS_H_ */

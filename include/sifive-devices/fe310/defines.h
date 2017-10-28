@@ -33,6 +33,7 @@
 // ----------------------------------------------------------------------------
 
 // TODO: make them consistent with the naming scheme.
+
 // IOF masks
 #define IOF0_SPI1_MASK          (0x000007FCUL)
 #define SPI11_NUM_SS     (4)
