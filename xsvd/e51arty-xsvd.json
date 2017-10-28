@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "0.2.2",
+  "schemaVersion": "0.2.3",
   "contentVersion": "0.1.0",
   "headerVersion": "0.1.0",
   "device": {
@@ -16,11 +16,12 @@
       "resetMask": "all",
       "resetValue": "0x0000000000000000",
       "access": "rw",
+      "headerGuardPrefix": "SIFIVE_DEVICES_ARTY_E51_",
       "headerTypePrefix": "sifive_e51arty_",
       "headerInterruptPrefix": "sifive_e51arty_interrupt_global_",
       "headerInterruptEnumPrefix": "riscv_interrupts_global_",
       "revision": "r0p0",
-      "numInterrupts": "511",
+      "numInterrupts": "26",
       "priorityBits": "3",
       "regWidth": "32",
       "cores": {
@@ -163,7 +164,7 @@
             }
           },
           "clusters": {
-            "enableshart0": {
+            "enablestarget0": {
               "description": "Hart 0 Interrupt Enable Bits",
               "addressOffset": "0x00002000",
               "clusters": {
@@ -180,7 +181,7 @@
                 }
               }
             },
-            "hart0": {
+            "target0": {
               "description": "Hart 0 Interrupt Thresholds",
               "addressOffset": "0x00200000",
               "clusters": {

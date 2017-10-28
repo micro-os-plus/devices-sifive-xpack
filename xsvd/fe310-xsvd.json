@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "0.2.2",
+  "schemaVersion": "0.2.3",
   "contentVersion": "0.1.0",
   "headerVersion": "0.1.0",
   "device": {
@@ -16,6 +16,7 @@
       "resetMask": "all",
       "resetValue": "0x00000000",
       "access": "rw",
+      "headerGuardPrefix": "SIFIVE_DEVICES_FE310_",
       "headerTypePrefix": "sifive_fe310_",
       "headerInterruptPrefix": "sifive_fe310_interrupt_global_",
       "headerInterruptEnumPrefix": "riscv_interrupts_global_",
@@ -119,7 +120,7 @@
             }
           },
           "clusters": {
-            "enableshart0": {
+            "enablestarget0": {
               "description": "Hart 0 Interrupt Enable Bits",
               "addressOffset": "0x00002000",
               "clusters": {
@@ -136,7 +137,7 @@
                 }
               }
             },
-            "hart0": {
+            "target0": {
               "description": "Hart 0 Interrupt Thresholds",
               "addressOffset": "0x00200000",
               "clusters": {
