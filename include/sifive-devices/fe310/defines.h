@@ -33,6 +33,7 @@
 // ----------------------------------------------------------------------------
 
 // TODO: make them consistent with the naming scheme.
+#define SIFIVE_FE310_GPIO_PINS_LAST_NUMBER (31u)
 
 // IOF masks
 #define IOF0_SPI1_MASK          (0x000007FCUL)
@@ -48,6 +49,12 @@
 #define IOF_SPI1_DQ1          (4u)
 #define IOF_SPI1_DQ2          (6u)
 #define IOF_SPI1_DQ3          (7u)
+// ----------------------------------------------------------------------------
+
+// The names of the RISCV_MMIO_ symbols are architecture specific,
+// but their values depend on a specific device implementation.
+// These definitions will be used in <riscv-arch/device-functions-inlines.h>,
+// included in <micro-os-plus/device..
 
 #define IOF0_SPI2_MASK          (0xFC000000UL)
 #define SPI2_NUM_SS       (1)
@@ -59,6 +66,9 @@
 #define IOF_SPI2_DQ1          (28u)
 #define IOF_SPI2_DQ2          (30u)
 #define IOF_SPI2_DQ3          (31u)
+#define RISCV_MMIO_MTIME_ADDRESS (SIFIVE_FE310_CLINT_BASE_ADDRESS + SIFIVE_FE310_CLINT_MTIME_OFFSET)
+#define RISCV_MMIO_MTIMECMP_ADDRESS (SIFIVE_FE310_CLINT_BASE_ADDRESS + SIFIVE_FE310_CLINT_MTIMECMP_OFFSET)
+
 
 //#define IOF0_I2C_MASK          (0x00003000UL)
 

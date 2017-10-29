@@ -34,17 +34,23 @@
 
 #define RISCV_INTERRUPTS_LOCAL_LAST_NUMBER (31u)
 
+#define SIFIVE_E51ARTY_GPIO_PINS_LAST_NUMBER (15u)
+
+// ----------------------------------------------------------------------------
+
+// The names of the RISCV_MMIO_ symbols are architecture specific,
+// but their values depend on a specific device implementation.
+// These definitions will be used in <riscv-arch/device-functions-inlines.h>,
+// included in <micro-os-plus/device..
+
+#define RISCV_MMIO_MTIME_ADDRESS (SIFIVE_E51ARTY_CLINT_BASE_ADDRESS + SIFIVE_E51ARTY_CLINT_MTIME_OFFSET)
+#define RISCV_MMIO_MTIMECMP_ADDRESS (SIFIVE_E51ARTY_CLINT_BASE_ADDRESS + SIFIVE_E51ARTY_CLINT_MTIMECMP_OFFSET)
+
 // ----------------------------------------------------------------------------
 
 // TODO: sort them out
 
-// #define IRQ_M_LOCAL        16
 // #define MIP_MLIP(x)        (1 << (IRQ_M_LOCAL + x))
-
-// #define NUM_GPIO 16
-
-// Why 28?
-// #define PLIC_NUM_INTERRUPTS 28
 
 // ----------------------------------------------------------------------------
 

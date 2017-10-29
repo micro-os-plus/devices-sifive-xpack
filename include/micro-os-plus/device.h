@@ -56,11 +56,16 @@
 
 // The names of the RISCV_MMIO_ symbols are architecture specific,
 // but their values depend on a specific device implementation.
-// These definitions will be used in <riscv-arch/device-functions-inlines.h>,
+// These definitions are used in <riscv-arch/device-functions-inlines.h>,
 // included below.
 
-#define RISCV_MMIO_MTIME_ADDRESS (&CLINT->mtime)
-#define RISCV_MMIO_MTIMECMP_ADDRESS (&CLINT->mtimecmp)
+#if !defined(RISCV_MMIO_MTIME_ADDRESS)
+#error "Define RISCV_MMIO_MTIME_ADDRESS in the device specific header file (defines.h)."
+#endif
+
+#if !defined(RISCV_MMIO_MTIMECMP_ADDRESS)
+#error "Define RISCV_MMIO_MTIMECMP_ADDRESS in the device specific header file (defines.h)."
+#endif
 
 #include <riscv-arch/device-functions.h>
 #include <riscv-arch/device-functions-inlines.h>
