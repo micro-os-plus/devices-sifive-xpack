@@ -44,9 +44,13 @@
 // ----------------------------------------------------------------------------
 // Defaults.
 
-#if !defined(RISCV_INTERRUPTS_LOCAL_LAST_NUMBER)
+#if defined(RISCV_INTERRUPTS_LOCAL_LAST_NUMBER)
+#if RISCV_INTERRUPTS_LOCAL_LAST_NUMBER < 15u
+#error "RISCV_INTERRUPTS_LOCAL_LAST_NUMBER must be >= 15"
+#endif
+#else
 #define RISCV_INTERRUPTS_LOCAL_LAST_NUMBER (15u)
-#endif /* !defined(RISCV_INTERRUPTS_LOCAL_LAST_NUMBER) */
+#endif /* defined(RISCV_INTERRUPTS_LOCAL_LAST_NUMBER) */
 
 // ----------------------------------------------------------------------------
 
