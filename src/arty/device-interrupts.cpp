@@ -263,7 +263,7 @@ riscv_interrupt_local_handle_device15 (void);
  * Array of pointers to interrupt handlers. See Table 3.6 from Volume II.
  */
 riscv_trap_handler_ptr_t __attribute__ ((section(".interrupts_local_array")))
-riscv_interrupts_local_device_handlers[] =
+riscv_interrupts_local_handlers[] =
   { // Architecture interrupts.
     riscv_interrupt_device_handle_unused, /* 0 */
     riscv_interrupt_device_handle_unused, /* 1 */
@@ -301,8 +301,8 @@ riscv_interrupts_local_device_handlers[] =
   };
 
 static_assert(
-    sizeof(riscv_interrupts_local_device_handlers)/sizeof(riscv_interrupts_local_device_handlers[0]) == (RISCV_INTERRUPTS_LOCAL_LAST_NUMBER + 1),
-    "riscv_interrupts_local_device_handlers[] size must match RISCV_INTERRUPTS_LOCAL_LAST_NUMBER");
+    sizeof(riscv_interrupts_local_handlers)/sizeof(riscv_interrupts_local_handlers[0]) == (RISCV_INTERRUPTS_LOCAL_LAST_NUMBER + 1),
+    "riscv_interrupts_local_handlers[] size must match RISCV_INTERRUPTS_LOCAL_LAST_NUMBER");
 
 // ----------------------------------------------------------------------------
 
