@@ -40,6 +40,7 @@ extern "C"
 
   // --------------------------------------------------------------------------
   // Global interrupt handlers.
+  // Read the names as `riscv::interrupt::global::handle_wdogcmp()`.
 
   void
   riscv_interrupt_global_handle_wdogcmp (void);
@@ -197,7 +198,18 @@ extern "C"
   // --------------------------------------------------------------------------
   // Local interrupt handlers.
 
-  // None.
+  void
+  riscv_interrupt_local_handle_machine_software (void);
+
+  void
+  riscv_interrupt_local_handle_machine_timer (void);
+
+  #if !defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER)
+  
+  void
+  riscv_interrupt_local_handle_machine_ext (void);
+
+  #endif /* !defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER) */
 
 // ----------------------------------------------------------------------------
 

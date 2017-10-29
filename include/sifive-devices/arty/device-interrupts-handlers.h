@@ -29,9 +29,7 @@
 #define SIFIVE_DEVICES_ARTY_DEVICE_INTERRUPTS_HANDLERS_H_
 
 /*
- * SiFive Core Complex IP E31/E51 global interrupts handler functions.
- *
- * TODO: split into
+ * SiFive Arty E31/E51 global interrupts handler functions.
  */
 
 // ----------------------------------------------------------------------------
@@ -41,7 +39,8 @@ extern "C"
 #endif /* defined(__cplusplus) */
 
   // --------------------------------------------------------------------------
-  // Global interrupt handlers.
+  // Global interrupt handlers. 
+  // Read the names as `riscv::interrupt::global::handle_uart0()`.
 
   void
   riscv_interrupt_global_handle_uart0 (void);
@@ -114,7 +113,21 @@ extern "C"
 
   // --------------------------------------------------------------------------
   // Local interrupt handlers.
+  // Read the names as `riscv::interrupt::local::device0()`.
 
+  void
+  riscv_interrupt_local_handle_machine_software (void);
+
+  void
+  riscv_interrupt_local_handle_machine_timer (void);
+
+  #if !defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER)
+  
+  void
+  riscv_interrupt_local_handle_machine_ext (void);
+
+  #endif /* !defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER) */
+  
   void
   riscv_interrupt_local_handle_device0 (void);
 
