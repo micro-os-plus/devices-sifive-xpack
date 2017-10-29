@@ -25,8 +25,8 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef SIFIVE_ARTY_E31_DEFINES_H_
-#define SIFIVE_ARTY_E31_DEFINES_H_
+#ifndef SIFIVE_DEVICES_ARTY_E31_DEFINES_H_
+#define SIFIVE_DEVICES_ARTY_E31_DEFINES_H_
 
 #include <stdint.h>
 
@@ -48,4 +48,4 @@
 
 // ----------------------------------------------------------------------------
 
-#endif /* SIFIVE_ARTY_E31_DEFINES_H_ */
+#endif /* SIFIVE_DEVICES_ARTY_E31_DEFINES_H_ */

@@ -25,8 +25,8 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef SIFIVE_DEVICE_PERIPHERALS_H_
-#define SIFIVE_DEVICE_PERIPHERALS_H_
+#ifndef SIFIVE_DEVICES_DEVICE_PERIPHERALS_H_
+#define SIFIVE_DEVICES_DEVICE_PERIPHERALS_H_
 
 // ----------------------------------------------------------------------------
 
@@ -43,4 +43,4 @@
 
 // ----------------------------------------------------------------------------
 
-#endif /* SIFIVE_DEVICE_PERIPHERALS_H_ */
+#endif /* SIFIVE_DEVICES_DEVICE_PERIPHERALS_H_ */
