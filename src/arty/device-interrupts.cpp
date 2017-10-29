@@ -40,10 +40,10 @@ extern "C"
 
 // ----------------------------------------------------------------------------
 
+#if defined (SIFIVE_E31ARTY) || defined (SIFIVE_E51ARTY)
+
 // To provide the desired functionality, redefine any of these
 // functions in the application.
-
-#if defined (SIFIVE_E31ARTY) || defined (SIFIVE_E51ARTY)
 
 void
 __attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
@@ -186,13 +186,19 @@ void
 __attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
 riscv_interrupt_local_handle_machine_timer (void);
 
-#if !defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER)
+#if defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER)
 
+extern void
+riscv_interrupt_local_handle_machine_ext (void);
+
+#else
+
+// Defined in the architecture package.
 void
 __attribute__ ((weak, alias ("riscv_interrupt_device_handle_unused")))
 riscv_interrupt_local_handle_machine_ext (void);
 
-#endif /* !defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER) */
+#endif /* defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER) */
 
 // Device local interrupts.
 void
