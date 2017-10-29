@@ -198,18 +198,15 @@ extern "C"
   // --------------------------------------------------------------------------
   // Local interrupt handlers.
 
+  // Architecture common handlers.
   void
   riscv_interrupt_local_handle_machine_software (void);
 
   void
   riscv_interrupt_local_handle_machine_timer (void);
 
-  #if !defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER)
-  
   void
   riscv_interrupt_local_handle_machine_ext (void);
-
-  #endif /* !defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER) */
 
 // ----------------------------------------------------------------------------
 

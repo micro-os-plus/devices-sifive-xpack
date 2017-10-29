@@ -115,19 +115,17 @@ extern "C"
   // Local interrupt handlers.
   // Read the names as `riscv::interrupt::local::device0()`.
 
+  // Architecture common handlers.
   void
   riscv_interrupt_local_handle_machine_software (void);
 
   void
   riscv_interrupt_local_handle_machine_timer (void);
 
-  #if !defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER)
-  
   void
   riscv_interrupt_local_handle_machine_ext (void);
 
-  #endif /* !defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER) */
-  
+  // Device specific handlers.
   void
   riscv_interrupt_local_handle_device0 (void);
 
