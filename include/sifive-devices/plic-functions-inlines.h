@@ -92,14 +92,14 @@ extern "C"
   riscv_plic_write_priority (riscv_plic_source_t global_interrupt_id,
                              riscv_plic_priority_t priority)
   {
-    PLIC->priorities_bits[global_interrupt_id].value = priority;
+    PLIC->priorities[global_interrupt_id] = priority;
   }
 
   static inline uint32_t
   __attribute__((always_inline))
   riscv_plic_read_priority (riscv_plic_source_t global_interrupt_id)
   {
-    return PLIC->priorities_bits[global_interrupt_id].value;
+    return PLIC->priorities[global_interrupt_id];
   }
 
   static inline riscv_plic_source_t
