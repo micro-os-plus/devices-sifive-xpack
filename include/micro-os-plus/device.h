@@ -44,9 +44,10 @@
 
 // ----------------------------------------------------------------------------
 
-// API function prototypes.
-#include <sifive-devices/functions.h>
-#include <sifive-devices/functions-inlines.h>
+// API function prototypes. 
+// Currently not used. 
+// #include <sifive-devices/functions.h>
+// #include <sifive-devices/functions-inlines.h>
 
 // ----------------------------------------------------------------------------
 
