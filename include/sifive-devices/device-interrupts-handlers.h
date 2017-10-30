@@ -32,8 +32,10 @@
 
 #if defined (SIFIVE_FE310)
 #include <sifive-devices/fe310/device-interrupts-handlers.h>
-#elif defined (SIFIVE_E31ARTY) || defined (SIFIVE_E51ARTY)
-#include <sifive-devices/arty/device-interrupts-handlers.h>
+#elif defined (SIFIVE_E31ARTY)
+#include <sifive-devices/arty/e31/device-interrupts-handlers.h>
+#elif defined (SIFIVE_E51ARTY)
+#include <sifive-devices/arty/e51/device-interrupts-handlers.h>
 #else
 #error "Unsupported device"
 #endif
