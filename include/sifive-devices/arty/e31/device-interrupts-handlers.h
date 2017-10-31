@@ -43,73 +43,73 @@ extern "C"
   // Read the names as `sifive::e31arty::interrupt::global::handle_uart0()`.
 
   void
-  sifive_e31arty_interrupt_global_handle_uart0 (void);
+  sifive_interrupt_global_handle_uart0 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_external (void);
+  sifive_interrupt_global_handle_external (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_spi0 (void);
+  sifive_interrupt_global_handle_spi0 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_gpio0 (void);
+  sifive_interrupt_global_handle_gpio0 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_gpio1 (void);
+  sifive_interrupt_global_handle_gpio1 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_gpio2 (void);
+  sifive_interrupt_global_handle_gpio2 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_gpio3 (void);
+  sifive_interrupt_global_handle_gpio3 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_gpio4 (void);
+  sifive_interrupt_global_handle_gpio4 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_gpio5 (void);
+  sifive_interrupt_global_handle_gpio5 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_gpio6 (void);
+  sifive_interrupt_global_handle_gpio6 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_gpio7 (void);
+  sifive_interrupt_global_handle_gpio7 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_gpio8 (void);
+  sifive_interrupt_global_handle_gpio8 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_gpio9 (void);
+  sifive_interrupt_global_handle_gpio9 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_gpio10 (void);
+  sifive_interrupt_global_handle_gpio10 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_gpio11 (void);
+  sifive_interrupt_global_handle_gpio11 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_gpio12 (void);
+  sifive_interrupt_global_handle_gpio12 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_gpio13 (void);
+  sifive_interrupt_global_handle_gpio13 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_gpio14 (void);
+  sifive_interrupt_global_handle_gpio14 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_gpio15 (void);
+  sifive_interrupt_global_handle_gpio15 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_pwm0cmp0 (void);
+  sifive_interrupt_global_handle_pwm0cmp0 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_pwm0cmp1 (void);
+  sifive_interrupt_global_handle_pwm0cmp1 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_pwm0cmp2 (void);
+  sifive_interrupt_global_handle_pwm0cmp2 (void);
 
   void
-  sifive_e31arty_interrupt_global_handle_pwm0cmp3 (void);
+  sifive_interrupt_global_handle_pwm0cmp3 (void);
 
   // --------------------------------------------------------------------------
   // Local interrupt handlers.
@@ -127,52 +127,52 @@ extern "C"
 
   // Device specific handlers.
   void
-  sifive_e31arty_interrupt_local_handle_device0 (void);
+  sifive_interrupt_local_handle_device0 (void);
 
   void
-  sifive_e31arty_interrupt_local_handle_device1 (void);
+  sifive_interrupt_local_handle_device1 (void);
 
   void
-  sifive_e31arty_interrupt_local_handle_device2 (void);
+  sifive_interrupt_local_handle_device2 (void);
 
   void
-  sifive_e31arty_interrupt_local_handle_device3 (void);
+  sifive_interrupt_local_handle_device3 (void);
 
   void
-  sifive_e31arty_interrupt_local_handle_device4 (void);
+  sifive_interrupt_local_handle_device4 (void);
 
   void
-  sifive_e31arty_interrupt_local_handle_device5 (void);
+  sifive_interrupt_local_handle_device5 (void);
 
   void
-  sifive_e31arty_interrupt_local_handle_device6 (void);
+  sifive_interrupt_local_handle_device6 (void);
 
   void
-  sifive_e31arty_interrupt_local_handle_device7 (void);
+  sifive_interrupt_local_handle_device7 (void);
 
   void
-  sifive_e31arty_interrupt_local_handle_device8 (void);
+  sifive_interrupt_local_handle_device8 (void);
 
   void
-  sifive_e31arty_interrupt_local_handle_device9 (void);
+  sifive_interrupt_local_handle_device9 (void);
 
   void
-  sifive_e31arty_interrupt_local_handle_device10 (void);
+  sifive_interrupt_local_handle_device10 (void);
 
   void
-  sifive_e31arty_interrupt_local_handle_device11 (void);
+  sifive_interrupt_local_handle_device11 (void);
 
   void
-  sifive_e31arty_interrupt_local_handle_device12 (void);
+  sifive_interrupt_local_handle_device12 (void);
 
   void
-  sifive_e31arty_interrupt_local_handle_device13 (void);
+  sifive_interrupt_local_handle_device13 (void);
 
   void
-  sifive_e31arty_interrupt_local_handle_device14 (void);
+  sifive_interrupt_local_handle_device14 (void);
 
   void
-  sifive_e31arty_interrupt_local_handle_device15 (void);
+  sifive_interrupt_local_handle_device15 (void);
 
 // ----------------------------------------------------------------------------
 

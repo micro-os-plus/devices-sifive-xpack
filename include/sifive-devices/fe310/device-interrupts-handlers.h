@@ -43,157 +43,157 @@ extern "C"
   // Read the names as `sifive::fe310::interrupt::global::handle_wdogcmp()`.
 
   void
-  sifive_fe310_interrupt_global_handle_wdogcmp (void);
+  sifive_interrupt_global_handle_wdogcmp (void);
 
   void
-  sifive_fe310_interrupt_global_handle_rtccmp (void);
+  sifive_interrupt_global_handle_rtccmp (void);
 
   void
-  sifive_fe310_interrupt_global_handle_uart0 (void);
+  sifive_interrupt_global_handle_uart0 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_uart1 (void);
+  sifive_interrupt_global_handle_uart1 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_qspi0 (void);
+  sifive_interrupt_global_handle_qspi0 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_qspi1 (void);
+  sifive_interrupt_global_handle_qspi1 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_qspi2 (void);
+  sifive_interrupt_global_handle_qspi2 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio0 (void);
+  sifive_interrupt_global_handle_gpio0 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio1 (void);
+  sifive_interrupt_global_handle_gpio1 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio2 (void);
+  sifive_interrupt_global_handle_gpio2 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio3 (void);
+  sifive_interrupt_global_handle_gpio3 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio4 (void);
+  sifive_interrupt_global_handle_gpio4 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio5 (void);
+  sifive_interrupt_global_handle_gpio5 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio6 (void);
+  sifive_interrupt_global_handle_gpio6 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio7 (void);
+  sifive_interrupt_global_handle_gpio7 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio8 (void);
+  sifive_interrupt_global_handle_gpio8 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio9 (void);
+  sifive_interrupt_global_handle_gpio9 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio10 (void);
+  sifive_interrupt_global_handle_gpio10 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio11 (void);
+  sifive_interrupt_global_handle_gpio11 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio12 (void);
+  sifive_interrupt_global_handle_gpio12 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio13 (void);
+  sifive_interrupt_global_handle_gpio13 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio14 (void);
+  sifive_interrupt_global_handle_gpio14 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio15 (void);
+  sifive_interrupt_global_handle_gpio15 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio16 (void);
+  sifive_interrupt_global_handle_gpio16 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio17 (void);
+  sifive_interrupt_global_handle_gpio17 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio18 (void);
+  sifive_interrupt_global_handle_gpio18 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio19 (void);
+  sifive_interrupt_global_handle_gpio19 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio20 (void);
+  sifive_interrupt_global_handle_gpio20 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio21 (void);
+  sifive_interrupt_global_handle_gpio21 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio22 (void);
+  sifive_interrupt_global_handle_gpio22 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio23 (void);
+  sifive_interrupt_global_handle_gpio23 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio24 (void);
+  sifive_interrupt_global_handle_gpio24 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio25 (void);
+  sifive_interrupt_global_handle_gpio25 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio26 (void);
+  sifive_interrupt_global_handle_gpio26 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio27 (void);
+  sifive_interrupt_global_handle_gpio27 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio28 (void);
+  sifive_interrupt_global_handle_gpio28 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio29 (void);
+  sifive_interrupt_global_handle_gpio29 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio30 (void);
+  sifive_interrupt_global_handle_gpio30 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_gpio31 (void);
+  sifive_interrupt_global_handle_gpio31 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_pwm0cmp0 (void);
+  sifive_interrupt_global_handle_pwm0cmp0 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_pwm0cmp1 (void);
+  sifive_interrupt_global_handle_pwm0cmp1 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_pwm0cmp2 (void);
+  sifive_interrupt_global_handle_pwm0cmp2 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_pwm0cmp3 (void);
+  sifive_interrupt_global_handle_pwm0cmp3 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_pwm1cmp0 (void);
+  sifive_interrupt_global_handle_pwm1cmp0 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_pwm1cmp1 (void);
+  sifive_interrupt_global_handle_pwm1cmp1 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_pwm1cmp2 (void);
+  sifive_interrupt_global_handle_pwm1cmp2 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_pwm1cmp3 (void);
+  sifive_interrupt_global_handle_pwm1cmp3 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_pwm2cmp0 (void);
+  sifive_interrupt_global_handle_pwm2cmp0 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_pwm2cmp1 (void);
+  sifive_interrupt_global_handle_pwm2cmp1 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_pwm2cmp2 (void);
+  sifive_interrupt_global_handle_pwm2cmp2 (void);
 
   void
-  sifive_fe310_interrupt_global_handle_pwm2cmp3 (void);
+  sifive_interrupt_global_handle_pwm2cmp3 (void);
 
   // --------------------------------------------------------------------------
   // Local interrupt handlers.
