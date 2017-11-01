@@ -99,9 +99,9 @@
           "size": "0x4000000",
           "registers": {
             "priorities": {
-              "arraySize": "51",
-              "description": "Interrupt Priorities Registers",
-              "addressOffset": "0x0004",
+              "arraySize": "52",
+              "description": "Interrupt Priorities Registers; 0 is reserved.",
+              "addressOffset": "0x0000",
               "fields": {
                 "value": {
                   "description": "The priority for a given global interrupt",

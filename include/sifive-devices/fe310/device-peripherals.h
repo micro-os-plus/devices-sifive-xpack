@@ -34,7 +34,7 @@
  * @brief µOS++ Core - device peripherals header file
  *  for Freedom E310-G000 from SiFive, Inc.
  * @version 0.1.0
- * @date 2017-10-28
+ * @date 2017-11-01
  * @note Generated from fe310-xsvd.json@0.1.0 with xsvd@0.2.3.
  */
 
@@ -234,23 +234,22 @@ typedef struct {
  */
 
 typedef struct {
-       uint32_t reserved1;
 
        union {
-         IO__ uint32_t priorities[51];  /**< @0x0C000004: Interrupt Priorities Registers */
+         IO__ uint32_t priorities[52];  /**< @0x0C000000: Interrupt Priorities Registers; 0 is reserved. */
 
          struct {
            IO__ uint32_t value : 3;  /**< [2..0] The priority for a given global interrupt */
                 uint32_t : 29;
-         } priorities_bits[51];
+         } priorities_bits[52];
        };
-       uint32_t reserved2[972];
+       uint32_t reserved1[972];
   I__  uint32_t pendings[2];  /**< @0x0C001000: Interrupt Pending Bits Registers */
-       uint64_t reserved3[511];
+       uint64_t reserved2[511];
        sifive_fe310_plic_enablestarget0_t enablestarget0;  /**< @0x0C002000: Hart 0 Interrupt Enable Bits */
-       uint64_t reserved4[261119];
+       uint64_t reserved3[261119];
        sifive_fe310_plic_target0_t target0;  /**< @0x0C200000: Hart 0 Interrupt Thresholds */
-       uint32_t reserved5[16252926];
+       uint32_t reserved4[16252926];
 } sifive_fe310_plic_t; // 0x0FFFFFFF
 
 // ----------------------------------------------------------------------------
@@ -1418,7 +1417,7 @@ typedef enum {
 // ----------------------------------------------------------------------------
 // Peripheral 'plic' offsets.
 
-#define SIFIVE_FE310_PLIC_PRIORITIES_OFFSET (0x00000004ul)  /**< 0x0C000004: Interrupt Priorities Registers */
+#define SIFIVE_FE310_PLIC_PRIORITIES_OFFSET (0x00000000ul)  /**< 0x0C000000: Interrupt Priorities Registers; 0 is reserved. */
 #define SIFIVE_FE310_PLIC_PENDINGS_OFFSET (0x00001000ul)  /**< 0x0C001000: Interrupt Pending Bits Registers */
 #define SIFIVE_FE310_PLIC_ENABLESTARGET0_OFFSET (0x00002000ul)  /**< 0x0C002000: Hart 0 Interrupt Enable Bits */
 #define SIFIVE_FE310_PLIC_ENABLESTARGET0_M_OFFSET (0x00002000ul)  /**< 0x0C002000: Hart 0 M-mode Interrupt Enable Bits */
