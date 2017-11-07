@@ -313,7 +313,7 @@
             }
           },
           "interrupts": {
-            "rtcmp": {
+            "rtccmp": {
               "description": "RTC Compare Interrupt",
               "value": "2"
             }
