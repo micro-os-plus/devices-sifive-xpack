@@ -34,7 +34,7 @@
  * @brief µOS++ Core - device peripherals header file
  *  for Freedom E310-G000 from SiFive, Inc.
  * @version 0.1.0
- * @date 2017-11-01
+ * @date 2017-11-07
  * @note Generated from fe310-xsvd.json@0.1.0 with xsvd@0.2.3.
  */
 
@@ -70,7 +70,7 @@ extern "C"
 
 typedef enum {
   sifive_fe310_interrupt_global_wdogcmp = 1, /**< Watchdog Compare Interrupt */
-  sifive_fe310_interrupt_global_rtcmp = 2, /**< RTC Compare Interrupt */
+  sifive_fe310_interrupt_global_rtccmp = 2, /**< RTC Compare Interrupt */
   sifive_fe310_interrupt_global_uart0 = 3, /**< UART0 Interrupt */
   sifive_fe310_interrupt_global_uart1 = 4, /**< UART1 Interrupt */
   sifive_fe310_interrupt_global_qspi0 = 5, /**< QSPI0 Interrupt */
@@ -255,13 +255,13 @@ typedef struct {
 // ----------------------------------------------------------------------------
 
 /**
- * @brief Always-On (AON) Domain.
+ * @brief Watchdog Timer (WDT), part of Always-On Domain.
  */
 
 typedef struct {
 
        union {
-         IO__ uint32_t wdogcfg;  /**< @0x10000000: Watchdog Configuration Register */
+         IO__ uint32_t cfg;  /**< @0x10000000: Watchdog Configuration Register */
 
          struct {
            IO__ uint32_t scale : 4;  /**< [3..0] Watchdog counter scale */
@@ -274,36 +274,45 @@ typedef struct {
                 uint32_t : 14;
            IO__ uint32_t cmpip : 1;  /**< [28..28] Watchdog interrupt pending */
                 uint32_t : 3;
-         } wdogcfg_bits;
+         } cfg_bits;
        };
        uint32_t reserved1;
-  IO__ uint32_t wdogcount;  /**< @0x10000008: Watchdog Count Register */
+  IO__ uint32_t count;  /**< @0x10000008: Watchdog Count Register */
        uint32_t reserved2;
 
        union {
-         IO__ uint32_t wdogs;  /**< @0x10000010: Watchdog Scale Register */
+         IO__ uint32_t scale;  /**< @0x10000010: Watchdog Scale Register */
 
          struct {
            IO__ uint32_t scale : 16;  /**< [15..0] Watchdog scale value */
                 uint32_t : 16;
-         } wdogs_bits;
+         } scale_bits;
        };
        uint32_t reserved3;
-  IO__ uint32_t wdogfeed;  /**< @0x10000018: Watchdog Feed Address Register */
-  IO__ uint32_t wdogkey;  /**< @0x1000001C: Watchdog Key Register */
+  IO__ uint32_t feed;  /**< @0x10000018: Watchdog Feed Address Register */
+  IO__ uint32_t key;  /**< @0x1000001C: Watchdog Key Register */
 
        union {
-         IO__ uint32_t wdogcmp;  /**< @0x10000020: Watchdog Compare Register */
+         IO__ uint32_t cmp;  /**< @0x10000020: Watchdog Compare Register */
 
          struct {
            IO__ uint32_t cmp : 16;  /**< [15..0] Watchdog compare value */
                 uint32_t : 16;
-         } wdogcmp_bits;
+         } cmp_bits;
        };
        uint32_t reserved4[7];
+} sifive_fe310_wdog_t; // 0x1000003F
+
+// ----------------------------------------------------------------------------
+
+/**
+ * @brief Real-Time Clock (RTC), part of Always-On Domain.
+ */
+
+typedef struct {
 
        union {
-         IO__ uint32_t rtccfg;  /**< @0x10000040: RTC Configuration Register */
+         IO__ uint32_t cfg;  /**< @0x10000040: RTC Configuration Register */
 
          struct {
            IO__ uint32_t scale : 4;  /**< [3..0] RTC clock rate scale */
@@ -312,23 +321,32 @@ typedef struct {
                 uint32_t : 15;
            I__  uint32_t cmpip : 1;  /**< [28..28] RTC comparator interrupt pending */
                 uint32_t : 3;
-         } rtccfg_bits;
+         } cfg_bits;
        };
-       uint32_t reserved5;
-  IO__ uint32_t rtclo;  /**< @0x10000048: RTC Counter Register Low */
+       uint32_t reserved1;
+  IO__ uint32_t low;  /**< @0x10000048: RTC Counter Register Low */
 
        union {
-         IO__ uint32_t rtchi;  /**< @0x1000004C: RTC Counter Register High */
+         IO__ uint32_t high;  /**< @0x1000004C: RTC Counter Register High */
 
          struct {
            IO__ uint32_t high : 16;  /**< [15..0] RTC counter register, high bits */
                 uint32_t : 16;
-         } rtchi_bits;
+         } high_bits;
        };
-  IO__ uint32_t rtcs;  /**< @0x10000050: RTC Scale Register */
-       uint32_t reserved6[3];
-  IO__ uint32_t rtccmp;  /**< @0x10000060: RTC Compare Register */
-       uint32_t reserved7[3];
+  IO__ uint32_t scale;  /**< @0x10000050: RTC Scale Register */
+       uint32_t reserved2[3];
+  IO__ uint32_t cmp;  /**< @0x10000060: RTC Compare Register */
+       uint32_t reserved3[3];
+} sifive_fe310_rtc_t; // 0x1000006F
+
+// ----------------------------------------------------------------------------
+
+/**
+ * @brief Always-On (AON) Domain.
+ */
+
+typedef struct {
 
        union {
          IO__ uint32_t lfrosccfg;  /**< @0x10000070: Internal Programmable Low-Frequency Ring Oscillator Register */
@@ -342,36 +360,44 @@ typedef struct {
            I__  uint32_t rdy : 1;  /**< [31..31] LFROSC ready */
          } lfrosccfg_bits;
        };
-       uint32_t reserved8[3];
+       uint32_t reserved1[3];
   IO__ uint32_t backup[32];  /**< @0x10000080: Backup Registers */
-  IO__ uint32_t pmuwakeupi[8];  /**< @0x10000100: Wakeup program instruction Registers */
-  IO__ uint32_t pmusleepi[8];  /**< @0x10000120: Sleep Program Instruction Registers */
+} sifive_fe310_aon_t; // 0x100000FF
+
+// ----------------------------------------------------------------------------
+
+/**
+ * @brief Power-Management Unit (PMU), part of Always-On Domain.
+ */
+
+typedef struct {
+  IO__ uint32_t wakeupi[8];  /**< @0x10000100: Wakeup program instruction Registers */
+  IO__ uint32_t sleepi[8];  /**< @0x10000120: Sleep Program Instruction Registers */
 
        union {
-         IO__ uint32_t pmuie;  /**< @0x10000140: PMU Interrupt Enables Register */
+         IO__ uint32_t ie;  /**< @0x10000140: PMU Interrupt Enables Register */
 
          struct {
                 uint32_t : 1;
            IO__ uint32_t rtc : 1;  /**< [1..1] RTC Comparator active */
            IO__ uint32_t dwakeup : 1;  /**< [2..2] dwakeup_n pin active */
                 uint32_t : 29;
-         } pmuie_bits;
+         } ie_bits;
        };
 
        union {
-         IO__ uint32_t pmucause;  /**< @0x10000144: PMU Wakeup Cause Register */
+         IO__ uint32_t cause;  /**< @0x10000144: PMU Wakeup Cause Register */
 
          struct {
            I__  uint32_t wakeupcause : 2;  /**< [1..0] Wakeup cause */
                 uint32_t : 6;
            I__  uint32_t resetcause : 2;  /**< [9..8] Reset cause */
                 uint32_t : 22;
-         } pmucause_bits;
+         } cause_bits;
        };
-  IO__ uint32_t pmusleep;  /**< @0x10000148: Initiate Sleep Sequence Register */
-  IO__ uint32_t pmukey;  /**< @0x1000014C: PMU Key Register */
-       uint32_t reserved9[8108];
-} sifive_fe310_aon_t; // 0x10007FFF
+  IO__ uint32_t sleep;  /**< @0x10000148: PMU Initiate Sleep Sequence Register */
+  IO__ uint32_t key;  /**< @0x1000014C: PMU Key Register */
+} sifive_fe310_pmu_t; // 0x1000014F
 
 // ----------------------------------------------------------------------------
 
@@ -862,10 +888,10 @@ typedef struct {
  */
 
 typedef enum {
-  sifive_fe310_aon_pmucause_wakeupcause_reset = 0, /**< Reset Wakeup */
-  sifive_fe310_aon_pmucause_wakeupcause_rtc = 1, /**< RTC Wakeup */
-  sifive_fe310_aon_pmucause_wakeupcause_dwakeup = 2, /**< Digital input Wakeup */
-} sifive_fe310_aon_pmucause_wakeupcause_enum_t;
+  sifive_fe310_pmu_cause_wakeupcause_reset = 0, /**< Reset Wakeup */
+  sifive_fe310_pmu_cause_wakeupcause_rtc = 1, /**< RTC Wakeup */
+  sifive_fe310_pmu_cause_wakeupcause_dwakeup = 2, /**< Digital input Wakeup */
+} sifive_fe310_pmu_cause_wakeupcause_enum_t;
 
 // ----------------------------------------------------------------------------
 
@@ -874,9 +900,9 @@ typedef enum {
  */
 
 typedef enum {
-  sifive_fe310_aon_pmucause_resetcause_external = 1, /**< External reset */
-  sifive_fe310_aon_pmucause_resetcause_watchdog = 2, /**< Watchdog timer reset */
-} sifive_fe310_aon_pmucause_resetcause_enum_t;
+  sifive_fe310_pmu_cause_resetcause_external = 1, /**< External reset */
+  sifive_fe310_pmu_cause_resetcause_watchdog = 2, /**< Watchdog timer reset */
+} sifive_fe310_pmu_cause_resetcause_enum_t;
 
 // ----------------------------------------------------------------------------
 
@@ -964,48 +990,54 @@ typedef enum {
 #define SIFIVE_FE310_PLIC_PRIORITIES_VALUE_MASK  (0x7ul << 0ul)  /**< [2..0] The priority for a given global interrupt */
 
 // ----------------------------------------------------------------------------
+// Struct 'sifive_fe310_wdog_t' positions & masks.
+
+// Register 'wdog.cfg'.
+#define SIFIVE_FE310_WDOG_CFG_SCALE_POSITION  (0ul)
+#define SIFIVE_FE310_WDOG_CFG_SCALE_MASK  (0xFul << 0ul)  /**< [3..0] Watchdog counter scale */
+#define SIFIVE_FE310_WDOG_CFG_RSTEN_POSITION  (8ul)
+#define SIFIVE_FE310_WDOG_CFG_RSTEN_MASK  (0x1ul << 8ul)  /**< [8..8] Watchdog full reset enable */
+#define SIFIVE_FE310_WDOG_CFG_RSTEN  (1ul << 8ul)
+#define SIFIVE_FE310_WDOG_CFG_ZEROCMP_POSITION  (9ul)
+#define SIFIVE_FE310_WDOG_CFG_ZEROCMP_MASK  (0x1ul << 9ul)  /**< [9..9] Watchdog zero on comparator */
+#define SIFIVE_FE310_WDOG_CFG_ZEROCMP  (1ul << 9ul)
+#define SIFIVE_FE310_WDOG_CFG_ENALWAYS_POSITION  (12ul)
+#define SIFIVE_FE310_WDOG_CFG_ENALWAYS_MASK  (0x1ul << 12ul)  /**< [12..12] Watchdog enable counter always */
+#define SIFIVE_FE310_WDOG_CFG_ENALWAYS  (1ul << 12ul)
+#define SIFIVE_FE310_WDOG_CFG_ENCOREAWAKE_POSITION  (13ul)
+#define SIFIVE_FE310_WDOG_CFG_ENCOREAWAKE_MASK  (0x1ul << 13ul)  /**< [13..13] Watchdog counter only when awake */
+#define SIFIVE_FE310_WDOG_CFG_ENCOREAWAKE  (1ul << 13ul)
+#define SIFIVE_FE310_WDOG_CFG_CMPIP_POSITION  (28ul)
+#define SIFIVE_FE310_WDOG_CFG_CMPIP_MASK  (0x1ul << 28ul)  /**< [28..28] Watchdog interrupt pending */
+#define SIFIVE_FE310_WDOG_CFG_CMPIP  (1ul << 28ul)
+
+// Register 'wdog.scale'.
+#define SIFIVE_FE310_WDOG_SCALE_SCALE_POSITION  (0ul)
+#define SIFIVE_FE310_WDOG_SCALE_SCALE_MASK  (0xFFFFul << 0ul)  /**< [15..0] Watchdog scale value */
+
+// Register 'wdog.cmp'.
+#define SIFIVE_FE310_WDOG_CMP_CMP_POSITION  (0ul)
+#define SIFIVE_FE310_WDOG_CMP_CMP_MASK  (0xFFFFul << 0ul)  /**< [15..0] Watchdog compare value */
+
+// ----------------------------------------------------------------------------
+// Struct 'sifive_fe310_rtc_t' positions & masks.
+
+// Register 'rtc.cfg'.
+#define SIFIVE_FE310_RTC_CFG_SCALE_POSITION  (0ul)
+#define SIFIVE_FE310_RTC_CFG_SCALE_MASK  (0xFul << 0ul)  /**< [3..0] RTC clock rate scale */
+#define SIFIVE_FE310_RTC_CFG_ENALWAYS_POSITION  (12ul)
+#define SIFIVE_FE310_RTC_CFG_ENALWAYS_MASK  (0x1ul << 12ul)  /**< [12..12] RTC counter enable */
+#define SIFIVE_FE310_RTC_CFG_ENALWAYS  (1ul << 12ul)
+#define SIFIVE_FE310_RTC_CFG_CMPIP_POSITION  (28ul)
+#define SIFIVE_FE310_RTC_CFG_CMPIP_MASK  (0x1ul << 28ul)  /**< [28..28] RTC comparator interrupt pending */
+#define SIFIVE_FE310_RTC_CFG_CMPIP  (1ul << 28ul)
+
+// Register 'rtc.high'.
+#define SIFIVE_FE310_RTC_HIGH_HIGH_POSITION  (0ul)
+#define SIFIVE_FE310_RTC_HIGH_HIGH_MASK  (0xFFFFul << 0ul)  /**< [15..0] RTC counter register, high bits */
+
+// ----------------------------------------------------------------------------
 // Struct 'sifive_fe310_aon_t' positions & masks.
-
-// Register 'aon.wdogcfg'.
-#define SIFIVE_FE310_AON_WDOGCFG_SCALE_POSITION  (0ul)
-#define SIFIVE_FE310_AON_WDOGCFG_SCALE_MASK  (0xFul << 0ul)  /**< [3..0] Watchdog counter scale */
-#define SIFIVE_FE310_AON_WDOGCFG_RSTEN_POSITION  (8ul)
-#define SIFIVE_FE310_AON_WDOGCFG_RSTEN_MASK  (0x1ul << 8ul)  /**< [8..8] Watchdog full reset enable */
-#define SIFIVE_FE310_AON_WDOGCFG_RSTEN  (1ul << 8ul)
-#define SIFIVE_FE310_AON_WDOGCFG_ZEROCMP_POSITION  (9ul)
-#define SIFIVE_FE310_AON_WDOGCFG_ZEROCMP_MASK  (0x1ul << 9ul)  /**< [9..9] Watchdog zero on comparator */
-#define SIFIVE_FE310_AON_WDOGCFG_ZEROCMP  (1ul << 9ul)
-#define SIFIVE_FE310_AON_WDOGCFG_ENALWAYS_POSITION  (12ul)
-#define SIFIVE_FE310_AON_WDOGCFG_ENALWAYS_MASK  (0x1ul << 12ul)  /**< [12..12] Watchdog enable counter always */
-#define SIFIVE_FE310_AON_WDOGCFG_ENALWAYS  (1ul << 12ul)
-#define SIFIVE_FE310_AON_WDOGCFG_ENCOREAWAKE_POSITION  (13ul)
-#define SIFIVE_FE310_AON_WDOGCFG_ENCOREAWAKE_MASK  (0x1ul << 13ul)  /**< [13..13] Watchdog counter only when awake */
-#define SIFIVE_FE310_AON_WDOGCFG_ENCOREAWAKE  (1ul << 13ul)
-#define SIFIVE_FE310_AON_WDOGCFG_CMPIP_POSITION  (28ul)
-#define SIFIVE_FE310_AON_WDOGCFG_CMPIP_MASK  (0x1ul << 28ul)  /**< [28..28] Watchdog interrupt pending */
-#define SIFIVE_FE310_AON_WDOGCFG_CMPIP  (1ul << 28ul)
-
-// Register 'aon.wdogs'.
-#define SIFIVE_FE310_AON_WDOGS_SCALE_POSITION  (0ul)
-#define SIFIVE_FE310_AON_WDOGS_SCALE_MASK  (0xFFFFul << 0ul)  /**< [15..0] Watchdog scale value */
-
-// Register 'aon.wdogcmp'.
-#define SIFIVE_FE310_AON_WDOGCMP_CMP_POSITION  (0ul)
-#define SIFIVE_FE310_AON_WDOGCMP_CMP_MASK  (0xFFFFul << 0ul)  /**< [15..0] Watchdog compare value */
-
-// Register 'aon.rtccfg'.
-#define SIFIVE_FE310_AON_RTCCFG_SCALE_POSITION  (0ul)
-#define SIFIVE_FE310_AON_RTCCFG_SCALE_MASK  (0xFul << 0ul)  /**< [3..0] RTC clock rate scale */
-#define SIFIVE_FE310_AON_RTCCFG_ENALWAYS_POSITION  (12ul)
-#define SIFIVE_FE310_AON_RTCCFG_ENALWAYS_MASK  (0x1ul << 12ul)  /**< [12..12] RTC counter enable */
-#define SIFIVE_FE310_AON_RTCCFG_ENALWAYS  (1ul << 12ul)
-#define SIFIVE_FE310_AON_RTCCFG_CMPIP_POSITION  (28ul)
-#define SIFIVE_FE310_AON_RTCCFG_CMPIP_MASK  (0x1ul << 28ul)  /**< [28..28] RTC comparator interrupt pending */
-#define SIFIVE_FE310_AON_RTCCFG_CMPIP  (1ul << 28ul)
-
-// Register 'aon.rtchi'.
-#define SIFIVE_FE310_AON_RTCHI_HIGH_POSITION  (0ul)
-#define SIFIVE_FE310_AON_RTCHI_HIGH_MASK  (0xFFFFul << 0ul)  /**< [15..0] RTC counter register, high bits */
 
 // Register 'aon.lfrosccfg'.
 #define SIFIVE_FE310_AON_LFROSCCFG_DIV_POSITION  (0ul)
@@ -1019,24 +1051,27 @@ typedef enum {
 #define SIFIVE_FE310_AON_LFROSCCFG_RDY_MASK  (0x1ul << 31ul)  /**< [31..31] LFROSC ready */
 #define SIFIVE_FE310_AON_LFROSCCFG_RDY  (1ul << 31ul)
 
-// Register 'aon.pmuie'.
-#define SIFIVE_FE310_AON_PMUIE_RTC_POSITION  (1ul)
-#define SIFIVE_FE310_AON_PMUIE_RTC_MASK  (0x1ul << 1ul)  /**< [1..1] RTC Comparator active */
-#define SIFIVE_FE310_AON_PMUIE_RTC  (1ul << 1ul)
-#define SIFIVE_FE310_AON_PMUIE_DWAKEUP_POSITION  (2ul)
-#define SIFIVE_FE310_AON_PMUIE_DWAKEUP_MASK  (0x1ul << 2ul)  /**< [2..2] dwakeup_n pin active */
-#define SIFIVE_FE310_AON_PMUIE_DWAKEUP  (1ul << 2ul)
+// ----------------------------------------------------------------------------
+// Struct 'sifive_fe310_pmu_t' positions & masks.
 
-// Register 'aon.pmucause'.
-#define SIFIVE_FE310_AON_PMUCAUSE_WAKEUPCAUSE_POSITION  (0ul)
-#define SIFIVE_FE310_AON_PMUCAUSE_WAKEUPCAUSE_MASK  (0x3ul << 0ul)  /**< [1..0] Wakeup cause */
-#define SIFIVE_FE310_AON_PMUCAUSE_WAKEUPCAUSE_RESET  (0ul << 0ul)  /**< Reset Wakeup */
-#define SIFIVE_FE310_AON_PMUCAUSE_WAKEUPCAUSE_RTC  (1ul << 0ul)  /**< RTC Wakeup */
-#define SIFIVE_FE310_AON_PMUCAUSE_WAKEUPCAUSE_DWAKEUP  (2ul << 0ul)  /**< Digital input Wakeup */
-#define SIFIVE_FE310_AON_PMUCAUSE_RESETCAUSE_POSITION  (8ul)
-#define SIFIVE_FE310_AON_PMUCAUSE_RESETCAUSE_MASK  (0x3ul << 8ul)  /**< [9..8] Reset cause */
-#define SIFIVE_FE310_AON_PMUCAUSE_RESETCAUSE_EXTERNAL  (1ul << 8ul)  /**< External reset */
-#define SIFIVE_FE310_AON_PMUCAUSE_RESETCAUSE_WATCHDOG  (2ul << 8ul)  /**< Watchdog timer reset */
+// Register 'pmu.ie'.
+#define SIFIVE_FE310_PMU_IE_RTC_POSITION  (1ul)
+#define SIFIVE_FE310_PMU_IE_RTC_MASK  (0x1ul << 1ul)  /**< [1..1] RTC Comparator active */
+#define SIFIVE_FE310_PMU_IE_RTC  (1ul << 1ul)
+#define SIFIVE_FE310_PMU_IE_DWAKEUP_POSITION  (2ul)
+#define SIFIVE_FE310_PMU_IE_DWAKEUP_MASK  (0x1ul << 2ul)  /**< [2..2] dwakeup_n pin active */
+#define SIFIVE_FE310_PMU_IE_DWAKEUP  (1ul << 2ul)
+
+// Register 'pmu.cause'.
+#define SIFIVE_FE310_PMU_CAUSE_WAKEUPCAUSE_POSITION  (0ul)
+#define SIFIVE_FE310_PMU_CAUSE_WAKEUPCAUSE_MASK  (0x3ul << 0ul)  /**< [1..0] Wakeup cause */
+#define SIFIVE_FE310_PMU_CAUSE_WAKEUPCAUSE_RESET  (0ul << 0ul)  /**< Reset Wakeup */
+#define SIFIVE_FE310_PMU_CAUSE_WAKEUPCAUSE_RTC  (1ul << 0ul)  /**< RTC Wakeup */
+#define SIFIVE_FE310_PMU_CAUSE_WAKEUPCAUSE_DWAKEUP  (2ul << 0ul)  /**< Digital input Wakeup */
+#define SIFIVE_FE310_PMU_CAUSE_RESETCAUSE_POSITION  (8ul)
+#define SIFIVE_FE310_PMU_CAUSE_RESETCAUSE_MASK  (0x3ul << 8ul)  /**< [9..8] Reset cause */
+#define SIFIVE_FE310_PMU_CAUSE_RESETCAUSE_EXTERNAL  (1ul << 8ul)  /**< External reset */
+#define SIFIVE_FE310_PMU_CAUSE_RESETCAUSE_WATCHDOG  (2ul << 8ul)  /**< Watchdog timer reset */
 
 // ----------------------------------------------------------------------------
 // Struct 'sifive_fe310_prci_t' positions & masks.
@@ -1428,27 +1463,39 @@ typedef enum {
 #define SIFIVE_FE310_PLIC_TARGET0_M_CLAIMCOMPLETE_OFFSET (0x00200004ul)  /**< 0x0C200004: The Interrupt Claim/Completion Register */
 
 // ----------------------------------------------------------------------------
+// Peripheral 'wdog' offsets.
+
+#define SIFIVE_FE310_WDOG_CFG_OFFSET (0x00000000ul)  /**< 0x10000000: Watchdog Configuration Register */
+#define SIFIVE_FE310_WDOG_COUNT_OFFSET (0x00000008ul)  /**< 0x10000008: Watchdog Count Register */
+#define SIFIVE_FE310_WDOG_SCALE_OFFSET (0x00000010ul)  /**< 0x10000010: Watchdog Scale Register */
+#define SIFIVE_FE310_WDOG_FEED_OFFSET (0x00000018ul)  /**< 0x10000018: Watchdog Feed Address Register */
+#define SIFIVE_FE310_WDOG_KEY_OFFSET (0x0000001Cul)  /**< 0x1000001C: Watchdog Key Register */
+#define SIFIVE_FE310_WDOG_CMP_OFFSET (0x00000020ul)  /**< 0x10000020: Watchdog Compare Register */
+
+// ----------------------------------------------------------------------------
+// Peripheral 'rtc' offsets.
+
+#define SIFIVE_FE310_RTC_CFG_OFFSET (0x00000000ul)  /**< 0x10000040: RTC Configuration Register */
+#define SIFIVE_FE310_RTC_LOW_OFFSET (0x00000008ul)  /**< 0x10000048: RTC Counter Register Low */
+#define SIFIVE_FE310_RTC_HIGH_OFFSET (0x0000000Cul)  /**< 0x1000004C: RTC Counter Register High */
+#define SIFIVE_FE310_RTC_SCALE_OFFSET (0x00000010ul)  /**< 0x10000050: RTC Scale Register */
+#define SIFIVE_FE310_RTC_CMP_OFFSET (0x00000020ul)  /**< 0x10000060: RTC Compare Register */
+
+// ----------------------------------------------------------------------------
 // Peripheral 'aon' offsets.
 
-#define SIFIVE_FE310_AON_WDOGCFG_OFFSET (0x00000000ul)  /**< 0x10000000: Watchdog Configuration Register */
-#define SIFIVE_FE310_AON_WDOGCOUNT_OFFSET (0x00000008ul)  /**< 0x10000008: Watchdog Count Register */
-#define SIFIVE_FE310_AON_WDOGS_OFFSET (0x00000010ul)  /**< 0x10000010: Watchdog Scale Register */
-#define SIFIVE_FE310_AON_WDOGFEED_OFFSET (0x00000018ul)  /**< 0x10000018: Watchdog Feed Address Register */
-#define SIFIVE_FE310_AON_WDOGKEY_OFFSET (0x0000001Cul)  /**< 0x1000001C: Watchdog Key Register */
-#define SIFIVE_FE310_AON_WDOGCMP_OFFSET (0x00000020ul)  /**< 0x10000020: Watchdog Compare Register */
-#define SIFIVE_FE310_AON_RTCCFG_OFFSET (0x00000040ul)  /**< 0x10000040: RTC Configuration Register */
-#define SIFIVE_FE310_AON_RTCLO_OFFSET (0x00000048ul)  /**< 0x10000048: RTC Counter Register Low */
-#define SIFIVE_FE310_AON_RTCHI_OFFSET (0x0000004Cul)  /**< 0x1000004C: RTC Counter Register High */
-#define SIFIVE_FE310_AON_RTCS_OFFSET (0x00000050ul)  /**< 0x10000050: RTC Scale Register */
-#define SIFIVE_FE310_AON_RTCCMP_OFFSET (0x00000060ul)  /**< 0x10000060: RTC Compare Register */
-#define SIFIVE_FE310_AON_LFROSCCFG_OFFSET (0x00000070ul)  /**< 0x10000070: Internal Programmable Low-Frequency Ring Oscillator Register */
-#define SIFIVE_FE310_AON_BACKUP_OFFSET (0x00000080ul)  /**< 0x10000080: Backup Registers */
-#define SIFIVE_FE310_AON_PMUWAKEUPI_OFFSET (0x00000100ul)  /**< 0x10000100: Wakeup program instruction Registers */
-#define SIFIVE_FE310_AON_PMUSLEEPI_OFFSET (0x00000120ul)  /**< 0x10000120: Sleep Program Instruction Registers */
-#define SIFIVE_FE310_AON_PMUIE_OFFSET (0x00000140ul)  /**< 0x10000140: PMU Interrupt Enables Register */
-#define SIFIVE_FE310_AON_PMUCAUSE_OFFSET (0x00000144ul)  /**< 0x10000144: PMU Wakeup Cause Register */
-#define SIFIVE_FE310_AON_PMUSLEEP_OFFSET (0x00000148ul)  /**< 0x10000148: Initiate Sleep Sequence Register */
-#define SIFIVE_FE310_AON_PMUKEY_OFFSET (0x0000014Cul)  /**< 0x1000014C: PMU Key Register */
+#define SIFIVE_FE310_AON_LFROSCCFG_OFFSET (0x00000000ul)  /**< 0x10000070: Internal Programmable Low-Frequency Ring Oscillator Register */
+#define SIFIVE_FE310_AON_BACKUP_OFFSET (0x00000010ul)  /**< 0x10000080: Backup Registers */
+
+// ----------------------------------------------------------------------------
+// Peripheral 'pmu' offsets.
+
+#define SIFIVE_FE310_PMU_WAKEUPI_OFFSET (0x00000000ul)  /**< 0x10000100: Wakeup program instruction Registers */
+#define SIFIVE_FE310_PMU_SLEEPI_OFFSET (0x00000020ul)  /**< 0x10000120: Sleep Program Instruction Registers */
+#define SIFIVE_FE310_PMU_IE_OFFSET (0x00000040ul)  /**< 0x10000140: PMU Interrupt Enables Register */
+#define SIFIVE_FE310_PMU_CAUSE_OFFSET (0x00000044ul)  /**< 0x10000144: PMU Wakeup Cause Register */
+#define SIFIVE_FE310_PMU_SLEEP_OFFSET (0x00000048ul)  /**< 0x10000148: PMU Initiate Sleep Sequence Register */
+#define SIFIVE_FE310_PMU_KEY_OFFSET (0x0000004Cul)  /**< 0x1000014C: PMU Key Register */
 
 // ----------------------------------------------------------------------------
 // Peripheral 'prci' offsets.
@@ -1549,7 +1596,10 @@ typedef enum {
 
 #define SIFIVE_FE310_CLINT_BASE_ADDRESS  (0x02000000ul)
 #define SIFIVE_FE310_PLIC_BASE_ADDRESS  (0x0C000000ul)
-#define SIFIVE_FE310_AON_BASE_ADDRESS  (0x10000000ul)
+#define SIFIVE_FE310_WDOG_BASE_ADDRESS  (0x10000000ul)
+#define SIFIVE_FE310_RTC_BASE_ADDRESS  (0x10000040ul)
+#define SIFIVE_FE310_AON_BASE_ADDRESS  (0x10000070ul)
+#define SIFIVE_FE310_PMU_BASE_ADDRESS  (0x10000100ul)
 #define SIFIVE_FE310_PRCI_BASE_ADDRESS  (0x10008000ul)
 #define SIFIVE_FE310_OTP_BASE_ADDRESS  (0x10010000ul)
 #define SIFIVE_FE310_GPIO_BASE_ADDRESS  (0x10012000ul)
@@ -1567,7 +1617,10 @@ typedef enum {
 
 #define CLINT  ((sifive_fe310_clint_t*) SIFIVE_FE310_CLINT_BASE_ADDRESS)
 #define PLIC  ((sifive_fe310_plic_t*) SIFIVE_FE310_PLIC_BASE_ADDRESS)
+#define WDOG  ((sifive_fe310_wdog_t*) SIFIVE_FE310_WDOG_BASE_ADDRESS)
+#define RTC  ((sifive_fe310_rtc_t*) SIFIVE_FE310_RTC_BASE_ADDRESS)
 #define AON  ((sifive_fe310_aon_t*) SIFIVE_FE310_AON_BASE_ADDRESS)
+#define PMU  ((sifive_fe310_pmu_t*) SIFIVE_FE310_PMU_BASE_ADDRESS)
 #define PRCI  ((sifive_fe310_prci_t*) SIFIVE_FE310_PRCI_BASE_ADDRESS)
 #define OTP  ((sifive_fe310_otp_t*) SIFIVE_FE310_OTP_BASE_ADDRESS)
 #define GPIO  ((sifive_fe310_gpio_t*) SIFIVE_FE310_GPIO_BASE_ADDRESS)
