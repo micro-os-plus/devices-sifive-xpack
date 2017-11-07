@@ -466,23 +466,23 @@ namespace sifive
 // Architecture interrupts.
 void
 __attribute__ ((weak, alias ("sifive_e51arty_interrupt_handle_unused")))
-riscv_interrupt_local_handle_machine_software (void);
+riscv_interrupt_handle_machine_software (void);
 
 void
 __attribute__ ((weak, alias ("sifive_e51arty_interrupt_handle_unused")))
-riscv_interrupt_local_handle_machine_timer (void);
+riscv_interrupt_handle_machine_timer (void);
 
 #if defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER)
 
 extern void
-riscv_interrupt_local_handle_machine_ext (void);
+riscv_interrupt_handle_machine_ext (void);
 
 #else
 
 // Defined in the architecture package.
 void
 __attribute__ ((weak, alias ("sifive_e51arty_interrupt_handle_unused")))
-riscv_interrupt_local_handle_machine_ext (void);
+riscv_interrupt_handle_machine_ext (void);
 
 #endif /* defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER) */
 
