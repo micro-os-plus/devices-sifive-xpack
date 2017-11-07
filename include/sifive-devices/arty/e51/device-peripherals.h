@@ -34,7 +34,7 @@
  * @brief µOS++ Core - device peripherals header file
  *  for Core Complex E51 Arty from SiFive, Inc.
  * @version 0.1.0
- * @date 2017-11-01
+ * @date 2017-11-07
  * @note Generated from e51arty-xsvd.json@0.1.0 with xsvd@0.2.3.
  */
 
@@ -53,7 +53,7 @@ extern "C"
  */
 
 /**
- * @addtogroup e31arty
+ * @addtogroup e51arty
  * @{
  */
 
@@ -940,7 +940,7 @@ typedef enum {
 
 /**
  * @} 
- */ /* End of group e31arty */
+ */ /* End of group e51arty */
 
 /**
  * @} 

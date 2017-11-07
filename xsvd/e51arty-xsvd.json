@@ -3,7 +3,7 @@
   "contentVersion": "0.1.0",
   "headerVersion": "0.1.0",
   "device": {
-    "e31arty": {
+    "e51arty": {
       "displayName": "Core Complex E51 Arty",
       "description": "SiFive’s E51 is a synthesised version of Core Complex E31 running on the Arty board.",
       "vendor": {
