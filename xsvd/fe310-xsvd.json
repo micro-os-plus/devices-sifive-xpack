@@ -168,13 +168,13 @@
             }
           }
         },
-        "aon": {
-          "description": "Always-On (AON) Domain",
+        "wdog": {
+          "description": "Watchdog Timer (WDT), part of Always-On Domain",
           "baseAddress": "0x10000000",
-          "size": "0x8000",
+          "size": "0x0040",
           "resetMask": "none",
           "registers": {
-            "wdogcfg": {
+            "cfg": {
               "description": "Watchdog Configuration Register",
               "addressOffset": "0x0000",
               "fields": {
@@ -216,11 +216,11 @@
                 }
               }
             },
-            "wdogcount": {
+            "count": {
               "description": "Watchdog Count Register",
               "addressOffset": "0x0008"
             },
-            "wdogs": {
+            "scale": {
               "description": "Watchdog Scale Register",
               "addressOffset": "0x0010",
               "fields": {
@@ -231,15 +231,15 @@
                 }
               }
             },
-            "wdogfeed": {
+            "feed": {
               "description": "Watchdog Feed Address Register",
               "addressOffset": "0x0018"
             },
-            "wdogkey": {
+            "key": {
               "description": "Watchdog Key Register",
               "addressOffset": "0x001C"
             },
-            "wdogcmp": {
+            "cmp": {
               "description": "Watchdog Compare Register",
               "addressOffset": "0x0020",
               "fields": {
@@ -249,10 +249,24 @@
                   "bitWidth": "16"
                 }
               }
-            },
-            "rtccfg": {
+            }
+          },
+          "interrupts": {
+            "wdogcmp": {
+              "description": "Watchdog Compare Interrupt",
+              "value": "1"
+            }
+          }
+        },
+        "rtc": {
+          "description": "Real-Time Clock (RTC), part of Always-On Domain",
+          "baseAddress": "0x10000040",
+          "size": "0x0030",
+          "resetMask": "none",
+          "registers": {
+            "cfg": {
               "description": "RTC Configuration Register",
-              "addressOffset": "0x0040",
+              "addressOffset": "0x0000",
               "fields": {
                 "scale": {
                   "description": "RTC clock rate scale",
@@ -274,13 +288,13 @@
                 }
               }
             },
-            "rtclo": {
+            "low": {
               "description": "RTC Counter Register Low",
-              "addressOffset": "0x0048"
+              "addressOffset": "0x0008"
             },
-            "rtchi": {
+            "high": {
               "description": "RTC Counter Register High",
-              "addressOffset": "0x004C",
+              "addressOffset": "0x000C",
               "fields": {
                 "high": {
                   "description": "RTC counter register, high bits",
@@ -289,65 +303,41 @@
                 }
               }
             },
-            "rtcs": {
+            "scale": {
               "description": "RTC Scale Register",
-              "addressOffset": "0x0050"
+              "addressOffset": "0x0010"
             },
-            "rtccmp": {
+            "cmp": {
               "description": "RTC Compare Register",
-              "addressOffset": "0x0060"
-            },
-            "lfrosccfg": {
-              "description": "Internal Programmable Low-Frequency Ring Oscillator Register",
-              "addressOffset": "0x0070",
-              "fields": {
-                "div": {
-                  "description": "LFROSC divider",
-                  "bitOffset": "0",
-                  "bitWidth": "6",
-                  "resetMask": "all",
-                  "resetValue": "0x04"
-                },
-                "trim": {
-                  "description": "LFROSC trim value",
-                  "bitOffset": "16",
-                  "bitWidth": "5",
-                  "resetMask": "all",
-                  "resetValue": "0x10"
-                },
-                "en": {
-                  "description": "LFROSC enable",
-                  "bitOffset": "30",
-                  "bitWidth": "1",
-                  "resetMask": "all",
-                  "resetValue": "0x1"
-                },
-                "rdy": {
-                  "description": "LFROSC ready",
-                  "bitOffset": "31",
-                  "bitWidth": "1",
-                  "access": "r"
-                }
-              }
-            },
-            "backup": {
-              "description": "Backup Registers",
-              "addressOffset": "0x0080",
-              "arraySize": "32"
-            },
-            "pmuwakeupi": {
+              "addressOffset": "0x0020"
+            }
+          },
+          "interrupts": {
+            "rtcmp": {
+              "description": "RTC Compare Interrupt",
+              "value": "2"
+            }
+          }
+        },
+        "pmu": {
+          "description": "Power-Management Unit (PMU), part of Always-On Domain",
+          "baseAddress": "0x10000100",
+          "size": "0x0050",
+          "resetMask": "none",
+          "registers": {
+            "wakeupi": {
               "description": "Wakeup program instruction Registers",
-              "addressOffset": "0x0100",
+              "addressOffset": "0x0000",
               "arraySize": "8"
             },
-            "pmusleepi": {
+            "sleepi": {
               "description": "Sleep Program Instruction Registers",
-              "addressOffset": "0x0120",
+              "addressOffset": "0x0020",
               "arraySize": "8"
             },
-            "pmuie": {
+            "ie": {
               "description": "PMU Interrupt Enables Register",
-              "addressOffset": "0x0140",
+              "addressOffset": "0x0040",
               "fields": {
                 "rtc": {
                   "description": "RTC Comparator active",
@@ -361,9 +351,9 @@
                 }
               }
             },
-            "pmucause": {
+            "cause": {
               "description": "PMU Wakeup Cause Register",
-              "addressOffset": "0x0144",
+              "addressOffset": "0x0044",
               "fields": {
                 "wakeupcause": {
                   "description": "Wakeup cause",
@@ -419,24 +409,59 @@
                 }
               }
             },
-            "pmusleep": {
-              "description": "Initiate Sleep Sequence Register",
-              "addressOffset": "0x0148"
+            "sleep": {
+              "description": "PMU Initiate Sleep Sequence Register",
+              "addressOffset": "0x0048"
             },
-            "pmukey": {
+            "key": {
               "description": "PMU Key Register",
-              "addressOffset": "0x014C"
+              "addressOffset": "0x004C"
             }
-          },
-          "interrupts": {
-            "wdogcmp": {
-              "description": "Watchdog Compare Interrupt",
-              "value": "1"
+          }
+        },
+        "aon": {
+          "description": "Always-On (AON) Domain",
+          "baseAddress": "0x10000070",
+          "size": "0x0090",
+          "resetMask": "none",
+          "registers": {
+            "lfrosccfg": {
+              "description": "Internal Programmable Low-Frequency Ring Oscillator Register",
+              "addressOffset": "0x0000",
+              "fields": {
+                "div": {
+                  "description": "LFROSC divider",
+                  "bitOffset": "0",
+                  "bitWidth": "6",
+                  "resetMask": "all",
+                  "resetValue": "0x04"
+                },
+                "trim": {
+                  "description": "LFROSC trim value",
+                  "bitOffset": "16",
+                  "bitWidth": "5",
+                  "resetMask": "all",
+                  "resetValue": "0x10"
+                },
+                "en": {
+                  "description": "LFROSC enable",
+                  "bitOffset": "30",
+                  "bitWidth": "1",
+                  "resetMask": "all",
+                  "resetValue": "0x1"
+                },
+                "rdy": {
+                  "description": "LFROSC ready",
+                  "bitOffset": "31",
+                  "bitWidth": "1",
+                  "access": "r"
+                }
+              }
             },
-            "rtcmp": {
-              "description": "RTC Compare Interrupt",
-              "value": "2",
-              "type": "global"
+            "backup": {
+              "description": "Backup Registers",
+              "addressOffset": "0x0010",
+              "arraySize": "32"
             }
           }
         },
