@@ -53,6 +53,5 @@ build/
 # Visual Studio Code
 .vscode/
 
-package-lock.json
-
 # end
+package-lock.json
