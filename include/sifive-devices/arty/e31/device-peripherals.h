@@ -34,7 +34,7 @@
  * @brief µOS++ Core - device peripherals header file
  *  for Core Complex E31 Arty from SiFive, Inc.
  * @version 0.1.0
- * @date 2017-11-07
+ * @date 2017-11-09
  * @note Generated from e31arty-xsvd.json@0.1.0 with xsvd@0.2.3.
  */
 
@@ -74,7 +74,7 @@ typedef enum {
   sifive_e31arty_interrupt_global_switch1 = 3, /**< SWITCH 1 Interrupt */
   sifive_e31arty_interrupt_global_switch2 = 4, /**< SWITCH 2 Interrupt */
   sifive_e31arty_interrupt_global_switch3 = 5, /**< SWITCH 3 Interrupt */
-  sifive_e31arty_interrupt_global_qspi0 = 6, /**< QSPI0 Interrupt */
+  sifive_e31arty_interrupt_global_spi0 = 6, /**< SPI0 Interrupt */
   sifive_e31arty_interrupt_global_gpio0 = 7, /**< GPIO0 Interrupt */
   sifive_e31arty_interrupt_global_gpio1 = 8, /**< GPIO1 Interrupt */
   sifive_e31arty_interrupt_global_gpio2 = 9, /**< GPIO2 Interrupt */
@@ -498,7 +498,7 @@ typedef struct {
          } ip_bits;
        };
        uint32_t reserved7[994];
-} sifive_e31arty_qspi_t; // 0x20004FFF
+} sifive_e31arty_spi_t; // 0x20004FFF
 
 // ----------------------------------------------------------------------------
 
@@ -568,10 +568,10 @@ typedef struct {
  */
 
 typedef enum {
-  sifive_e31arty_qspi_csmode_mode_auto = 0, /**< Assert/de-assert CS at the beginning/end of each frame */
-  sifive_e31arty_qspi_csmode_mode_hold = 2, /**< Keep CS continuously asserted after the initial frame */
-  sifive_e31arty_qspi_csmode_mode_off = 3, /**< Disable hardware control of the CS pin */
-} sifive_e31arty_qspi_csmode_mode_enum_t;
+  sifive_e31arty_spi_csmode_mode_auto = 0, /**< Assert/de-assert CS at the beginning/end of each frame */
+  sifive_e31arty_spi_csmode_mode_hold = 2, /**< Keep CS continuously asserted after the initial frame */
+  sifive_e31arty_spi_csmode_mode_off = 3, /**< Disable hardware control of the CS pin */
+} sifive_e31arty_spi_csmode_mode_enum_t;
 
 // ----------------------------------------------------------------------------
 
@@ -580,10 +580,10 @@ typedef enum {
  */
 
 typedef enum {
-  sifive_e31arty_qspi_fmt_proto_single = 0, /**< DQ0 (MOSI), DQ1 (MISO) */
-  sifive_e31arty_qspi_fmt_proto_dual = 1, /**< DQ0, DQ1 */
-  sifive_e31arty_qspi_fmt_proto_quad = 2, /**< DQ0, DQ1, DQ2, DQ3 */
-} sifive_e31arty_qspi_fmt_proto_enum_t;
+  sifive_e31arty_spi_fmt_proto_single = 0, /**< DQ0 (MOSI), DQ1 (MISO) */
+  sifive_e31arty_spi_fmt_proto_dual = 1, /**< DQ0, DQ1 */
+  sifive_e31arty_spi_fmt_proto_quad = 2, /**< DQ0, DQ1, DQ2, DQ3 */
+} sifive_e31arty_spi_fmt_proto_enum_t;
 
 // ----------------------------------------------------------------------------
 
@@ -592,9 +592,9 @@ typedef enum {
  */
 
 typedef enum {
-  sifive_e31arty_qspi_fmt_endian_msb = 0, /**< Transmit most-significant bit (MSB) first */
-  sifive_e31arty_qspi_fmt_endian_lsb = 1, /**< Transmit least-significant bit (LSB) first */
-} sifive_e31arty_qspi_fmt_endian_enum_t;
+  sifive_e31arty_spi_fmt_endian_msb = 0, /**< Transmit most-significant bit (MSB) first */
+  sifive_e31arty_spi_fmt_endian_lsb = 1, /**< Transmit least-significant bit (LSB) first */
+} sifive_e31arty_spi_fmt_endian_enum_t;
 
 // ----------------------------------------------------------------------------
 
@@ -603,9 +603,9 @@ typedef enum {
  */
 
 typedef enum {
-  sifive_e31arty_qspi_fmt_dir_rx = 0, /**< For dual and quad protocols, the DQ pins are tri-stated. For the single protocol, the DQ0 pin is driven with the transmit data as normal. */
-  sifive_e31arty_qspi_fmt_dir_tx = 1, /**< The receive FIFO is not populated. */
-} sifive_e31arty_qspi_fmt_dir_enum_t;
+  sifive_e31arty_spi_fmt_dir_rx = 0, /**< For dual and quad protocols, the DQ pins are tri-stated. For the single protocol, the DQ0 pin is driven with the transmit data as normal. */
+  sifive_e31arty_spi_fmt_dir_tx = 1, /**< The receive FIFO is not populated. */
+} sifive_e31arty_spi_fmt_dir_enum_t;
 
 // ----------------------------------------------------------------------------
 // Struct 'sifive_e31arty_plic_target0_m_t' positions & masks.
@@ -676,117 +676,117 @@ typedef enum {
 #define SIFIVE_E31ARTY_UART_DIV_VALUE_MASK  (0xFFFFul << 0ul)  /**< [15..0] Baud rate divisor */
 
 // ----------------------------------------------------------------------------
-// Struct 'sifive_e31arty_qspi_t' positions & masks.
+// Struct 'sifive_e31arty_spi_t' positions & masks.
 
-// Register 'qspi.sckdiv'.
-#define SIFIVE_E31ARTY_QSPI_SCKDIV_SCALE_POSITION  (0ul)
-#define SIFIVE_E31ARTY_QSPI_SCKDIV_SCALE_MASK  (0xFFFul << 0ul)  /**< [11..0] Divisor for serial clock */
+// Register 'spi.sckdiv'.
+#define SIFIVE_E31ARTY_SPI_SCKDIV_SCALE_POSITION  (0ul)
+#define SIFIVE_E31ARTY_SPI_SCKDIV_SCALE_MASK  (0xFFFul << 0ul)  /**< [11..0] Divisor for serial clock */
 
-// Register 'qspi.sckmode'.
-#define SIFIVE_E31ARTY_QSPI_SCKMODE_PHA_POSITION  (0ul)
-#define SIFIVE_E31ARTY_QSPI_SCKMODE_PHA_MASK  (0x1ul << 0ul)  /**< [0..0] Serial clock phase */
-#define SIFIVE_E31ARTY_QSPI_SCKMODE_PHA  (1ul << 0ul)
-#define SIFIVE_E31ARTY_QSPI_SCKMODE_POL_POSITION  (1ul)
-#define SIFIVE_E31ARTY_QSPI_SCKMODE_POL_MASK  (0x1ul << 1ul)  /**< [1..1] Serial clock polarity */
-#define SIFIVE_E31ARTY_QSPI_SCKMODE_POL  (1ul << 1ul)
+// Register 'spi.sckmode'.
+#define SIFIVE_E31ARTY_SPI_SCKMODE_PHA_POSITION  (0ul)
+#define SIFIVE_E31ARTY_SPI_SCKMODE_PHA_MASK  (0x1ul << 0ul)  /**< [0..0] Serial clock phase */
+#define SIFIVE_E31ARTY_SPI_SCKMODE_PHA  (1ul << 0ul)
+#define SIFIVE_E31ARTY_SPI_SCKMODE_POL_POSITION  (1ul)
+#define SIFIVE_E31ARTY_SPI_SCKMODE_POL_MASK  (0x1ul << 1ul)  /**< [1..1] Serial clock polarity */
+#define SIFIVE_E31ARTY_SPI_SCKMODE_POL  (1ul << 1ul)
 
-// Register 'qspi.csmode'.
-#define SIFIVE_E31ARTY_QSPI_CSMODE_MODE_POSITION  (0ul)
-#define SIFIVE_E31ARTY_QSPI_CSMODE_MODE_MASK  (0x3ul << 0ul)  /**< [1..0] Chip select mode */
-#define SIFIVE_E31ARTY_QSPI_CSMODE_MODE_AUTO  (0ul << 0ul)  /**< Assert/de-assert CS at the beginning/end of each frame */
-#define SIFIVE_E31ARTY_QSPI_CSMODE_MODE_HOLD  (2ul << 0ul)  /**< Keep CS continuously asserted after the initial frame */
-#define SIFIVE_E31ARTY_QSPI_CSMODE_MODE_OFF  (3ul << 0ul)  /**< Disable hardware control of the CS pin */
+// Register 'spi.csmode'.
+#define SIFIVE_E31ARTY_SPI_CSMODE_MODE_POSITION  (0ul)
+#define SIFIVE_E31ARTY_SPI_CSMODE_MODE_MASK  (0x3ul << 0ul)  /**< [1..0] Chip select mode */
+#define SIFIVE_E31ARTY_SPI_CSMODE_MODE_AUTO  (0ul << 0ul)  /**< Assert/de-assert CS at the beginning/end of each frame */
+#define SIFIVE_E31ARTY_SPI_CSMODE_MODE_HOLD  (2ul << 0ul)  /**< Keep CS continuously asserted after the initial frame */
+#define SIFIVE_E31ARTY_SPI_CSMODE_MODE_OFF  (3ul << 0ul)  /**< Disable hardware control of the CS pin */
 
-// Register 'qspi.delay0'.
-#define SIFIVE_E31ARTY_QSPI_DELAY0_CSSCK_POSITION  (0ul)
-#define SIFIVE_E31ARTY_QSPI_DELAY0_CSSCK_MASK  (0xFFul << 0ul)  /**< [7..0] CS to SCK Delay */
-#define SIFIVE_E31ARTY_QSPI_DELAY0_SCKCS_POSITION  (16ul)
-#define SIFIVE_E31ARTY_QSPI_DELAY0_SCKCS_MASK  (0xFFul << 16ul)  /**< [23..16] SCK to CS Delay */
+// Register 'spi.delay0'.
+#define SIFIVE_E31ARTY_SPI_DELAY0_CSSCK_POSITION  (0ul)
+#define SIFIVE_E31ARTY_SPI_DELAY0_CSSCK_MASK  (0xFFul << 0ul)  /**< [7..0] CS to SCK Delay */
+#define SIFIVE_E31ARTY_SPI_DELAY0_SCKCS_POSITION  (16ul)
+#define SIFIVE_E31ARTY_SPI_DELAY0_SCKCS_MASK  (0xFFul << 16ul)  /**< [23..16] SCK to CS Delay */
 
-// Register 'qspi.delay1'.
-#define SIFIVE_E31ARTY_QSPI_DELAY1_INTERCS_POSITION  (0ul)
-#define SIFIVE_E31ARTY_QSPI_DELAY1_INTERCS_MASK  (0xFFul << 0ul)  /**< [7..0] Minimum CS inactive time */
-#define SIFIVE_E31ARTY_QSPI_DELAY1_INTERXFR_POSITION  (16ul)
-#define SIFIVE_E31ARTY_QSPI_DELAY1_INTERXFR_MASK  (0xFFul << 16ul)  /**< [23..16] Maximum interframe delay */
+// Register 'spi.delay1'.
+#define SIFIVE_E31ARTY_SPI_DELAY1_INTERCS_POSITION  (0ul)
+#define SIFIVE_E31ARTY_SPI_DELAY1_INTERCS_MASK  (0xFFul << 0ul)  /**< [7..0] Minimum CS inactive time */
+#define SIFIVE_E31ARTY_SPI_DELAY1_INTERXFR_POSITION  (16ul)
+#define SIFIVE_E31ARTY_SPI_DELAY1_INTERXFR_MASK  (0xFFul << 16ul)  /**< [23..16] Maximum interframe delay */
 
-// Register 'qspi.fmt'.
-#define SIFIVE_E31ARTY_QSPI_FMT_PROTO_POSITION  (0ul)
-#define SIFIVE_E31ARTY_QSPI_FMT_PROTO_MASK  (0x3ul << 0ul)  /**< [1..0] SPI Protocol */
-#define SIFIVE_E31ARTY_QSPI_FMT_PROTO_SINGLE  (0ul << 0ul)  /**< DQ0 (MOSI), DQ1 (MISO) */
-#define SIFIVE_E31ARTY_QSPI_FMT_PROTO_DUAL  (1ul << 0ul)  /**< DQ0, DQ1 */
-#define SIFIVE_E31ARTY_QSPI_FMT_PROTO_QUAD  (2ul << 0ul)  /**< DQ0, DQ1, DQ2, DQ3 */
-#define SIFIVE_E31ARTY_QSPI_FMT_ENDIAN_POSITION  (2ul)
-#define SIFIVE_E31ARTY_QSPI_FMT_ENDIAN_MASK  (0x1ul << 2ul)  /**< [2..2] SPI endianness */
-#define SIFIVE_E31ARTY_QSPI_FMT_ENDIAN_MSB  (0ul << 2ul)  /**< Transmit most-significant bit (MSB) first */
-#define SIFIVE_E31ARTY_QSPI_FMT_ENDIAN_LSB  (1ul << 2ul)  /**< Transmit least-significant bit (LSB) first */
-#define SIFIVE_E31ARTY_QSPI_FMT_DIR_POSITION  (3ul)
-#define SIFIVE_E31ARTY_QSPI_FMT_DIR_MASK  (0x1ul << 3ul)  /**< [3..3] SPI I/O Direction */
-#define SIFIVE_E31ARTY_QSPI_FMT_DIR_RX  (0ul << 3ul)  /**< For dual and quad protocols, the DQ pins are tri-stated. For the single protocol, the DQ0 pin is driven with the transmit data as normal. */
-#define SIFIVE_E31ARTY_QSPI_FMT_DIR_TX  (1ul << 3ul)  /**< The receive FIFO is not populated. */
-#define SIFIVE_E31ARTY_QSPI_FMT_LEN_POSITION  (16ul)
-#define SIFIVE_E31ARTY_QSPI_FMT_LEN_MASK  (0xFul << 16ul)  /**< [19..16] Number of bits per frame */
+// Register 'spi.fmt'.
+#define SIFIVE_E31ARTY_SPI_FMT_PROTO_POSITION  (0ul)
+#define SIFIVE_E31ARTY_SPI_FMT_PROTO_MASK  (0x3ul << 0ul)  /**< [1..0] SPI Protocol */
+#define SIFIVE_E31ARTY_SPI_FMT_PROTO_SINGLE  (0ul << 0ul)  /**< DQ0 (MOSI), DQ1 (MISO) */
+#define SIFIVE_E31ARTY_SPI_FMT_PROTO_DUAL  (1ul << 0ul)  /**< DQ0, DQ1 */
+#define SIFIVE_E31ARTY_SPI_FMT_PROTO_QUAD  (2ul << 0ul)  /**< DQ0, DQ1, DQ2, DQ3 */
+#define SIFIVE_E31ARTY_SPI_FMT_ENDIAN_POSITION  (2ul)
+#define SIFIVE_E31ARTY_SPI_FMT_ENDIAN_MASK  (0x1ul << 2ul)  /**< [2..2] SPI endianness */
+#define SIFIVE_E31ARTY_SPI_FMT_ENDIAN_MSB  (0ul << 2ul)  /**< Transmit most-significant bit (MSB) first */
+#define SIFIVE_E31ARTY_SPI_FMT_ENDIAN_LSB  (1ul << 2ul)  /**< Transmit least-significant bit (LSB) first */
+#define SIFIVE_E31ARTY_SPI_FMT_DIR_POSITION  (3ul)
+#define SIFIVE_E31ARTY_SPI_FMT_DIR_MASK  (0x1ul << 3ul)  /**< [3..3] SPI I/O Direction */
+#define SIFIVE_E31ARTY_SPI_FMT_DIR_RX  (0ul << 3ul)  /**< For dual and quad protocols, the DQ pins are tri-stated. For the single protocol, the DQ0 pin is driven with the transmit data as normal. */
+#define SIFIVE_E31ARTY_SPI_FMT_DIR_TX  (1ul << 3ul)  /**< The receive FIFO is not populated. */
+#define SIFIVE_E31ARTY_SPI_FMT_LEN_POSITION  (16ul)
+#define SIFIVE_E31ARTY_SPI_FMT_LEN_MASK  (0xFul << 16ul)  /**< [19..16] Number of bits per frame */
 
-// Register 'qspi.txdata'.
-#define SIFIVE_E31ARTY_QSPI_TXDATA_DATA_POSITION  (0ul)
-#define SIFIVE_E31ARTY_QSPI_TXDATA_DATA_MASK  (0xFFul << 0ul)  /**< [7..0] Transmit data */
-#define SIFIVE_E31ARTY_QSPI_TXDATA_FULL_POSITION  (31ul)
-#define SIFIVE_E31ARTY_QSPI_TXDATA_FULL_MASK  (0x1ul << 31ul)  /**< [31..31] FIFO full flag */
-#define SIFIVE_E31ARTY_QSPI_TXDATA_FULL  (1ul << 31ul)
+// Register 'spi.txdata'.
+#define SIFIVE_E31ARTY_SPI_TXDATA_DATA_POSITION  (0ul)
+#define SIFIVE_E31ARTY_SPI_TXDATA_DATA_MASK  (0xFFul << 0ul)  /**< [7..0] Transmit data */
+#define SIFIVE_E31ARTY_SPI_TXDATA_FULL_POSITION  (31ul)
+#define SIFIVE_E31ARTY_SPI_TXDATA_FULL_MASK  (0x1ul << 31ul)  /**< [31..31] FIFO full flag */
+#define SIFIVE_E31ARTY_SPI_TXDATA_FULL  (1ul << 31ul)
 
-// Register 'qspi.rxdata'.
-#define SIFIVE_E31ARTY_QSPI_RXDATA_DATA_POSITION  (0ul)
-#define SIFIVE_E31ARTY_QSPI_RXDATA_DATA_MASK  (0xFFul << 0ul)  /**< [7..0] Received data */
-#define SIFIVE_E31ARTY_QSPI_RXDATA_EMPTY_POSITION  (31ul)
-#define SIFIVE_E31ARTY_QSPI_RXDATA_EMPTY_MASK  (0x1ul << 31ul)  /**< [31..31] FIFO empty flag */
-#define SIFIVE_E31ARTY_QSPI_RXDATA_EMPTY  (1ul << 31ul)
+// Register 'spi.rxdata'.
+#define SIFIVE_E31ARTY_SPI_RXDATA_DATA_POSITION  (0ul)
+#define SIFIVE_E31ARTY_SPI_RXDATA_DATA_MASK  (0xFFul << 0ul)  /**< [7..0] Received data */
+#define SIFIVE_E31ARTY_SPI_RXDATA_EMPTY_POSITION  (31ul)
+#define SIFIVE_E31ARTY_SPI_RXDATA_EMPTY_MASK  (0x1ul << 31ul)  /**< [31..31] FIFO empty flag */
+#define SIFIVE_E31ARTY_SPI_RXDATA_EMPTY  (1ul << 31ul)
 
-// Register 'qspi.txmark'.
-#define SIFIVE_E31ARTY_QSPI_TXMARK_VALUE_POSITION  (0ul)
-#define SIFIVE_E31ARTY_QSPI_TXMARK_VALUE_MASK  (0x7ul << 0ul)  /**< [2..0] Transmit watermark */
+// Register 'spi.txmark'.
+#define SIFIVE_E31ARTY_SPI_TXMARK_VALUE_POSITION  (0ul)
+#define SIFIVE_E31ARTY_SPI_TXMARK_VALUE_MASK  (0x7ul << 0ul)  /**< [2..0] Transmit watermark */
 
-// Register 'qspi.rxmark'.
-#define SIFIVE_E31ARTY_QSPI_RXMARK_VALUE_POSITION  (0ul)
-#define SIFIVE_E31ARTY_QSPI_RXMARK_VALUE_MASK  (0x7ul << 0ul)  /**< [2..0] Receive watermark */
+// Register 'spi.rxmark'.
+#define SIFIVE_E31ARTY_SPI_RXMARK_VALUE_POSITION  (0ul)
+#define SIFIVE_E31ARTY_SPI_RXMARK_VALUE_MASK  (0x7ul << 0ul)  /**< [2..0] Receive watermark */
 
-// Register 'qspi.fctrl'.
-#define SIFIVE_E31ARTY_QSPI_FCTRL_EN_POSITION  (0ul)
-#define SIFIVE_E31ARTY_QSPI_FCTRL_EN_MASK  (0x1ul << 0ul)  /**< [0..0] SPI Flash Mode Select */
-#define SIFIVE_E31ARTY_QSPI_FCTRL_EN  (1ul << 0ul)
+// Register 'spi.fctrl'.
+#define SIFIVE_E31ARTY_SPI_FCTRL_EN_POSITION  (0ul)
+#define SIFIVE_E31ARTY_SPI_FCTRL_EN_MASK  (0x1ul << 0ul)  /**< [0..0] SPI Flash Mode Select */
+#define SIFIVE_E31ARTY_SPI_FCTRL_EN  (1ul << 0ul)
 
-// Register 'qspi.ffmt'.
-#define SIFIVE_E31ARTY_QSPI_FFMT_CMDEN_POSITION  (0ul)
-#define SIFIVE_E31ARTY_QSPI_FFMT_CMDEN_MASK  (0x1ul << 0ul)  /**< [0..0] Enable sending of command */
-#define SIFIVE_E31ARTY_QSPI_FFMT_CMDEN  (1ul << 0ul)
-#define SIFIVE_E31ARTY_QSPI_FFMT_ADDRLEN_POSITION  (1ul)
-#define SIFIVE_E31ARTY_QSPI_FFMT_ADDRLEN_MASK  (0x7ul << 1ul)  /**< [3..1] Number of address bytes(0 to 4) */
-#define SIFIVE_E31ARTY_QSPI_FFMT_PADCNT_POSITION  (4ul)
-#define SIFIVE_E31ARTY_QSPI_FFMT_PADCNT_MASK  (0xFul << 4ul)  /**< [7..4] Number of dummy cycles */
-#define SIFIVE_E31ARTY_QSPI_FFMT_CMDPROTO_POSITION  (8ul)
-#define SIFIVE_E31ARTY_QSPI_FFMT_CMDPROTO_MASK  (0x3ul << 8ul)  /**< [9..8] Protocol for transmitting command */
-#define SIFIVE_E31ARTY_QSPI_FFMT_ADDRPROTO_POSITION  (10ul)
-#define SIFIVE_E31ARTY_QSPI_FFMT_ADDRPROTO_MASK  (0x3ul << 10ul)  /**< [11..10] Protocol for transmitting address and padding */
-#define SIFIVE_E31ARTY_QSPI_FFMT_DATAPROTO_POSITION  (12ul)
-#define SIFIVE_E31ARTY_QSPI_FFMT_DATAPROTO_MASK  (0x3ul << 12ul)  /**< [13..12] Protocol for receiving data bytes */
-#define SIFIVE_E31ARTY_QSPI_FFMT_CMDCODE_POSITION  (16ul)
-#define SIFIVE_E31ARTY_QSPI_FFMT_CMDCODE_MASK  (0xFFul << 16ul)  /**< [23..16] Value of command byte */
-#define SIFIVE_E31ARTY_QSPI_FFMT_PADCODE_POSITION  (24ul)
-#define SIFIVE_E31ARTY_QSPI_FFMT_PADCODE_MASK  (0xFFul << 24ul)  /**< [31..24] First 8 bits to transmit during dummy cycles */
+// Register 'spi.ffmt'.
+#define SIFIVE_E31ARTY_SPI_FFMT_CMDEN_POSITION  (0ul)
+#define SIFIVE_E31ARTY_SPI_FFMT_CMDEN_MASK  (0x1ul << 0ul)  /**< [0..0] Enable sending of command */
+#define SIFIVE_E31ARTY_SPI_FFMT_CMDEN  (1ul << 0ul)
+#define SIFIVE_E31ARTY_SPI_FFMT_ADDRLEN_POSITION  (1ul)
+#define SIFIVE_E31ARTY_SPI_FFMT_ADDRLEN_MASK  (0x7ul << 1ul)  /**< [3..1] Number of address bytes(0 to 4) */
+#define SIFIVE_E31ARTY_SPI_FFMT_PADCNT_POSITION  (4ul)
+#define SIFIVE_E31ARTY_SPI_FFMT_PADCNT_MASK  (0xFul << 4ul)  /**< [7..4] Number of dummy cycles */
+#define SIFIVE_E31ARTY_SPI_FFMT_CMDPROTO_POSITION  (8ul)
+#define SIFIVE_E31ARTY_SPI_FFMT_CMDPROTO_MASK  (0x3ul << 8ul)  /**< [9..8] Protocol for transmitting command */
+#define SIFIVE_E31ARTY_SPI_FFMT_ADDRPROTO_POSITION  (10ul)
+#define SIFIVE_E31ARTY_SPI_FFMT_ADDRPROTO_MASK  (0x3ul << 10ul)  /**< [11..10] Protocol for transmitting address and padding */
+#define SIFIVE_E31ARTY_SPI_FFMT_DATAPROTO_POSITION  (12ul)
+#define SIFIVE_E31ARTY_SPI_FFMT_DATAPROTO_MASK  (0x3ul << 12ul)  /**< [13..12] Protocol for receiving data bytes */
+#define SIFIVE_E31ARTY_SPI_FFMT_CMDCODE_POSITION  (16ul)
+#define SIFIVE_E31ARTY_SPI_FFMT_CMDCODE_MASK  (0xFFul << 16ul)  /**< [23..16] Value of command byte */
+#define SIFIVE_E31ARTY_SPI_FFMT_PADCODE_POSITION  (24ul)
+#define SIFIVE_E31ARTY_SPI_FFMT_PADCODE_MASK  (0xFFul << 24ul)  /**< [31..24] First 8 bits to transmit during dummy cycles */
 
-// Register 'qspi.ie'.
-#define SIFIVE_E31ARTY_QSPI_IE_TXWM_POSITION  (0ul)
-#define SIFIVE_E31ARTY_QSPI_IE_TXWM_MASK  (0x1ul << 0ul)  /**< [0..0] Transmit watermark enable */
-#define SIFIVE_E31ARTY_QSPI_IE_TXWM  (1ul << 0ul)
-#define SIFIVE_E31ARTY_QSPI_IE_RXWM_POSITION  (1ul)
-#define SIFIVE_E31ARTY_QSPI_IE_RXWM_MASK  (0x1ul << 1ul)  /**< [1..1] Receive watermark enable */
-#define SIFIVE_E31ARTY_QSPI_IE_RXWM  (1ul << 1ul)
+// Register 'spi.ie'.
+#define SIFIVE_E31ARTY_SPI_IE_TXWM_POSITION  (0ul)
+#define SIFIVE_E31ARTY_SPI_IE_TXWM_MASK  (0x1ul << 0ul)  /**< [0..0] Transmit watermark enable */
+#define SIFIVE_E31ARTY_SPI_IE_TXWM  (1ul << 0ul)
+#define SIFIVE_E31ARTY_SPI_IE_RXWM_POSITION  (1ul)
+#define SIFIVE_E31ARTY_SPI_IE_RXWM_MASK  (0x1ul << 1ul)  /**< [1..1] Receive watermark enable */
+#define SIFIVE_E31ARTY_SPI_IE_RXWM  (1ul << 1ul)
 
-// Register 'qspi.ip'.
-#define SIFIVE_E31ARTY_QSPI_IP_TXWM_POSITION  (0ul)
-#define SIFIVE_E31ARTY_QSPI_IP_TXWM_MASK  (0x1ul << 0ul)  /**< [0..0] Transmit watermark pending */
-#define SIFIVE_E31ARTY_QSPI_IP_TXWM  (1ul << 0ul)
-#define SIFIVE_E31ARTY_QSPI_IP_RXWM_POSITION  (1ul)
-#define SIFIVE_E31ARTY_QSPI_IP_RXWM_MASK  (0x1ul << 1ul)  /**< [1..1] Receive watermark pending */
-#define SIFIVE_E31ARTY_QSPI_IP_RXWM  (1ul << 1ul)
+// Register 'spi.ip'.
+#define SIFIVE_E31ARTY_SPI_IP_TXWM_POSITION  (0ul)
+#define SIFIVE_E31ARTY_SPI_IP_TXWM_MASK  (0x1ul << 0ul)  /**< [0..0] Transmit watermark pending */
+#define SIFIVE_E31ARTY_SPI_IP_TXWM  (1ul << 0ul)
+#define SIFIVE_E31ARTY_SPI_IP_RXWM_POSITION  (1ul)
+#define SIFIVE_E31ARTY_SPI_IP_RXWM_MASK  (0x1ul << 1ul)  /**< [1..1] Receive watermark pending */
+#define SIFIVE_E31ARTY_SPI_IP_RXWM  (1ul << 1ul)
 
 // ----------------------------------------------------------------------------
 // Struct 'sifive_e31arty_pwm_t' positions & masks.
@@ -911,24 +911,24 @@ typedef enum {
 #define SIFIVE_E31ARTY_GPIO_OUTXOR_OFFSET (0x00000040ul)  /**< 0x20002040: Output XOR (invert) Register */
 
 // ----------------------------------------------------------------------------
-// Peripheral 'qspi' offsets.
+// Peripheral 'spi' offsets.
 
-#define SIFIVE_E31ARTY_QSPI_SCKDIV_OFFSET (0x00000000ul)  /**< 0x20004000: Serial clock divisor Register */
-#define SIFIVE_E31ARTY_QSPI_SCKMODE_OFFSET (0x00000004ul)  /**< 0x20004004: Serial Clock Mode Register */
-#define SIFIVE_E31ARTY_QSPI_CSID_OFFSET (0x00000010ul)  /**< 0x20004010: Chip Select ID Register */
-#define SIFIVE_E31ARTY_QSPI_CSDEF_OFFSET (0x00000014ul)  /**< 0x20004014: Chip Select Default Register */
-#define SIFIVE_E31ARTY_QSPI_CSMODE_OFFSET (0x00000018ul)  /**< 0x20004018: Chip Select Mode Register */
-#define SIFIVE_E31ARTY_QSPI_DELAY0_OFFSET (0x00000028ul)  /**< 0x20004028: Delay Control 0 Register */
-#define SIFIVE_E31ARTY_QSPI_DELAY1_OFFSET (0x0000002Cul)  /**< 0x2000402C: Delay Control 1 Register */
-#define SIFIVE_E31ARTY_QSPI_FMT_OFFSET (0x00000040ul)  /**< 0x20004040: Frame Format Register */
-#define SIFIVE_E31ARTY_QSPI_TXDATA_OFFSET (0x00000048ul)  /**< 0x20004048: Tx FIFO Data Register */
-#define SIFIVE_E31ARTY_QSPI_RXDATA_OFFSET (0x0000004Cul)  /**< 0x2000404C: Rx FIFO Data Register */
-#define SIFIVE_E31ARTY_QSPI_TXMARK_OFFSET (0x00000050ul)  /**< 0x20004050: Tx FIFO Watermark Register */
-#define SIFIVE_E31ARTY_QSPI_RXMARK_OFFSET (0x00000054ul)  /**< 0x20004054: Rx FIFO Watermark Register */
-#define SIFIVE_E31ARTY_QSPI_FCTRL_OFFSET (0x00000060ul)  /**< 0x20004060: Flash Interface Control Register */
-#define SIFIVE_E31ARTY_QSPI_FFMT_OFFSET (0x00000064ul)  /**< 0x20004064: Flash Instruction Format Register */
-#define SIFIVE_E31ARTY_QSPI_IE_OFFSET (0x00000070ul)  /**< 0x20004070: Interrupt Enable Register */
-#define SIFIVE_E31ARTY_QSPI_IP_OFFSET (0x00000074ul)  /**< 0x20004074: Interrupt Pending Register */
+#define SIFIVE_E31ARTY_SPI_SCKDIV_OFFSET (0x00000000ul)  /**< 0x20004000: Serial clock divisor Register */
+#define SIFIVE_E31ARTY_SPI_SCKMODE_OFFSET (0x00000004ul)  /**< 0x20004004: Serial Clock Mode Register */
+#define SIFIVE_E31ARTY_SPI_CSID_OFFSET (0x00000010ul)  /**< 0x20004010: Chip Select ID Register */
+#define SIFIVE_E31ARTY_SPI_CSDEF_OFFSET (0x00000014ul)  /**< 0x20004014: Chip Select Default Register */
+#define SIFIVE_E31ARTY_SPI_CSMODE_OFFSET (0x00000018ul)  /**< 0x20004018: Chip Select Mode Register */
+#define SIFIVE_E31ARTY_SPI_DELAY0_OFFSET (0x00000028ul)  /**< 0x20004028: Delay Control 0 Register */
+#define SIFIVE_E31ARTY_SPI_DELAY1_OFFSET (0x0000002Cul)  /**< 0x2000402C: Delay Control 1 Register */
+#define SIFIVE_E31ARTY_SPI_FMT_OFFSET (0x00000040ul)  /**< 0x20004040: Frame Format Register */
+#define SIFIVE_E31ARTY_SPI_TXDATA_OFFSET (0x00000048ul)  /**< 0x20004048: Tx FIFO Data Register */
+#define SIFIVE_E31ARTY_SPI_RXDATA_OFFSET (0x0000004Cul)  /**< 0x2000404C: Rx FIFO Data Register */
+#define SIFIVE_E31ARTY_SPI_TXMARK_OFFSET (0x00000050ul)  /**< 0x20004050: Tx FIFO Watermark Register */
+#define SIFIVE_E31ARTY_SPI_RXMARK_OFFSET (0x00000054ul)  /**< 0x20004054: Rx FIFO Watermark Register */
+#define SIFIVE_E31ARTY_SPI_FCTRL_OFFSET (0x00000060ul)  /**< 0x20004060: Flash Interface Control Register */
+#define SIFIVE_E31ARTY_SPI_FFMT_OFFSET (0x00000064ul)  /**< 0x20004064: Flash Instruction Format Register */
+#define SIFIVE_E31ARTY_SPI_IE_OFFSET (0x00000070ul)  /**< 0x20004070: Interrupt Enable Register */
+#define SIFIVE_E31ARTY_SPI_IP_OFFSET (0x00000074ul)  /**< 0x20004074: Interrupt Pending Register */
 
 // ----------------------------------------------------------------------------
 // Peripheral 'pwm' offsets.
@@ -945,7 +945,7 @@ typedef enum {
 #define SIFIVE_E31ARTY_PLIC_BASE_ADDRESS  (0x0C000000ul)
 #define SIFIVE_E31ARTY_UART0_BASE_ADDRESS  (0x20000000ul)
 #define SIFIVE_E31ARTY_GPIO_BASE_ADDRESS  (0x20002000ul)
-#define SIFIVE_E31ARTY_QSPI0_BASE_ADDRESS  (0x20004000ul)
+#define SIFIVE_E31ARTY_SPI0_BASE_ADDRESS  (0x20004000ul)
 #define SIFIVE_E31ARTY_PWM0_BASE_ADDRESS  (0x20005000ul)
 
 // ----------------------------------------------------------------------------
@@ -955,7 +955,7 @@ typedef enum {
 #define PLIC  ((sifive_e31arty_plic_t*) SIFIVE_E31ARTY_PLIC_BASE_ADDRESS)
 #define UART0  ((sifive_e31arty_uart_t*) SIFIVE_E31ARTY_UART0_BASE_ADDRESS)
 #define GPIO  ((sifive_e31arty_gpio_t*) SIFIVE_E31ARTY_GPIO_BASE_ADDRESS)
-#define QSPI0  ((sifive_e31arty_qspi_t*) SIFIVE_E31ARTY_QSPI0_BASE_ADDRESS)
+#define SPI0  ((sifive_e31arty_spi_t*) SIFIVE_E31ARTY_SPI0_BASE_ADDRESS)
 #define PWM0  ((sifive_e31arty_pwm_t*) SIFIVE_E31ARTY_PWM0_BASE_ADDRESS)
 
 // ----------------------------------------------------------------------------

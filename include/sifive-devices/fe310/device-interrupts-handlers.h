@@ -58,13 +58,13 @@ namespace sifive
       handle_global_uart1 (void);
 
       void
-      handle_global_qspi0 (void);
+      handle_global_spi0 (void);
 
       void
-      handle_global_qspi1 (void);
+      handle_global_spi1 (void);
 
       void
-      handle_global_qspi2 (void);
+      handle_global_spi2 (void);
 
       void
       handle_global_gpio0 (void);
@@ -250,13 +250,13 @@ extern "C"
   sifive_fe310_interrupt_handle_global_uart1 (void);
 
   void
-  sifive_fe310_interrupt_handle_global_qspi0 (void);
+  sifive_fe310_interrupt_handle_global_spi0 (void);
 
   void
-  sifive_fe310_interrupt_handle_global_qspi1 (void);
+  sifive_fe310_interrupt_handle_global_spi1 (void);
 
   void
-  sifive_fe310_interrupt_handle_global_qspi2 (void);
+  sifive_fe310_interrupt_handle_global_spi2 (void);
 
   void
   sifive_fe310_interrupt_handle_global_gpio0 (void);

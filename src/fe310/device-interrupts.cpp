@@ -90,15 +90,15 @@ namespace sifive
 
       void
       __attribute__ ((weak, alias ("sifive_fe310_interrupt_handle_unused")))
-      handle_global_qspi0 (void);
+      handle_global_spi0 (void);
 
       void
       __attribute__ ((weak, alias ("sifive_fe310_interrupt_handle_unused")))
-      handle_global_qspi1 (void);
+      handle_global_spi1 (void);
 
       void
       __attribute__ ((weak, alias ("sifive_fe310_interrupt_handle_unused")))
-      handle_global_qspi2 (void);
+      handle_global_spi2 (void);
 
       void
       __attribute__ ((weak, alias ("sifive_fe310_interrupt_handle_unused")))
@@ -301,15 +301,15 @@ sifive_fe310_interrupt_handle_global_uart1 (void);
 
 void
 __attribute__ ((weak, alias ("sifive_fe310_interrupt_handle_unused")))
-sifive_fe310_interrupt_handle_global_qspi0 (void);
+sifive_fe310_interrupt_handle_global_spi0 (void);
 
 void
 __attribute__ ((weak, alias ("sifive_fe310_interrupt_handle_unused")))
-sifive_fe310_interrupt_handle_global_qspi1 (void);
+sifive_fe310_interrupt_handle_global_spi1 (void);
 
 void
 __attribute__ ((weak, alias ("sifive_fe310_interrupt_handle_unused")))
-sifive_fe310_interrupt_handle_global_qspi2 (void);
+sifive_fe310_interrupt_handle_global_spi2 (void);
 
 void
 __attribute__ ((weak, alias ("sifive_fe310_interrupt_handle_unused")))
@@ -506,9 +506,9 @@ namespace riscv
         sifive::fe310::interrupt::handle_global_rtccmp, /* 2 */
         sifive::fe310::interrupt::handle_global_uart0, /* 3 */
         sifive::fe310::interrupt::handle_global_uart1, /* 4 */
-        sifive::fe310::interrupt::handle_global_qspi0, /* 5 */
-        sifive::fe310::interrupt::handle_global_qspi1, /* 6 */
-        sifive::fe310::interrupt::handle_global_qspi2, /* 7 */
+        sifive::fe310::interrupt::handle_global_spi0, /* 5 */
+        sifive::fe310::interrupt::handle_global_spi1, /* 6 */
+        sifive::fe310::interrupt::handle_global_spi2, /* 7 */
         sifive::fe310::interrupt::handle_global_gpio0, /* 8 */
         sifive::fe310::interrupt::handle_global_gpio1, /* 9 */
         sifive::fe310::interrupt::handle_global_gpio2, /* 10 */
@@ -561,9 +561,9 @@ namespace riscv
         sifive_fe310_interrupt_handle_global_rtccmp, /* 2 */
         sifive_fe310_interrupt_handle_global_uart0, /* 3 */
         sifive_fe310_interrupt_handle_global_uart1, /* 4 */
-        sifive_fe310_interrupt_handle_global_qspi0, /* 5 */
-        sifive_fe310_interrupt_handle_global_qspi1, /* 6 */
-        sifive_fe310_interrupt_handle_global_qspi2, /* 7 */
+        sifive_fe310_interrupt_handle_global_spi0, /* 5 */
+        sifive_fe310_interrupt_handle_global_spi1, /* 6 */
+        sifive_fe310_interrupt_handle_global_spi2, /* 7 */
         sifive_fe310_interrupt_handle_global_gpio0, /* 8 */
         sifive_fe310_interrupt_handle_global_gpio1, /* 9 */
         sifive_fe310_interrupt_handle_global_gpio2, /* 10 */
