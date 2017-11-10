@@ -517,12 +517,12 @@
             }
           }
         },
-        "qspi0": {
+        "spi0": {
           "description": "Serial Peripheral Interface (SPI) Peripheral",
           "baseAddress": "0x20004000",
           "size": "0x1000",
           "resetMask": "none",
-          "groupName": "qspi",
+          "groupName": "spi",
           "registers": {
             "sckdiv": {
               "description": "Serial clock divisor Register",
@@ -910,8 +910,8 @@
             }
           },
           "interrupts": {
-            "qspi0": {
-              "description": "QSPI0 Interrupt",
+            "spi0": {
+              "description": "SPI0 Interrupt",
               "value": "6"
             }
           }

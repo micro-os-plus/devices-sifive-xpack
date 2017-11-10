@@ -1068,12 +1068,12 @@
             }
           }
         },
-        "qspi0": {
+        "spi0": {
           "description": "Serial Peripheral Interface (SPI) Peripheral",
           "baseAddress": "0x10014000",
           "size": "0x1000",
           "resetMask": "none",
-          "groupName": "qspi",
+          "groupName": "spi",
           "registers": {
             "sckdiv": {
               "description": "Serial clock divisor Register",
@@ -1461,8 +1461,8 @@
             }
           },
           "interrupts": {
-            "qspi0": {
-              "description": "QSPI0 Interrupt",
+            "spi0": {
+              "description": "SPI0 Interrupt",
               "value": "5"
             }
           }
@@ -1631,13 +1631,13 @@
             }
           }
         },
-        "qspi1": {
+        "spi1": {
           "baseAddress": "0x10024000",
           "derivedFrom": "spi0",
-          "groupName": "qspi",
+          "groupName": "spi",
           "interrupts": {
-            "qspi1": {
-              "description": "QSPI0 Interrupt",
+            "spi1": {
+              "description": "SPI1 Interrupt",
               "value": "6"
             }
           }
@@ -1797,13 +1797,13 @@
             }
           }
         },
-        "qspi2": {
+        "spi2": {
           "baseAddress": "0x10034000",
           "derivedFrom": "spi0",
-          "groupName": "qspi",
+          "groupName": "spi",
           "interrupts": {
-            "qspi2": {
-              "description": "QSPI2 Interrupt",
+            "spi2": {
+              "description": "SPI2 Interrupt",
               "value": "7"
             }
           }
