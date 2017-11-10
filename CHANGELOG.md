@@ -2,6 +2,10 @@
 
 Changes in reverse chronological order.
 
+### v0.2.0 (2017-11-09)
+
+* rename QSPI -> SPI
+
 ### v0.1.0 (2017-10-26)
 
 * update for new GitHub names
