@@ -587,14 +587,14 @@
                           "description": "Divided by 2"
                         },
                         "2": {
-                          "displayName": "/3",
-                          "headerName": "div3",
-                          "description": "Divided by 3"
-                        },
-                        "3": {
                           "displayName": "/4",
                           "headerName": "div4",
                           "description": "Divided by 4"
+                        },
+                        "3": {
+                          "displayName": "/8",
+                          "headerName": "div8",
+                          "description": "Divided by 8"
                         }
                       }
                     }
