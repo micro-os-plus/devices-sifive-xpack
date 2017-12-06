@@ -377,7 +377,7 @@
                           "description": "Digital input Wakeup"
                         },
                         "*": {
-                          "displayName": "reserved"
+                          "displayName": "undefined"
                         }
                       }
                     }
@@ -401,7 +401,7 @@
                           "description": "Watchdog timer reset"
                         },
                         "*": {
-                          "displayName": "reserved"
+                          "displayName": "undefined"
                         }
                       }
                     }
