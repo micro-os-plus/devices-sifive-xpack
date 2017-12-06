@@ -537,19 +537,23 @@
                       "description": "Reference Clock R Divide Ratio Enumeration",
                       "values": {
                         "0": {
-                          "displayName": "div1",
+                          "displayName": "/1",
+                          "headerName": "div1",
                           "description": "Unchanged"
                         },
                         "1": {
-                          "displayName": "div2",
+                          "displayName": "/2",
+                          "headerName": "div2",
                           "description": "Divided by 2"
                         },
                         "2": {
-                          "displayName": "div3",
+                          "displayName": "/3",
+                          "headerName": "div3",
                           "description": "Divided by 3"
                         },
                         "3": {
-                          "displayName": "div4",
+                          "displayName": "/4",
+                          "headerName": "div4",
                           "description": "Divided by 4"
                         }
                       }
@@ -578,15 +582,18 @@
                           "description": "Not supported"
                         },
                         "1": {
-                          "displayName": "div2",
+                          "displayName": "/2",
+                          "headerName": "div2",
                           "description": "Divided by 2"
                         },
                         "2": {
-                          "displayName": "div3",
+                          "displayName": "/3",
+                          "headerName": "div3",
                           "description": "Divided by 3"
                         },
                         "3": {
-                          "displayName": "div4",
+                          "displayName": "/4",
+                          "headerName": "div4",
                           "description": "Divided by 4"
                         }
                       }
