@@ -2,6 +2,17 @@
 
 Changes in reverse chronological order.
 
+### (2017-12-06)
+
+* [#1] rename bitfields to value, to avoid repetition
+  * rtc->high
+  * wdog->scale
+  * wdog->cmp
+* [#2] ad bitfields to GPIO
+* [#3] fe310-xsvd: pmu->cause undefined; the reset & wakeup default bits renamed `undefined`
+* [#4] add headerName to pll enums, to differentiate `/2` from `div2`
+* update all xsvd files to schema 0.2.4, version 0.2.0
+
 ### v0.2.0 (2017-11-09)
 
 * rename QSPI -> SPI
