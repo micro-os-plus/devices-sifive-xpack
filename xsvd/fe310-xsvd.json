@@ -565,7 +565,334 @@
                   "bitOffset": "4",
                   "bitWidth": "6",
                   "resetMask": "all",
-                  "resetValue": "0x1F"
+                  "resetValue": "0x1F",
+                  "enumeration": {
+                    "pllf-enum": {
+                      "description": "Reference Clock F Multiplier Ratio Enumeration",
+                      "values": {
+                        "0": {
+                          "displayName": "*2",
+                          "headerName": "mul2",
+                          "description": "Multiplied by 2"
+                        },
+                        "1": {
+                          "displayName": "*4",
+                          "headerName": "mul4",
+                          "description": "Multiplied by 4"
+                        },
+                        "2": {
+                          "displayName": "*6",
+                          "headerName": "mul6",
+                          "description": "Multiplied by 6"
+                        },
+                        "3": {
+                          "displayName": "*8",
+                          "headerName": "mul8",
+                          "description": "Multiplied by 8"
+                        },
+                        "4": {
+                          "displayName": "*10",
+                          "headerName": "mul10",
+                          "description": "Multiplied by 10"
+                        },
+                        "5": {
+                          "displayName": "*12",
+                          "headerName": "mul12",
+                          "description": "Multiplied by 12"
+                        },
+                        "6": {
+                          "displayName": "*14",
+                          "headerName": "mul14",
+                          "description": "Multiplied by 14"
+                        },
+                        "7": {
+                          "displayName": "*16",
+                          "headerName": "mul16",
+                          "description": "Multiplied by 16"
+                        },
+                        "8": {
+                          "displayName": "*18",
+                          "headerName": "mul18",
+                          "description": "Multiplied by 18"
+                        },
+                        "9": {
+                          "displayName": "*20",
+                          "headerName": "mul20",
+                          "description": "Multiplied by 20"
+                        },
+                        "10": {
+                          "displayName": "*22",
+                          "headerName": "mul22",
+                          "description": "Multiplied by 22"
+                        },
+                        "11": {
+                          "displayName": "*24",
+                          "headerName": "mul24",
+                          "description": "Multiplied by 24"
+                        },
+                        "12": {
+                          "displayName": "*26",
+                          "headerName": "mul26",
+                          "description": "Multiplied by 26"
+                        },
+                        "13": {
+                          "displayName": "*28",
+                          "headerName": "mul28",
+                          "description": "Multiplied by 28"
+                        },
+                        "14": {
+                          "displayName": "*30",
+                          "headerName": "mul30",
+                          "description": "Multiplied by 30"
+                        },
+                        "15": {
+                          "displayName": "*32",
+                          "headerName": "mul32",
+                          "description": "Multiplied by 32"
+                        },
+                        "16": {
+                          "displayName": "*34",
+                          "headerName": "mul34",
+                          "description": "Multiplied by 34"
+                        },
+                        "17": {
+                          "displayName": "*36",
+                          "headerName": "mul36",
+                          "description": "Multiplied by 36"
+                        },
+                        "18": {
+                          "displayName": "*38",
+                          "headerName": "mul38",
+                          "description": "Multiplied by 38"
+                        },
+                        "19": {
+                          "displayName": "*40",
+                          "headerName": "mul40",
+                          "description": "Multiplied by 40"
+                        },
+                        "20": {
+                          "displayName": "*42",
+                          "headerName": "mul42",
+                          "description": "Multiplied by 42"
+                        },
+                        "21": {
+                          "displayName": "*44",
+                          "headerName": "mul44",
+                          "description": "Multiplied by 44"
+                        },
+                        "22": {
+                          "displayName": "*46",
+                          "headerName": "mul46",
+                          "description": "Multiplied by 46"
+                        },
+                        "23": {
+                          "displayName": "*48",
+                          "headerName": "mul48",
+                          "description": "Multiplied by 48"
+                        },
+                        "24": {
+                          "displayName": "*50",
+                          "headerName": "mul50",
+                          "description": "Multiplied by 50"
+                        },
+                        "25": {
+                          "displayName": "*52",
+                          "headerName": "mul52",
+                          "description": "Multiplied by 52"
+                        },
+                        "26": {
+                          "displayName": "*54",
+                          "headerName": "mul54",
+                          "description": "Multiplied by 54"
+                        },
+                        "27": {
+                          "displayName": "*56",
+                          "headerName": "mul56",
+                          "description": "Multiplied by 56"
+                        },
+                        "28": {
+                          "displayName": "*58",
+                          "headerName": "mul58",
+                          "description": "Multiplied by 58"
+                        },
+                        "29": {
+                          "displayName": "*60",
+                          "headerName": "mul60",
+                          "description": "Multiplied by 60"
+                        },
+                        "30": {
+                          "displayName": "*62",
+                          "headerName": "mul62",
+                          "description": "Multiplied by 62"
+                        },
+                        "31": {
+                          "displayName": "*64",
+                          "headerName": "mul64",
+                          "description": "Multiplied by 64"
+                        },
+                        "32": {
+                          "displayName": "*66",
+                          "headerName": "mul66",
+                          "description": "Multiplied by 66"
+                        },
+                        "33": {
+                          "displayName": "*68",
+                          "headerName": "mul68",
+                          "description": "Multiplied by 68"
+                        },
+                        "34": {
+                          "displayName": "*70",
+                          "headerName": "mul70",
+                          "description": "Multiplied by 70"
+                        },
+                        "35": {
+                          "displayName": "*72",
+                          "headerName": "mul72",
+                          "description": "Multiplied by 72"
+                        },
+                        "36": {
+                          "displayName": "*74",
+                          "headerName": "mul74",
+                          "description": "Multiplied by 74"
+                        },
+                        "37": {
+                          "displayName": "*76",
+                          "headerName": "mul76",
+                          "description": "Multiplied by 76"
+                        },
+                        "38": {
+                          "displayName": "*78",
+                          "headerName": "mul78",
+                          "description": "Multiplied by 78"
+                        },
+                        "39": {
+                          "displayName": "*80",
+                          "headerName": "mul80",
+                          "description": "Multiplied by 80"
+                        },
+                        "40": {
+                          "displayName": "*82",
+                          "headerName": "mul82",
+                          "description": "Multiplied by 82"
+                        },
+                        "41": {
+                          "displayName": "*84",
+                          "headerName": "mul84",
+                          "description": "Multiplied by 84"
+                        },
+                        "42": {
+                          "displayName": "*86",
+                          "headerName": "mul86",
+                          "description": "Multiplied by 86"
+                        },
+                        "43": {
+                          "displayName": "*88",
+                          "headerName": "mul88",
+                          "description": "Multiplied by 88"
+                        },
+                        "44": {
+                          "displayName": "*90",
+                          "headerName": "mul90",
+                          "description": "Multiplied by 90"
+                        },
+                        "45": {
+                          "displayName": "*92",
+                          "headerName": "mul92",
+                          "description": "Multiplied by 92"
+                        },
+                        "46": {
+                          "displayName": "*94",
+                          "headerName": "mul94",
+                          "description": "Multiplied by 94"
+                        },
+                        "47": {
+                          "displayName": "*96",
+                          "headerName": "mul96",
+                          "description": "Multiplied by 96"
+                        },
+                        "48": {
+                          "displayName": "*98",
+                          "headerName": "mul98",
+                          "description": "Multiplied by 98"
+                        },
+                        "49": {
+                          "displayName": "*100",
+                          "headerName": "mul100",
+                          "description": "Multiplied by 100"
+                        },
+                        "50": {
+                          "displayName": "*102",
+                          "headerName": "mul102",
+                          "description": "Multiplied by 102"
+                        },
+                        "51": {
+                          "displayName": "*104",
+                          "headerName": "mul104",
+                          "description": "Multiplied by 104"
+                        },
+                        "52": {
+                          "displayName": "*106",
+                          "headerName": "mul106",
+                          "description": "Multiplied by 106"
+                        },
+                        "53": {
+                          "displayName": "*108",
+                          "headerName": "mul108",
+                          "description": "Multiplied by 108"
+                        },
+                        "54": {
+                          "displayName": "*110",
+                          "headerName": "mul110",
+                          "description": "Multiplied by 110"
+                        },
+                        "55": {
+                          "displayName": "*112",
+                          "headerName": "mul112",
+                          "description": "Multiplied by 112"
+                        },
+                        "56": {
+                          "displayName": "*114",
+                          "headerName": "mul114",
+                          "description": "Multiplied by 114"
+                        },
+                        "57": {
+                          "displayName": "*116",
+                          "headerName": "mul116",
+                          "description": "Multiplied by 116"
+                        },
+                        "58": {
+                          "displayName": "*118",
+                          "headerName": "mul118",
+                          "description": "Multiplied by 118"
+                        },
+                        "59": {
+                          "displayName": "*120",
+                          "headerName": "mul120",
+                          "description": "Multiplied by 120"
+                        },
+                        "60": {
+                          "displayName": "*122",
+                          "headerName": "mul122",
+                          "description": "Multiplied by 122"
+                        },
+                        "61": {
+                          "displayName": "*124",
+                          "headerName": "mul124",
+                          "description": "Multiplied by 124"
+                        },
+                        "62": {
+                          "displayName": "*126",
+                          "headerName": "mul126",
+                          "description": "Multiplied by 126"
+                        },
+                        "63": {
+                          "displayName": "*128",
+                          "headerName": "mul128",
+                          "description": "Multiplied by 128"
+                        }
+                      }
+                    }
+                  }
                 },
                 "q": {
                   "description": "PLL Q output divider value",
