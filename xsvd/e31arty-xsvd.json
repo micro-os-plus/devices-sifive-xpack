@@ -257,71 +257,207 @@
           "registers": {
             "value": {
               "description": "Pin Value Register",
-              "addressOffset": "0x000"
+              "addressOffset": "0x000",
+              "fields": {
+                "bit": {
+                  "repeatGenerator": "0-31",
+                  "description": "Value Bit Field",
+                  "bitOffset": "0",
+                  "bitWidth": "1"
+                }
+              }
             },
             "inputen": {
               "description": "Pin Input Enable Register",
-              "addressOffset": "0x004"
+              "addressOffset": "0x004",
+              "fields": {
+                "bit": {
+                  "repeatGenerator": "0-31",
+                  "description": "Pin Input Enable Bit Field",
+                  "bitOffset": "0",
+                  "bitWidth": "1"
+                }
+              }
             },
             "outputen": {
               "description": "Pin Output Enable Register",
-              "addressOffset": "0x008"
+              "addressOffset": "0x008",
+              "fields": {
+                "bit": {
+                  "repeatGenerator": "0-31",
+                  "description": "Pin Output Enable Bit Field",
+                  "bitOffset": "0",
+                  "bitWidth": "1"
+                }
+              }
             },
             "port": {
               "description": "Output Port Value Register",
-              "addressOffset": "0x00C"
+              "addressOffset": "0x00C",
+              "fields": {
+                "bit": {
+                  "repeatGenerator": "0-31",
+                  "description": "Output Port Value Bit Field",
+                  "bitOffset": "0",
+                  "bitWidth": "1"
+                }
+              }
             },
             "pue": {
               "description": "Internal Pull-up Enable Register",
-              "addressOffset": "0x010"
+              "addressOffset": "0x010",
+              "fields": {
+                "bit": {
+                  "repeatGenerator": "0-31",
+                  "description": "Internal Pull-up Enable Bit Field",
+                  "bitOffset": "0",
+                  "bitWidth": "1"
+                }
+              }
             },
             "ds": {
               "description": "Pin Drive Strength Register",
-              "addressOffset": "0x014"
+              "addressOffset": "0x014",
+              "fields": {
+                "bit": {
+                  "repeatGenerator": "0-31",
+                  "description": "Pin Drive Strength Bit Field",
+                  "bitOffset": "0",
+                  "bitWidth": "1"
+                }
+              }
             },
             "riseie": {
               "description": "Rise Interrupt Enable Register",
-              "addressOffset": "0x018"
+              "addressOffset": "0x018",
+              "fields": {
+                "bit": {
+                  "repeatGenerator": "0-31",
+                  "description": "Rise Interrupt Enable Bit Field",
+                  "bitOffset": "0",
+                  "bitWidth": "1"
+                }
+              }
             },
             "riseip": {
               "description": "Rise Interrupt Pending Register",
-              "addressOffset": "0x01C"
+              "addressOffset": "0x01C",
+              "fields": {
+                "bit": {
+                  "repeatGenerator": "0-31",
+                  "description": "Rise Interrupt Pending Bit Field",
+                  "bitOffset": "0",
+                  "bitWidth": "1"
+                }
+              }
             },
             "fallie": {
               "description": "Fall Interrupt Enable Register",
-              "addressOffset": "0x020"
+              "addressOffset": "0x020",
+              "fields": {
+                "bit": {
+                  "repeatGenerator": "0-31",
+                  "description": "Fall Interrupt Enable Bit Field",
+                  "bitOffset": "0",
+                  "bitWidth": "1"
+                }
+              }
             },
             "fallip": {
               "description": "Fall Interrupt Pending Register",
-              "addressOffset": "0x024"
+              "addressOffset": "0x024",
+              "fields": {
+                "bit": {
+                  "repeatGenerator": "0-31",
+                  "description": "Fall Interrupt Pending Bit Field",
+                  "bitOffset": "0",
+                  "bitWidth": "1"
+                }
+              }
             },
             "highie": {
               "description": "High Interrupt Enable Register",
-              "addressOffset": "0x028"
+              "addressOffset": "0x028",
+              "fields": {
+                "bit": {
+                  "repeatGenerator": "0-31",
+                  "description": "High Interrupt Enable Bit Field",
+                  "bitOffset": "0",
+                  "bitWidth": "1"
+                }
+              }
             },
             "highip": {
               "description": "High Interrupt Pending Register",
-              "addressOffset": "0x02C"
+              "addressOffset": "0x02C",
+              "fields": {
+                "bit": {
+                  "repeatGenerator": "0-31",
+                  "description": "High Interrupt Pending Bit Field",
+                  "bitOffset": "0",
+                  "bitWidth": "1"
+                }
+              }
             },
             "lowie": {
               "description": "Low Interrupt Enable Register",
-              "addressOffset": "0x030"
+              "addressOffset": "0x030",
+              "fields": {
+                "bit": {
+                  "repeatGenerator": "0-31",
+                  "description": "Low Interrupt Enable Bit Field",
+                  "bitOffset": "0",
+                  "bitWidth": "1"
+                }
+              }
             },
             "lowip": {
               "description": "Low Interrupt Pending Register",
-              "addressOffset": "0x034"
+              "addressOffset": "0x034",
+              "fields": {
+                "bit": {
+                  "repeatGenerator": "0-31",
+                  "description": "Low Interrupt Pending Bit Field",
+                  "bitOffset": "0",
+                  "bitWidth": "1"
+                }
+              }
             },
             "iofen": {
               "description": "HW I/O Function Enable Register",
-              "addressOffset": "0x038"
+              "addressOffset": "0x038",
+              "fields": {
+                "bit": {
+                  "repeatGenerator": "0-31",
+                  "description": "HW I/O Function Enable Bit Field",
+                  "bitOffset": "0",
+                  "bitWidth": "1"
+                }
+              }
             },
             "iofsel": {
               "description": "HW I/O Function Select Register",
-              "addressOffset": "0x03C"
+              "addressOffset": "0x03C",
+              "fields": {
+                "bit": {
+                  "repeatGenerator": "0-31",
+                  "description": "HW I/O Function Select Bit Field",
+                  "bitOffset": "0",
+                  "bitWidth": "1"
+                }
+              }
             },
             "outxor": {
               "description": "Output XOR (invert) Register",
-              "addressOffset": "0x040"
+              "addressOffset": "0x040",
+              "fields": {
+                "bit": {
+                  "repeatGenerator": "0-31",
+                  "description": "Output XOR Bit Field",
+                  "bitOffset": "0",
+                  "bitWidth": "1"
+                }
+              }
             }
           },
           "interrupts": {
