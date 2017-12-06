@@ -224,7 +224,7 @@
               "description": "Watchdog Scale Register",
               "addressOffset": "0x0010",
               "fields": {
-                "scale": {
+                "value": {
                   "description": "Watchdog scale value",
                   "bitOffset": "0",
                   "bitWidth": "16"
@@ -243,7 +243,7 @@
               "description": "Watchdog Compare Register",
               "addressOffset": "0x0020",
               "fields": {
-                "cmp": {
+                "value": {
                   "description": "Watchdog compare value",
                   "bitOffset": "0",
                   "bitWidth": "16"
@@ -296,7 +296,7 @@
               "description": "RTC Counter Register High",
               "addressOffset": "0x000C",
               "fields": {
-                "high": {
+                "value": {
                   "description": "RTC counter register, high bits",
                   "bitOffset": "0",
                   "bitWidth": "16"
