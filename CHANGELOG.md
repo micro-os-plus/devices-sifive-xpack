@@ -12,6 +12,8 @@ Changes in reverse chronological order.
 * [#3] fe310-xsvd: pmu->cause undefined; the reset & wakeup default bits renamed `undefined`
 * [#4] add headerName to pll enums, to differentiate `/2` from `div2`
 * update all xsvd files to schema 0.2.4, version 0.2.0
+* [#5] fe310-xsvd: add enum to pllcfg.f field
+* [#6] fe310-xsvd: fix pll q enums
 
 ### v0.2.0 (2017-11-09)
 
