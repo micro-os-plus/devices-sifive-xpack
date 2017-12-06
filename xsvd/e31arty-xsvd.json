@@ -1,7 +1,7 @@
 {
-  "schemaVersion": "0.2.3",
-  "contentVersion": "0.1.0",
-  "headerVersion": "0.1.0",
+  "schemaVersion": "0.2.4",
+  "contentVersion": "0.2.0",
+  "headerVersion": "0.2.0",
   "device": {
     "e31arty": {
       "displayName": "Core Complex E31 Arty",
