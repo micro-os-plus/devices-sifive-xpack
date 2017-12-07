@@ -6,7 +6,7 @@
     "e31arty": {
       "displayName": "Core Complex E31 Arty",
       "description": "SiFive’s E31 is a synthesised version of Core Complex E31 running on the Arty board.",
-      "vendor": {
+      "supplier": {
         "name": "sifive",
         "id": "1",
         "displayName": "SiFive, Inc.",
