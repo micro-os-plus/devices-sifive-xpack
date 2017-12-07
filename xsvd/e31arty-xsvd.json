@@ -9,7 +9,8 @@
       "supplier": {
         "name": "sifive",
         "id": "1",
-        "displayName": "SiFive, Inc.",
+        "displayName": "SiFive",
+        "fullName": "SiFive, Inc.",
         "contact": "info@sifive.com"
       },
       "busWidth": "32",
