@@ -361,7 +361,7 @@
                   "bitOffset": "0",
                   "bitWidth": "2",
                   "access": "r",
-                  "enumeration": {
+                  "enumerations": {
                     "wakeupcause-enum": {
                       "description": "Wakeup Cause Values Enumeration",
                       "values": {
@@ -389,7 +389,7 @@
                   "bitOffset": "8",
                   "bitWidth": "2",
                   "access": "r",
-                  "enumeration": {
+                  "enumerations": {
                     "resetcause-enum": {
                       "description": "Reset Cause Values Enumeration",
                       "values": {
@@ -533,7 +533,7 @@
                   "bitWidth": "3",
                   "resetMask": "all",
                   "resetValue": "0x1",
-                  "enumeration": {
+                  "enumerations": {
                     "pllr-enum": {
                       "description": "Reference Clock R Divide Ratio Enumeration",
                       "values": {
@@ -567,7 +567,7 @@
                   "bitWidth": "6",
                   "resetMask": "all",
                   "resetValue": "0x1F",
-                  "enumeration": {
+                  "enumerations": {
                     "pllf-enum": {
                       "description": "Reference Clock F Multiplier Ratio Enumeration",
                       "values": {
@@ -901,7 +901,7 @@
                   "bitWidth": "2",
                   "resetMask": "all",
                   "resetValue": "0x3",
-                  "enumeration": {
+                  "enumerations": {
                     "pllq-enum": {
                       "description": "Reference Clock Q Divide Ratio Enumeration",
                       "values": {
@@ -1601,7 +1601,7 @@
                   "bitWidth": "2",
                   "resetMask": "all",
                   "resetValue": "0x0",
-                  "enumeration": {
+                  "enumerations": {
                     "csmode-enum": {
                       "description": "Chip Select Modes Enumeration",
                       "values": {
@@ -1676,7 +1676,7 @@
                   "bitWidth": "2",
                   "resetMask": "all",
                   "resetValue": "0x0",
-                  "enumeration": {
+                  "enumerations": {
                     "proto-enum": {
                       "description": "SPI Protocol Enumeration",
                       "values": {
@@ -1705,7 +1705,7 @@
                   "bitWidth": "1",
                   "resetMask": "all",
                   "resetValue": "0x0",
-                  "enumeration": {
+                  "enumerations": {
                     "endian-enum": {
                       "description": "SPI Endianness Enumeration",
                       "values": {
@@ -1727,7 +1727,7 @@
                   "bitWidth": "1",
                   "resetMask": "all",
                   "resetValue": "0x1",
-                  "enumeration": {
+                  "enumerations": {
                     "dir-enum": {
                       "description": "SPI I/O Direction Enumeration",
                       "values": {

@@ -736,7 +736,7 @@
                   "bitWidth": "2",
                   "resetMask": "all",
                   "resetValue": "0x0",
-                  "enumeration": {
+                  "enumerations": {
                     "csmode-enum": {
                       "description": "Chip Select Modes Enumeration",
                       "values": {
@@ -811,7 +811,7 @@
                   "bitWidth": "2",
                   "resetMask": "all",
                   "resetValue": "0x0",
-                  "enumeration": {
+                  "enumerations": {
                     "proto-enum": {
                       "description": "SPI Protocol Enumeration",
                       "values": {
@@ -840,7 +840,7 @@
                   "bitWidth": "1",
                   "resetMask": "all",
                   "resetValue": "0x0",
-                  "enumeration": {
+                  "enumerations": {
                     "endian-enum": {
                       "description": "SPI Endianness Enumeration",
                       "values": {
@@ -862,7 +862,7 @@
                   "bitWidth": "1",
                   "resetMask": "all",
                   "resetValue": "0x1",
-                  "enumeration": {
+                  "enumerations": {
                     "dir-enum": {
                       "description": "SPI I/O Direction Enumeration",
                       "values": {
