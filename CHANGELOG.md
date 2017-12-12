@@ -2,7 +2,13 @@
 
 Changes in reverse chronological order.
 
-### (2017-12-06)
+* [#8] Rework the devices xcdl
+  * use "mcus" to avoid repeating "devices"
+  * rename "vendor" -> "supplier"
+  * move the "xsvd" property inside "debug"
+  * use "displayName" for devices
+  
+### 2017-12-06
 
 * [#1] rename bitfields to value, to avoid repetition
   * rtc->high
