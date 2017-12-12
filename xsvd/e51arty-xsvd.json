@@ -244,7 +244,8 @@
                   "repeatGenerator": "0-31",
                   "description": "Value Bit Field",
                   "bitOffset": "0",
-                  "bitWidth": "1"
+                  "bitWidth": "1",
+                  "headerName": ""
                 }
               }
             },
@@ -256,7 +257,8 @@
                   "repeatGenerator": "0-31",
                   "description": "Pin Input Enable Bit Field",
                   "bitOffset": "0",
-                  "bitWidth": "1"
+                  "bitWidth": "1",
+                  "headerName": ""
                 }
               }
             },
@@ -268,7 +270,8 @@
                   "repeatGenerator": "0-31",
                   "description": "Pin Output Enable Bit Field",
                   "bitOffset": "0",
-                  "bitWidth": "1"
+                  "bitWidth": "1",
+                  "headerName": ""
                 }
               }
             },
@@ -280,7 +283,8 @@
                   "repeatGenerator": "0-31",
                   "description": "Output Port Value Bit Field",
                   "bitOffset": "0",
-                  "bitWidth": "1"
+                  "bitWidth": "1",
+                  "headerName": ""
                 }
               }
             },
@@ -292,7 +296,8 @@
                   "repeatGenerator": "0-31",
                   "description": "Internal Pull-up Enable Bit Field",
                   "bitOffset": "0",
-                  "bitWidth": "1"
+                  "bitWidth": "1",
+                  "headerName": ""
                 }
               }
             },
@@ -304,7 +309,8 @@
                   "repeatGenerator": "0-31",
                   "description": "Pin Drive Strength Bit Field",
                   "bitOffset": "0",
-                  "bitWidth": "1"
+                  "bitWidth": "1",
+                  "headerName": ""
                 }
               }
             },
@@ -316,7 +322,8 @@
                   "repeatGenerator": "0-31",
                   "description": "Rise Interrupt Enable Bit Field",
                   "bitOffset": "0",
-                  "bitWidth": "1"
+                  "bitWidth": "1",
+                  "headerName": ""
                 }
               }
             },
@@ -328,7 +335,8 @@
                   "repeatGenerator": "0-31",
                   "description": "Rise Interrupt Pending Bit Field",
                   "bitOffset": "0",
-                  "bitWidth": "1"
+                  "bitWidth": "1",
+                  "headerName": ""
                 }
               }
             },
@@ -340,7 +348,8 @@
                   "repeatGenerator": "0-31",
                   "description": "Fall Interrupt Enable Bit Field",
                   "bitOffset": "0",
-                  "bitWidth": "1"
+                  "bitWidth": "1",
+                  "headerName": ""
                 }
               }
             },
@@ -352,7 +361,8 @@
                   "repeatGenerator": "0-31",
                   "description": "Fall Interrupt Pending Bit Field",
                   "bitOffset": "0",
-                  "bitWidth": "1"
+                  "bitWidth": "1",
+                  "headerName": ""
                 }
               }
             },
@@ -364,7 +374,8 @@
                   "repeatGenerator": "0-31",
                   "description": "High Interrupt Enable Bit Field",
                   "bitOffset": "0",
-                  "bitWidth": "1"
+                  "bitWidth": "1",
+                  "headerName": ""
                 }
               }
             },
@@ -376,7 +387,8 @@
                   "repeatGenerator": "0-31",
                   "description": "High Interrupt Pending Bit Field",
                   "bitOffset": "0",
-                  "bitWidth": "1"
+                  "bitWidth": "1",
+                  "headerName": ""
                 }
               }
             },
@@ -388,7 +400,8 @@
                   "repeatGenerator": "0-31",
                   "description": "Low Interrupt Enable Bit Field",
                   "bitOffset": "0",
-                  "bitWidth": "1"
+                  "bitWidth": "1",
+                  "headerName": ""
                 }
               }
             },
@@ -400,7 +413,8 @@
                   "repeatGenerator": "0-31",
                   "description": "Low Interrupt Pending Bit Field",
                   "bitOffset": "0",
-                  "bitWidth": "1"
+                  "bitWidth": "1",
+                  "headerName": ""
                 }
               }
             },
@@ -412,7 +426,8 @@
                   "repeatGenerator": "0-31",
                   "description": "HW I/O Function Enable Bit Field",
                   "bitOffset": "0",
-                  "bitWidth": "1"
+                  "bitWidth": "1",
+                  "headerName": ""
                 }
               }
             },
@@ -424,7 +439,8 @@
                   "repeatGenerator": "0-31",
                   "description": "HW I/O Function Select Bit Field",
                   "bitOffset": "0",
-                  "bitWidth": "1"
+                  "bitWidth": "1",
+                  "headerName": ""
                 }
               }
             },
@@ -436,7 +452,8 @@
                   "repeatGenerator": "0-31",
                   "description": "Output XOR Bit Field",
                   "bitOffset": "0",
-                  "bitWidth": "1"
+                  "bitWidth": "1",
+                  "headerName": ""
                 }
               }
             }
