@@ -33,9 +33,9 @@
 /**
  * @brief µOS++ Core - device peripherals header file
  *  for Freedom E310-G000 from SiFive, Inc.
- * @version 0.1.0
- * @date 2017-11-09
- * @note Generated from fe310-xsvd.json@0.1.0 with xsvd@0.2.3.
+ * @version 0.2.0
+ * @date 2017-12-12
+ * @note Generated from fe310-xsvd.json@0.2.0 with xsvd@0.3.0.
  */
 
 // ----------------------------------------------------------------------------
@@ -205,15 +205,7 @@ typedef struct {
  */
 
 typedef struct {
-
-       union {
-         IO__ uint32_t threshold;  /**< @0x0C200000: The Priority Threshold Register */
-
-         struct {
-           IO__ uint32_t value : 3;  /**< [2..0] The priority threshold value */
-                uint32_t : 29;
-         } threshold_bits;
-       };
+  IO__ uint32_t threshold;  /**< @0x0C200000: The Priority Threshold Register */
   IO__ uint32_t claimcomplete;  /**< @0x0C200004: The Interrupt Claim/Completion Register */
 } sifive_fe310_plic_target0_m_t; // 0x0C200007
 
@@ -234,15 +226,7 @@ typedef struct {
  */
 
 typedef struct {
-
-       union {
-         IO__ uint32_t priorities[52];  /**< @0x0C000000: Interrupt Priorities Registers; 0 is reserved. */
-
-         struct {
-           IO__ uint32_t value : 3;  /**< [2..0] The priority for a given global interrupt */
-                uint32_t : 29;
-         } priorities_bits[52];
-       };
+  IO__ uint32_t priorities[52];  /**< @0x0C000000: Interrupt Priorities Registers; 0 is reserved. */
        uint32_t reserved1[972];
   I__  uint32_t pendings[2];  /**< @0x0C001000: Interrupt Pending Bits Registers */
        uint64_t reserved2[511];
@@ -259,47 +243,15 @@ typedef struct {
  */
 
 typedef struct {
-
-       union {
-         IO__ uint32_t cfg;  /**< @0x10000000: Watchdog Configuration Register */
-
-         struct {
-           IO__ uint32_t scale : 4;  /**< [3..0] Watchdog counter scale */
-                uint32_t : 4;
-           IO__ uint32_t rsten : 1;  /**< [8..8] Watchdog full reset enable */
-           IO__ uint32_t zerocmp : 1;  /**< [9..9] Watchdog zero on comparator */
-                uint32_t : 2;
-           IO__ uint32_t enalways : 1;  /**< [12..12] Watchdog enable counter always */
-           IO__ uint32_t encoreawake : 1;  /**< [13..13] Watchdog counter only when awake */
-                uint32_t : 14;
-           IO__ uint32_t cmpip : 1;  /**< [28..28] Watchdog interrupt pending */
-                uint32_t : 3;
-         } cfg_bits;
-       };
+  IO__ uint32_t cfg;  /**< @0x10000000: Watchdog Configuration Register */
        uint32_t reserved1;
   IO__ uint32_t count;  /**< @0x10000008: Watchdog Count Register */
        uint32_t reserved2;
-
-       union {
-         IO__ uint32_t scale;  /**< @0x10000010: Watchdog Scale Register */
-
-         struct {
-           IO__ uint32_t scale : 16;  /**< [15..0] Watchdog scale value */
-                uint32_t : 16;
-         } scale_bits;
-       };
+  IO__ uint32_t scale;  /**< @0x10000010: Watchdog Scale Register */
        uint32_t reserved3;
   IO__ uint32_t feed;  /**< @0x10000018: Watchdog Feed Address Register */
   IO__ uint32_t key;  /**< @0x1000001C: Watchdog Key Register */
-
-       union {
-         IO__ uint32_t cmp;  /**< @0x10000020: Watchdog Compare Register */
-
-         struct {
-           IO__ uint32_t cmp : 16;  /**< [15..0] Watchdog compare value */
-                uint32_t : 16;
-         } cmp_bits;
-       };
+  IO__ uint32_t cmp;  /**< @0x10000020: Watchdog Compare Register */
        uint32_t reserved4[7];
 } sifive_fe310_wdog_t; // 0x1000003F
 
@@ -310,30 +262,10 @@ typedef struct {
  */
 
 typedef struct {
-
-       union {
-         IO__ uint32_t cfg;  /**< @0x10000040: RTC Configuration Register */
-
-         struct {
-           IO__ uint32_t scale : 4;  /**< [3..0] RTC clock rate scale */
-                uint32_t : 8;
-           IO__ uint32_t enalways : 1;  /**< [12..12] RTC counter enable */
-                uint32_t : 15;
-           I__  uint32_t cmpip : 1;  /**< [28..28] RTC comparator interrupt pending */
-                uint32_t : 3;
-         } cfg_bits;
-       };
+  IO__ uint32_t cfg;  /**< @0x10000040: RTC Configuration Register */
        uint32_t reserved1;
   IO__ uint32_t low;  /**< @0x10000048: RTC Counter Register Low */
-
-       union {
-         IO__ uint32_t high;  /**< @0x1000004C: RTC Counter Register High */
-
-         struct {
-           IO__ uint32_t high : 16;  /**< [15..0] RTC counter register, high bits */
-                uint32_t : 16;
-         } high_bits;
-       };
+  IO__ uint32_t high;  /**< @0x1000004C: RTC Counter Register High */
   IO__ uint32_t scale;  /**< @0x10000050: RTC Scale Register */
        uint32_t reserved2[3];
   IO__ uint32_t cmp;  /**< @0x10000060: RTC Compare Register */
@@ -347,19 +279,7 @@ typedef struct {
  */
 
 typedef struct {
-
-       union {
-         IO__ uint32_t lfrosccfg;  /**< @0x10000070: Internal Programmable Low-Frequency Ring Oscillator Register */
-
-         struct {
-           IO__ uint32_t div : 6;  /**< [5..0] LFROSC divider */
-                uint32_t : 10;
-           IO__ uint32_t trim : 5;  /**< [20..16] LFROSC trim value */
-                uint32_t : 9;
-           IO__ uint32_t en : 1;  /**< [30..30] LFROSC enable */
-           I__  uint32_t rdy : 1;  /**< [31..31] LFROSC ready */
-         } lfrosccfg_bits;
-       };
+  IO__ uint32_t lfrosccfg;  /**< @0x10000070: Internal Programmable Low-Frequency Ring Oscillator Register */
        uint32_t reserved1[3];
   IO__ uint32_t backup[32];  /**< @0x10000080: Backup Registers */
 } sifive_fe310_aon_t; // 0x100000FF
@@ -373,28 +293,8 @@ typedef struct {
 typedef struct {
   IO__ uint32_t wakeupi[8];  /**< @0x10000100: Wakeup program instruction Registers */
   IO__ uint32_t sleepi[8];  /**< @0x10000120: Sleep Program Instruction Registers */
-
-       union {
-         IO__ uint32_t ie;  /**< @0x10000140: PMU Interrupt Enables Register */
-
-         struct {
-                uint32_t : 1;
-           IO__ uint32_t rtc : 1;  /**< [1..1] RTC Comparator active */
-           IO__ uint32_t dwakeup : 1;  /**< [2..2] dwakeup_n pin active */
-                uint32_t : 29;
-         } ie_bits;
-       };
-
-       union {
-         IO__ uint32_t cause;  /**< @0x10000144: PMU Wakeup Cause Register */
-
-         struct {
-           I__  uint32_t wakeupcause : 2;  /**< [1..0] Wakeup cause */
-                uint32_t : 6;
-           I__  uint32_t resetcause : 2;  /**< [9..8] Reset cause */
-                uint32_t : 22;
-         } cause_bits;
-       };
+  IO__ uint32_t ie;  /**< @0x10000140: PMU Interrupt Enables Register */
+  IO__ uint32_t cause;  /**< @0x10000144: PMU Wakeup Cause Register */
   IO__ uint32_t sleep;  /**< @0x10000148: PMU Initiate Sleep Sequence Register */
   IO__ uint32_t key;  /**< @0x1000014C: PMU Key Register */
 } sifive_fe310_pmu_t; // 0x1000014F
@@ -406,46 +306,9 @@ typedef struct {
  */
 
 typedef struct {
-
-       union {
-         IO__ uint32_t hfrosccfg;  /**< @0x10008000: Internal Trimmable Programmable 72 MHz Oscillator Register */
-
-         struct {
-           IO__ uint32_t div : 6;  /**< [5..0] HFROSC divider */
-                uint32_t : 10;
-           IO__ uint32_t trim : 5;  /**< [20..16] HFROSC trim value */
-                uint32_t : 9;
-           IO__ uint32_t en : 1;  /**< [30..30] HFROSC enable */
-           I__  uint32_t rdy : 1;  /**< [31..31] HFROSC ready */
-         } hfrosccfg_bits;
-       };
-
-       union {
-         IO__ uint32_t hfxosccfg;  /**< @0x10008004: External 16 MHz Crystal Oscillator Register */
-
-         struct {
-                uint32_t : 30;
-           IO__ uint32_t en : 1;  /**< [30..30] HFXOSC enable */
-           I__  uint32_t rdy : 1;  /**< [31..31] HFXOSC ready */
-         } hfxosccfg_bits;
-       };
-
-       union {
-         IO__ uint32_t pllcfg;  /**< @0x10008008: Internal High-Frequency PLL (HFPLL) Register */
-
-         struct {
-           IO__ uint32_t r : 3;  /**< [2..0] PLL R input divider value */
-                uint32_t : 1;
-           IO__ uint32_t f : 6;  /**< [9..4] PLL F multiplier value */
-           IO__ uint32_t q : 2;  /**< [11..10] PLL Q output divider value */
-                uint32_t : 4;
-           IO__ uint32_t sel : 1;  /**< [16..16] PLL select */
-           IO__ uint32_t refsel : 1;  /**< [17..17] PLL reference select */
-           IO__ uint32_t bypass : 1;  /**< [18..18] PLL bypass */
-                uint32_t : 12;
-           I__  uint32_t lock : 1;  /**< [31..31] PLL lock indicator */
-         } pllcfg_bits;
-       };
+  IO__ uint32_t hfrosccfg;  /**< @0x10008000: Internal Trimmable Programmable 72 MHz Oscillator Register */
+  IO__ uint32_t hfxosccfg;  /**< @0x10008004: External 16 MHz Crystal Oscillator Register */
+  IO__ uint32_t pllcfg;  /**< @0x10008008: Internal High-Frequency PLL (HFPLL) Register */
   IO__ uint32_t plloutdiv;  /**< @0x1000800C: PLL Output Divider */
        uint32_t reserved1[8188];
 } sifive_fe310_prci_t; // 0x1000FFFF
@@ -470,19 +333,7 @@ typedef struct {
   IO__ uint32_t a;  /**< @0x10010028: Device Address Register */
   IO__ uint32_t d;  /**< @0x1001002C: Device Data Input Register */
   IO__ uint32_t q;  /**< @0x10010030: Device Data Output Register */
-
-       union {
-         IO__ uint32_t rsctrl;  /**< @0x10010034: Read Sequencer Control Register */
-
-         struct {
-           IO__ uint32_t scale : 2;  /**< [1..0] OTP timescale */
-                uint32_t : 1;
-           IO__ uint32_t tas : 1;  /**< [3..3] Address setup time */
-           IO__ uint32_t trp : 1;  /**< [4..4] Read pulse time */
-           IO__ uint32_t tracc : 1;  /**< [5..5] Read access time */
-                uint32_t : 26;
-         } rsctrl_bits;
-       };
+  IO__ uint32_t rsctrl;  /**< @0x10010034: Read Sequencer Control Register */
        uint32_t reserved1[1010];
 } sifive_fe310_otp_t; // 0x10010FFF
 
@@ -520,78 +371,13 @@ typedef struct {
  */
 
 typedef struct {
-
-       union {
-         IO__ uint32_t txdata;  /**< @0x10013000: Transmit Data Register */
-
-         struct {
-           IO__ uint32_t data : 8;  /**< [7..0] Transmit data */
-                uint32_t : 23;
-           IO__ uint32_t full : 1;  /**< [31..31] Transmit FIFO full */
-         } txdata_bits;
-       };
-
-       union {
-         IO__ uint32_t rxdata;  /**< @0x10013004: Receive Data Register */
-
-         struct {
-           I__  uint32_t data : 8;  /**< [7..0] Received data */
-                uint32_t : 23;
-           IO__ uint32_t empty : 1;  /**< [31..31] Receive FIFO empty */
-         } rxdata_bits;
-       };
-
-       union {
-         IO__ uint32_t txctrl;  /**< @0x10013008: Transmit Control Register  */
-
-         struct {
-           IO__ uint32_t txen : 1;  /**< [0..0] Transmit enable */
-           IO__ uint32_t nstop : 1;  /**< [1..1] Number of stop bits */
-                uint32_t : 14;
-           IO__ uint32_t txcnt : 3;  /**< [18..16] Transmit watermark level */
-                uint32_t : 13;
-         } txctrl_bits;
-       };
-
-       union {
-         IO__ uint32_t rxctrl;  /**< @0x1001300C: Receive Control Register */
-
-         struct {
-           IO__ uint32_t rxen : 1;  /**< [0..0] Receive enable */
-                uint32_t : 15;
-           IO__ uint32_t rxcnt : 3;  /**< [18..16] Receive watermark level */
-                uint32_t : 13;
-         } rxctrl_bits;
-       };
-
-       union {
-         IO__ uint32_t ie;  /**< @0x10013010: Interrupt Enable Register */
-
-         struct {
-           IO__ uint32_t txwm : 1;  /**< [0..0] Transmit watermark interrupt enable */
-           IO__ uint32_t rxwm : 1;  /**< [1..1] Receive watermark interrupt enable */
-                uint32_t : 30;
-         } ie_bits;
-       };
-
-       union {
-         I__  uint32_t ip;  /**< @0x10013014: Interrupt Pending Register */
-
-         struct {
-           I__  uint32_t txwm : 1;  /**< [0..0] Transmit watermark interrupt pending */
-           I__  uint32_t rxwm : 1;  /**< [1..1] Receive watermark interrupt pending */
-                uint32_t : 30;
-         } ip_bits;
-       };
-
-       union {
-         IO__ uint32_t div;  /**< @0x10013018: Baud Rate Divisor Register */
-
-         struct {
-           IO__ uint32_t value : 16;  /**< [15..0] Baud rate divisor */
-                uint32_t : 16;
-         } div_bits;
-       };
+  IO__ uint32_t txdata;  /**< @0x10013000: Transmit Data Register */
+  IO__ uint32_t rxdata;  /**< @0x10013004: Receive Data Register */
+  IO__ uint32_t txctrl;  /**< @0x10013008: Transmit Control Register  */
+  IO__ uint32_t rxctrl;  /**< @0x1001300C: Receive Control Register */
+  IO__ uint32_t ie;  /**< @0x10013010: Interrupt Enable Register */
+  I__  uint32_t ip;  /**< @0x10013014: Interrupt Pending Register */
+  IO__ uint32_t div;  /**< @0x10013018: Baud Rate Divisor Register */
        uint32_t reserved1[1017];
 } sifive_fe310_uart_t; // 0x10013FFF
 
@@ -602,160 +388,28 @@ typedef struct {
  */
 
 typedef struct {
-
-       union {
-         IO__ uint32_t sckdiv;  /**< @0x10014000: Serial clock divisor Register */
-
-         struct {
-           IO__ uint32_t scale : 12;  /**< [11..0] Divisor for serial clock */
-                uint32_t : 20;
-         } sckdiv_bits;
-       };
-
-       union {
-         IO__ uint32_t sckmode;  /**< @0x10014004: Serial Clock Mode Register */
-
-         struct {
-           IO__ uint32_t pha : 1;  /**< [0..0] Serial clock phase */
-           IO__ uint32_t pol : 1;  /**< [1..1] Serial clock polarity */
-                uint32_t : 30;
-         } sckmode_bits;
-       };
+  IO__ uint32_t sckdiv;  /**< @0x10014000: Serial clock divisor Register */
+  IO__ uint32_t sckmode;  /**< @0x10014004: Serial Clock Mode Register */
        uint32_t reserved1[2];
   IO__ uint32_t csid;  /**< @0x10014010: Chip Select ID Register */
   IO__ uint32_t csdef;  /**< @0x10014014: Chip Select Default Register */
-
-       union {
-         IO__ uint32_t csmode;  /**< @0x10014018: Chip Select Mode Register */
-
-         struct {
-           IO__ uint32_t mode : 2;  /**< [1..0] Chip select mode */
-                uint32_t : 30;
-         } csmode_bits;
-       };
+  IO__ uint32_t csmode;  /**< @0x10014018: Chip Select Mode Register */
        uint32_t reserved2[3];
-
-       union {
-         IO__ uint32_t delay0;  /**< @0x10014028: Delay Control 0 Register */
-
-         struct {
-           IO__ uint32_t cssck : 8;  /**< [7..0] CS to SCK Delay */
-                uint32_t : 8;
-           IO__ uint32_t sckcs : 8;  /**< [23..16] SCK to CS Delay */
-                uint32_t : 8;
-         } delay0_bits;
-       };
-
-       union {
-         IO__ uint32_t delay1;  /**< @0x1001402C: Delay Control 1 Register */
-
-         struct {
-           IO__ uint32_t intercs : 8;  /**< [7..0] Minimum CS inactive time */
-                uint32_t : 8;
-           IO__ uint32_t interxfr : 8;  /**< [23..16] Maximum interframe delay */
-                uint32_t : 8;
-         } delay1_bits;
-       };
+  IO__ uint32_t delay0;  /**< @0x10014028: Delay Control 0 Register */
+  IO__ uint32_t delay1;  /**< @0x1001402C: Delay Control 1 Register */
        uint32_t reserved3[4];
-
-       union {
-         IO__ uint32_t fmt;  /**< @0x10014040: Frame Format Register */
-
-         struct {
-           IO__ uint32_t proto : 2;  /**< [1..0] SPI Protocol */
-           IO__ uint32_t endian : 1;  /**< [2..2] SPI endianness */
-           IO__ uint32_t dir : 1;  /**< [3..3] SPI I/O Direction */
-                uint32_t : 12;
-           IO__ uint32_t len : 4;  /**< [19..16] Number of bits per frame */
-                uint32_t : 12;
-         } fmt_bits;
-       };
+  IO__ uint32_t fmt;  /**< @0x10014040: Frame Format Register */
        uint32_t reserved4;
-
-       union {
-         IO__ uint32_t txdata;  /**< @0x10014048: Tx FIFO Data Register */
-
-         struct {
-           IO__ uint32_t data : 8;  /**< [7..0] Transmit data */
-                uint32_t : 23;
-           I__  uint32_t full : 1;  /**< [31..31] FIFO full flag */
-         } txdata_bits;
-       };
-
-       union {
-         I__  uint32_t rxdata;  /**< @0x1001404C: Rx FIFO Data Register */
-
-         struct {
-           I__  uint32_t data : 8;  /**< [7..0] Received data */
-                uint32_t : 23;
-           I__  uint32_t empty : 1;  /**< [31..31] FIFO empty flag */
-         } rxdata_bits;
-       };
-
-       union {
-         IO__ uint32_t txmark;  /**< @0x10014050: Tx FIFO Watermark Register */
-
-         struct {
-           IO__ uint32_t value : 3;  /**< [2..0] Transmit watermark */
-                uint32_t : 29;
-         } txmark_bits;
-       };
-
-       union {
-         IO__ uint32_t rxmark;  /**< @0x10014054: Rx FIFO Watermark Register */
-
-         struct {
-           IO__ uint32_t value : 3;  /**< [2..0] Receive watermark */
-                uint32_t : 29;
-         } rxmark_bits;
-       };
+  IO__ uint32_t txdata;  /**< @0x10014048: Tx FIFO Data Register */
+  I__  uint32_t rxdata;  /**< @0x1001404C: Rx FIFO Data Register */
+  IO__ uint32_t txmark;  /**< @0x10014050: Tx FIFO Watermark Register */
+  IO__ uint32_t rxmark;  /**< @0x10014054: Rx FIFO Watermark Register */
        uint32_t reserved5[2];
-
-       union {
-         IO__ uint32_t fctrl;  /**< @0x10014060: Flash Interface Control Register */
-
-         struct {
-           IO__ uint32_t en : 1;  /**< [0..0] SPI Flash Mode Select */
-                uint32_t : 31;
-         } fctrl_bits;
-       };
-
-       union {
-         IO__ uint32_t ffmt;  /**< @0x10014064: Flash Instruction Format Register */
-
-         struct {
-           IO__ uint32_t cmden : 1;  /**< [0..0] Enable sending of command */
-           IO__ uint32_t addrlen : 3;  /**< [3..1] Number of address bytes(0 to 4) */
-           IO__ uint32_t padcnt : 4;  /**< [7..4] Number of dummy cycles */
-           IO__ uint32_t cmdproto : 2;  /**< [9..8] Protocol for transmitting command */
-           IO__ uint32_t addrproto : 2;  /**< [11..10] Protocol for transmitting address and padding */
-           IO__ uint32_t dataproto : 2;  /**< [13..12] Protocol for receiving data bytes */
-                uint32_t : 2;
-           IO__ uint32_t cmdcode : 8;  /**< [23..16] Value of command byte */
-           IO__ uint32_t padcode : 8;  /**< [31..24] First 8 bits to transmit during dummy cycles */
-         } ffmt_bits;
-       };
+  IO__ uint32_t fctrl;  /**< @0x10014060: Flash Interface Control Register */
+  IO__ uint32_t ffmt;  /**< @0x10014064: Flash Instruction Format Register */
        uint32_t reserved6[2];
-
-       union {
-         IO__ uint32_t ie;  /**< @0x10014070: Interrupt Enable Register */
-
-         struct {
-           I__  uint32_t txwm : 1;  /**< [0..0] Transmit watermark enable */
-           I__  uint32_t rxwm : 1;  /**< [1..1] Receive watermark enable */
-                uint32_t : 30;
-         } ie_bits;
-       };
-
-       union {
-         IO__ uint32_t ip;  /**< @0x10014074: Interrupt Pending Register */
-
-         struct {
-           I__  uint32_t txwm : 1;  /**< [0..0] Transmit watermark pending */
-           I__  uint32_t rxwm : 1;  /**< [1..1] Receive watermark pending */
-                uint32_t : 30;
-         } ip_bits;
-       };
+  IO__ uint32_t ie;  /**< @0x10014070: Interrupt Enable Register */
+  IO__ uint32_t ip;  /**< @0x10014074: Interrupt Pending Register */
        uint32_t reserved7[994];
 } sifive_fe310_spi_t; // 0x10014FFF
 
@@ -766,57 +420,13 @@ typedef struct {
  */
 
 typedef struct {
-
-       union {
-         IO__ uint32_t cfg;  /**< @0x10015000: Configuration Register */
-
-         struct {
-           IO__ uint32_t scale : 4;  /**< [3..0] Counter scale */
-                uint32_t : 4;
-           IO__ uint32_t sticky : 1;  /**< [8..8] Sticky - disallow clearing pwmcmpXip bits */
-           IO__ uint32_t zerocmp : 1;  /**< [9..9] Zero - counter resets to zero after match */
-           IO__ uint32_t deglitch : 1;  /**< [10..10] Deglitch - latch pwmcmpXip within same cycle */
-                uint32_t : 1;
-           IO__ uint32_t enalways : 1;  /**< [12..12] Enable always - run continuously */
-           IO__ uint32_t enoneshot : 1;  /**< [13..13] enable one shot - run one cycle */
-                uint32_t : 2;
-           IO__ uint32_t cmp0center : 1;  /**< [16..16] PWM0 Compare Center */
-           IO__ uint32_t cmp1center : 1;  /**< [17..17] PWM1 Compare Center */
-           IO__ uint32_t cmp2center : 1;  /**< [18..18] PWM2 Compare Center */
-           IO__ uint32_t cmp3center : 1;  /**< [19..19] PWM3 Compare Center */
-                uint32_t : 4;
-           IO__ uint32_t cmp0gang : 1;  /**< [24..24] PWM0/PWM1 Compare Gang */
-           IO__ uint32_t cmp1gang : 1;  /**< [25..25] PWM1/PWM2 Compare Gang */
-           IO__ uint32_t cmp2gang : 1;  /**< [26..26] PWM2/PWM3 Compare Gang */
-           IO__ uint32_t cmp3gang : 1;  /**< [27..27] PWM3/PWM0 Compare Gang */
-           IO__ uint32_t cmp0ip : 1;  /**< [28..28] PWM0 Interrupt Pending */
-           IO__ uint32_t cmp1ip : 1;  /**< [29..29] PWM1 Interrupt Pending */
-           IO__ uint32_t cmp2ip : 1;  /**< [30..30] PWM2 Interrupt Pending */
-           IO__ uint32_t cmp3ip : 1;  /**< [31..31] PWM3 Interrupt Pending */
-         } cfg_bits;
-       };
+  IO__ uint32_t cfg;  /**< @0x10015000: Configuration Register */
        uint32_t reserved1;
   IO__ uint32_t count;  /**< @0x10015008: Configuration Register */
        uint32_t reserved2;
-
-       union {
-         IO__ uint32_t scale;  /**< @0x10015010: Scale Register */
-
-         struct {
-           IO__ uint32_t value : 8;  /**< [7..0] Compare value */
-                uint32_t : 24;
-         } scale_bits;
-       };
+  IO__ uint32_t scale;  /**< @0x10015010: Scale Register */
        uint32_t reserved3[3];
-
-       union {
-         IO__ uint32_t cmp[4];  /**< @0x10015020: Compare Registers */
-
-         struct {
-           IO__ uint32_t value : 8;  /**< [7..0] Compare value */
-                uint32_t : 24;
-         } cmp_bits[4];
-       };
+  IO__ uint32_t cmp[4];  /**< @0x10015020: Compare Registers */
        uint32_t reserved4[1012];
 } sifive_fe310_pwm0_t; // 0x10015FFF
 
@@ -827,57 +437,13 @@ typedef struct {
  */
 
 typedef struct {
-
-       union {
-         IO__ uint32_t cfg;  /**< @0x10025000: Configuration Register */
-
-         struct {
-           IO__ uint32_t scale : 4;  /**< [3..0] Counter scale */
-                uint32_t : 4;
-           IO__ uint32_t sticky : 1;  /**< [8..8] Sticky - disallow clearing pwmcmpXip bits */
-           IO__ uint32_t zerocmp : 1;  /**< [9..9] Zero - counter resets to zero after match */
-           IO__ uint32_t deglitch : 1;  /**< [10..10] Deglitch - latch pwmcmpXip within same cycle */
-                uint32_t : 1;
-           IO__ uint32_t enalways : 1;  /**< [12..12] Enable always - run continuously */
-           IO__ uint32_t enoneshot : 1;  /**< [13..13] enable one shot - run one cycle */
-                uint32_t : 2;
-           IO__ uint32_t cmp0center : 1;  /**< [16..16] PWM0 Compare Center */
-           IO__ uint32_t cmp1center : 1;  /**< [17..17] PWM1 Compare Center */
-           IO__ uint32_t cmp2center : 1;  /**< [18..18] PWM2 Compare Center */
-           IO__ uint32_t cmp3center : 1;  /**< [19..19] PWM3 Compare Center */
-                uint32_t : 4;
-           IO__ uint32_t cmp0gang : 1;  /**< [24..24] PWM0/PWM1 Compare Gang */
-           IO__ uint32_t cmp1gang : 1;  /**< [25..25] PWM1/PWM2 Compare Gang */
-           IO__ uint32_t cmp2gang : 1;  /**< [26..26] PWM2/PWM3 Compare Gang */
-           IO__ uint32_t cmp3gang : 1;  /**< [27..27] PWM3/PWM0 Compare Gang */
-           IO__ uint32_t cmp0ip : 1;  /**< [28..28] PWM0 Interrupt Pending */
-           IO__ uint32_t cmp1ip : 1;  /**< [29..29] PWM1 Interrupt Pending */
-           IO__ uint32_t cmp2ip : 1;  /**< [30..30] PWM2 Interrupt Pending */
-           IO__ uint32_t cmp3ip : 1;  /**< [31..31] PWM3 Interrupt Pending */
-         } cfg_bits;
-       };
+  IO__ uint32_t cfg;  /**< @0x10025000: Configuration Register */
        uint32_t reserved1;
   IO__ uint32_t count;  /**< @0x10025008: Configuration Register */
        uint32_t reserved2;
-
-       union {
-         IO__ uint32_t scale;  /**< @0x10025010: Scale Register */
-
-         struct {
-           IO__ uint32_t value : 16;  /**< [15..0] Compare value */
-                uint32_t : 16;
-         } scale_bits;
-       };
+  IO__ uint32_t scale;  /**< @0x10025010: Scale Register */
        uint32_t reserved3[3];
-
-       union {
-         IO__ uint32_t cmp[4];  /**< @0x10025020: Compare Registers */
-
-         struct {
-           IO__ uint32_t value : 16;  /**< [15..0] Compare value */
-                uint32_t : 16;
-         } cmp_bits[4];
-       };
+  IO__ uint32_t cmp[4];  /**< @0x10025020: Compare Registers */
        uint32_t reserved4[1012];
 } sifive_fe310_pwm_t; // 0x10025FFF
 
@@ -920,13 +486,86 @@ typedef enum {
 // ----------------------------------------------------------------------------
 
 /**
+ * @brief Reference Clock F Multiplier Ratio Enumeration.
+ */
+
+typedef enum {
+  sifive_fe310_prci_pllcfg_f_mul2 = 0, /**< Multiplied by 2 */
+  sifive_fe310_prci_pllcfg_f_mul4 = 1, /**< Multiplied by 4 */
+  sifive_fe310_prci_pllcfg_f_mul6 = 2, /**< Multiplied by 6 */
+  sifive_fe310_prci_pllcfg_f_mul8 = 3, /**< Multiplied by 8 */
+  sifive_fe310_prci_pllcfg_f_mul10 = 4, /**< Multiplied by 10 */
+  sifive_fe310_prci_pllcfg_f_mul12 = 5, /**< Multiplied by 12 */
+  sifive_fe310_prci_pllcfg_f_mul14 = 6, /**< Multiplied by 14 */
+  sifive_fe310_prci_pllcfg_f_mul16 = 7, /**< Multiplied by 16 */
+  sifive_fe310_prci_pllcfg_f_mul18 = 8, /**< Multiplied by 18 */
+  sifive_fe310_prci_pllcfg_f_mul20 = 9, /**< Multiplied by 20 */
+  sifive_fe310_prci_pllcfg_f_mul22 = 10, /**< Multiplied by 22 */
+  sifive_fe310_prci_pllcfg_f_mul24 = 11, /**< Multiplied by 24 */
+  sifive_fe310_prci_pllcfg_f_mul26 = 12, /**< Multiplied by 26 */
+  sifive_fe310_prci_pllcfg_f_mul28 = 13, /**< Multiplied by 28 */
+  sifive_fe310_prci_pllcfg_f_mul30 = 14, /**< Multiplied by 30 */
+  sifive_fe310_prci_pllcfg_f_mul32 = 15, /**< Multiplied by 32 */
+  sifive_fe310_prci_pllcfg_f_mul34 = 16, /**< Multiplied by 34 */
+  sifive_fe310_prci_pllcfg_f_mul36 = 17, /**< Multiplied by 36 */
+  sifive_fe310_prci_pllcfg_f_mul38 = 18, /**< Multiplied by 38 */
+  sifive_fe310_prci_pllcfg_f_mul40 = 19, /**< Multiplied by 40 */
+  sifive_fe310_prci_pllcfg_f_mul42 = 20, /**< Multiplied by 42 */
+  sifive_fe310_prci_pllcfg_f_mul44 = 21, /**< Multiplied by 44 */
+  sifive_fe310_prci_pllcfg_f_mul46 = 22, /**< Multiplied by 46 */
+  sifive_fe310_prci_pllcfg_f_mul48 = 23, /**< Multiplied by 48 */
+  sifive_fe310_prci_pllcfg_f_mul50 = 24, /**< Multiplied by 50 */
+  sifive_fe310_prci_pllcfg_f_mul52 = 25, /**< Multiplied by 52 */
+  sifive_fe310_prci_pllcfg_f_mul54 = 26, /**< Multiplied by 54 */
+  sifive_fe310_prci_pllcfg_f_mul56 = 27, /**< Multiplied by 56 */
+  sifive_fe310_prci_pllcfg_f_mul58 = 28, /**< Multiplied by 58 */
+  sifive_fe310_prci_pllcfg_f_mul60 = 29, /**< Multiplied by 60 */
+  sifive_fe310_prci_pllcfg_f_mul62 = 30, /**< Multiplied by 62 */
+  sifive_fe310_prci_pllcfg_f_mul64 = 31, /**< Multiplied by 64 */
+  sifive_fe310_prci_pllcfg_f_mul66 = 32, /**< Multiplied by 66 */
+  sifive_fe310_prci_pllcfg_f_mul68 = 33, /**< Multiplied by 68 */
+  sifive_fe310_prci_pllcfg_f_mul70 = 34, /**< Multiplied by 70 */
+  sifive_fe310_prci_pllcfg_f_mul72 = 35, /**< Multiplied by 72 */
+  sifive_fe310_prci_pllcfg_f_mul74 = 36, /**< Multiplied by 74 */
+  sifive_fe310_prci_pllcfg_f_mul76 = 37, /**< Multiplied by 76 */
+  sifive_fe310_prci_pllcfg_f_mul78 = 38, /**< Multiplied by 78 */
+  sifive_fe310_prci_pllcfg_f_mul80 = 39, /**< Multiplied by 80 */
+  sifive_fe310_prci_pllcfg_f_mul82 = 40, /**< Multiplied by 82 */
+  sifive_fe310_prci_pllcfg_f_mul84 = 41, /**< Multiplied by 84 */
+  sifive_fe310_prci_pllcfg_f_mul86 = 42, /**< Multiplied by 86 */
+  sifive_fe310_prci_pllcfg_f_mul88 = 43, /**< Multiplied by 88 */
+  sifive_fe310_prci_pllcfg_f_mul90 = 44, /**< Multiplied by 90 */
+  sifive_fe310_prci_pllcfg_f_mul92 = 45, /**< Multiplied by 92 */
+  sifive_fe310_prci_pllcfg_f_mul94 = 46, /**< Multiplied by 94 */
+  sifive_fe310_prci_pllcfg_f_mul96 = 47, /**< Multiplied by 96 */
+  sifive_fe310_prci_pllcfg_f_mul98 = 48, /**< Multiplied by 98 */
+  sifive_fe310_prci_pllcfg_f_mul100 = 49, /**< Multiplied by 100 */
+  sifive_fe310_prci_pllcfg_f_mul102 = 50, /**< Multiplied by 102 */
+  sifive_fe310_prci_pllcfg_f_mul104 = 51, /**< Multiplied by 104 */
+  sifive_fe310_prci_pllcfg_f_mul106 = 52, /**< Multiplied by 106 */
+  sifive_fe310_prci_pllcfg_f_mul108 = 53, /**< Multiplied by 108 */
+  sifive_fe310_prci_pllcfg_f_mul110 = 54, /**< Multiplied by 110 */
+  sifive_fe310_prci_pllcfg_f_mul112 = 55, /**< Multiplied by 112 */
+  sifive_fe310_prci_pllcfg_f_mul114 = 56, /**< Multiplied by 114 */
+  sifive_fe310_prci_pllcfg_f_mul116 = 57, /**< Multiplied by 116 */
+  sifive_fe310_prci_pllcfg_f_mul118 = 58, /**< Multiplied by 118 */
+  sifive_fe310_prci_pllcfg_f_mul120 = 59, /**< Multiplied by 120 */
+  sifive_fe310_prci_pllcfg_f_mul122 = 60, /**< Multiplied by 122 */
+  sifive_fe310_prci_pllcfg_f_mul124 = 61, /**< Multiplied by 124 */
+  sifive_fe310_prci_pllcfg_f_mul126 = 62, /**< Multiplied by 126 */
+  sifive_fe310_prci_pllcfg_f_mul128 = 63, /**< Multiplied by 128 */
+} sifive_fe310_prci_pllcfg_f_enum_t;
+
+// ----------------------------------------------------------------------------
+
+/**
  * @brief Reference Clock Q Divide Ratio Enumeration.
  */
 
 typedef enum {
   sifive_fe310_prci_pllcfg_q_div2 = 1, /**< Divided by 2 */
-  sifive_fe310_prci_pllcfg_q_div3 = 2, /**< Divided by 3 */
-  sifive_fe310_prci_pllcfg_q_div4 = 3, /**< Divided by 4 */
+  sifive_fe310_prci_pllcfg_q_div4 = 2, /**< Divided by 4 */
+  sifive_fe310_prci_pllcfg_q_div8 = 3, /**< Divided by 8 */
 } sifive_fe310_prci_pllcfg_q_enum_t;
 
 // ----------------------------------------------------------------------------
@@ -1012,12 +651,12 @@ typedef enum {
 #define SIFIVE_FE310_WDOG_CFG_CMPIP  (1ul << 28ul)
 
 // Register 'wdog.scale'.
-#define SIFIVE_FE310_WDOG_SCALE_SCALE_POSITION  (0ul)
-#define SIFIVE_FE310_WDOG_SCALE_SCALE_MASK  (0xFFFFul << 0ul)  /**< [15..0] Watchdog scale value */
+#define SIFIVE_FE310_WDOG_SCALE_VALUE_POSITION  (0ul)
+#define SIFIVE_FE310_WDOG_SCALE_VALUE_MASK  (0xFFFFul << 0ul)  /**< [15..0] Watchdog scale value */
 
 // Register 'wdog.cmp'.
-#define SIFIVE_FE310_WDOG_CMP_CMP_POSITION  (0ul)
-#define SIFIVE_FE310_WDOG_CMP_CMP_MASK  (0xFFFFul << 0ul)  /**< [15..0] Watchdog compare value */
+#define SIFIVE_FE310_WDOG_CMP_VALUE_POSITION  (0ul)
+#define SIFIVE_FE310_WDOG_CMP_VALUE_MASK  (0xFFFFul << 0ul)  /**< [15..0] Watchdog compare value */
 
 // ----------------------------------------------------------------------------
 // Struct 'sifive_fe310_rtc_t' positions & masks.
@@ -1033,8 +672,8 @@ typedef enum {
 #define SIFIVE_FE310_RTC_CFG_CMPIP  (1ul << 28ul)
 
 // Register 'rtc.high'.
-#define SIFIVE_FE310_RTC_HIGH_HIGH_POSITION  (0ul)
-#define SIFIVE_FE310_RTC_HIGH_HIGH_MASK  (0xFFFFul << 0ul)  /**< [15..0] RTC counter register, high bits */
+#define SIFIVE_FE310_RTC_HIGH_VALUE_POSITION  (0ul)
+#define SIFIVE_FE310_RTC_HIGH_VALUE_MASK  (0xFFFFul << 0ul)  /**< [15..0] RTC counter register, high bits */
 
 // ----------------------------------------------------------------------------
 // Struct 'sifive_fe310_aon_t' positions & masks.
@@ -1105,11 +744,75 @@ typedef enum {
 #define SIFIVE_FE310_PRCI_PLLCFG_R_DIV4  (3ul << 0ul)  /**< Divided by 4 */
 #define SIFIVE_FE310_PRCI_PLLCFG_F_POSITION  (4ul)
 #define SIFIVE_FE310_PRCI_PLLCFG_F_MASK  (0x3Ful << 4ul)  /**< [9..4] PLL F multiplier value */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL2  (0ul << 4ul)  /**< Multiplied by 2 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL4  (1ul << 4ul)  /**< Multiplied by 4 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL6  (2ul << 4ul)  /**< Multiplied by 6 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL8  (3ul << 4ul)  /**< Multiplied by 8 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL10  (4ul << 4ul)  /**< Multiplied by 10 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL12  (5ul << 4ul)  /**< Multiplied by 12 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL14  (6ul << 4ul)  /**< Multiplied by 14 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL16  (7ul << 4ul)  /**< Multiplied by 16 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL18  (8ul << 4ul)  /**< Multiplied by 18 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL20  (9ul << 4ul)  /**< Multiplied by 20 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL22  (10ul << 4ul)  /**< Multiplied by 22 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL24  (11ul << 4ul)  /**< Multiplied by 24 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL26  (12ul << 4ul)  /**< Multiplied by 26 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL28  (13ul << 4ul)  /**< Multiplied by 28 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL30  (14ul << 4ul)  /**< Multiplied by 30 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL32  (15ul << 4ul)  /**< Multiplied by 32 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL34  (16ul << 4ul)  /**< Multiplied by 34 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL36  (17ul << 4ul)  /**< Multiplied by 36 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL38  (18ul << 4ul)  /**< Multiplied by 38 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL40  (19ul << 4ul)  /**< Multiplied by 40 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL42  (20ul << 4ul)  /**< Multiplied by 42 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL44  (21ul << 4ul)  /**< Multiplied by 44 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL46  (22ul << 4ul)  /**< Multiplied by 46 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL48  (23ul << 4ul)  /**< Multiplied by 48 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL50  (24ul << 4ul)  /**< Multiplied by 50 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL52  (25ul << 4ul)  /**< Multiplied by 52 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL54  (26ul << 4ul)  /**< Multiplied by 54 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL56  (27ul << 4ul)  /**< Multiplied by 56 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL58  (28ul << 4ul)  /**< Multiplied by 58 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL60  (29ul << 4ul)  /**< Multiplied by 60 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL62  (30ul << 4ul)  /**< Multiplied by 62 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL64  (31ul << 4ul)  /**< Multiplied by 64 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL66  (32ul << 4ul)  /**< Multiplied by 66 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL68  (33ul << 4ul)  /**< Multiplied by 68 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL70  (34ul << 4ul)  /**< Multiplied by 70 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL72  (35ul << 4ul)  /**< Multiplied by 72 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL74  (36ul << 4ul)  /**< Multiplied by 74 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL76  (37ul << 4ul)  /**< Multiplied by 76 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL78  (38ul << 4ul)  /**< Multiplied by 78 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL80  (39ul << 4ul)  /**< Multiplied by 80 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL82  (40ul << 4ul)  /**< Multiplied by 82 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL84  (41ul << 4ul)  /**< Multiplied by 84 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL86  (42ul << 4ul)  /**< Multiplied by 86 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL88  (43ul << 4ul)  /**< Multiplied by 88 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL90  (44ul << 4ul)  /**< Multiplied by 90 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL92  (45ul << 4ul)  /**< Multiplied by 92 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL94  (46ul << 4ul)  /**< Multiplied by 94 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL96  (47ul << 4ul)  /**< Multiplied by 96 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL98  (48ul << 4ul)  /**< Multiplied by 98 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL100  (49ul << 4ul)  /**< Multiplied by 100 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL102  (50ul << 4ul)  /**< Multiplied by 102 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL104  (51ul << 4ul)  /**< Multiplied by 104 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL106  (52ul << 4ul)  /**< Multiplied by 106 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL108  (53ul << 4ul)  /**< Multiplied by 108 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL110  (54ul << 4ul)  /**< Multiplied by 110 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL112  (55ul << 4ul)  /**< Multiplied by 112 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL114  (56ul << 4ul)  /**< Multiplied by 114 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL116  (57ul << 4ul)  /**< Multiplied by 116 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL118  (58ul << 4ul)  /**< Multiplied by 118 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL120  (59ul << 4ul)  /**< Multiplied by 120 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL122  (60ul << 4ul)  /**< Multiplied by 122 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL124  (61ul << 4ul)  /**< Multiplied by 124 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL126  (62ul << 4ul)  /**< Multiplied by 126 */
+#define SIFIVE_FE310_PRCI_PLLCFG_F_MUL128  (63ul << 4ul)  /**< Multiplied by 128 */
 #define SIFIVE_FE310_PRCI_PLLCFG_Q_POSITION  (10ul)
 #define SIFIVE_FE310_PRCI_PLLCFG_Q_MASK  (0x3ul << 10ul)  /**< [11..10] PLL Q output divider value */
 #define SIFIVE_FE310_PRCI_PLLCFG_Q_DIV2  (1ul << 10ul)  /**< Divided by 2 */
-#define SIFIVE_FE310_PRCI_PLLCFG_Q_DIV3  (2ul << 10ul)  /**< Divided by 3 */
-#define SIFIVE_FE310_PRCI_PLLCFG_Q_DIV4  (3ul << 10ul)  /**< Divided by 4 */
+#define SIFIVE_FE310_PRCI_PLLCFG_Q_DIV4  (2ul << 10ul)  /**< Divided by 4 */
+#define SIFIVE_FE310_PRCI_PLLCFG_Q_DIV8  (3ul << 10ul)  /**< Divided by 8 */
 #define SIFIVE_FE310_PRCI_PLLCFG_SEL_POSITION  (16ul)
 #define SIFIVE_FE310_PRCI_PLLCFG_SEL_MASK  (0x1ul << 16ul)  /**< [16..16] PLL select */
 #define SIFIVE_FE310_PRCI_PLLCFG_SEL  (1ul << 16ul)

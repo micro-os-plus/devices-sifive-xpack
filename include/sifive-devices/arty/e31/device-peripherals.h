@@ -33,9 +33,9 @@
 /**
  * @brief µOS++ Core - device peripherals header file
  *  for Core Complex E31 Arty from SiFive, Inc.
- * @version 0.1.0
- * @date 2017-11-09
- * @note Generated from e31arty-xsvd.json@0.1.0 with xsvd@0.2.3.
+ * @version 0.2.0
+ * @date 2017-12-12
+ * @note Generated from e31arty-xsvd.json@0.2.0 with xsvd@0.3.0.
  */
 
 // ----------------------------------------------------------------------------
@@ -180,15 +180,7 @@ typedef struct {
  */
 
 typedef struct {
-
-       union {
-         IO__ uint32_t threshold;  /**< @0x0C200000: The Priority Threshold Register */
-
-         struct {
-           IO__ uint32_t value : 3;  /**< [2..0] The priority threshold value */
-                uint32_t : 29;
-         } threshold_bits;
-       };
+  IO__ uint32_t threshold;  /**< @0x0C200000: The Priority Threshold Register */
   IO__ uint32_t claimcomplete;  /**< @0x0C200004: The Interrupt Claim/Completion Register */
 } sifive_e31arty_plic_target0_m_t; // 0x0C200007
 
@@ -209,15 +201,7 @@ typedef struct {
  */
 
 typedef struct {
-
-       union {
-         IO__ uint32_t priorities[27];  /**< @0x0C000000: Interrupt Priorities Registers; 0 is reserved. */
-
-         struct {
-           IO__ uint32_t value : 3;  /**< [2..0] The priority for a given global interrupt */
-                uint32_t : 29;
-         } priorities_bits[27];
-       };
+  IO__ uint32_t priorities[27];  /**< @0x0C000000: Interrupt Priorities Registers; 0 is reserved. */
        uint32_t reserved1[997];
   I__  uint32_t pendings[8];  /**< @0x0C001000: Interrupt Pending Bits Registers */
        uint32_t reserved2[1016];
@@ -234,78 +218,13 @@ typedef struct {
  */
 
 typedef struct {
-
-       union {
-         IO__ uint32_t txdata;  /**< @0x20000000: Transmit Data Register */
-
-         struct {
-           IO__ uint32_t data : 8;  /**< [7..0] Transmit data */
-                uint32_t : 23;
-           IO__ uint32_t full : 1;  /**< [31..31] Transmit FIFO full */
-         } txdata_bits;
-       };
-
-       union {
-         IO__ uint32_t rxdata;  /**< @0x20000004: Receive Data Register */
-
-         struct {
-           I__  uint32_t data : 8;  /**< [7..0] Received data */
-                uint32_t : 23;
-           IO__ uint32_t empty : 1;  /**< [31..31] Receive FIFO empty */
-         } rxdata_bits;
-       };
-
-       union {
-         IO__ uint32_t txctrl;  /**< @0x20000008: Transmit Control Register  */
-
-         struct {
-           IO__ uint32_t txen : 1;  /**< [0..0] Transmit enable */
-           IO__ uint32_t nstop : 1;  /**< [1..1] Number of stop bits */
-                uint32_t : 14;
-           IO__ uint32_t txcnt : 3;  /**< [18..16] Transmit watermark level */
-                uint32_t : 13;
-         } txctrl_bits;
-       };
-
-       union {
-         IO__ uint32_t rxctrl;  /**< @0x2000000C: Receive Control Register */
-
-         struct {
-           IO__ uint32_t rxen : 1;  /**< [0..0] Receive enable */
-                uint32_t : 15;
-           IO__ uint32_t rxcnt : 3;  /**< [18..16] Receive watermark level */
-                uint32_t : 13;
-         } rxctrl_bits;
-       };
-
-       union {
-         IO__ uint32_t ie;  /**< @0x20000010: Interrupt Enable Register */
-
-         struct {
-           IO__ uint32_t txwm : 1;  /**< [0..0] Transmit watermark interrupt enable */
-           IO__ uint32_t rxwm : 1;  /**< [1..1] Receive watermark interrupt enable */
-                uint32_t : 30;
-         } ie_bits;
-       };
-
-       union {
-         I__  uint32_t ip;  /**< @0x20000014: Interrupt Pending Register */
-
-         struct {
-           I__  uint32_t txwm : 1;  /**< [0..0] Transmit watermark interrupt pending */
-           I__  uint32_t rxwm : 1;  /**< [1..1] Receive watermark interrupt pending */
-                uint32_t : 30;
-         } ip_bits;
-       };
-
-       union {
-         IO__ uint32_t div;  /**< @0x20000018: Baud Rate Divisor Register */
-
-         struct {
-           IO__ uint32_t value : 16;  /**< [15..0] Baud rate divisor */
-                uint32_t : 16;
-         } div_bits;
-       };
+  IO__ uint32_t txdata;  /**< @0x20000000: Transmit Data Register */
+  IO__ uint32_t rxdata;  /**< @0x20000004: Receive Data Register */
+  IO__ uint32_t txctrl;  /**< @0x20000008: Transmit Control Register  */
+  IO__ uint32_t rxctrl;  /**< @0x2000000C: Receive Control Register */
+  IO__ uint32_t ie;  /**< @0x20000010: Interrupt Enable Register */
+  I__  uint32_t ip;  /**< @0x20000014: Interrupt Pending Register */
+  IO__ uint32_t div;  /**< @0x20000018: Baud Rate Divisor Register */
        uint32_t reserved1[1017];
 } sifive_e31arty_uart_t; // 0x20000FFF
 
@@ -343,160 +262,28 @@ typedef struct {
  */
 
 typedef struct {
-
-       union {
-         IO__ uint32_t sckdiv;  /**< @0x20004000: Serial clock divisor Register */
-
-         struct {
-           IO__ uint32_t scale : 12;  /**< [11..0] Divisor for serial clock */
-                uint32_t : 20;
-         } sckdiv_bits;
-       };
-
-       union {
-         IO__ uint32_t sckmode;  /**< @0x20004004: Serial Clock Mode Register */
-
-         struct {
-           IO__ uint32_t pha : 1;  /**< [0..0] Serial clock phase */
-           IO__ uint32_t pol : 1;  /**< [1..1] Serial clock polarity */
-                uint32_t : 30;
-         } sckmode_bits;
-       };
+  IO__ uint32_t sckdiv;  /**< @0x20004000: Serial clock divisor Register */
+  IO__ uint32_t sckmode;  /**< @0x20004004: Serial Clock Mode Register */
        uint32_t reserved1[2];
   IO__ uint32_t csid;  /**< @0x20004010: Chip Select ID Register */
   IO__ uint32_t csdef;  /**< @0x20004014: Chip Select Default Register */
-
-       union {
-         IO__ uint32_t csmode;  /**< @0x20004018: Chip Select Mode Register */
-
-         struct {
-           IO__ uint32_t mode : 2;  /**< [1..0] Chip select mode */
-                uint32_t : 30;
-         } csmode_bits;
-       };
+  IO__ uint32_t csmode;  /**< @0x20004018: Chip Select Mode Register */
        uint32_t reserved2[3];
-
-       union {
-         IO__ uint32_t delay0;  /**< @0x20004028: Delay Control 0 Register */
-
-         struct {
-           IO__ uint32_t cssck : 8;  /**< [7..0] CS to SCK Delay */
-                uint32_t : 8;
-           IO__ uint32_t sckcs : 8;  /**< [23..16] SCK to CS Delay */
-                uint32_t : 8;
-         } delay0_bits;
-       };
-
-       union {
-         IO__ uint32_t delay1;  /**< @0x2000402C: Delay Control 1 Register */
-
-         struct {
-           IO__ uint32_t intercs : 8;  /**< [7..0] Minimum CS inactive time */
-                uint32_t : 8;
-           IO__ uint32_t interxfr : 8;  /**< [23..16] Maximum interframe delay */
-                uint32_t : 8;
-         } delay1_bits;
-       };
+  IO__ uint32_t delay0;  /**< @0x20004028: Delay Control 0 Register */
+  IO__ uint32_t delay1;  /**< @0x2000402C: Delay Control 1 Register */
        uint32_t reserved3[4];
-
-       union {
-         IO__ uint32_t fmt;  /**< @0x20004040: Frame Format Register */
-
-         struct {
-           IO__ uint32_t proto : 2;  /**< [1..0] SPI Protocol */
-           IO__ uint32_t endian : 1;  /**< [2..2] SPI endianness */
-           IO__ uint32_t dir : 1;  /**< [3..3] SPI I/O Direction */
-                uint32_t : 12;
-           IO__ uint32_t len : 4;  /**< [19..16] Number of bits per frame */
-                uint32_t : 12;
-         } fmt_bits;
-       };
+  IO__ uint32_t fmt;  /**< @0x20004040: Frame Format Register */
        uint32_t reserved4;
-
-       union {
-         IO__ uint32_t txdata;  /**< @0x20004048: Tx FIFO Data Register */
-
-         struct {
-           IO__ uint32_t data : 8;  /**< [7..0] Transmit data */
-                uint32_t : 23;
-           I__  uint32_t full : 1;  /**< [31..31] FIFO full flag */
-         } txdata_bits;
-       };
-
-       union {
-         I__  uint32_t rxdata;  /**< @0x2000404C: Rx FIFO Data Register */
-
-         struct {
-           I__  uint32_t data : 8;  /**< [7..0] Received data */
-                uint32_t : 23;
-           I__  uint32_t empty : 1;  /**< [31..31] FIFO empty flag */
-         } rxdata_bits;
-       };
-
-       union {
-         IO__ uint32_t txmark;  /**< @0x20004050: Tx FIFO Watermark Register */
-
-         struct {
-           IO__ uint32_t value : 3;  /**< [2..0] Transmit watermark */
-                uint32_t : 29;
-         } txmark_bits;
-       };
-
-       union {
-         IO__ uint32_t rxmark;  /**< @0x20004054: Rx FIFO Watermark Register */
-
-         struct {
-           IO__ uint32_t value : 3;  /**< [2..0] Receive watermark */
-                uint32_t : 29;
-         } rxmark_bits;
-       };
+  IO__ uint32_t txdata;  /**< @0x20004048: Tx FIFO Data Register */
+  I__  uint32_t rxdata;  /**< @0x2000404C: Rx FIFO Data Register */
+  IO__ uint32_t txmark;  /**< @0x20004050: Tx FIFO Watermark Register */
+  IO__ uint32_t rxmark;  /**< @0x20004054: Rx FIFO Watermark Register */
        uint32_t reserved5[2];
-
-       union {
-         IO__ uint32_t fctrl;  /**< @0x20004060: Flash Interface Control Register */
-
-         struct {
-           IO__ uint32_t en : 1;  /**< [0..0] SPI Flash Mode Select */
-                uint32_t : 31;
-         } fctrl_bits;
-       };
-
-       union {
-         IO__ uint32_t ffmt;  /**< @0x20004064: Flash Instruction Format Register */
-
-         struct {
-           IO__ uint32_t cmden : 1;  /**< [0..0] Enable sending of command */
-           IO__ uint32_t addrlen : 3;  /**< [3..1] Number of address bytes(0 to 4) */
-           IO__ uint32_t padcnt : 4;  /**< [7..4] Number of dummy cycles */
-           IO__ uint32_t cmdproto : 2;  /**< [9..8] Protocol for transmitting command */
-           IO__ uint32_t addrproto : 2;  /**< [11..10] Protocol for transmitting address and padding */
-           IO__ uint32_t dataproto : 2;  /**< [13..12] Protocol for receiving data bytes */
-                uint32_t : 2;
-           IO__ uint32_t cmdcode : 8;  /**< [23..16] Value of command byte */
-           IO__ uint32_t padcode : 8;  /**< [31..24] First 8 bits to transmit during dummy cycles */
-         } ffmt_bits;
-       };
+  IO__ uint32_t fctrl;  /**< @0x20004060: Flash Interface Control Register */
+  IO__ uint32_t ffmt;  /**< @0x20004064: Flash Instruction Format Register */
        uint32_t reserved6[2];
-
-       union {
-         IO__ uint32_t ie;  /**< @0x20004070: Interrupt Enable Register */
-
-         struct {
-           I__  uint32_t txwm : 1;  /**< [0..0] Transmit watermark enable */
-           I__  uint32_t rxwm : 1;  /**< [1..1] Receive watermark enable */
-                uint32_t : 30;
-         } ie_bits;
-       };
-
-       union {
-         IO__ uint32_t ip;  /**< @0x20004074: Interrupt Pending Register */
-
-         struct {
-           I__  uint32_t txwm : 1;  /**< [0..0] Transmit watermark pending */
-           I__  uint32_t rxwm : 1;  /**< [1..1] Receive watermark pending */
-                uint32_t : 30;
-         } ip_bits;
-       };
+  IO__ uint32_t ie;  /**< @0x20004070: Interrupt Enable Register */
+  IO__ uint32_t ip;  /**< @0x20004074: Interrupt Pending Register */
        uint32_t reserved7[994];
 } sifive_e31arty_spi_t; // 0x20004FFF
 
@@ -507,57 +294,13 @@ typedef struct {
  */
 
 typedef struct {
-
-       union {
-         IO__ uint32_t cfg;  /**< @0x20005000: Configuration Register */
-
-         struct {
-           IO__ uint32_t scale : 4;  /**< [3..0] Counter scale */
-                uint32_t : 4;
-           IO__ uint32_t sticky : 1;  /**< [8..8] Sticky - disallow clearing pwmcmpXip bits */
-           IO__ uint32_t zerocmp : 1;  /**< [9..9] Zero - counter resets to zero after match */
-           IO__ uint32_t deglitch : 1;  /**< [10..10] Deglitch - latch pwmcmpXip within same cycle */
-                uint32_t : 1;
-           IO__ uint32_t enalways : 1;  /**< [12..12] Enable always - run continuously */
-           IO__ uint32_t enoneshot : 1;  /**< [13..13] enable one shot - run one cycle */
-                uint32_t : 2;
-           IO__ uint32_t cmp0center : 1;  /**< [16..16] PWM0 Compare Center */
-           IO__ uint32_t cmp1center : 1;  /**< [17..17] PWM1 Compare Center */
-           IO__ uint32_t cmp2center : 1;  /**< [18..18] PWM2 Compare Center */
-           IO__ uint32_t cmp3center : 1;  /**< [19..19] PWM3 Compare Center */
-                uint32_t : 4;
-           IO__ uint32_t cmp0gang : 1;  /**< [24..24] PWM0/PWM1 Compare Gang */
-           IO__ uint32_t cmp1gang : 1;  /**< [25..25] PWM1/PWM2 Compare Gang */
-           IO__ uint32_t cmp2gang : 1;  /**< [26..26] PWM2/PWM3 Compare Gang */
-           IO__ uint32_t cmp3gang : 1;  /**< [27..27] PWM3/PWM0 Compare Gang */
-           IO__ uint32_t cmp0ip : 1;  /**< [28..28] PWM0 Interrupt Pending */
-           IO__ uint32_t cmp1ip : 1;  /**< [29..29] PWM1 Interrupt Pending */
-           IO__ uint32_t cmp2ip : 1;  /**< [30..30] PWM2 Interrupt Pending */
-           IO__ uint32_t cmp3ip : 1;  /**< [31..31] PWM3 Interrupt Pending */
-         } cfg_bits;
-       };
+  IO__ uint32_t cfg;  /**< @0x20005000: Configuration Register */
        uint32_t reserved1;
   IO__ uint32_t count;  /**< @0x20005008: Configuration Register */
        uint32_t reserved2;
-
-       union {
-         IO__ uint32_t scale;  /**< @0x20005010: Scale Register */
-
-         struct {
-           IO__ uint32_t value : 8;  /**< [7..0] Compare value */
-                uint32_t : 24;
-         } scale_bits;
-       };
+  IO__ uint32_t scale;  /**< @0x20005010: Scale Register */
        uint32_t reserved3[3];
-
-       union {
-         IO__ uint32_t cmp[4];  /**< @0x20005020: Compare Registers */
-
-         struct {
-           IO__ uint32_t value : 8;  /**< [7..0] Compare value */
-                uint32_t : 24;
-         } cmp_bits[4];
-       };
+  IO__ uint32_t cmp[4];  /**< @0x20005020: Compare Registers */
        uint32_t reserved4[1012];
 } sifive_e31arty_pwm_t; // 0x20005FFF
 
