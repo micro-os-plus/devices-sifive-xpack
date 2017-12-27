@@ -2,6 +2,13 @@
 
 Changes in reverse chronological order.
 
+### 2017-12-27
+
+* update xcdl to 0.2.0
+  * simplify supplier
+  * rename compiler
+  * rename defines
+  * rename arch
 * [#8] Rework the devices xcdl
   * use "mcus" to avoid repeating "devices"
   * rename "vendor" -> "supplier"
