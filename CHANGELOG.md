@@ -2,6 +2,10 @@
 
 Changes in reverse chronological order.
 
+### 2017-12-30
+
+* add license & copyright
+
 ### 2017-12-27
 
 * update xcdl to 0.2.0

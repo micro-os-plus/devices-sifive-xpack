@@ -2,6 +2,8 @@
   "schemaVersion": "0.2.4",
   "contentVersion": "0.2.0",
   "headerVersion": "0.2.0",
+  "license": "MIT",
+  "copyright": "© 2017 Liviu Ionescu",
   "device": {
     "e31arty": {
       "displayName": "Core Complex E31 Arty",
