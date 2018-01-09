@@ -1,6 +1,6 @@
 {
   "name": "@sifive/devices",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "An xPack with the µOS++ support for the SiFive Core Complex devices",
   "main": "",
   "scripts": {
