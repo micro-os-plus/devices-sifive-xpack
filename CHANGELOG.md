@@ -2,6 +2,8 @@
 
 Changes in reverse chronological order.
 
+### v0.3.0 (2018-01-09)
+
 ### 2017-12-30
 
 * add license & copyright
