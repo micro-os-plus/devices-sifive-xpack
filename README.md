@@ -14,7 +14,7 @@ This section is intended to developers who plan to include this library in their
 
 ### Easy install
 
-his package can be installed from the `npm` [registry](https://www.npmjs.com/package/@micro-os-plus/sifive-devices).
+This package can be installed from the `npm` [registry](https://www.npmjs.com/package/@micro-os-plus/sifive-devices).
 
 ```console
 $ xpm install @micro-os-plus/sifive-devices
