@@ -664,7 +664,7 @@ sifive_e51arty_interrupt_handle_unused (void)
 
   while (true)
     {
-      riscv::arch::nop ();
+      riscv::arch::wfi ();
     }
 }
 

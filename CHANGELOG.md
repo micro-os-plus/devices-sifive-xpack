@@ -2,6 +2,10 @@
 
 Changes in reverse chronological order.
 
+### 2018-01-15
+
+* [#11] Use wfi() in infinite loops
+
 ### v0.3.0 (2018-01-09)
 
 ### 2017-12-30

@@ -772,7 +772,7 @@ sifive_fe310_interrupt_handle_unused (void)
 
   while (true)
     {
-      riscv::arch::nop ();
+      riscv::arch::wfi ();
     }
 }
 
