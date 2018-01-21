@@ -2,6 +2,10 @@
 
 Changes in reverse chronological order.
 
+### 2018-01-21
+
+* [#12] Add os_terminate(), it is device specific
+
 ### 2018-01-15
 
 * [#11] Use wfi() in infinite loops

@@ -26,6 +26,7 @@
  */
 
 #include <micro-os-plus/device.h>
+#include <micro-os-plus/startup/initialize-hooks.h>
 
 #include <cstddef>
 
@@ -38,7 +39,7 @@ namespace riscv
   // ------------------------------------------------------------------------
   // Device functions definitions.
 
-  // TODO: add functions.
+  // TODO: add C++ functions.
 
   // --------------------------------------------------------------------------
   } /* namespace device */
@@ -49,8 +50,31 @@ namespace riscv
 
 // TODO: add aliases.
 
-// uint64_t
-// __attribute__((alias("_ZN5riscv6device5mtimeEv")))
-// riscv_device_read_mtime (void);
+// ----------------------------------------------------------------------------
+
+#if !defined(OS_USE_SEMIHOSTING_SYSCALLS)
+
+/**
+ * @details
+ * This function resets the MCU core.
+ */
+void
+__attribute__ ((noreturn,weak))
+os_terminate (int code __attribute__((unused)))
+{
+  // TODO: find a RISC-V soft reset.
+
+#if defined(DEBUG)
+  os::arch::brk ();
+#endif /* DEBUG */
+
+  while (true)
+    {
+      os::arch::wfi ();
+    }
+  /* NOTREACHED */
+}
+
+#endif /* !defined(OS_USE_SEMIHOSTING_SYSCALLS) */
 
 // ----------------------------------------------------------------------------
