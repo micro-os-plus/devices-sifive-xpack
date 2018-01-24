@@ -2,7 +2,7 @@
 
 Changes in reverse chronological order.
 
-### v0.4.0 (2018-01-24)
+### v1.0.0 (2018-01-24)
 
 * [#14] devices-xcdl.json: fix typo
 * device-functions.cpp: use riscv::arch
