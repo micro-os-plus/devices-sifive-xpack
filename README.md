@@ -8,6 +8,16 @@ The standard way to include the device files is
 #include <micro-os-plus/device.h>
 ```
 
+### Macros
+
+* `SIFIVE_FE310`
+* `SIFIVE_E31ARTY`
+* `SIFIVE_E51ARTY`
+
+### Known problems
+
+* the `os_terminate()` function is not fully implemented, it must use either the Watchdog or PMU+RTC to trigger a system reset.
+
 ## Developer info
 
 This section is intended to developers who plan to include this library in their own projects.
