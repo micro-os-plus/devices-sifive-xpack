@@ -75,7 +75,7 @@
 								"<micro-os-plus/device.h>"
 							],
 							"defines": [
-								"SIFIVE_E310ARTY"
+								"SIFIVE_E31ARTY"
 							],
 							"target": [
 								"-march=rv32imac",
