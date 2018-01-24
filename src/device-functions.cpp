@@ -65,12 +65,12 @@ os_terminate (int code __attribute__((unused)))
   // TODO: find a RISC-V soft reset.
 
 #if defined(DEBUG)
-  os::arch::brk ();
+  riscv::arch::ebreak ();
 #endif /* DEBUG */
 
   while (true)
     {
-      os::arch::wfi ();
+      riscv::arch::wfi ();
     }
   /* NOTREACHED */
 }
