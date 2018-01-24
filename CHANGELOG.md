@@ -6,7 +6,7 @@ Changes in reverse chronological order.
 
 * [#14] devices-xcdl.json: fix typo
 * device-functions.cpp: use riscv::arch
-* [#13]: add comments about how to reset
+* [#13] add comments about how to reset
 * README: add known problems for reset
 
 ### 2018-01-21
