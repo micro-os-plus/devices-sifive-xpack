@@ -38,7 +38,7 @@
   },
   "xpack": {
     "dependencies": {
-      "@micro-os-plus/riscv-arch": "~0.3.0"
+      "@micro-os-plus/riscv-arch": "~1.0.0"
     }
   }
 }
