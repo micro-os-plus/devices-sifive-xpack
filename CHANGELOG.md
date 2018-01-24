@@ -2,6 +2,13 @@
 
 Changes in reverse chronological order.
 
+### v0.4.0 (2018-01-24)
+
+* [#14] devices-xcdl.json: fix typo
+* device-functions.cpp: use riscv::arch
+* [#13]: add comments about how to reset
+* README: add known problems for reset
+
 ### 2018-01-21
 
 * [#12] Add os_terminate(), it is device specific
