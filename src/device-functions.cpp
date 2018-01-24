@@ -62,7 +62,14 @@ void
 __attribute__ ((noreturn,weak))
 os_terminate (int code __attribute__((unused)))
 {
-  // TODO: find a RISC-V soft reset.
+#if defined(SIFIVE_FE310)
+  // The Watchdog or PMU+RTC can be used to trigger a system reset.
+  // TODO: find the best solution.
+#elif defined(SIFIVE_E31ARTY) || defined(SIFIVE_E51ARTY)
+  // There isn't a way to soft reset the E31/E51 images through the core.
+#else
+#error "Unsupported device."
+#endif
 
 #if defined(DEBUG)
   riscv::arch::ebreak ();
