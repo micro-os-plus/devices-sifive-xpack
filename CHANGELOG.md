@@ -2,6 +2,10 @@
 
 Changes in reverse chronological order.
 
+### v1.0.1 (2018-01-24)
+
+* update dependencies
+
 ### v1.0.0 (2018-01-24)
 
 * [#14] devices-xcdl.json: fix typo
