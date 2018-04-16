@@ -32,13 +32,11 @@
     "url": "https://github.com/micro-os-plus/sifive-devices-xpack/issues"
   },
   "config": {},
-  "dependencies": {},
+  "dependencies": {
+    "@micro-os-plus/riscv-arch": "~1.0.2"
+  },
   "devDependencies": {
     "xsvd": "~0.2.3"
   },
-  "xpack": {
-    "dependencies": {
-      "@micro-os-plus/riscv-arch": "~1.0.1"
-    }
-  }
+  "xpack": {}
 }
