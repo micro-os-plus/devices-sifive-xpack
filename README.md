@@ -1,5 +1,31 @@
 ## SiFive device specific files
 
+This project provides support for SiFive RISC-V microcontrollers.
+
+## Developer info
+
+This section is intended to developers who plan to include this library in their own projects.
+
+### Prerequisites
+
+A recent [`xpm`](https://www.npmjs.com/package/xpm), which is a portable [Node.js](https://nodejs.org/) command line application.
+
+Compiling the source code requires a modern C++ compiler, preferably GCC 5 or higher. 
+
+### Easy install
+
+This package is available as [`@sifive/devices`](https://www.npmjs.com/package/@sifive/devices) from the `npmjs.com` registry; with `xpm` available, installing the latest version of the package is quite easy:
+
+```console
+$ xpm install @sifive/devices
+```
+
+This package is also available from [GitHub](https://github.com/micro-os-plus/sifive-devices-xpack):
+
+```console
+$ git clone https://github.com/micro-os-plus/sifive-devices-xpack.git sifive-devices-xpack.git
+```
+
 ### How to use
 
 The standard way to include the device files is
@@ -18,35 +44,7 @@ The standard way to include the device files is
 
 * the `os_terminate()` function is not fully implemented, it must use either the Watchdog or PMU+RTC to trigger a system reset.
 
-## Developer info
-
-This section is intended to developers who plan to include this library in their own projects.
-
-### Easy install
-
-This package can be installed from the `npm` [registry](https://www.npmjs.com/package/@micro-os-plus/sifive-devices).
-
-```console
-$ xpm install @micro-os-plus/sifive-devices
-```
-
-This package is also available from [GitHub](https://github.com/micro-os-plus/sifive-devices-xpack):
-
-```console
-$ git clone https://github.com/micro-os-plus/sifive-devices-xpack.git sifive-devices-xpack.git
-```
-
-### Prerequisites
-
-Installing from `npm` registry requires a recent [Node.js](https://nodejs.org) (>7.x; the 6.x LTS version is not compatible), and the `xpm` tool (https://www.npmjs.com/package/xpm).
-
-```console
-$ sudo npm install xpm --global
-```
-
-On Windows, global packages are installed in the user home folder, and do not require `sudo`.
-
-Compiling the source code require a modern C++ compiler, preferably GCC 5 or higher, but was also compiled with GCC 4.8. 
+## Maintainer info
 
 ### How to publish
 
