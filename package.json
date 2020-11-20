@@ -1,7 +1,7 @@
 {
   "name": "@sifive/devices",
   "version": "1.0.3",
-  "description": "An xPack with the µOS++ support for the SiFive Core Complex devices",
+  "description": "A source xPack with the µOS++ support for the SiFive Core Complex devices",
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
