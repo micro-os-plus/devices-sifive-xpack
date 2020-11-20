@@ -1,4 +1,8 @@
-## SiFive device specific files
+[![license](https://img.shields.io/github/license/micro-os-plus/sifive-devices-xpack)](https://github.com/micro-os-plus/sifive-devices-xpack/blob/xpack/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/sifive-devices-xpack.svg)](https://github.com/micro-os-plus/sifive-devices-xpack/issues)
+[![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/sifive-devices-xpack.svg)](https://github.com/micro-os-plus/sifive-devices-xpack/pulls)
+
+# SiFive device specific files
 
 This project provides support for SiFive RISC-V microcontrollers.
 
