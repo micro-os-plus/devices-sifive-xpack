@@ -25,22 +25,33 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef SIFIVE_DEVICES_DEVICE_PERIPHERALS_H_
-#define SIFIVE_DEVICES_DEVICE_PERIPHERALS_H_
+#ifndef SIFIVE_DEVICES_DEFINES_H_
+#define SIFIVE_DEVICES_DEFINES_H_
 
 // ----------------------------------------------------------------------------
 
 // Select one of the definition files based on device.
 #if defined (SIFIVE_FE310)
-#include <sifive-devices/fe310/device-peripherals.h>
+#include <micro-os-plus/devices-sifive/fe310/defines.h>
 #elif defined (SIFIVE_E31ARTY)
-#include <sifive-devices/arty/e31/device-peripherals.h>
+#include <micro-os-plus/devices-sifive/arty/e31/defines.h>
 #elif defined (SIFIVE_E51ARTY)
-#include <sifive-devices/arty/e51/device-peripherals.h>
+#include <micro-os-plus/devices-sifive/arty/e51/defines.h>
 #else
 #error "Unsupported device"
 #endif
 
 // ----------------------------------------------------------------------------
+// Defaults.
 
-#endif /* SIFIVE_DEVICES_DEVICE_PERIPHERALS_H_ */
+#if defined(RISCV_INTERRUPTS_LOCAL_LAST_NUMBER)
+#if RISCV_INTERRUPTS_LOCAL_LAST_NUMBER < 15u
+#error "RISCV_INTERRUPTS_LOCAL_LAST_NUMBER must be >= 15"
+#endif
+#else
+#define RISCV_INTERRUPTS_LOCAL_LAST_NUMBER (15u)
+#endif /* defined(RISCV_INTERRUPTS_LOCAL_LAST_NUMBER) */
+
+// ----------------------------------------------------------------------------
+
+#endif /* SIFIVE_DEVICES_DEFINES_H_ */

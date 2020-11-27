@@ -28,7 +28,7 @@
 #ifndef SIFIVE_DEVICES_PLIC_FUNCTIONS_INLINES_H_
 #define SIFIVE_DEVICES_PLIC_FUNCTIONS_INLINES_H_
 
-#include <sifive-devices/defines.h>
+#include <micro-os-plus/devices-sifive/defines.h>
 
 #include <stdint.h>
 

@@ -36,22 +36,22 @@
 // ----------------------------------------------------------------------------
 
 // Automatically generated device header files.
-#include <sifive-devices/device-peripherals.h>
+#include <micro-os-plus/devices-sifive/device-peripherals.h>
 
 // Additional definitions and types.
-#include <sifive-devices/defines.h>
-#include <sifive-devices/types.h>
+#include <micro-os-plus/devices-sifive/defines.h>
+#include <micro-os-plus/devices-sifive/types.h>
 
 // ----------------------------------------------------------------------------
 
 // API function prototypes. 
 // Currently not used. 
-// #include <sifive-devices/functions.h>
-// #include <sifive-devices/functions-inlines.h>
+// #include <micro-os-plus/devices-sifive/functions.h>
+// #include <micro-os-plus/devices-sifive/functions-inlines.h>
 
 // ----------------------------------------------------------------------------
 
-#include <sifive-devices/device-interrupts-handlers.h>
+#include <micro-os-plus/devices-sifive/device-interrupts-handlers.h>
 
 // ----------------------------------------------------------------------------
 
@@ -68,13 +68,13 @@
 #error "Define RISCV_MMIO_MTIMECMP_ADDRESS in the device specific header file (defines.h)."
 #endif
 
-#include <riscv-arch/device-functions.h>
-#include <riscv-arch/device-functions-inlines.h>
+#include <micro-os-plus/architecture-riscv/device-functions.h>
+#include <micro-os-plus/architecture-riscv/device-functions-inlines.h>
 
 // ----------------------------------------------------------------------------
 
-#include <riscv-arch/plic-functions.h>
-#include <sifive-devices/plic-functions-inlines.h>
+#include <micro-os-plus/architecture-riscv/plic-functions.h>
+#include <micro-os-plus/devices-sifive/plic-functions-inlines.h>
 
 // ----------------------------------------------------------------------------
 

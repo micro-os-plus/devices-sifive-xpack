@@ -25,58 +25,21 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef SIFIVE_DEVICES_FUNCTIONS_H_
-#define SIFIVE_DEVICES_FUNCTIONS_H_
-
-#include <sifive-devices/defines.h>
-
-#include <stdint.h>
-
-/*
- * Device support functions.
- *
- * Inline functions are first defined in C (prefixed with `riscv_device_`),
- * then, for convenience, are redefined in C++ in the `riscv::device::`
- * namespace.
- *
- * Regular functions are first defined in C++ then aliased to C.
- */
-
-// ----------------------------------------------------------------------------
-#if defined(__cplusplus)
-extern "C"
-{
-#endif /* defined(__cplusplus) */
-
-// --------------------------------------------------------------------------
-// Device support functions in C.
-
-// TODO: add functions.
-// Prefix them with `riscv_device_`.
-
-#if defined(__cplusplus)
-}
-#endif /* defined(__cplusplus) */
+#ifndef SIFIVE_DEVICES_DEVICE_INTERRUPTS_HANDLERS_H_
+#define SIFIVE_DEVICES_DEVICE_INTERRUPTS_HANDLERS_H_
 
 // ----------------------------------------------------------------------------
 
-#if defined(__cplusplus)
-
-namespace riscv
-{
-  namespace device
-  {
-  // --------------------------------------------------------------------------
-  // Device support functions in C++.
-
-  // TODO: add functions.
-
-  // --------------------------------------------------------------------------
-  } /* namespace device */
-} /* namespace riscv */
-
-#endif /* defined(__cplusplus) */
+#if defined (SIFIVE_FE310)
+#include <micro-os-plus/devices-sifive/fe310/device-interrupts-handlers.h>
+#elif defined (SIFIVE_E31ARTY)
+#include <micro-os-plus/devices-sifive/arty/e31/device-interrupts-handlers.h>
+#elif defined (SIFIVE_E51ARTY)
+#include <micro-os-plus/devices-sifive/arty/e51/device-interrupts-handlers.h>
+#else
+#error "Unsupported device"
+#endif
 
 // ----------------------------------------------------------------------------
 
-#endif /* SIFIVE_DEVICES_FUNCTIONS_H_ */
+#endif /* SIFIVE_DEVICES_DEVICE_INTERRUPTS_HANDLERS_H_ */

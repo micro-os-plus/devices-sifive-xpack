@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "link": "npm link xsvd",
-    "gen": "xsvd gen-headers --file xsvd/fe310-xsvd.json --dest include/sifive-devices/fe310; xsvd gen-headers --file xsvd/e31arty-xsvd.json --dest include/sifive-devices/arty/e31; xsvd gen-headers --file xsvd/e51arty-xsvd.json --dest include/sifive-devices/arty/e51"
+    "gen": "xsvd gen-headers --file xsvd/fe310-xsvd.json --dest include/devices-sifive/fe310; xsvd gen-headers --file xsvd/e31arty-xsvd.json --dest include/devices-sifive/arty/e31; xsvd gen-headers --file xsvd/e51arty-xsvd.json --dest include/devices-sifive/arty/e51"
   },
   "repository": {
     "type": "git",
