@@ -679,4 +679,3 @@ sifive_e51arty_interrupt_handle_unused (void)
 #endif /* defined(__riscv) */
 
 // ----------------------------------------------------------------------------
-
