@@ -25,6 +25,10 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
+#if defined(__riscv)
+
+// ----------------------------------------------------------------------------
+
 #include <micro-os-plus/platform.h>
 
 #include <stddef.h>
@@ -779,3 +783,8 @@ sifive_fe310_interrupt_handle_unused (void)
 #endif /* DEVICE */
 
 // ----------------------------------------------------------------------------
+
+#endif /* defined(__riscv) */
+
+// ----------------------------------------------------------------------------
+

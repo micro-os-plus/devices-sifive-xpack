@@ -25,6 +25,10 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
+#if defined(__riscv)
+
+// ----------------------------------------------------------------------------
+
 #include <micro-os-plus/device.h>
 #include <micro-os-plus/startup/hooks.h>
 
@@ -83,5 +87,9 @@ os_terminate (int code __attribute__((unused)))
 }
 
 #endif /* !defined(OS_USE_SEMIHOSTING_SYSCALLS) */
+
+// ----------------------------------------------------------------------------
+
+#endif /* defined(__riscv) */
 
 // ----------------------------------------------------------------------------

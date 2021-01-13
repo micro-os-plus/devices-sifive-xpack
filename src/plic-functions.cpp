@@ -25,6 +25,10 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
+#if defined(__riscv)
+
+// ----------------------------------------------------------------------------
+
 #include <micro-os-plus/device.h>
 
 #include <cstdint>
@@ -77,5 +81,9 @@ riscv_plic_initialize (void);
 void
 __attribute__((alias("_ZN5riscv4plic16clear_prioritiesEv")))
 riscv_plic_clear_priorities (void);
+
+// ----------------------------------------------------------------------------
+
+#endif /* defined(__riscv) */
 
 // ----------------------------------------------------------------------------
