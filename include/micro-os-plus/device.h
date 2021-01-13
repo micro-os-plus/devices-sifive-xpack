@@ -44,8 +44,8 @@
 
 // ----------------------------------------------------------------------------
 
-// API function prototypes. 
-// Currently not used. 
+// API function prototypes.
+// Currently not used.
 // #include <micro-os-plus/devices-sifive/functions.h>
 // #include <micro-os-plus/devices-sifive/functions-inlines.h>
 
@@ -61,15 +61,17 @@
 // included below.
 
 #if !defined(RISCV_MMIO_MTIME_ADDRESS)
-#error "Define RISCV_MMIO_MTIME_ADDRESS in the device specific header file (defines.h)."
+#error                                                                        \
+    "Define RISCV_MMIO_MTIME_ADDRESS in the device specific header file (defines.h)."
 #endif
 
 #if !defined(RISCV_MMIO_MTIMECMP_ADDRESS)
-#error "Define RISCV_MMIO_MTIMECMP_ADDRESS in the device specific header file (defines.h)."
+#error                                                                        \
+    "Define RISCV_MMIO_MTIMECMP_ADDRESS in the device specific header file (defines.h)."
 #endif
 
-#include <micro-os-plus/architecture-riscv/device-functions.h>
 #include <micro-os-plus/architecture-riscv/device-functions-inlines.h>
+#include <micro-os-plus/architecture-riscv/device-functions.h>
 
 // ----------------------------------------------------------------------------
 

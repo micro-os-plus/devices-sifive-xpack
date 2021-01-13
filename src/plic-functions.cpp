@@ -31,55 +31,53 @@
 
 #include <micro-os-plus/device.h>
 
-#include <cstdint>
 #include <cstddef>
+#include <cstdint>
 
 // ----------------------------------------------------------------------------
 
 namespace riscv
 {
-  namespace plic
-  {
-    // ------------------------------------------------------------------------
-    // Device PLIC functions definitions.
+namespace plic
+{
+// ----------------------------------------------------------------------------
+// Device PLIC functions definitions.
 
-    void
-    initialize (void)
+void
+initialize (void)
+{
+  // Disable all interrupts for the current hart.
+  for (std::size_t i = 0;
+       i < ((RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER + 32u) / 32u); ++i)
     {
-      // Disable all interrupts for the current hart.
-      for (std::size_t i = 0;
-          i < ((RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER + 32u) / 32u); ++i)
-        {
-          PLIC->enablestarget0.m.enables[i] = 0;
-        }
-
-      // Set the threshold to zero.
-      PLIC->target0.m.threshold = 0;
+      PLIC->enablestarget0.m.enables[i] = 0;
     }
 
-    void
-    clear_priorities (void)
-    {
-      // Set priorities to zero. The array starts at 1.
-      for (std::size_t i = 1; i <= RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER; ++i)
-        {
-          PLIC->priorities[i - 1] = 0;
-        }
-    }
+  // Set the threshold to zero.
+  PLIC->target0.m.threshold = 0;
+}
 
-  // --------------------------------------------------------------------------
-  } /* namespace plic */
+void
+clear_priorities (void)
+{
+  // Set priorities to zero. The array starts at 1.
+  for (std::size_t i = 1; i <= RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER; ++i)
+    {
+      PLIC->priorities[i - 1] = 0;
+    }
+}
+
+// ----------------------------------------------------------------------------
+} /* namespace plic */
 } /* namespace riscv */
 
 // ----------------------------------------------------------------------------
 // C aliases to the C++ functions.
 
-void
-__attribute__((alias("_ZN5riscv4plic10initializeEv")))
+void __attribute__ ((alias ("_ZN5riscv4plic10initializeEv")))
 riscv_plic_initialize (void);
 
-void
-__attribute__((alias("_ZN5riscv4plic16clear_prioritiesEv")))
+void __attribute__ ((alias ("_ZN5riscv4plic16clear_prioritiesEv")))
 riscv_plic_clear_priorities (void);
 
 // ----------------------------------------------------------------------------

@@ -31,11 +31,11 @@
 // ----------------------------------------------------------------------------
 
 // Select one of the definition files based on device.
-#if defined (SIFIVE_FE310)
+#if defined(SIFIVE_FE310)
 #include <micro-os-plus/devices-sifive/fe310/device-peripherals.h>
-#elif defined (SIFIVE_E31ARTY)
+#elif defined(SIFIVE_E31ARTY)
 #include <micro-os-plus/devices-sifive/arty/e31/device-peripherals.h>
-#elif defined (SIFIVE_E51ARTY)
+#elif defined(SIFIVE_E51ARTY)
 #include <micro-os-plus/devices-sifive/arty/e51/device-peripherals.h>
 #else
 #error "Unsupported device"
