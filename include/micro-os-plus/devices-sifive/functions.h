@@ -48,11 +48,11 @@ extern "C"
 {
 #endif /* defined(__cplusplus) */
 
-  // --------------------------------------------------------------------------
-  // Device support functions in C.
+// --------------------------------------------------------------------------
+// Device support functions in C.
 
-  // TODO: add functions.
-  // Prefix them with `riscv_device_`.
+// TODO: add functions.
+// Prefix them with `riscv_device_`.
 
 #if defined(__cplusplus)
 }
@@ -64,15 +64,15 @@ extern "C"
 
 namespace riscv
 {
-namespace device
-{
-// ----------------------------------------------------------------------------
-// Device support functions in C++.
+  namespace device
+  {
+  // --------------------------------------------------------------------------
+  // Device support functions in C++.
 
-// TODO: add functions.
+  // TODO: add functions.
 
-// ----------------------------------------------------------------------------
-} /* namespace device */
+  // --------------------------------------------------------------------------
+  } /* namespace device */
 } /* namespace riscv */
 
 #endif /* defined(__cplusplus) */

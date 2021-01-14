@@ -38,15 +38,15 @@
 
 namespace riscv
 {
-namespace device
-{
-// ----------------------------------------------------------------------------
-// Device functions definitions.
+  namespace device
+  {
+  // ------------------------------------------------------------------------
+  // Device functions definitions.
 
-// TODO: add C++ functions.
+  // TODO: add C++ functions.
 
-// ----------------------------------------------------------------------------
-} /* namespace device */
+  // --------------------------------------------------------------------------
+  } /* namespace device */
 } /* namespace riscv */
 
 // ----------------------------------------------------------------------------
@@ -62,8 +62,9 @@ namespace device
  * @details
  * This function resets the MCU core.
  */
-void __attribute__ ((noreturn, weak))
-os_terminate (int code __attribute__ ((unused)))
+void
+__attribute__ ((noreturn,weak))
+os_terminate (int code __attribute__((unused)))
 {
 #if defined(SIFIVE_FE310)
   // The Watchdog or PMU+RTC can be used to trigger a system reset.
