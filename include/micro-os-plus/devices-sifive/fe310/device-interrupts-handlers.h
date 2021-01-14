@@ -28,6 +28,8 @@
 #ifndef SIFIVE_DEVICES_FE310_DEVICE_INTERRUPTS_HANDLERS_H_
 #define SIFIVE_DEVICES_FE310_DEVICE_INTERRUPTS_HANDLERS_H_
 
+// ----------------------------------------------------------------------------
+
 /*
  * SiFive Freedom E310 global interrupts handler functions.
  */
@@ -199,9 +201,9 @@ namespace sifive
       handle_global_pwm2cmp3 (void);
 
       // ----------------------------------------------------------------------
-    } /* namespace interrupt */
-  } /* namespace fe310 */
-} /* namespace sifive */
+    } // namespace interrupt
+  } // namespace fe310
+} // namespace sifive
 
 namespace riscv
 {
@@ -221,9 +223,8 @@ namespace riscv
     handle_machine_ext (void);
 
     // ------------------------------------------------------------------------
-  } /* namespace interrupt */
-} /* namespace riscv */
-
+  } // namespace interrupt
+} // namespace riscv
 
 #else /* defined(__cplusplus) && defined(OS_USE_CPP_INTERRUPTS) */
 
@@ -403,7 +404,7 @@ extern "C"
   void
   riscv_interrupt_handle_machine_ext (void);
 
-// ----------------------------------------------------------------------------
+  // --------------------------------------------------------------------------
 
 #if defined(__cplusplus)
 }

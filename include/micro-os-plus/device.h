@@ -33,8 +33,6 @@
 // Architecture definitions.
 #include <micro-os-plus/architecture.h>
 
-// ----------------------------------------------------------------------------
-
 // Automatically generated device header files.
 #include <micro-os-plus/devices-sifive/device-peripherals.h>
 
@@ -42,18 +40,12 @@
 #include <micro-os-plus/devices-sifive/defines.h>
 #include <micro-os-plus/devices-sifive/types.h>
 
-// ----------------------------------------------------------------------------
-
-// API function prototypes. 
-// Currently not used. 
+// API function prototypes.
+// Currently not used.
 // #include <micro-os-plus/devices-sifive/functions.h>
 // #include <micro-os-plus/devices-sifive/functions-inlines.h>
 
-// ----------------------------------------------------------------------------
-
 #include <micro-os-plus/devices-sifive/device-interrupts-handlers.h>
-
-// ----------------------------------------------------------------------------
 
 // The names of the RISCV_MMIO_ symbols are architecture specific,
 // but their values depend on a specific device implementation.
@@ -61,17 +53,17 @@
 // included below.
 
 #if !defined(RISCV_MMIO_MTIME_ADDRESS)
-#error "Define RISCV_MMIO_MTIME_ADDRESS in the device specific header file (defines.h)."
+#error \
+    "Define RISCV_MMIO_MTIME_ADDRESS in the device specific header file (defines.h)."
 #endif
 
 #if !defined(RISCV_MMIO_MTIMECMP_ADDRESS)
-#error "Define RISCV_MMIO_MTIMECMP_ADDRESS in the device specific header file (defines.h)."
+#error \
+    "Define RISCV_MMIO_MTIMECMP_ADDRESS in the device specific header file (defines.h)."
 #endif
 
 #include <micro-os-plus/architecture-riscv/device-functions.h>
 #include <micro-os-plus/architecture-riscv/device-functions-inlines.h>
-
-// ----------------------------------------------------------------------------
 
 #include <micro-os-plus/architecture-riscv/plic-functions.h>
 #include <micro-os-plus/devices-sifive/plic-functions-inlines.h>

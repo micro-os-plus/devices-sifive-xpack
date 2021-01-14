@@ -48,7 +48,7 @@ namespace riscv
     {
       // Disable all interrupts for the current hart.
       for (std::size_t i = 0;
-          i < ((RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER + 32u) / 32u); ++i)
+           i < ((RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER + 32u) / 32u); ++i)
         {
           PLIC->enablestarget0.m.enables[i] = 0;
         }
@@ -67,19 +67,17 @@ namespace riscv
         }
     }
 
-  // --------------------------------------------------------------------------
-  } /* namespace plic */
-} /* namespace riscv */
+    // ------------------------------------------------------------------------
+  } // namespace plic
+} // namespace riscv
 
 // ----------------------------------------------------------------------------
 // C aliases to the C++ functions.
 
-void
-__attribute__((alias("_ZN5riscv4plic10initializeEv")))
+void __attribute__ ((alias ("_ZN5riscv4plic10initializeEv")))
 riscv_plic_initialize (void);
 
-void
-__attribute__((alias("_ZN5riscv4plic16clear_prioritiesEv")))
+void __attribute__ ((alias ("_ZN5riscv4plic16clear_prioritiesEv")))
 riscv_plic_clear_priorities (void);
 
 // ----------------------------------------------------------------------------

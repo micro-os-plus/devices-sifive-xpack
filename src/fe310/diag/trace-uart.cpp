@@ -36,7 +36,7 @@
 #include <micro-os-plus/device.h>
 #include <micro-os-plus/diag/trace.h>
 
-#define OS_INTEGER_TRACE_UART0_BAUD_RATE	(115200)
+#define OS_INTEGER_TRACE_UART0_BAUD_RATE (115200)
 
 // ----------------------------------------------------------------------------
 
@@ -50,18 +50,19 @@ namespace os
     initialize (void)
     {
       // Select IOF0 for UART0 RX & TX pins.
-      GPIO->iofsel &= ~(SIFIVE_FE310_GPIO_IOF0_UART0_RX | 
-        SIFIVE_FE310_GPIO_IOF0_UART0_TX);
+      GPIO->iofsel &= ~(SIFIVE_FE310_GPIO_IOF0_UART0_RX
+                        | SIFIVE_FE310_GPIO_IOF0_UART0_TX);
       // Enable IOF for UART0 RX & TX pins.
-      GPIO->iofen |= (SIFIVE_FE310_GPIO_IOF0_UART0_RX | 
-        SIFIVE_FE310_GPIO_IOF0_UART0_TX);
+      GPIO->iofen |= (SIFIVE_FE310_GPIO_IOF0_UART0_RX
+                      | SIFIVE_FE310_GPIO_IOF0_UART0_TX);
 
       // Set baud rate.
       UART0->div = (riscv::core::running_frequency_hz ()
-          / OS_INTEGER_TRACE_UART0_BAUD_RATE) - 1;
+                    / OS_INTEGER_TRACE_UART0_BAUD_RATE)
+                   - 1;
       // Enable transmitter.
       UART0->txctrl |= SIFIVE_FE310_UART_TXCTRL_TXEN;
-      
+
       // Wait a bit to avoid corruption on the UART.
       // (In some cases, switching to the IOF can lead
       // to output glitches, so need to let the UART
@@ -84,7 +85,7 @@ namespace os
           return 0;
         }
 
-      const char* cbuf = (const char*) buf;
+      const char* cbuf = (const char*)buf;
 
       for (size_t i = 0; i < nbyte; i++)
         {
@@ -106,7 +107,7 @@ namespace os
         }
 
       // All characters successfully sent.
-      return (ssize_t) nbyte;
+      return (ssize_t)nbyte;
     }
 
     // ------------------------------------------------------------------------
@@ -117,9 +118,9 @@ namespace os
       ; // TODO flush port
     }
 
-  // --------------------------------------------------------------------------
-  } /* namespace trace */
-} /* namespace os */
+    // ------------------------------------------------------------------------
+  } // namespace trace
+} // namespace os
 
 #endif /* defined(OS_USE_TRACE_UART0) */
 #endif /* defined(TRACE) */

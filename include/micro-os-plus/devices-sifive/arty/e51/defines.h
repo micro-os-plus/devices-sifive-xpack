@@ -28,6 +28,8 @@
 #ifndef SIFIVE_DEVICES_ARTY_E51_DEFINES_H_
 #define SIFIVE_DEVICES_ARTY_E51_DEFINES_H_
 
+// ----------------------------------------------------------------------------
+
 #include <stdint.h>
 
 // ----------------------------------------------------------------------------
@@ -43,8 +45,10 @@
 // These definitions will be used in <riscv-arch/device-functions-inlines.h>,
 // included in <micro-os-plus/device..
 
-#define RISCV_MMIO_MTIME_ADDRESS (SIFIVE_E51ARTY_CLINT_BASE_ADDRESS + SIFIVE_E51ARTY_CLINT_MTIME_OFFSET)
-#define RISCV_MMIO_MTIMECMP_ADDRESS (SIFIVE_E51ARTY_CLINT_BASE_ADDRESS + SIFIVE_E51ARTY_CLINT_MTIMECMP_OFFSET)
+#define RISCV_MMIO_MTIME_ADDRESS \
+  (SIFIVE_E51ARTY_CLINT_BASE_ADDRESS + SIFIVE_E51ARTY_CLINT_MTIME_OFFSET)
+#define RISCV_MMIO_MTIMECMP_ADDRESS \
+  (SIFIVE_E51ARTY_CLINT_BASE_ADDRESS + SIFIVE_E51ARTY_CLINT_MTIMECMP_OFFSET)
 
 // ----------------------------------------------------------------------------
 

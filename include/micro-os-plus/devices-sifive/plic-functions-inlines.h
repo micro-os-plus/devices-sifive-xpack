@@ -28,26 +28,28 @@
 #ifndef SIFIVE_DEVICES_PLIC_FUNCTIONS_INLINES_H_
 #define SIFIVE_DEVICES_PLIC_FUNCTIONS_INLINES_H_
 
+// ----------------------------------------------------------------------------
+
 #include <micro-os-plus/devices-sifive/defines.h>
 
 #include <stdint.h>
+
+// ----------------------------------------------------------------------------
 
 /*
  * Inline implementations for the Core Complex IP support functions.
  */
 
-// ----------------------------------------------------------------------------
 #if defined(__cplusplus)
 extern "C"
 {
 #endif /* defined(__cplusplus) */
 
-// ----------------------------------------------------------------------------
-// Device PLIC support functions in C.
-// Assume there is a single target (target0), corresponding to Hart 0.
+  // --------------------------------------------------------------------------
+  // Device PLIC support functions in C.
+  // Assume there is a single target (target0), corresponding to Hart 0.
 
-  static inline riscv_plic_priority_t
-  __attribute__((always_inline))
+  static inline __attribute__ ((always_inline)) riscv_plic_priority_t
   riscv_plic_write_threshold (riscv_plic_priority_t priority)
   {
     riscv_plic_priority_t previous = PLIC->target0.m.threshold;
@@ -56,61 +58,54 @@ extern "C"
     return previous;
   }
 
-  static inline riscv_plic_priority_t
-  __attribute__((always_inline))
+  static inline __attribute__ ((always_inline)) riscv_plic_priority_t
   riscv_plic_read_threshold (void)
   {
     return PLIC->target0.m.threshold;
   }
 
-  static inline void
-  __attribute__((always_inline))
+  static inline __attribute__ ((always_inline)) void
   riscv_plic_enable_interrupt (riscv_plic_source_t global_interrupt_id)
   {
-    PLIC->enablestarget0.m.enables[global_interrupt_id / 32u] |= (1u
-        << (global_interrupt_id % 32u));
+    PLIC->enablestarget0.m.enables[global_interrupt_id / 32u]
+        |= (1u << (global_interrupt_id % 32u));
   }
 
-  static inline void
-  __attribute__((always_inline))
+  static inline __attribute__ ((always_inline)) void
   riscv_plic_disable_interrupt (riscv_plic_source_t global_interrupt_id)
   {
-    PLIC->enablestarget0.m.enables[global_interrupt_id / 32u] &= 
-      ~(1u << (global_interrupt_id % 32u));
+    PLIC->enablestarget0.m.enables[global_interrupt_id / 32u]
+        &= ~(1u << (global_interrupt_id % 32u));
   }
 
-  static inline bool
-  __attribute__((always_inline))
+  static inline __attribute__ ((always_inline)) bool
   riscv_plic_is_interrupt_enabled (riscv_plic_source_t global_interrupt_id)
   {
     return (PLIC->enablestarget0.m.enables[global_interrupt_id / 32u]
-        & ~(1u << (global_interrupt_id % 32u))) != 0;
+            & ~(1u << (global_interrupt_id % 32u)))
+           != 0;
   }
 
-  static inline void
-  __attribute__((always_inline))
+  static inline __attribute__ ((always_inline)) void
   riscv_plic_write_priority (riscv_plic_source_t global_interrupt_id,
                              riscv_plic_priority_t priority)
   {
     PLIC->priorities[global_interrupt_id] = priority;
   }
 
-  static inline uint32_t
-  __attribute__((always_inline))
+  static inline __attribute__ ((always_inline)) uint32_t
   riscv_plic_read_priority (riscv_plic_source_t global_interrupt_id)
   {
     return PLIC->priorities[global_interrupt_id];
   }
 
-  static inline riscv_plic_source_t
-  __attribute__((always_inline))
+  static inline __attribute__ ((always_inline)) riscv_plic_source_t
   riscv_plic_claim_interrupt (void)
   {
     return PLIC->target0.m.claimcomplete;
   }
 
-  static inline void
-  __attribute__((always_inline))
+  static inline __attribute__ ((always_inline)) void
   riscv_plic_complete_interrupt (riscv_plic_source_t global_interrupt_id)
   {
     PLIC->target0.m.claimcomplete = global_interrupt_id;
@@ -143,15 +138,13 @@ namespace riscv
      * value of zero permits all interrupts with non-zero priority,
      * whereas a value of 7 masks all interrupts.
      */
-    inline priority_t
-    __attribute__((always_inline))
+    inline __attribute__ ((always_inline)) priority_t
     threshold (priority_t priority)
     {
       return riscv_plic_write_threshold (priority);
     }
 
-    inline priority_t
-    __attribute__((always_inline))
+    inline __attribute__ ((always_inline)) priority_t
     threshold (void)
     {
       return riscv_plic_read_threshold ();
@@ -168,36 +161,31 @@ namespace riscv
      * Only 32-bit word accesses are supported by the enables
      * array in SiFive RV32 systems.
      */
-    inline void
-    __attribute__((always_inline))
+    inline __attribute__ ((always_inline)) void
     enable_interrupt (source_t global_interrupt_id)
     {
       riscv_plic_enable_interrupt (global_interrupt_id);
     }
 
-    inline void
-    __attribute__((always_inline))
+    inline __attribute__ ((always_inline)) void
     disable_interrupt (source_t global_interrupt_id)
     {
       riscv_plic_disable_interrupt (global_interrupt_id);
     }
 
-    inline bool
-    __attribute__((always_inline))
+    inline __attribute__ ((always_inline)) bool
     is_interrupt_enabled (source_t global_interrupt_id)
     {
       return riscv_plic_is_interrupt_enabled (global_interrupt_id);
     }
 
-    inline void
-    __attribute__((always_inline))
+    inline __attribute__ ((always_inline)) void
     priority (source_t global_interrupt_id, priority_t priority)
     {
       riscv_plic_write_priority (global_interrupt_id, priority);
     }
 
-    inline priority_t
-    __attribute__((always_inline))
+    inline __attribute__ ((always_inline)) priority_t
     priority (source_t global_interrupt_id)
     {
       return riscv_plic_read_priority (global_interrupt_id);
@@ -218,8 +206,7 @@ namespace riscv
      * The claim operation is not affected by the setting of the
      * priority threshold register.
      */
-    inline source_t
-    __attribute__((always_inline))
+    inline __attribute__ ((always_inline)) source_t
     claim_interrupt (void)
     {
       return riscv_plic_claim_interrupt ();
@@ -235,17 +222,15 @@ namespace riscv
      * ID does not match an interrupt source that is currently
      * enabled for the target, the completion is silently ignored.
      */
-    inline void
-    __attribute__((always_inline))
+    inline __attribute__ ((always_inline)) void
     complete_interrupt (source_t global_interrupt_id)
     {
       riscv_plic_complete_interrupt (global_interrupt_id);
     }
 
-  // --------------------------------------------------------------------------
-  } /* namespace plic */
-// ----------------------------------------------------------------------------
-} /* namespace riscv */
+    // ------------------------------------------------------------------------
+  } // namespace plic
+} // namespace riscv
 
 #endif /* defined(__cplusplus) */
 
