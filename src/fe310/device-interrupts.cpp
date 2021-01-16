@@ -440,7 +440,7 @@ sifive_fe310_interrupt_handle_global_pwm2cmp2 (void);
 void __attribute__ ((weak, alias ("sifive_fe310_interrupt_handle_unused")))
 sifive_fe310_interrupt_handle_global_pwm2cmp3 (void);
 
-#endif /* defined(OS_USE_CPP_INTERRUPTS) */
+#endif // defined(OS_USE_CPP_INTERRUPTS)
 
 namespace riscv
 {
@@ -563,7 +563,7 @@ namespace riscv
             sifive_fe310_interrupt_handle_global_pwm2cmp2, /* 50 */
             sifive_fe310_interrupt_handle_global_pwm2cmp3 /* 51 */
 
-#endif /* defined(OS_USE_CPP_INTERRUPTS) */
+#endif // defined(OS_USE_CPP_INTERRUPTS)
           };
 
     // ------------------------------------------------------------------------
@@ -604,7 +604,7 @@ namespace riscv
     void __attribute__ ((weak, alias ("sifive_fe310_interrupt_handle_unused")))
     handle_machine_ext (void);
 
-#endif /* defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER) */
+#endif // defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER)
 
     // Device local interrupts.
     // (none)
@@ -633,12 +633,12 @@ riscv_interrupt_handle_machine_ext (void);
 void __attribute__ ((weak, alias ("sifive_fe310_interrupt_handle_unused")))
 riscv_interrupt_handle_machine_ext (void);
 
-#endif /* defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER) */
+#endif // defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER)
 
 // Device local interrupts.
 // (none)
 
-#endif /* defined(OS_USE_CPP_INTERRUPTS) */
+#endif // defined(OS_USE_CPP_INTERRUPTS)
 
 namespace riscv
 {
@@ -695,7 +695,7 @@ namespace riscv
     // Device local interrupts.
     // (none)
 
-#endif /* defined(OS_USE_CPP_INTERRUPTS) */
+#endif // defined(OS_USE_CPP_INTERRUPTS)
           };
 
     // ------------------------------------------------------------------------
@@ -715,7 +715,7 @@ sifive_fe310_interrupt_handle_unused (void)
 {
 #if defined(DEBUG)
   riscv::arch::ebreak ();
-#endif /* defined(DEBUG) */
+#endif // defined(DEBUG)
 
   while (true)
     {
@@ -723,10 +723,10 @@ sifive_fe310_interrupt_handle_unused (void)
     }
 }
 
-#endif /* DEVICE */
+#endif // DEVICE
 
 // ----------------------------------------------------------------------------
 
-#endif /* defined(__riscv) */
+#endif // defined(__riscv)
 
 // ----------------------------------------------------------------------------

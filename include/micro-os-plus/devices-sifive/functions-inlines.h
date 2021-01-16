@@ -43,7 +43,7 @@
 #if defined(__cplusplus)
 extern "C"
 {
-#endif /* defined(__cplusplus) */
+#endif // defined(__cplusplus)
 
   // --------------------------------------------------------------------------
   // Device support functions in C.
@@ -53,7 +53,7 @@ extern "C"
 
 #if defined(__cplusplus)
 }
-#endif /* defined(__cplusplus) */
+#endif // defined(__cplusplus)
 
 // ----------------------------------------------------------------------------
 
@@ -72,10 +72,10 @@ namespace riscv
   } // namespace device
 } // namespace riscv
 
-#endif /* defined(__cplusplus) */
+#endif // defined(__cplusplus)
 
 // ----------------------------------------------------------------------------
 
-#endif /* SIFIVE_DEVICES_FUNCTIONS_INLINES_H_ */
+#endif // SIFIVE_DEVICES_FUNCTIONS_INLINES_H_
 
 // ----------------------------------------------------------------------------

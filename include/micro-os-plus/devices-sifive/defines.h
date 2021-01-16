@@ -50,10 +50,10 @@
 #endif
 #else
 #define RISCV_INTERRUPTS_LOCAL_LAST_NUMBER (15u)
-#endif /* defined(RISCV_INTERRUPTS_LOCAL_LAST_NUMBER) */
+#endif // defined(RISCV_INTERRUPTS_LOCAL_LAST_NUMBER)
 
 // ----------------------------------------------------------------------------
 
-#endif /* SIFIVE_DEVICES_DEFINES_H_ */
+#endif // SIFIVE_DEVICES_DEFINES_H_
 
 // ----------------------------------------------------------------------------

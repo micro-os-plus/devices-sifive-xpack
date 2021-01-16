@@ -42,6 +42,6 @@
 
 // ----------------------------------------------------------------------------
 
-#endif /* SIFIVE_DEVICES_DEVICE_INTERRUPTS_HANDLERS_H_ */
+#endif // SIFIVE_DEVICES_DEVICE_INTERRUPTS_HANDLERS_H_
 
 // ----------------------------------------------------------------------------

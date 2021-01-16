@@ -43,7 +43,7 @@
 #if defined(__cplusplus)
 extern "C"
 {
-#endif /* defined(__cplusplus) */
+#endif // defined(__cplusplus)
 
   // --------------------------------------------------------------------------
   // Device PLIC support functions in C.
@@ -113,7 +113,7 @@ extern "C"
 
 #if defined(__cplusplus)
 }
-#endif /* defined(__cplusplus) */
+#endif // defined(__cplusplus)
 
 // ----------------------------------------------------------------------------
 
@@ -232,10 +232,10 @@ namespace riscv
   } // namespace plic
 } // namespace riscv
 
-#endif /* defined(__cplusplus) */
+#endif // defined(__cplusplus)
 
 // ----------------------------------------------------------------------------
 
-#endif /* SIFIVE_DEVICES_PLIC_FUNCTIONS_INLINES_H_ */
+#endif // SIFIVE_DEVICES_PLIC_FUNCTIONS_INLINES_H_
 
 // ----------------------------------------------------------------------------

@@ -244,7 +244,7 @@ sifive_e51arty_interrupt_handle_global_pwm0cmp2 (void);
 void __attribute__ ((weak, alias ("sifive_e51arty_interrupt_handle_unused")))
 sifive_e51arty_interrupt_handle_global_pwm0cmp3 (void);
 
-#endif /* defined(OS_USE_CPP_INTERRUPTS) */
+#endif // defined(OS_USE_CPP_INTERRUPTS)
 
 namespace riscv
 {
@@ -317,7 +317,7 @@ namespace riscv
             sifive_e51arty_interrupt_handle_global_pwm0cmp2, /* 25 */
             sifive_e51arty_interrupt_handle_global_pwm0cmp3 /* 26 */
 
-#endif /* defined(OS_USE_CPP_INTERRUPTS) */
+#endif // defined(OS_USE_CPP_INTERRUPTS)
           };
 
     // ------------------------------------------------------------------------
@@ -361,7 +361,7 @@ namespace riscv
                          alias ("sifive_e51arty_interrupt_handle_unused")))
     handle_machine_ext (void);
 
-#endif /* defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER) */
+#endif // defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER)
 
     // ------------------------------------------------------------------------
   } // namespace interrupt
@@ -465,7 +465,7 @@ riscv_interrupt_handle_machine_ext (void);
 void __attribute__ ((weak, alias ("sifive_e51arty_interrupt_handle_unused")))
 riscv_interrupt_handle_machine_ext (void);
 
-#endif /* defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER) */
+#endif // defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER)
 
 // Device local interrupts.
 void __attribute__ ((weak, alias ("sifive_e51arty_interrupt_handle_unused")))
@@ -516,7 +516,7 @@ sifive_e51arty_interrupt_handle_local_device14 (void);
 void __attribute__ ((weak, alias ("sifive_e51arty_interrupt_handle_unused")))
 sifive_e51arty_interrupt_handle_local_device15 (void);
 
-#endif /* defined(OS_USE_CPP_INTERRUPTS) */
+#endif // defined(OS_USE_CPP_INTERRUPTS)
 
 namespace riscv
 {
@@ -605,7 +605,7 @@ namespace riscv
             sifive_e51arty_interrupt_handle_local_device14, /* 30 */
             sifive_e51arty_interrupt_handle_local_device15 /* 31 */
 
-#endif /* defined(OS_USE_CPP_INTERRUPTS) */
+#endif // defined(OS_USE_CPP_INTERRUPTS)
           };
 
     // ------------------------------------------------------------------------
@@ -625,7 +625,7 @@ sifive_e51arty_interrupt_handle_unused (void)
 {
 #if defined(DEBUG)
   riscv::arch::ebreak ();
-#endif /* defined(DEBUG) */
+#endif // defined(DEBUG)
 
   while (true)
     {
@@ -633,10 +633,10 @@ sifive_e51arty_interrupt_handle_unused (void)
     }
 }
 
-#endif /* DEVICE */
+#endif // DEVICE
 
 // ----------------------------------------------------------------------------
 
-#endif /* defined(__riscv) */
+#endif // defined(__riscv)
 
 // ----------------------------------------------------------------------------

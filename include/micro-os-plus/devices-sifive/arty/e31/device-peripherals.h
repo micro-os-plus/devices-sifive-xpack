@@ -907,6 +907,6 @@ extern "C"
 
 // ----------------------------------------------------------------------------
 
-#endif /* SIFIVE_DEVICES_ARTY_E31_DEVICE_PERIPHERALS_H_ */
+#endif // SIFIVE_DEVICES_ARTY_E31_DEVICE_PERIPHERALS_H_
 
 // ----------------------------------------------------------------------------

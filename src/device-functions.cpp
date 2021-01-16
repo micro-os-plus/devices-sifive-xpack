@@ -76,7 +76,7 @@ os_terminate (int code __attribute__ ((unused)))
 
 #if defined(DEBUG)
   riscv::arch::ebreak ();
-#endif /* DEBUG */
+#endif // DEBUG
 
   while (true)
     {
@@ -85,10 +85,10 @@ os_terminate (int code __attribute__ ((unused)))
   /* NOTREACHED */
 }
 
-#endif /* !defined(OS_USE_SEMIHOSTING_SYSCALLS) */
+#endif // !defined(OS_USE_SEMIHOSTING_SYSCALLS)
 
 // ----------------------------------------------------------------------------
 
-#endif /* defined(__riscv) */
+#endif // defined(__riscv)
 
 // ----------------------------------------------------------------------------

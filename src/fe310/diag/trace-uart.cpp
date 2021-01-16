@@ -122,11 +122,11 @@ namespace os
   } // namespace trace
 } // namespace os
 
-#endif /* defined(OS_USE_TRACE_UART0) */
-#endif /* defined(TRACE) */
+#endif // defined(OS_USE_TRACE_UART0)
+#endif // defined(TRACE)
 
 // ----------------------------------------------------------------------------
 
-#endif /* defined(__riscv) */
+#endif // defined(__riscv)
 
 // ----------------------------------------------------------------------------

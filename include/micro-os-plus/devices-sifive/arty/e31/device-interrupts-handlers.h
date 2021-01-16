@@ -209,7 +209,7 @@ namespace sifive
 #if defined(__cplusplus)
 extern "C"
 {
-#endif /* defined(__cplusplus) */
+#endif // defined(__cplusplus)
 
   // --------------------------------------------------------------------------
   // Global interrupt handlers.
@@ -349,12 +349,12 @@ extern "C"
 
 #if defined(__cplusplus)
 }
-#endif /* defined(__cplusplus) */
+#endif // defined(__cplusplus)
 
-#endif /* defined(__cplusplus) && defined(OS_USE_CPP_INTERRUPTS) */
+#endif // defined(__cplusplus) && defined(OS_USE_CPP_INTERRUPTS)
 
 // ----------------------------------------------------------------------------
 
-#endif /* SIFIVE_DEVICES_ARTY_E31_DEVICE_INTERRUPTS_HANDLERS_H_ */
+#endif // SIFIVE_DEVICES_ARTY_E31_DEVICE_INTERRUPTS_HANDLERS_H_
 
 // ----------------------------------------------------------------------------
