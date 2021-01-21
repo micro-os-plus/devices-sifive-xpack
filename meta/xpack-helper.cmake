@@ -11,28 +11,38 @@
 
 message(STATUS "Including xpack-sifive-devices...")
 
+# -----------------------------------------------------------------------------
+
 function(target_sources_xpack_sifive_devices target)
 
-  get_filename_component(PARENT_DIR ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
+  get_filename_component(xpack_root_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
   target_sources(
     ${target}
 
     PRIVATE
-      ${PARENT_DIR}/src/xxx
+      # TODO: add Arty e31/e51.
+      $<$<STREQUAL:"${xpack_device_compile_definition}","SIFIVE_FE310">:${xpack_root_folder}/src/fe310/diag/trace-uart.cpp>
+      $<$<STREQUAL:"${xpack_device_compile_definition}","SIFIVE_FE310">:${xpack_root_folder}/src/fe310/device-interrupts.cpp>
+      ${xpack_root_folder}/src/device-functions.cpp
+      ${xpack_root_folder}/src/plic-functions.cpp
   )
+
 endfunction()
+
+# -----------------------------------------------------------------------------
 
 function(target_include_directories_xpack_sifive_devices target)
 
-  get_filename_component(PARENT_DIR ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
+  get_filename_component(xpack_root_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
   target_include_directories(
     ${target}
 
     PUBLIC
-      ${PARENT_DIR}/include
+      ${xpack_root_folder}/include
   )
+
 endfunction()
 
 # -----------------------------------------------------------------------------
