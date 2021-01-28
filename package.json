@@ -10,9 +10,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/micro-os-plus/devices-sifive-xpack.git"
+    "url": "git+https://github.com/micro-os-plus/devices-sifive-xpack.git/"
   },
-  "homepage": "https://github.com/micro-os-plus/devices-sifive-xpack",
+  "homepage": "https://github.com/micro-os-plus/devices-sifive-xpack/",
   "keywords": [
     "xpack",
     "c++",
@@ -32,11 +32,7 @@
     "url": "https://github.com/micro-os-plus/devices-sifive-xpack/issues/"
   },
   "config": {},
-  "dependencies": {
-    "@micro-os-plus/riscv-arch": "~1.0.3"
-  },
-  "devDependencies": {
-    "xsvd": "~0.2.3"
-  },
+  "dependencies": {},
+  "devDependencies": {},
   "xpack": {}
 }
