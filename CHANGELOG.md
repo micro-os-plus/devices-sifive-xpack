@@ -1,21 +1,29 @@
-## Change log
+# Change & release log
 
-Changes in reverse chronological order.
+Releases in reverse chronological order.
 
-### v1.0.3 (2020-09-19)
+Please check
+[GitHub](https://github.com/micro-os-plus/devices-sifive-xpack/issues/)
+and close existing issues and pull requests.
+
+## v1.1.0 (2021-02-04)
+
+- first restructured release
+
+## v1.0.3 (2020-09-19)
 
 - bump riscv-arch to 1.0.3
 
-### v1.0.2 (2018-04-16)
+## v1.0.2 (2018-04-16)
 
 - bump deps & move back to npm
 - update README developer info
 
-### v1.0.1 (2018-01-24)
+## v1.0.1 (2018-01-24)
 
 - update dependencies
 
-### v1.0.0 (2018-01-24)
+## v1.0.0 (2018-01-24)
 
 - [#14] devices-xcdl.json: fix typo
 - device-functions.cpp: use riscv::arch
@@ -30,7 +38,7 @@ Changes in reverse chronological order.
 
 - [#11] Use wfi() in infinite loops
 
-### v0.3.0 (2018-01-09)
+## v0.3.0 (2018-01-09)
 
 ### 2017-12-30
 
@@ -62,22 +70,22 @@ Changes in reverse chronological order.
 - [#5] fe310-xsvd: add enum to pllcfg.f field
 - [#6] fe310-xsvd: fix pll q enums
 
-### v0.2.0 (2017-11-09)
+## v0.2.0 (2017-11-09)
 
 - rename QSPI -> SPI
 
-### v0.1.0 (2017-10-26)
+## v1.1.0 (2017-10-26)
 
 - update for new GitHub names
 - package.json: remove scripts.link
 
-### v0.0.5 (2017-10-04)
+## v0.0.5 (2017-10-04)
 
 - `package.json` clean-ups
 - add `devices-xcdl.json`
 - add `CHANGELOG.md`
 
-### v0.0.4 (2017-09-18)
+## v0.0.4 (2017-09-18)
 
 - remove `_IP` from `COREPLEX_IP`
 - rename folder without `_ip`
@@ -90,7 +98,7 @@ Changes in reverse chronological order.
   - for E310 there are none
 - package.json: add dependency on riscv-arch
 
-### v0.0.3, v0.0.2, v0.0.1 (2017-09-05)
+## v0.0.3, v0.0.2, v0.0.1 (2017-09-05)
 
 - initial version, inspired from Eclipse templates.
 
