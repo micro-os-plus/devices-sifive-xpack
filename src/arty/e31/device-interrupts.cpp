@@ -624,12 +624,12 @@ void __attribute__ ((section (".traps_handlers"), weak))
 sifive_e31arty_interrupt_handle_unused (void)
 {
 #if defined(DEBUG)
-  riscv::arch::ebreak ();
+  riscv::architecture::ebreak ();
 #endif // defined(DEBUG)
 
   while (true)
     {
-      riscv::arch::wfi ();
+      riscv::architecture::wfi ();
     }
 }
 

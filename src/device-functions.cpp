@@ -75,12 +75,12 @@ os_terminate (int code __attribute__ ((unused)))
 #endif
 
 #if defined(DEBUG)
-  riscv::arch::ebreak ();
+  riscv::architecture::ebreak ();
 #endif // DEBUG
 
   while (true)
     {
-      riscv::arch::wfi ();
+      riscv::architecture::wfi ();
     }
   /* NOTREACHED */
 }
