@@ -66,7 +66,7 @@ namespace sifive
 // To provide the desired functionality, redefine any of these
 // functions in the application.
 
-#if defined(OS_USE_CPP_INTERRUPTS)
+#if defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
 
 namespace sifive
 {
@@ -244,7 +244,7 @@ sifive_e31arty_interrupt_handle_global_pwm0cmp2 (void);
 void __attribute__ ((weak, alias ("sifive_e31arty_interrupt_handle_unused")))
 sifive_e31arty_interrupt_handle_global_pwm0cmp3 (void);
 
-#endif // defined(OS_USE_CPP_INTERRUPTS)
+#endif // defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
 
 namespace riscv
 {
@@ -257,7 +257,7 @@ namespace riscv
         __attribute__ ((section (".interrupts_global_array")))
         global_interrupt_handlers[]
         = {
-#if defined(OS_USE_CPP_INTERRUPTS)
+#if defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
 
             sifive::e31arty::interrupt::handle_unused, /* 0 */
             sifive::e31arty::interrupt::handle_global_uart0, /* 1 */
@@ -287,7 +287,7 @@ namespace riscv
             sifive::e31arty::interrupt::handle_global_pwm0cmp2, /* 25 */
             sifive::e31arty::interrupt::handle_global_pwm0cmp3 /* 26 */
 
-#else /* defined(OS_USE_CPP_INTERRUPTS) */
+#else /* defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS) */
 
             sifive_e31arty_interrupt_handle_unused, /* 0 */
             sifive_e31arty_interrupt_handle_global_uart0, /* 1 */
@@ -317,7 +317,7 @@ namespace riscv
             sifive_e31arty_interrupt_handle_global_pwm0cmp2, /* 25 */
             sifive_e31arty_interrupt_handle_global_pwm0cmp3 /* 26 */
 
-#endif // defined(OS_USE_CPP_INTERRUPTS)
+#endif // defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
           };
 
     // ------------------------------------------------------------------------
@@ -332,7 +332,7 @@ static_assert (sizeof (riscv::core::global_interrupt_handlers)
 
 // ----------------------------------------------------------------------------
 
-#if defined(OS_USE_CPP_INTERRUPTS)
+#if defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
 
 namespace riscv
 {
@@ -445,7 +445,7 @@ namespace sifive
   } // namespace e31arty
 } // namespace sifive
 
-#else /* defined(OS_USE_CPP_INTERRUPTS) */
+#else /* defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS) */
 
 // Architecture interrupts.
 void __attribute__ ((weak, alias ("sifive_e31arty_interrupt_handle_unused")))
@@ -516,7 +516,7 @@ sifive_e31arty_interrupt_handle_local_device14 (void);
 void __attribute__ ((weak, alias ("sifive_e31arty_interrupt_handle_unused")))
 sifive_e31arty_interrupt_handle_local_device15 (void);
 
-#endif // defined(OS_USE_CPP_INTERRUPTS)
+#endif // defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
 
 namespace riscv
 {
@@ -529,7 +529,7 @@ namespace riscv
         __attribute__ ((section (".interrupts_local_array")))
         local_interrupt_handlers[]
         = {
-#if defined(OS_USE_CPP_INTERRUPTS)
+#if defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
 
             // Architecture interrupts.
             sifive::e31arty::interrupt::handle_unused, /* 0 */
@@ -567,7 +567,7 @@ namespace riscv
             sifive::e31arty::interrupt::handle_local_device14, /* 30 */
             sifive::e31arty::interrupt::handle_local_device15 /* 31 */
 
-#else /* defined(OS_USE_CPP_INTERRUPTS) */
+#else /* defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS) */
 
             // Architecture interrupts.
             sifive_e31arty_interrupt_handle_unused, /* 0 */
@@ -605,7 +605,7 @@ namespace riscv
             sifive_e31arty_interrupt_handle_local_device14, /* 30 */
             sifive_e31arty_interrupt_handle_local_device15 /* 31 */
 
-#endif // defined(OS_USE_CPP_INTERRUPTS)
+#endif // defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
           };
 
     // ------------------------------------------------------------------------

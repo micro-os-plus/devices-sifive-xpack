@@ -31,12 +31,12 @@
 
 #if defined(TRACE)
 
-#if defined(OS_USE_TRACE_UART0)
+#if defined(MICRO_OS_PLUS_USE_TRACE_UART0)
 
 #include <micro-os-plus/device.h>
 #include <micro-os-plus/diag/trace.h>
 
-#define OS_INTEGER_TRACE_UART0_BAUD_RATE (115200)
+#define MICRO_OS_PLUS_INTEGER_TRACE_UART0_BAUD_RATE (115200)
 
 // ----------------------------------------------------------------------------
 
@@ -58,7 +58,7 @@ namespace os
 
       // Set baud rate.
       UART0->div = (riscv::core::running_frequency_hz ()
-                    / OS_INTEGER_TRACE_UART0_BAUD_RATE)
+                    / MICRO_OS_PLUS_INTEGER_TRACE_UART0_BAUD_RATE)
                    - 1;
       // Enable transmitter.
       UART0->txctrl |= SIFIVE_FE310_UART_TXCTRL_TXEN;
@@ -122,7 +122,7 @@ namespace os
   } // namespace trace
 } // namespace os
 
-#endif // defined(OS_USE_TRACE_UART0)
+#endif // defined(MICRO_OS_PLUS_USE_TRACE_UART0)
 #endif // defined(TRACE)
 
 // ----------------------------------------------------------------------------

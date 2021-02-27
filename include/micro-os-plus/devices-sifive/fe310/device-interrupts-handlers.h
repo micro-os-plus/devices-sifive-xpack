@@ -36,7 +36,7 @@
 
 // ----------------------------------------------------------------------------
 
-#if defined(__cplusplus) && defined(OS_USE_CPP_INTERRUPTS)
+#if defined(__cplusplus) && defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
 
 namespace sifive
 {
@@ -226,7 +226,7 @@ namespace riscv
   } // namespace interrupt
 } // namespace riscv
 
-#else /* defined(__cplusplus) && defined(OS_USE_CPP_INTERRUPTS) */
+#else /* defined(__cplusplus) && defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS) */
 
 // ----------------------------------------------------------------------------
 
@@ -410,7 +410,7 @@ extern "C"
 }
 #endif // defined(__cplusplus)
 
-#endif // defined(__cplusplus) && defined(OS_USE_CPP_INTERRUPTS)
+#endif // defined(__cplusplus) && defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
 
 // ----------------------------------------------------------------------------
 

@@ -66,7 +66,7 @@ namespace sifive
 // To provide the desired functionality, redefine any of these
 // functions in the application.
 
-#if defined(OS_USE_CPP_INTERRUPTS)
+#if defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
 
 namespace sifive
 {
@@ -440,7 +440,7 @@ sifive_fe310_interrupt_handle_global_pwm2cmp2 (void);
 void __attribute__ ((weak, alias ("sifive_fe310_interrupt_handle_unused")))
 sifive_fe310_interrupt_handle_global_pwm2cmp3 (void);
 
-#endif // defined(OS_USE_CPP_INTERRUPTS)
+#endif // defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
 
 namespace riscv
 {
@@ -453,7 +453,7 @@ namespace riscv
         __attribute__ ((section (".interrupts_global_array")))
         global_interrupt_handlers[]
         = {
-#if defined(OS_USE_CPP_INTERRUPTS)
+#if defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
 
             sifive::fe310::interrupt::handle_unused, /* 0 */
             sifive::fe310::interrupt::handle_global_wdogcmp, /* 1 */
@@ -508,7 +508,7 @@ namespace riscv
             sifive::fe310::interrupt::handle_global_pwm2cmp2, /* 50 */
             sifive::fe310::interrupt::handle_global_pwm2cmp3 /* 51 */
 
-#else /* defined(OS_USE_CPP_INTERRUPTS) */
+#else /* defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS) */
 
             sifive_fe310_interrupt_handle_unused, /* 0 */
             sifive_fe310_interrupt_handle_global_wdogcmp, /* 1 */
@@ -563,7 +563,7 @@ namespace riscv
             sifive_fe310_interrupt_handle_global_pwm2cmp2, /* 50 */
             sifive_fe310_interrupt_handle_global_pwm2cmp3 /* 51 */
 
-#endif // defined(OS_USE_CPP_INTERRUPTS)
+#endif // defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
           };
 
     // ------------------------------------------------------------------------
@@ -578,7 +578,7 @@ static_assert (sizeof (riscv::core::global_interrupt_handlers)
 
 // ----------------------------------------------------------------------------
 
-#if defined(OS_USE_CPP_INTERRUPTS)
+#if defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
 
 namespace riscv
 {
@@ -613,7 +613,7 @@ namespace riscv
   } // namespace interrupt
 } // namespace riscv
 
-#else /* defined(OS_USE_CPP_INTERRUPTS) */
+#else /* defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS) */
 
 // Architecture interrupts.
 void __attribute__ ((weak, alias ("sifive_fe310_interrupt_handle_unused")))
@@ -638,7 +638,7 @@ riscv_interrupt_handle_machine_ext (void);
 // Device local interrupts.
 // (none)
 
-#endif // defined(OS_USE_CPP_INTERRUPTS)
+#endif // defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
 
 namespace riscv
 {
@@ -651,7 +651,7 @@ namespace riscv
         __attribute__ ((section (".interrupts_local_array")))
         local_interrupt_handlers[]
         = {
-#if defined(OS_USE_CPP_INTERRUPTS)
+#if defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
 
             // Architecture interrupts.
             sifive::fe310::interrupt::handle_unused, /* 0 */
@@ -673,7 +673,7 @@ namespace riscv
     // Device local interrupts.
     // (none)
 
-#else /* defined(OS_USE_CPP_INTERRUPTS) */
+#else /* defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS) */
 
             // Architecture interrupts.
             sifive_fe310_interrupt_handle_unused, /* 0 */
@@ -695,7 +695,7 @@ namespace riscv
     // Device local interrupts.
     // (none)
 
-#endif // defined(OS_USE_CPP_INTERRUPTS)
+#endif // defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
           };
 
     // ------------------------------------------------------------------------
