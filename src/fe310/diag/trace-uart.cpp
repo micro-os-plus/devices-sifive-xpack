@@ -40,7 +40,7 @@
 
 // ----------------------------------------------------------------------------
 
-namespace os
+namespace micro_os_plus
 {
   namespace trace
   {
@@ -120,7 +120,7 @@ namespace os
 
     // ------------------------------------------------------------------------
   } // namespace trace
-} // namespace os
+} // namespace micro_os_plus
 
 #endif // defined(MICRO_OS_PLUS_USE_TRACE_UART0)
 #endif // defined(TRACE)
