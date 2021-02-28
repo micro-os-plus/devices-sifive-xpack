@@ -63,7 +63,7 @@ namespace riscv
  * This function resets the MCU core.
  */
 void __attribute__ ((noreturn, weak))
-os_terminate (int code __attribute__ ((unused)))
+micro_os_plus_terminate (int code __attribute__ ((unused)))
 {
 #if defined(SIFIVE_FE310)
   // The Watchdog or PMU+RTC can be used to trigger a system reset.
