@@ -18,7 +18,7 @@ endif()
 
 set(xpack-sifive-devices-included TRUE)
 
-message(STATUS "Including xpack-sifive-devices...")
+message(STATUS "Processing xPack ${PACKAGE_JSON_NAME}@${PACKAGE_JSON_VERSION}...")
 
 # -----------------------------------------------------------------------------
 
