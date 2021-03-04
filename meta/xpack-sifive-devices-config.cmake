@@ -89,7 +89,7 @@ if(NOT TARGET xpack-sifive-devices-interface)
   # Aliases.
 
   add_library(sifive::devices ALIAS xpack-sifive-devices-interface)
-  message(STATUS "sifive::devices")
+  message(STATUS "=> sifive::devices")
 
 endif()
 
