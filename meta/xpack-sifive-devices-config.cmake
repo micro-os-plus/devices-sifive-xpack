@@ -84,7 +84,7 @@ if(NOT TARGET xpack-sifive-devices-interface)
     INTERFACE
       micro-os-plus::architecture-riscv
       micro-os-plus::architecture-riscv-device
-      micro-os-plus::diag-trace-static
+      micro-os-plus::diag-trace
   )
 
   # ---------------------------------------------------------------------------
