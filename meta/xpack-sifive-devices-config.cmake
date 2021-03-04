@@ -69,6 +69,8 @@ if(NOT TARGET xpack-sifive-devices-interface)
       ${xpack_current_folder}/include
   )
 
+  message(STATUS "+ ${xpack_device_compile_definition}")
+  
   target_compile_definitions(
     xpack-sifive-devices-interface
 
