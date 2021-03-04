@@ -39,15 +39,27 @@ if(NOT TARGET xpack-sifive-devices-interface)
   # Hopefully the file names follow the symbol definitions.
   string(TOLOWER ${xpack_device_compile_definition} device_name)
 
+  set(source_files
+    ${xpack_current_folder}/src/device-functions.cpp
+    ${xpack_current_folder}/src/plic-functions.cpp
+  )
+
+  if("${xpack_device_compile_definition}" STREQUAL "SIFIVE_FE310")
+    list(APPEND <list>
+      ${xpack_current_folder}/src/fe310/diag/trace-uart.cpp
+      ${xpack_current_folder}/src/fe310/device-interrupts.cpp
+    )
+  else()
+    # TODO: add Arty e31/e51.
+  endif()
+      
+  xpack_display_relative_paths("${source_files}" "${xpack_current_folder}")
+
   target_sources(
     xpack-sifive-devices-interface
 
     INTERFACE
-      # TODO: add Arty e31/e51.
-      $<$<STREQUAL:"${xpack_device_compile_definition}","SIFIVE_FE310">:${xpack_current_folder}/src/fe310/diag/trace-uart.cpp>
-      $<$<STREQUAL:"${xpack_device_compile_definition}","SIFIVE_FE310">:${xpack_current_folder}/src/fe310/device-interrupts.cpp>
-      ${xpack_current_folder}/src/device-functions.cpp
-      ${xpack_current_folder}/src/plic-functions.cpp
+      ${source_files}
   )
 
   target_include_directories(
