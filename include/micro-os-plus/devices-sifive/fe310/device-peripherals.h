@@ -1465,8 +1465,8 @@ extern "C"
 #define SIFIVE_FE310_PWM_CMP_VALUE_MASK \
   (0xFFFFul << 0ul) /**< [15..0] Compare value */
 
-  // --------------------------------------------------------------------------
-  // Peripheral 'clint' offsets.
+// ----------------------------------------------------------------------------
+// Peripheral 'clint' offsets.
 
 #define SIFIVE_FE310_CLINT_MSIP_OFFSET \
   (0x00000000ul) /**< 0x02000000: MSIP (Machine-mode Software Interrupts) \
@@ -1484,8 +1484,8 @@ extern "C"
 #define SIFIVE_FE310_CLINT_MTIME_HIGH_OFFSET \
   (0x0000BFFCul) /**< 0x0200BFFC: Machine Time Register High */
 
-  // --------------------------------------------------------------------------
-  // Peripheral 'plic' offsets.
+// ----------------------------------------------------------------------------
+// Peripheral 'plic' offsets.
 
 #define SIFIVE_FE310_PLIC_PRIORITIES_OFFSET \
   (0x00000000ul) /**< 0x0C000000: Interrupt Priorities Registers; 0 is \
@@ -1507,8 +1507,8 @@ extern "C"
 #define SIFIVE_FE310_PLIC_TARGET0_M_CLAIMCOMPLETE_OFFSET \
   (0x00200004ul) /**< 0x0C200004: The Interrupt Claim/Completion Register */
 
-  // --------------------------------------------------------------------------
-  // Peripheral 'wdog' offsets.
+// ----------------------------------------------------------------------------
+// Peripheral 'wdog' offsets.
 
 #define SIFIVE_FE310_WDOG_CFG_OFFSET \
   (0x00000000ul) /**< 0x10000000: Watchdog Configuration Register */
@@ -1523,8 +1523,8 @@ extern "C"
 #define SIFIVE_FE310_WDOG_CMP_OFFSET \
   (0x00000020ul) /**< 0x10000020: Watchdog Compare Register */
 
-  // --------------------------------------------------------------------------
-  // Peripheral 'rtc' offsets.
+// ----------------------------------------------------------------------------
+// Peripheral 'rtc' offsets.
 
 #define SIFIVE_FE310_RTC_CFG_OFFSET \
   (0x00000000ul) /**< 0x10000040: RTC Configuration Register */
@@ -1537,8 +1537,8 @@ extern "C"
 #define SIFIVE_FE310_RTC_CMP_OFFSET \
   (0x00000020ul) /**< 0x10000060: RTC Compare Register */
 
-  // --------------------------------------------------------------------------
-  // Peripheral 'aon' offsets.
+// ----------------------------------------------------------------------------
+// Peripheral 'aon' offsets.
 
 #define SIFIVE_FE310_AON_LFROSCCFG_OFFSET \
   (0x00000000ul) /**< 0x10000070: Internal Programmable Low-Frequency Ring \
@@ -1546,8 +1546,8 @@ extern "C"
 #define SIFIVE_FE310_AON_BACKUP_OFFSET \
   (0x00000010ul) /**< 0x10000080: Backup Registers */
 
-  // --------------------------------------------------------------------------
-  // Peripheral 'pmu' offsets.
+// ----------------------------------------------------------------------------
+// Peripheral 'pmu' offsets.
 
 #define SIFIVE_FE310_PMU_WAKEUPI_OFFSET \
   (0x00000000ul) /**< 0x10000100: Wakeup program instruction Registers */
@@ -1562,8 +1562,8 @@ extern "C"
 #define SIFIVE_FE310_PMU_KEY_OFFSET \
   (0x0000004Cul) /**< 0x1000014C: PMU Key Register */
 
-  // --------------------------------------------------------------------------
-  // Peripheral 'prci' offsets.
+// ----------------------------------------------------------------------------
+// Peripheral 'prci' offsets.
 
 #define SIFIVE_FE310_PRCI_HFROSCCFG_OFFSET \
   (0x00000000ul) /**< 0x10008000: Internal Trimmable Programmable 72 MHz \
@@ -1577,8 +1577,8 @@ extern "C"
 #define SIFIVE_FE310_PRCI_PLLOUTDIV_OFFSET \
   (0x0000000Cul) /**< 0x1000800C: PLL Output Divider */
 
-  // --------------------------------------------------------------------------
-  // Peripheral 'otp' offsets.
+// ----------------------------------------------------------------------------
+// Peripheral 'otp' offsets.
 
 #define SIFIVE_FE310_OTP_LOCK_OFFSET \
   (0x00000000ul) /**< 0x10010000: Programmed-I/O Lock Register */
@@ -1610,8 +1610,8 @@ extern "C"
 #define SIFIVE_FE310_OTP_RSCTRL_OFFSET \
   (0x00000034ul) /**< 0x10010034: Read Sequencer Control Register */
 
-  // --------------------------------------------------------------------------
-  // Peripheral 'gpio' offsets.
+// ----------------------------------------------------------------------------
+// Peripheral 'gpio' offsets.
 
 #define SIFIVE_FE310_GPIO_VALUE_OFFSET \
   (0x00000000ul) /**< 0x10012000: Pin Value Register */
@@ -1648,8 +1648,8 @@ extern "C"
 #define SIFIVE_FE310_GPIO_OUTXOR_OFFSET \
   (0x00000040ul) /**< 0x10012040: Output XOR (invert) Register */
 
-  // --------------------------------------------------------------------------
-  // Peripheral 'uart' offsets.
+// ----------------------------------------------------------------------------
+// Peripheral 'uart' offsets.
 
 #define SIFIVE_FE310_UART_TXDATA_OFFSET \
   (0x00000000ul) /**< 0x10013000: Transmit Data Register */
@@ -1666,8 +1666,8 @@ extern "C"
 #define SIFIVE_FE310_UART_DIV_OFFSET \
   (0x00000018ul) /**< 0x10013018: Baud Rate Divisor Register */
 
-  // --------------------------------------------------------------------------
-  // Peripheral 'spi' offsets.
+// ----------------------------------------------------------------------------
+// Peripheral 'spi' offsets.
 
 #define SIFIVE_FE310_SPI_SCKDIV_OFFSET \
   (0x00000000ul) /**< 0x10014000: Serial clock divisor Register */
@@ -1702,8 +1702,8 @@ extern "C"
 #define SIFIVE_FE310_SPI_IP_OFFSET \
   (0x00000074ul) /**< 0x10014074: Interrupt Pending Register */
 
-  // --------------------------------------------------------------------------
-  // Peripheral 'pwm0' offsets.
+// ----------------------------------------------------------------------------
+// Peripheral 'pwm0' offsets.
 
 #define SIFIVE_FE310_PWM0_CFG_OFFSET \
   (0x00000000ul) /**< 0x10015000: Configuration Register */
@@ -1714,8 +1714,8 @@ extern "C"
 #define SIFIVE_FE310_PWM0_CMP_OFFSET \
   (0x00000020ul) /**< 0x10015020: Compare Registers */
 
-  // --------------------------------------------------------------------------
-  // Peripheral 'pwm' offsets.
+// ----------------------------------------------------------------------------
+// Peripheral 'pwm' offsets.
 
 #define SIFIVE_FE310_PWM_CFG_OFFSET \
   (0x00000000ul) /**< 0x10025000: Configuration Register */
@@ -1726,8 +1726,8 @@ extern "C"
 #define SIFIVE_FE310_PWM_CMP_OFFSET \
   (0x00000020ul) /**< 0x10025020: Compare Registers */
 
-  // --------------------------------------------------------------------------
-  // Peripherals memory map.
+// ----------------------------------------------------------------------------
+// Peripherals memory map.
 
 #define SIFIVE_FE310_CLINT_BASE_ADDRESS (0x02000000ul)
 #define SIFIVE_FE310_PLIC_BASE_ADDRESS (0x0C000000ul)
@@ -1747,8 +1747,31 @@ extern "C"
 #define SIFIVE_FE310_SPI2_BASE_ADDRESS (0x10034000ul)
 #define SIFIVE_FE310_PWM2_BASE_ADDRESS (0x10035000ul)
 
-  // --------------------------------------------------------------------------
-  // Peripherals declarations.
+// ----------------------------------------------------------------------------
+// Peripherals declarations.
+
+#if defined(__cplusplus)
+
+// Avoid -Wold-style-cast.
+#define CLINT (reinterpret_cast<sifive_fe310_clint_t*>(SIFIVE_FE310_CLINT_BASE_ADDRESS))
+#define PLIC (reinterpret_cast<sifive_fe310_plic_t*>(SIFIVE_FE310_PLIC_BASE_ADDRESS))
+#define WDOG (reinterpret_cast<sifive_fe310_wdog_t*>(SIFIVE_FE310_WDOG_BASE_ADDRESS))
+#define RTC (reinterpret_cast<sifive_fe310_rtc_t*>(SIFIVE_FE310_RTC_BASE_ADDRESS))
+#define AON (reinterpret_cast<sifive_fe310_aon_t*>(SIFIVE_FE310_AON_BASE_ADDRESS))
+#define PMU (reinterpret_cast<sifive_fe310_pmu_t*>(SIFIVE_FE310_PMU_BASE_ADDRESS))
+#define PRCI (reinterpret_cast<sifive_fe310_prci_t*>(SIFIVE_FE310_PRCI_BASE_ADDRESS))
+#define OTP (reinterpret_cast<sifive_fe310_otp_t*>(SIFIVE_FE310_OTP_BASE_ADDRESS))
+#define GPIO (reinterpret_cast<sifive_fe310_gpio_t*>(SIFIVE_FE310_GPIO_BASE_ADDRESS))
+#define UART0 (reinterpret_cast<sifive_fe310_uart_t*>(SIFIVE_FE310_UART0_BASE_ADDRESS))
+#define SPI0 (reinterpret_cast<sifive_fe310_spi_t*>(SIFIVE_FE310_SPI0_BASE_ADDRESS))
+#define PWM0 (reinterpret_cast<sifive_fe310_pwm0_t*>(SIFIVE_FE310_PWM0_BASE_ADDRESS))
+#define UART1 (reinterpret_cast<sifive_fe310_uart_t*>(SIFIVE_FE310_UART1_BASE_ADDRESS))
+#define SPI1 (reinterpret_cast<sifive_fe310_spi_t*>(SIFIVE_FE310_SPI1_BASE_ADDRESS))
+#define PWM1 (reinterpret_cast<sifive_fe310_pwm_t*>(SIFIVE_FE310_PWM1_BASE_ADDRESS))
+#define SPI2 (reinterpret_cast<sifive_fe310_spi_t*>(SIFIVE_FE310_SPI2_BASE_ADDRESS))
+#define PWM2 (reinterpret_cast<sifive_fe310_pwm_t*>(SIFIVE_FE310_PWM2_BASE_ADDRESS))
+
+#else
 
 #define CLINT ((sifive_fe310_clint_t*)SIFIVE_FE310_CLINT_BASE_ADDRESS)
 #define PLIC ((sifive_fe310_plic_t*)SIFIVE_FE310_PLIC_BASE_ADDRESS)
@@ -1767,6 +1790,8 @@ extern "C"
 #define PWM1 ((sifive_fe310_pwm_t*)SIFIVE_FE310_PWM1_BASE_ADDRESS)
 #define SPI2 ((sifive_fe310_spi_t*)SIFIVE_FE310_SPI2_BASE_ADDRESS)
 #define PWM2 ((sifive_fe310_pwm_t*)SIFIVE_FE310_PWM2_BASE_ADDRESS)
+
+#endif
 
   // --------------------------------------------------------------------------
 
