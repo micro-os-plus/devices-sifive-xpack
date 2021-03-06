@@ -595,9 +595,8 @@ namespace riscv
 
 #if defined(RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER)
 
-    // redundant redeclaration of 'void riscv::interrupt::handle_machine_ext()' in same scope
-    // extern void
-    // handle_machine_ext (void);
+    // redundant redeclaration of 'void riscv::interrupt::handle_machine_ext()'
+    // in same scope extern void handle_machine_ext (void);
 
 #else /* defined (RISCV_INTERRUPTS_GLOBAL_LAST_NUMBER) */
 

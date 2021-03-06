@@ -67,15 +67,17 @@ extern "C"
   static inline __attribute__ ((always_inline)) void
   riscv_plic_enable_interrupt (riscv_plic_source_t global_interrupt_id)
   {
-    PLIC->enablestarget0.m.enables[global_interrupt_id / 32u] =
-        PLIC->enablestarget0.m.enables[global_interrupt_id / 32u] | (1u << (global_interrupt_id % 32u));
+    PLIC->enablestarget0.m.enables[global_interrupt_id / 32u]
+        = PLIC->enablestarget0.m.enables[global_interrupt_id / 32u]
+          | (1u << (global_interrupt_id % 32u));
   }
 
   static inline __attribute__ ((always_inline)) void
   riscv_plic_disable_interrupt (riscv_plic_source_t global_interrupt_id)
   {
-    PLIC->enablestarget0.m.enables[global_interrupt_id / 32u] =
-        PLIC->enablestarget0.m.enables[global_interrupt_id / 32u] & ~(1u << (global_interrupt_id % 32u));
+    PLIC->enablestarget0.m.enables[global_interrupt_id / 32u]
+        = PLIC->enablestarget0.m.enables[global_interrupt_id / 32u]
+          & ~(1u << (global_interrupt_id % 32u));
   }
 
   static inline __attribute__ ((always_inline)) bool
