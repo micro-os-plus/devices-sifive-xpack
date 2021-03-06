@@ -45,7 +45,7 @@ if(NOT TARGET xpack-sifive-devices-interface)
   )
 
   if("${xpack_device_compile_definition}" STREQUAL "SIFIVE_FE310")
-    list(APPEND <list>
+    list(APPEND source_files
       ${xpack_current_folder}/src/fe310/diag/trace-uart.cpp
       ${xpack_current_folder}/src/fe310/device-interrupts.cpp
     )
