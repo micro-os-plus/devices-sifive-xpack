@@ -1,6 +1,6 @@
 {
   "name": "@xpack-sifive/devices",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A source xPack with the µOS++ support for the SiFive Core Complex devices",
   "main": "",
   "scripts": {
@@ -32,7 +32,6 @@
     "url": "https://github.com/micro-os-plus/devices-sifive-xpack/issues/"
   },
   "config": {},
-  "dependencies": {},
   "devDependencies": {},
   "xpack": {}
 }
