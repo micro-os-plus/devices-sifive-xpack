@@ -29,10 +29,7 @@
 #define SIFIVE_DEVICES_ARTY_E51_DEVICE_INTERRUPTS_HANDLERS_H_
 
 // ----------------------------------------------------------------------------
-
-/*
- * SiFive Arty E51 global interrupts handler functions.
- */
+// SiFive Arty E51 global interrupts handler functions.
 
 #if defined(__cplusplus) && defined(MICRO_OS_PLUS_USE_CPP_INTERRUPTS)
 

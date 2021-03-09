@@ -29,10 +29,7 @@
 #define SIFIVE_DEVICES_FE310_DEVICE_INTERRUPTS_HANDLERS_H_
 
 // ----------------------------------------------------------------------------
-
-/*
- * SiFive Freedom E310 global interrupts handler functions.
- */
+// SiFive Freedom E310 global interrupts handler functions.
 
 // ----------------------------------------------------------------------------
 

@@ -35,10 +35,7 @@
 #include <stdint.h>
 
 // ----------------------------------------------------------------------------
-
-/*
- * Inline implementations for the Core Complex IP support functions.
- */
+// Inline implementations for the Core Complex IP support functions.
 
 #if defined(__cplusplus)
 extern "C"
