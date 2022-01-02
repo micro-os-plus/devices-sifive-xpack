@@ -11,12 +11,18 @@
 
 # https://cmake.org/cmake/help/v3.19/
 # https://cmake.org/cmake/help/v3.19/manual/cmake-packages.7.html#package-configuration-file
+cmake_minimum_required(VERSION 3.19)
 
-if(xpack-sifive-devices-included)
+# Use targets as include markers (variables are not scope independent).
+if(TARGET xpack-sifive-devices-included)
   return()
+else()
+  add_custom_target(xpack-sifive-devices-included)
 endif()
 
-set(xpack-sifive-devices-included TRUE)
+if(NOT TARGET micro-os-plus-build-helper-included)
+  message(FATAL_ERROR "Include the mandatory build-helper (xpacks/micro-os-plus-build-helper/cmake/xpack-helper.cmake)")
+endif()
 
 message(STATUS "Processing xPack ${PACKAGE_JSON_NAME}@${PACKAGE_JSON_VERSION}...")
 
@@ -52,7 +58,7 @@ if(NOT TARGET xpack-sifive-devices-interface)
   else()
     # TODO: add Arty e31/e51.
   endif()
-      
+
   xpack_display_relative_paths("${source_files}" "${xpack_current_folder}")
 
   target_sources(
@@ -70,7 +76,7 @@ if(NOT TARGET xpack-sifive-devices-interface)
   )
 
   message(STATUS "+ ${xpack_device_compile_definition}")
-  
+
   target_compile_definitions(
     xpack-sifive-devices-interface
 

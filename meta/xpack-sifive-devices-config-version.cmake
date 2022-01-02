@@ -12,7 +12,7 @@
 # https://cmake.org/cmake/help/v3.19/
 # https://cmake.org/cmake/help/v3.19/manual/cmake-packages.7.html#package-configuration-file
 
-# message(STATUS "Including sifive-devices-config-version...")
+message(STATUS "Including sifive-devices-config-version...")
 
 # -----------------------------------------------------------------------------
 
