@@ -93,7 +93,7 @@ if(NOT TARGET xpack-sifive-devices-interface)
       micro-os-plus::diag-trace
   )
 
-  # ---------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
   # Aliases.
 
   add_library(sifive::devices ALIAS xpack-sifive-devices-interface)
