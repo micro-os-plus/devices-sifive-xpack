@@ -608,9 +608,9 @@ static_assert (sizeof (riscv::core::local_interrupt_handlers)
 void __attribute__ ((section (".traps_handlers"), weak))
 sifive_e31arty_interrupt_handle_unused (void)
 {
-#if defined(DEBUG)
+#if defined(MICRO_OS_PLUS_DEBUG)
   riscv::architecture::ebreak ();
-#endif // defined(DEBUG)
+#endif // defined(MICRO_OS_PLUS_DEBUG)
 
   while (true)
     {

@@ -59,9 +59,9 @@ micro_os_plus_terminate (int code __attribute__ ((unused)))
 #error "Unsupported device."
 #endif
 
-#if defined(DEBUG)
+#if defined(MICRO_OS_PLUS_DEBUG)
   riscv::architecture::ebreak ();
-#endif // DEBUG
+#endif // MICRO_OS_PLUS_DEBUG
 
   while (true)
     {
