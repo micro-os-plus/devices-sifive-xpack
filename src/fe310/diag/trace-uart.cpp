@@ -81,13 +81,17 @@ namespace micro_os_plus
               // Wait until FIFO is ready...
               // Without handshake, should not block.
               while ((UART0->txdata & SIFIVE_FE310_UART_TXDATA_FULL) != 0)
-                ;
+                {
+                  // Busy wait!
+                }
               UART0->txdata = '\r';
             }
 
           // Wait until FIFO is ready...
           while ((UART0->txdata & SIFIVE_FE310_UART_TXDATA_FULL) != 0)
-            ;
+            {
+              // Busy wait!
+            }
           UART0->txdata = ch;
         }
 
@@ -100,7 +104,7 @@ namespace micro_os_plus
     void
     flush (void)
     {
-      ; // TODO flush port
+      // TODO flush port
     }
 
     // ------------------------------------------------------------------------
