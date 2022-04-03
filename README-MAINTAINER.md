@@ -117,7 +117,7 @@ When the release is considered stable, promote it as `latest`:
 
 - `npm dist-tag ls @xpack-sifive/devices`
 - `npm dist-tag add @xpack-sifive/devices@2.0.1 latest`
-- `npm dist-tag ls @@xpack-sifive/devices`
+- `npm dist-tag ls @xpack-sifive/devices`
 
 ## Announce to the community
 
