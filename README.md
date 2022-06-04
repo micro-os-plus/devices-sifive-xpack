@@ -95,11 +95,15 @@ and E51Arty.
 
 To include this package in a project, consider the following details.
 
-#### Source folders
+#### Source files
 
-- `src`
+The source files to be added to user projects are:
+
+TODO
 
 #### Include folders
+
+The following folders should be passed to the compiler during the build:
 
 - `include`
 
