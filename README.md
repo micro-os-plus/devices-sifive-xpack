@@ -1,5 +1,5 @@
 [![license](https://img.shields.io/github/license/micro-os-plus/devices-sifive-xpack)](https://github.com/micro-os-plus/devices-sifive-xpack/blob/xpack/LICENSE)
-[![CI on Push](https://github.com/micro-os-plus/devices-sifive-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/devices-sifive-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+[![CI on Push](https://github.com/micro-os-plus/devices-sifive-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/micro-os-plus/devices-sifive-xpack/actions/workflows/CI.yml)
 
 # A source library xPack with the µOS++ SiFive device specific files
 
@@ -18,7 +18,7 @@ For maintainer info, please see the
 
 ## Install
 
-As a source library xPacks, the easiest way to add it to a project is via
+As a source library xPack, the easiest way to add it to a project is via
 **xpm**, but it can also be used as any Git project, for example as a submodule.
 
 ### Prerequisites
@@ -88,7 +88,7 @@ TBD
 
 ### Status
 
-This package supports 3 of the initial SiFive devices, FE310, E31Arty
+The **devices-sifive-** source library is fully functional; for now it supports 3 of the initial SiFive devices, FE310, E31Arty
 and E51Arty.
 
 ### Build & integration info
