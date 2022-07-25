@@ -3,6 +3,8 @@
     80
   ],
   "cSpell.ignoreWords": [
+    "Ionescu",
+    "Liviu",
     "POSIX",
     "buildtype",
     "cmake",
@@ -17,9 +19,11 @@
     "npmjs",
     "postversion",
     "semihosting",
+    "sifive",
     "subdir",
     "xpack",
     "xpacks"
   ],
-  "cmake.configureOnOpen": false
+  "cmake.configureOnOpen": false,
+  "editor.wordWrap": "on"
 }
