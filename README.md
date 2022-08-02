@@ -1,3 +1,6 @@
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/micro-os-plus/devices-sifive-xpack)](https://github.com/micro-os-plus/devices-sifive-xpack/blob/xpack/package.json)
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/micro-os-plus/devices-sifive-xpack)](https://github.com/micro-os-plus/devices-sifive-xpack/tags/)
+[![npm (scoped)](https://img.shields.io/npm/v/@micro-os-plus/devices-sifive.svg?color=blue)](https://www.npmjs.com/package/@micro-os-plus/devices-sifive/)
 [![license](https://img.shields.io/github/license/micro-os-plus/devices-sifive-xpack)](https://github.com/micro-os-plus/devices-sifive-xpack/blob/xpack/LICENSE)
 [![CI on Push](https://github.com/micro-os-plus/devices-sifive-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/micro-os-plus/devices-sifive-xpack/actions/workflows/CI.yml)
 
