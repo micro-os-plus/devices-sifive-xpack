@@ -18,6 +18,9 @@
     "url": "https://github.com/micro-os-plus/devices-sifive-xpack.git/"
   },
   "homepage": "https://github.com/micro-os-plus/devices-sifive-xpack/",
+  "bugs": {
+    "url": "https://github.com/micro-os-plus/devices-sifive-xpack/issues/"
+  },
   "keywords": [
     "xpack",
     "c++",
@@ -33,10 +36,16 @@
     "url": "https://github.com/ilg-ul/"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/micro-os-plus/devices-sifive-xpack/issues/"
-  },
   "config": {},
+  "dependencies": {},
+  "bundleDependencies": [],
   "devDependencies": {},
-  "xpack": {}
+  "xpack": {
+    "minimumXpmRequired": "0.14.0",
+    "dependencies": {},
+    "devDependencies": {},
+    "properties": {},
+    "actions": {},
+    "buildConfigurations": {}
+  }
 }
