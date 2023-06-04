@@ -75,7 +75,7 @@ git init # Unless already a Git project
 mkdir -p xpacks
 
 git submodule add https://github.com/micro-os-plus/devices-sifive-xpack.git \
-  xpacks/micro-os-plus-devices-sifive
+  xpacks/@micro-os-plus/devices-sifive
 ```
 
 ## Branches
