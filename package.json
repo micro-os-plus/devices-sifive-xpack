@@ -15,11 +15,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/micro-os-plus/devices-sifive-xpack.git/"
+    "url": "https://github.com/micro-os-plus/devices-sifive-xpack.git"
   },
-  "homepage": "https://github.com/micro-os-plus/devices-sifive-xpack/",
+  "homepage": "https://github.com/micro-os-plus/devices-sifive-xpack",
   "bugs": {
-    "url": "https://github.com/micro-os-plus/devices-sifive-xpack/issues/"
+    "url": "https://github.com/micro-os-plus/devices-sifive-xpack/issues"
   },
   "keywords": [
     "xpack",
@@ -33,7 +33,7 @@
   "author": {
     "name": "Liviu Ionescu",
     "email": "ilg@livius.net",
-    "url": "https://github.com/ilg-ul/"
+    "url": "https://github.com/ilg-ul"
   },
   "license": "MIT",
   "config": {},
