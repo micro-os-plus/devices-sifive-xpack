@@ -1,7 +1,7 @@
 {
   "name": "@xpack-sifive/devices",
   "version": "2.0.1",
-  "description": "A source library xPack with the µOS++ support for the SiFive Core Complex devices",
+  "description": "A source code library with the µOS++ support for the SiFive Core Complex devices",
   "main": "",
   "scripts": {
     "npm-install": "npm install",
